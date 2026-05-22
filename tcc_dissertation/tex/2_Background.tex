@@ -1,5 +1,38 @@
 \label{chap:background}
 
-The Background chapter (also known as Theoretical Framework) serves as the scientific foundation of your work. Its primary purpose is to prove that you aren't "reinventing the wheel" and that you have mastered the existing knowledge required to solve your problem.
+The \gls{CL} is a procedure that allows doctors to examine the inner lining of the colon and rectum using a flexible tube with a lighted camera. The \gls{CLP} passes through the anus and rectum into the colon, providing images of the interior. Those images can be used to identify abnormalities such as polyps, which are growths that can develop into colorectal cancer if left untreated. 
 
-Since you are bridging two very different fields (Forensics and Advanced AI/KAN), this chapter  will be crucial for your TCC.
+However, the accuracy of colonoscopy can be affected by various factors, as discussed in Introduction \ref{chap:introduction}. Considering the importance of early detection of colorectal cancer, is undeniable that improving the accuracy of colonoscopy is a critical area of research. 
+
+\section{Machine Learning and Computer Vision}
+\label{sec_machine_learning}
+
+\gls{AI} is a field of computer science dedicated to creating systems capable of performing tasks that typically require human intelligence. Examples of such tasks includes problem-solving, decision-making, and pattern recognition. \gls{ML} is an area of knowledge that focus on developing algorithms that allow computer system to learn from data and improve their performance without being explicit programmed. This mathematical relationship derived from the data is called model. Each revelant feature, or characteristc of data, must be represented numerically, so the model can \textit{learn}. 
+
+The process to select which aspects of data to use in a machine learning process is called \gls{FE}, to improve performance and efficiency of machine learning algorithms. For a model to performe well, the quality of the its training data is essencial. Different architectures will have different approaches, as exposed in \ref{sec_models}.
+
+Based on the nature and objective of it, a \gls{ML} can be categorized as one of the paradigms in the training process: \gls{SL}, unsupervised learning or reinforcement learning can be choosen after collect data. Besides that, a model can involve more than one approach in the end-to-end training process, in order to improve final performance.
+
+\section{Data organization and Datasets}
+\label{sec_dataset}
+Not only in \gls{AI} context, data organization is more important than ever in the XXI century, considering that companies collect large amounts of data from various sources daily. Considering that, data must often be organized collections that make information accessible for analysis and application - called \gls{DS}.
+However, there are more than one way of storing data, and different types of \gls{DS} store it in various ways. 
+
+Structured \gls{DS} organize information in predefined structure, normally tables which each column is an attribute and each row an instance. In other hand, unstructured \gls{DS} contain information that does not fit in a rigid schema or cannot be resumed to a numerical or text value. Some examples of it can be images, videos, web-pages, documents or even applications. Futhermore, semistructured \gls{DS} don't follow rigid schemas, they incorporate defined syntax, such as json (JavaScript Object Notation), html (Hypertext Markup Language) or xml (Extensible Markup Language).
+
+The type of problem that can be solved or explored using \gls{ML} and \gls{AI} depends not only in the quality of data, but the type of the \gls{DS} that will train the model.
+
+\section{Supervised Learning}
+\label{sec_supervised_learning}
+\gls{SL} goal is to make the model able to predit the \textit{correct} output for a given input. With that in mind, it applies to category problems, where the model outputs is compared to a \textit{ground truth}. Each instance of the \gls{DS} is labered with a discret value, such as numerical, representing which class or category it belongs to. According to the data and application context, a single instance can have multiple possible classes to be classified on.
+
+While the train advances, the \textit{loss}, overall difference between the model’s output and the ground truth of training inputs, should drop, meaning the model is "learning" from the training process. If a model’s predictions are accurate, the loss is small. If its predictions are inaccurate, the loss is large.
+
+\section{Deep Learning}
+\label{sec_deep_learning}
+
+\section{Models}
+\label{sec_models}
+
+\section{Evaluated Metrics}
+\label{sec_metrics}
