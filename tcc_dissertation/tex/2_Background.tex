@@ -28,8 +28,19 @@ The type of task that can be solved or explored using \gls{ML} and \gls{AI} depe
 
 While the train advances, the \textit{loss}, overall difference between the model’s output and the ground truth of training inputs, should drop, meaning the model is "learning" from the training process. If a model’s predictions are accurate, the loss is small. If its predictions are inaccurate, the loss is large. Different loss functions prioritize different types of error, so the choice of a loss function should reflect the nature of the data the model analyzes.
 
-\section{Deep Learning}
+\section{Artificial Neural Networks and Deep Learning}
 \label{sec_deep_learning}
+For classification tasks is very common to use \gls{ANN} algorithms, a \gls{ML} model based on the biological neurons for \gls{SL}. In the human brain, neurons are connect to each other and communicate through electrical signals. Mathematically, this structure is represented by a fuction \(f(X)\) , that maps an input \(X = x1, x2, x3, ...\) to predict a output \(Y\).
+
+\gls{ANN} is composed of three different parts, called \textit{layers}. Each one being composed of a group of \textit{neurons}. The first one is the \textit{input layer}, which receives raw data. The second consist of multiple layers, the \textit{hidden layer} consist of \textit{nodes} that transform inputs into new representation. They can be mathematically represented as a \textbf{linear transformations}, which the input features are multiplied by their associated weights and added bias to pass from one layer to the another. Finally, the \textit{output layer} applys to the output of the hidden layer a \textbf{nonlinear activation function} such as sigmoid, Relu, tanh, softmax and produce the final prediction.
+
+Models with at least 4 layers are called \gls{DL} models. Not only can data be splitted into smaller pieces to make predictions, \gls{DL} often needs a massive amount of training data and computer perfomrance to reach optimal performance, considering the fact that some of more than millions or even a billion of parameters. The inclusion of multiple \textit{hidden layers} distinguishes a \gls{DL} from a "simple" \gls{ANN}, which allows the model to learn complex hierarchical features of data. The first ones identify broader paterns such as borders and deeper ones identify more granular patterns.
+
+\subsection{Backpropagation and Gradient Descendent}
+\label{sub_sec_backprop_gradi}
+Fitting the parameters in the \gls{DL} and reducing the \textit{loss} is the main goal of training. To do so, is necessary that each of one of the millions, or event billions, parameters to be calculed separately, what can be have and tremendous computational cost considering the amount of neurons in a network.
+
+Backward propagation erro, also referenced as \gls{BP}, is an algorithm to calculate how changes an individual weight or bias in  \gls{ANN} will affect the accuracy of predictions.
 
 \section{Models}
 \label{sec_models}
