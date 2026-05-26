@@ -38,9 +38,37 @@ Models with at least 4 layers are called \gls{DL} models. Not only can data be s
 
 \subsection{Backpropagation and Gradient Descendent}
 \label{sub_sec_backprop_gradi}
-Fitting the parameters in the \gls{DL} and reducing the \textit{loss} is the main goal of training. To do so, is necessary that each of one of the millions, or event billions, parameters to be calculed separately, what can be have and tremendous computational cost considering the amount of neurons in a network.
+A \gls{DL} model updates its parameters in order to achieve greater precision in output predictions. To do so, is necessary that each of one of the millions, or even billions, parameters to be calculed separately, what can be have and tremendous computational cost considering the amount of neurons in a network. This process occurs after each \textbf{epoch} - a complete pass throught the train dataset, where the model process every sample, calculates loss and, finally, update it`s parameters.
 
-Backward propagation erro, also referenced as \gls{BP}, is an algorithm to calculate how changes an individual weight or bias in  \gls{ANN} will affect the accuracy of predictions.
+Backward propagation erro, also referenced as \gls{BP}, is an algorithm to calculate how changes an individual weight or bias in  \gls{ANN} will affect the accuracy of predictions. By calculating the \textbf{gradient} - vector of partial derivatives of the \gls{LF} for each variable in every equation, it shows optimization algorithms - technics to adjust model parameters, each equations and parameters should be adjusted to reduce \gls{LF}.
+
+
+\gls{GD} is an optimization algorithm  for minimizing a differentiable multivariate function. In \gls{SL}, it commonly works along side \gls{BP}, based on \textit{learning rate} - size of the steps necessary to reach minimum gradient. High ones means in highers steps, but may skip de converge point. However, small ones kill optimization efficiency.
+
+For big amounts of data, dataset may be splitted into \textit{batchs} for efficiency. In this approach, an \textbf{epoch} consist of multiple iterations, which each process one batch. The number of iterations can be calculated by: \( iterationPerEpoch = totalSamples / batchSize\).
+
+\subsection{Stochastic Gradient Descendent}
+\label{sub_sec_stoch_grad}
+Based on \gls{GD}, \gls{SGD} executes and updates parameters for each sample in dataset, one at a time inside an epoch. Easier to stay in memory than a \textit{batch} approach, it can reduce computational efficiency and generate noisy gradients.
+
+\subsection{Mini-Batch Gradient Descendent}
+\label{sub_sec_mini_batch_grad}
+It combines \gls{SGD} with \textit{batch} approach, splitting dataset in small batches, called \textit{mini-batches} and updates model parameters in each of them.
+
+\subsection{SGD with Momentum}
+\label{sub_sec_sgd_momentum}
+\gls{GDM} is an extension of \gls{GD} algorithm. Based on physics, where movement depends on current force and past velocity. The main goal of this approach is to smooth learning processo by adding past gradients, what leads to more stable convergence, which avoids \gls{BP} to skip the global minimum.
+
+A new parameter called \textit{momentum factor} controls how mmuch of the past gradients are "remembered" in a update. Zero (0) means the optimizer will not consider past gradients and a value closes to one (1) will consider more past values.
+
+
+\subsection{Adam}
+\label{sub_sec_adam}
+
+
+\subsection{Adamax}
+\label{sub_sec_adamax}
+
 
 \section{Models}
 \label{sec_models}
