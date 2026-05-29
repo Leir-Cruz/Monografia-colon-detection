@@ -7,7 +7,10 @@ However, the accuracy of colonoscopy can be affected by various factors, as disc
 \section{Machine Learning and Computer Vision}
 \label{sec_machine_learning}
 
-\gls{AI} is a field of computer science dedicated to creating systems capable of performing tasks that typically require human intelligence. Examples of such tasks includes problem-solving, decision-making, and pattern recognition. \gls{ML} is an area of knowledge that focus on developing algorithms that allow computer system to learn from data and improve their performance without being explicit programmed. This mathematical relationship derived from the data is called model. Each revelant feature, or characteristc of data, must be represented numerically, so the model can \textit{learn}. 
+In 1943 the first mathematical model of what would be the bases to \gls{AI},field of computer science dedicated to creating systems capable of performing tasks that typically require human intelligence, was published by Warren McCulloch and Walter Pitts in \cite{mcculloch1943} paper. 
+
+
+Examples of such tasks includes problem-solving, decision-making, and pattern recognition. \gls{ML} is an area of knowledge that focus on developing algorithms that allow computer system to learn from data and improve their performance without being explicit programmed. This mathematical relationship derived from the data is called model. Each revelant feature, or characteristc of data, must be represented numerically, so the model can \textit{learn}. 
 
 The process to select which aspects of data to use in a machine learning process is called \gls{FE}, to improve performance and efficiency of machine learning algorithms. For a model to performe well, the quality of the its training data is essencial. Different architectures will have different approaches, as exposed in \ref{sec_models}.
 
@@ -62,8 +65,9 @@ It combines \gls{SGD} with \textit{batch} approach, splitting dataset in small b
 A new parameter called \textit{momentum factor} controls how mmuch of the past gradients are "remembered" in a update. Zero (0) means the optimizer will not consider past gradients and a value closes to one (1) will consider more past values.
 
 
-\subsection{Adam}
+\subsection{Adaptive Moment Estimation}
 \label{sub_sec_adam}
+Adaptive Moment Estimation, or \gls{ADM}, is an optimization algorithm such as \gls{GD}. First appear in \cite{DBLP:journals/corr/KingmaB14} Diederik P. Kingma and Jimmy Ba show that 
 
 
 \subsection{Adamax}
