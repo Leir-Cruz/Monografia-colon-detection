@@ -45,8 +45,32 @@ Frank Rosenblatt work \cite{rosenblatt1958perceptron} proposed in 1958 a model t
 
 A stimulus can be classified in classes, which provokes a stronger impulse of it corresponding response. However, those responses are not based on boolean algebra, but probabilistic logic. The system is capable of modifying association units or their connections based on the stimulus and impulses provided. Frank calls "differentiated environment" where each response is associeated to a distinct class of similar stimuli, where performance can be enhanced by the use of binary system.
 
+Bernard Widrow \cite{widrow1960adaptive} develop a system that learns by giving a lot of examples of inputs and their respective desired outputs, instead of comparing every logic detail. The quality of the system performance is directly related to the number of examples given. To illustrate it, a machine called \gls{ADALINE} was built. Similar to von Neumann \cite{Neumann1956ProbabilisticLA} with his neuron built as a combinatorial logic circuit, each input is linearly combined with it respectives weights, which are setted during the training procedure.
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.6\textwidth]{vonNeumein-neuron}
+    \caption{Adjustable neuron cited by Bernard Window \cite{widrow1960adaptive}.
+    }
+\end{figure}
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.6\textwidth]{adaline-schematic}
+    \caption{Adaline schematic cited by Bernard Window \cite{widrow1960adaptive}.
+    }
+\end{figure}
+\gls{ADALINE} learning is stored at the weights a0...a16 and can be used to classify the original patterns and noisy it`s distorsed versions. The training method is an iterative search process to find the best gain set, which can be look by the error of an instance
+\begin{equation}
+    \epsilon(k) = d(k) - [a_0 + \sum_{j=1}^{n} a_j s_j(k)]
+\end{equation}
 
-
+Widrow and Holf demonstrated mathematically that the use \gls{MSE} to adaptation weights was because of it parabolic propertys of single global minimum.
+\begin{equation} 
+    MSE = \frac{1}{m} \sum_{i=1}^{m} (\hat{y}^{(i)} - y^{(i)})^2 
+\end{equation}
+With that, minimizing \gls{MSE} is equivalent to minimizing the average number of neuron error, which lead to the best set of weights. The training process uses partial derivatives of the formula above, showing that the direction and the magnitude of each weight depends exclusively from the input signal and the magnitude error, as detailed in \ref{sub_sec_backprop_gradi}.
+\begin{equation} 
+\frac{\partial \epsilon^2(k)}{\partial a_j} = -2s_j(k)\epsilon(k) 
+\end{equation}
 
 \section{Artificial Neural Networks and Deep Learning}
 \label{sec_deep_learning}
