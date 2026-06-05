@@ -50,7 +50,7 @@ Bernard Widrow \cite{widrow1960adaptive} develop a system that learns by giving 
     \centering
     \includegraphics[width=0.6\textwidth]{vonNeumein-neuron}
     \caption{Adjustable neuron cited by Bernard Window \cite{widrow1960adaptive}.
-    }
+    \label{fig:adjustable neuron}}
 \end{figure}
 \begin{figure}[htbp]
     \centering
@@ -58,7 +58,8 @@ Bernard Widrow \cite{widrow1960adaptive} develop a system that learns by giving 
     \caption{Adaline schematic cited by Bernard Window \cite{widrow1960adaptive}.
     }
 \end{figure}
-\gls{ADALINE} learning is stored at the weights a0...a16 and can be used to classify the original patterns and noisy it`s distorsed versions. The training method is an iterative search process to find the best gain set, which can be look by the error of an instance
+
+\gls{ADALINE} learning is stored at the weights a0...a16 and can be used to classify the original patterns and noisy it`s distorsed versions. The training method is an iterative search process to find the best gain set, which can be look by the error of an instance:
 \begin{equation}
     \epsilon(k) = d(k) - [a_0 + \sum_{j=1}^{n} a_j s_j(k)]
 \end{equation}
@@ -67,56 +68,49 @@ Widrow and Holf demonstrated mathematically that the use \gls{MSE} to adaptation
 \begin{equation} 
     MSE = \frac{1}{m} \sum_{i=1}^{m} (\hat{y}^{(i)} - y^{(i)})^2 
 \end{equation}
-With that, minimizing \gls{MSE} is equivalent to minimizing the average number of neuron error, which lead to the best set of weights. The training process uses partial derivatives of the formula above, showing that the direction and the magnitude of each weight depends exclusively from the input signal and the magnitude error, as detailed in \ref{sub_sec_backprop_gradi}.
+With that, minimizing \gls{MSE} is equivalent to minimizing the average number of neuron error, which lead to the best set of weights. The training process uses partial derivatives of the formula above, showing that the direction and the magnitude of each weight depends exclusively from the input signal and the magnitude error, as detailed in \ref{sec_neural_networks}.
 \begin{equation} 
 \frac{\partial \epsilon^2(k)}{\partial a_j} = -2s_j(k)\epsilon(k) 
 \end{equation}
 
-\section{Artificial Neural Networks and Deep Learning}
+\section{Artificial Neural Networks and Gradient Descent}
+\label{sec_neural_networks}
+The perceptron \cite{rosenblatt1958perceptron} can be considered as the first published attempet to build a \gls{ANN} that could learn from examples. However, it was only a single layer neuron. Later, in his book Principles of Neurodynamics \cite{Rosenblatt1963PRINCIPLESON}, the author explicit discusses multilayer perceptron architectures, with multiple neurons organized in series. As in figure \ref{fig:adjustable neuron}, the output of a neuron is connect serves as input of the next one.
+
+It was with David E. Rumelhart et al \cite{Rumelhart1986LearningRB} that an \gls{ANN} training procedure was shown useful in practice, because of the high cost of adjusting all weights of the neuron. Those extra layers between output and input were called hidden-layers, or hiddens units, and they introduce more difficult to find the learning rules, or the corrects weights, to reduce the difference between the actual and desired outputs. The input of a neuron in j layer is a linear function of the outputs ($y_i$) multiplied by their respective weights ($w_{ij}$).
+\begin{equation} 
+    x_j = \sum_{i} y_i w_{ij} 
+\end{equation}
+One important difference pointed in \cite{Rumelhart1986LearningRB} is each hidden-layer output is followed by a non-linear function, instead of only the output layer. This occurs because series linear function only could be simply replaced by a single one, just adjusting the weight, which would limit the system capacity of learning.
+For example, in binary classification, as explored in \ref{chap:methodology}, is very common to use sigmoid function as the non-linear function of the neurons output:
+\begin{equation}
+     y_j = \frac{1}{1 + e^{-x_j}} \label{sigmoid_func}
+\end{equation}
+David appointed that the total error of an multi-layered \gls{ANN} could be, similar to perceptron, as the comparison of the desired output and the prediction
+\begin{equation} 
+    E = \frac{1}{2} \sum_{c} \sum_{j} (y_{j,c} - d_{j,c})^2 
+\end{equation}
+where ($c$) is an index over cases, ($j$) is index over outputs units and ($y$) the actual state of the output. The main point, as in Rosenblatt article \cite{Rosenblatt1963PRINCIPLESON}, is minimize ($E$). To make this, is suggested the use of \gls{GD} \cite{5a25e804-97fa-3be4-ac27-50be05d4f28d}, mathematical method to find local points of minima.
+By calculating the partial derivatives of the error and applying calculus chain rule, it is possible how the change in the input or the weight of a layer ($j$) affects the error:
+\begin{equation} 
+    \frac{\partial E}{\partial x_j} = \frac{\partial E}{\partial y_j} y_j (1 - y_j) 
+\end{equation} 
+
+\begin{equation} 
+    \frac{\partial E}{\partial w_{ij}} = \frac{\partial E}{\partial x_j} y_i 
+\end{equation}
+
+The derivates above propagates from the top layer back to the bottom one after, updating the weights of the \gls{ANN}:
+
+\begin{equation} 
+    \Delta w(t) = -\epsilon \frac{\partial E}{\partial w(t)} + \alpha \Delta w(t-1) 
+\end{equation}
+
+Where ($t$) where ¢ is incremented by 1 for each sweep through the whole set of input-output cases, and ($\alpha$) is an exponential decay factor between 0 and 1 that determines the contribution of the current gradient and earlier gradients to the weight change.
+
+
+\section{Deep Learning}
 \label{sec_deep_learning}
-For classification tasks is very common to use \gls{ANN} algorithms, a \gls{ML} model based on the biological neurons for \gls{SL}. In the human brain, neurons are connect to each other and communicate through electrical signals. Mathematically, this structure is represented by a fuction \(f(X)\) , that maps an input \(X = x1, x2, x3, ...\) to predict a output \(Y\).
-
-\gls{ANN} is composed of three different parts, called \textit{layers}. Each one being composed of a group of \textit{neurons}. The first one is the \textit{input layer}, which receives raw data. The second consist of multiple layers, the \textit{hidden layer} consist of \textit{nodes} that transform inputs into new representation. They can be mathematically represented as a \textbf{linear transformations}, which the input features are multiplied by their associated weights and added bias to pass from one layer to the another. Finally, the \textit{output layer} applys to the output of the hidden layer a \textbf{nonlinear activation function} such as sigmoid, Relu, tanh, softmax and produce the final prediction.
-
-Models with at least 4 layers are called \gls{DL} models. Not only can data be splitted into smaller pieces to make predictions, \gls{DL} often needs a massive amount of training data and computer perfomrance to reach optimal performance, considering the fact that some of more than millions or even a billion of parameters. The inclusion of multiple \textit{hidden layers} distinguishes a \gls{DL} from a "simple" \gls{ANN}, which allows the model to learn complex hierarchical features of data. The first ones identify broader paterns such as borders and deeper ones identify more granular patterns.
-
-\subsection{Backpropagation and Gradient Descendent}
-\label{sub_sec_backprop_gradi}
-A \gls{DL} model updates its parameters in order to achieve greater precision in output predictions. To do so, is necessary that each of one of the millions, or even billions, parameters to be calculed separately, what can be have and tremendous computational cost considering the amount of neurons in a network. This process occurs after each \textbf{epoch} - a complete pass throught the train dataset, where the model process every sample, calculates loss and, finally, update it`s parameters.
-
-Backward propagation erro, also referenced as \gls{BP}, is an algorithm to calculate how changes an individual weight or bias in  \gls{ANN} will affect the accuracy of predictions. By calculating the \textbf{gradient} - vector of partial derivatives of the \gls{LF} for each variable in every equation, it shows optimization algorithms - technics to adjust model parameters, each equations and parameters should be adjusted to reduce \gls{LF}.
-
-
-\gls{GD} is an optimization algorithm  for minimizing a differentiable multivariate function. In \gls{SL}, it commonly works along side \gls{BP}, based on \textit{learning rate} - size of the steps necessary to reach minimum gradient. High ones means in highers steps, but may skip de converge point. However, small ones kill optimization efficiency.
-
-For big amounts of data, dataset may be splitted into \textit{batchs} for efficiency. In this approach, an \textbf{epoch} consist of multiple iterations, which each process one batch. The number of iterations can be calculated by: \( iterationPerEpoch = totalSamples / batchSize\).
-
-\subsection{Stochastic Gradient Descendent}
-\label{sub_sec_stoch_grad}
-Based on \gls{GD}, \gls{SGD} executes and updates parameters for each sample in dataset, one at a time inside an epoch. Easier to stay in memory than a \textit{batch} approach, it can reduce computational efficiency and generate noisy gradients.
-
-\subsection{Mini-Batch Gradient Descendent}
-\label{sub_sec_mini_batch_grad}
-It combines \gls{SGD} with \textit{batch} approach, splitting dataset in small batches, called \textit{mini-batches} and updates model parameters in each of them.
-
-\subsection{SGD with Momentum}
-\label{sub_sec_sgd_momentum}
-\gls{GDM} is an extension of \gls{GD} algorithm. Based on physics, where movement depends on current force and past velocity. The main goal of this approach is to smooth learning processo by adding past gradients, what leads to more stable convergence, which avoids \gls{BP} to skip the global minimum.
-
-A new parameter called \textit{momentum factor} controls how mmuch of the past gradients are "remembered" in a update. Zero (0) means the optimizer will not consider past gradients and a value closes to one (1) will consider more past values.
-
-
-\subsection{Adaptive Moment Estimation}
-\label{sub_sec_adam}
-Adaptive Moment Estimation, or \gls{ADM}, is an optimization algorithm such as \gls{GD}. First appear in \cite{DBLP:journals/corr/KingmaB14} Diederik P. Kingma and Jimmy Ba show that 
-
-
-\subsection{Adamax}
-\label{sub_sec_adamax}
-
-
-\section{Models}
-\label{sec_models}
 
 \section{Evaluated Metrics}
 \label{sec_metrics}
