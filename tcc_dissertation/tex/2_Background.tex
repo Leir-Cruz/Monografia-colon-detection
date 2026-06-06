@@ -109,8 +109,15 @@ The derivates above propagates from the top layer back to the bottom one after, 
 Where ($t$) where ¢ is incremented by 1 for each sweep through the whole set of input-output cases, and ($\alpha$) is an exponential decay factor between 0 and 1 that determines the contribution of the current gradient and earlier gradients to the weight change.
 
 
-\section{Deep Learning}
+\section{Deep Learning and Image Recognition}
 \label{sec_deep_learning}
+The work of David et al \cite{Rumelhart1986LearningRB} was the bases of modern \gls{DL}, which popularized the use of \gls{BP} in \gls{ANN}. In 1998 \cite{articleDocReg} a lot of recognition system were already using some form of multilayer \gls{ANN} trained with \gls{BP}, which avoid local minima of \gls{GD}. These habilities made them to be a heavily study candidate for pattern recognition tasks. Hierarchically organization of the hidden layers available features extraction in image recognition, such as Kunihiko Fukushima work \cite{Fukushima1980NeocognitronAS}.
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Fukushima-layer-connection}
+    \caption{Diagram illustrating interconnections between layers provided in \cite{Fukushima1980NeocognitronAS}.}
+\end{figure}
+
 
 \section{Evaluated Metrics}
 \label{sec_metrics}
