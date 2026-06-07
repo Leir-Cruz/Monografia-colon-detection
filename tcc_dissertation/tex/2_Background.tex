@@ -35,9 +35,11 @@ Structured \gls{DS} organize information in predefined structure, normally table
 
 The type of task that can be solved or explored using \gls{ML} and \gls{AI} depends not only in the quality of data, but the type of the \gls{DS} that will train the model.
 
-\section{Supervised Learning}
+\section{Firsts Network and Supervised Learning}
 \label{sec_supervised_learning}
-Frank Rosenblatt work \cite{rosenblatt1958perceptron} proposed in 1958 a model to explain how the human brain storages data and utilize it for pattern recognition and behavior. The probabilistic model called perceptron is divided in three layers: Sensority units that respondes to impulses in all or nothing bases; Association units receives the transmitted impulses and, if the algebric sum of those are greated than the unit thredhold, it fires and generates the responses of some Response units. Each response unit has feedbacks connections that can be excitatory or inhibitory and are mutually exclusive.If a response occurs, it will inhibit others.
+Frank Rosenblatt work \cite{rosenblatt1958perceptron} proposed in 1958 a model to explain how the human brain storages data and utilize it for pattern recognition and behavior. Not only that, but also was compromissed in understand how information contained in storage influence regonition. Such as Alan Turing \cite{DBLP:journals/x/Turing50}, Resenblatt also belived in the application of positive or negative reinforcement to make the system learn. Not only that, but also expanded to his machine model the biological concept that similar stimulus should activate the same nets cells.
+
+This probabilistic model called perceptron is divided in three layers: Sensority units that respondes to impulses in all or nothing bases; Association units receives the transmitted impulses and, if the algebric sum of those are greated than the unit thredhold, it fires and generates the responses of some Response units. Each response unit has feedbacks connections that can be excitatory or inhibitory and are mutually exclusive. This means that, if a response unit is trigged during a stimulus, it will inhibit others from trigger to other similar ones.
 
 \begin{figure}[htbp]
     \centering
@@ -46,9 +48,13 @@ Frank Rosenblatt work \cite{rosenblatt1958perceptron} proposed in 1958 a model t
 }
 \end{figure}
 
-A stimulus can be classified in classes, which provokes a stronger impulse of it corresponding response. However, those responses are not based on boolean algebra, but probabilistic logic. The system is capable of modifying association units or their connections based on the stimulus and impulses provided. Frank calls "differentiated environment" where each response is associeated to a distinct class of similar stimuli, where performance can be enhanced by the use of binary system.
+A stimulus can be classified in classes, which provokes a stronger impulse of it corresponding response. However, those responses are not based on boolean algebra, but probabilistic logic. The system is capable of modifying association units or their connections based on the stimulus and impulses provided. Frank calls "differentiated environment" where each response is associeated to a distinct class of similar stimuli, where performance can be enhanced by the use of binary system. To a neuron it self, it was shown the capacity of learning from experience.
 
-Bernard Widrow \cite{widrow1960adaptive} develop a system that learns by giving a lot of examples of inputs and their respective desired outputs, instead of comparing every logic detail. The quality of the system performance is directly related to the number of examples given. To illustrate it, a machine called \gls{ADALINE} was built. Similar to von Neumann \cite{Neumann1956ProbabilisticLA} with his neuron built as a combinatorial logic circuit, each input is linearly combined with it respectives weights, which are setted during the training procedure.
+
+The perceptron error was calcullated from the mistakes classifications, as it learning procedure. The main achievement of it, was the possibility of predicting learning curves and the growth of probability of correct classificaion as the number of inputs rise. 
+
+
+Bernard Widrow \cite{widrow1960adaptive} develop a neural network that learns by giving a lot of examples of inputs and their respective desired outputs, instead of comparing every logic detail. The quality of the system performance is directly related to the number of examples given. To illustrate it, a machine called \gls{ADALINE} was built. Similar to von Neumann \cite{Neumann1956ProbabilisticLA} with his neuron built as a combinatorial logic circuit, each input is linearly combined with it respectives weights, which are setted during the training procedure.
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.6\textwidth]{vonNeumein-neuron}
@@ -62,7 +68,7 @@ Bernard Widrow \cite{widrow1960adaptive} develop a system that learns by giving 
     }
 \end{figure}
 
-\gls{ADALINE} learning is stored at the weights a0...a16 and can be used to classify the original patterns and noisy it`s distorsed versions. The training method is an iterative search process to find the best gain set, which can be look by the error of an instance:
+Just as the perceptron, \gls{ADALINE} had one layer aside from input and output, but it`s learning was stored at the weights a0...a16 and can be used to classify the original patterns and noisy it`s distorsed versions. The training method was an iterative search process to find the best gain set, which can be look by the error of an instance:
 \begin{equation}
     \epsilon(k) = d(k) - [a_0 + \sum_{j=1}^{n} a_j s_j(k)]
 \end{equation}
@@ -78,14 +84,14 @@ With that, minimizing \gls{MSE} is equivalent to minimizing the average number o
 
 \section{Artificial Neural Networks and Gradient Descent}
 \label{sec_neural_networks}
-The perceptron \cite{rosenblatt1958perceptron} can be considered as the first published attempet to build a \gls{ANN} that could learn from examples. However, it was only a single layer neuron. Later, in his book Principles of Neurodynamics \cite{Rosenblatt1963PRINCIPLESON}, the author explicit discusses multilayer perceptron architectures, with multiple neurons organized in series. As in figure \ref{fig:adjustable neuron}, the output of a neuron is connect serves as input of the next one.
+The perceptron \cite{rosenblatt1958perceptron} can be considered as the first published attempet to build a \gls{ANN} that could learn from examples. However, it was only a single layer aside from input and output. Later, in his book Principles of Neurodynamics \cite{Rosenblatt1963PRINCIPLESON}, the author explicit discusses multilayer perceptron architectures, with multiple neurons organized in series. As in figure \ref{fig:adjustable neuron}, the output of a neuron is connect serves as input of the next one.
 
 It was with David E. Rumelhart et al \cite{Rumelhart1986LearningRB} that an \gls{ANN} training procedure was shown useful in practice, because of the high cost of adjusting all weights of the neuron. Those extra layers between output and input were called hidden-layers, or hiddens units, and they introduce more difficult to find the learning rules, or the corrects weights, to reduce the difference between the actual and desired outputs. The input of a neuron in j layer is a linear function of the outputs ($y_i$) multiplied by their respective weights ($w_{ij}$).
 \begin{equation} 
     x_j = \sum_{i} y_i w_{ij} 
 \end{equation}
-One important difference pointed in \cite{Rumelhart1986LearningRB} is each hidden-layer output is followed by a non-linear function, instead of only the output layer. This occurs because series linear function only could be simply replaced by a single one, just adjusting the weight, which would limit the system capacity of learning.
-For example, in binary classification, as explored in \ref{chap:methodology}, is very common to use sigmoid function as the non-linear function of the neurons output:
+One important difference pointed in \cite{Rumelhart1986LearningRB} is each hidden-layer output is followed by a non-linear function, different than \gls{ADALINE}, which all layers had as output a linear-function. This occurs because series linear function only could be simply replaced by a single one, just adjusting the weight, which would limit the system capacity of learning.
+For example, in binary classification, as explored in chapter \ref{chap:methodology}, is very common to use sigmoid function as the non-linear function of the neurons output:
 \begin{equation}
      y_j = \frac{1}{1 + e^{-x_j}} \label{sigmoid_func}
 \end{equation}
@@ -111,16 +117,20 @@ The derivates above propagates from the top layer back to the bottom one after, 
 
 Where ($t$) where ¢ is incremented by 1 for each sweep through the whole set of input-output cases, and ($\alpha$) is an exponential decay factor between 0 and 1 that determines the contribution of the current gradient and earlier gradients to the weight change.
 
+ This new method of learning with \gls{BP} and \gls{GD} made multilayer neural networks available in every-day use, overcomming perceptron limitation that could only solve linearly separable problems.
+
 
 \section{Deep Learning and Image Recognition}
 \label{sec_deep_learning}
-The work of David et al \cite{Rumelhart1986LearningRB} was the bases of modern \gls{DL}, which popularized the use of \gls{BP} in \gls{ANN}. In 1998 \cite{articleDocReg} a lot of recognition system were already using some form of multilayer \gls{ANN} trained with \gls{BP}, which avoid local minima of \gls{GD}. These habilities made them to be a heavily study candidate for pattern recognition tasks. Hierarchically organization of the hidden layers available features extraction in image recognition, such as Kunihiko Fukushima work \cite{Fukushima1980NeocognitronAS}.
+The work of David et al \cite{Rumelhart1986LearningRB} discussed in he section above \ref{sec_neural_networks} was the bases of modern \gls{DL}, which popularized the use of \gls{BP} in \gls{ANN}. By applying a non-linear function in the response-unit of all neurons in the hidden and output layer, those models earns the hability of approximating any measurable function to any desired degree of accuracy, as concluded in 1989 Kurt Hornik et al. work Multilayer Feedforward Networks are
+Universal Approximators \cite{HORNIK1989359}.
+
+In 1998 \cite{articleDocReg} a lot of recognition system were already using some form of multilayer \gls{ANN} trained with \gls{BP}. These habilities made them to be a heavily study candidate for pattern recognition tasks, such as image recognition, which was proven by as Kunihiko Fukushima work \cite{Fukushima1980NeocognitronAS}, showing how  organizating hierarchically the hidden layers ends up to extraction available features and pattern in a 2D image.
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.8\textwidth]{Fukushima-layer-connection}
     \caption{Diagram illustrating interconnections between layers provided in \cite{Fukushima1980NeocognitronAS}.}
 \end{figure}
-
 
 \section{Evaluated Metrics}
 \label{sec_metrics}
