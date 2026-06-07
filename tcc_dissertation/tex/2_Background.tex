@@ -140,3 +140,61 @@ In 1998 \cite{articleDocReg} a lot of recognition system were already using some
 
 \section{Evaluated Metrics}
 \label{sec_metrics}
+In classification models in tasks such as image and pattern recognition, it`s important to have a way of mesuare how well a \gls{DL} model is performing. The simplest case of classification is the binary classification, where there are only two classes a sample can be, normally labed as Positive (P) or Negative (N). There`re total outcomes of four outcomes to a binary classifier \cite{metrics}:
+\begin{itemize}
+    \item \gls{TP}: Predictions where the model correct predicted the sample to belongs to a "class A".
+    \item \gls{TN}: Predictions where the model correct predicted the sample to not belongs to a "class A".
+    \item \gls{FP}: Predictions where the model incorrectly predicted the sample to belongs to "class A".
+    \item \gls{FN}: Predicctions where the model incorrectly predicted the sample to not belongs to "class A".
+\end{itemize}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.5\textwidth]{outcomes-of-classifier}
+    \caption{Representation of the four outcomes of a classifier \cite{metrics}.}
+\end{figure}
+
+The most common way to visualize those outcomes is using the confusion matrix. It`s a table with four different combinations of predicted and actual value of labeled samples \cite{metrics}.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.5\textwidth]{confusion-matrix-explain}
+    \caption{Confusion matrix for binary classification problems \cite{metrics}.}
+\end{figure}
+
+Considering the possibles outcomes of binary classification sample, there are different metrics, which evalueats different characteristcs of the model performance that should be considered during training phase. As discussed in \ref{chap:methodology}, four of those metrics were used during this work, which will be explained next.
+
+\subsection{Accuracy}
+\label{sub_sec_accuracy}
+Accuracy is the number of all corrects predictions by the total of the number of the dataset.
+\begin{equation}
+    \frac{TP + TN}{TP + FP + TN + FN}
+\end{equation}
+
+\subsection{Recall}
+\label{sub_sec_recall}
+Also called sensivity, recall is the number of correct positive predictions by the number of total positives. It can be interpreted as the model capacity to correctly identify positive instances.
+\begin{equation}
+    \frac{TP}{TP + FN}
+\end{equation}
+
+\subsection{Specificity}
+\label{sub_sec_specificity}
+Specifity is the number of correct false predictions by the number of total falses. It can be interpreted as the model capacity to correctly identify negative instances.
+\begin{equation}
+    \frac{TN}{TN + FP}
+\end{equation}
+
+\subsection{Precision}
+\label{sub_sec_precision}
+Precision is the number of correct positive predictions by the total number of positive predictions. It can be interpreted as the reliability of a correct positive prediction.
+\begin{equation}
+    \frac{TP}{TP + FP}
+\end{equation}
+
+\subsection{F-score}
+\label{sub_sec_fscore}
+F-score is a harmonic mean of precision and recall.
+\begin{equation}
+    \frac{2*Precision*Recall}{Precision*Recall} = \frac{2*TP}{2*TP + FP + FN}
+\end{equation}
