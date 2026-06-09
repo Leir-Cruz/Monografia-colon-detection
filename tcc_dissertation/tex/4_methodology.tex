@@ -100,6 +100,40 @@ After downloading all images necessary, they were converted to a csv file per \g
 
 With the respective \gls{CSV} file, the samples were splitted in validation, test and train, while rezised to 224 x 224 pixels and normalized using ImageNet standarts  - 0.485, 0.456, 0.406 mean and 0.229, 0.224, 0.225  standard deviation to aid training convergence and efficiency \cite{DBLP:conf/nips/KrizhevskySH12} \cite{10913097}.
 
+After transformation, all images are put in memory instead of storage, through DataLoader for velocity enhancement during training in batches of 64.
+
+Training is made using \gls{SL} with train and validation \gls{DS}. Through 50 epochs, each loss is calculated through Cross Entropy Function. If validation loss does not improve in 15 epochs, early stopped is activated and best model, model with best performancing (lowest validation loss) is saved and used for tests with test \gls{DS}.
+
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.5\textwidth]{loss-resnet18-nonorm-adammax}
+    \caption{Example of loss variantion during train phase for Residual network 18 using adammax as optimizer and \gls{NCTCRCHE100K} dataset.
+    }
+\end{figure}
+
+After train, the best model is validated through metrics \ref{sec_metrics}: accuracy, recall, precision specificity and F-Score in the test \gls{DS}.
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.5\textwidth]{matriz-confusao-resnet18-nonorm-adammax}
+    \caption{Example of confusion matrix during test for Residual network 18 using adammax as optimizer and \gls{NCTCRCHE100K} dataset.
+    }
+\end{figure}
+
+\begin{table}[]
+    \centering
+    \begin{tabular}{|l|l|}
+    \hline
+    Metrics   & Value  \\ \hline
+    Accuracy  & 0.916  \\ \hline
+    Precision & 0.9122 \\ \hline
+    Recall    & 0.916  \\ \hline
+    F-score   & 0.9116 \\ \hline
+    \end{tabular}
+    \caption{Example performance metrics for the test phase of the for Residual network 18 using adammax as optimizer and \gls{NCTCRCHE100K} dataset.}
+\end{table}
+
+
 \section{First Attempt Procediments}
 \label{sec_first_attempt}
 Based on Md. Bipul Hossain and Mohamed Shaban paper \cite{DBLP:conf/aibthings/HossainS24}, the \gls{DS} choosen in the first attempt for training and test was the \gls{LC25000}. 
