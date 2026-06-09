@@ -3,7 +3,7 @@ This chapter describes experimental designs and implementation details of this w
 
 \section{Datasets}
 \label{sec_datasets}
-For this survey, three different datasets were used, all of them suffered transformations to convert their respectives classes in \gls{BC} staintment. Also, all images were transformeds in 224 x 224 pixels for normalization and train efficiency \cite{DBLP:conf/nips/KrizhevskySH12}.
+For this survey, three different datasets were used, all of them suffered transformations to convert their respectives classes in \gls{BC} staintment.
 
 \subsection{100,000 histological images of human colorectal cancer and healthy tissue}
 \label{subsec_nct100k}
@@ -60,17 +60,6 @@ The classes in the datasets are:
 \end{itemize}
 All images were equally distributed between classes above, with five thousand for each one.
 
-\section{Other train configuration}
-\label{sec_others}
-During train phase, in all cases, the batch size choosen was 64 and all images were in memory while setting the necessary procedures. With 50 epochs of train, all models were trained with the following optimizers configuration:
-\begin{itemize}
-    \item Adam: learning rate of $1\times 10^{-4}$.
-    \item SGD: learning rate of $1\times 10^{-2}$, momentum of 0.9 and weight decay of $5\times 10^{-4}$.
-    \item AdamMax: learning rate of $1\times 10^{-2}$, $\beta_1$ of 0.9, $\beta_2$ of 0.999, weight decay of $1\times 10^{-4}$ and $\varepsilon$ of $1\times 10^{-8}$.
-\end{itemize}
-
-When applied, scheduler was configured with step size of 5 and $\gamma$ of $0.1$.
-
 \section{Environment}
 \label{sec_environment}
 During hardware limitation by the lack of \gls{GPU}, it was necessary a cloud-based service to run the \gls{DL} models through trainin phase. Google Colab, a Jupyter Notebook environment provided by Google was chosen due to facility in configuration and reliability in the Pro+ plan. The service have a free use option, however it suffer from interrupting overtime and less capable \gls{GPU}. All models ran with Nvidia A100-SXM4 with 40Gb VRAM.
@@ -86,9 +75,34 @@ All models Tensors were gotten from Pytorch python library. The ones used were:
     \item ResNet 152
 \end{itemize}
 
+\section{Common Configurations to all scenarios}
+\label{sec_config}
+
+During train phase, all models listed in \ref{sec_environment} were rab with batch size of 64 samples. With 50 epochs per train and 15 early stop behavior, all models were trained with the following optimizers configuration:
+\begin{itemize}
+    \item Adam: learning rate of $1\times 10^{-4}$.
+    \item SGD: learning rate of $1\times 10^{-2}$, momentum of 0.9 and weight decay of $5\times 10^{-4}$.
+    \item AdamMax: learning rate of $1\times 10^{-2}$, $\beta_1$ of 0.9, $\beta_2$ of 0.999, weight decay of $1\times 10^{-4}$ and $\varepsilon$ of $1\times 10^{-8}$.
+\end{itemize}
+All optimizers hyperparams were choosen based on another works \ref{chap:related}, for a measurable comparasions with other results, as explored in \ref{chap:results}. Also, when applied, scheduler was configured with step size of 5 and $\gamma$ of $0.1$.
+
+
+\section{Procediments}
+\label{sec_procediments}
+All development was built in \gls{VSCODE} \gls{IDE} the "Colab" extension, where all dependecies were easily installed with a Jupyter Notebook comand. For the dataset, as all data is kept inside the cloud service storage, the datasets were downloaded through their respective \gls{API}.
+
+After downloading images necessary, it was necessary convert them to a single csv file. For all datasets, the csv was generated with two columns: path and label. In the first one, was the path the program would need to course to get the image, while the second indicats the image class. For training, label need to be a numeric value, so the following transformation was made:
+\begin{itemize}
+    \item 1: cancer image
+    \item 0: non-cancer image
+\end{itemize}
+
+
+With the respective \gls{CSV} file, the samples were splitted in validation, test and train and them transformed 224 x 224 pixels for normalization and train efficiency \cite{DBLP:conf/nips/KrizhevskySH12}.
+
 \section{First Attempt Procediments}
 \label{sec_first_attempt}
-Based on Md. Bipul Hossain and Mohamed Shaban paper \cite{DBLP:conf/aibthings/HossainS24}, the \gls{DS} choosen in the first attempt for training and test was the \gls{LC25000}
+Based on Md. Bipul Hossain and Mohamed Shaban paper \cite{DBLP:conf/aibthings/HossainS24}, the \gls{DS} choosen in the first attempt for training and test was the \gls{LC25000}. 
 
 \section{Second Attempt Procediments}
 \label{sec_second_attempt}
