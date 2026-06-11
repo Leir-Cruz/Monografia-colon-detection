@@ -1,19 +1,292 @@
 \label{chap:results}
+\begin{table}[]
+\centering
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\textbf{Architecture} & \textbf{ACC} & \textbf{Precision} & \textbf{Recall} & \textbf{F1-Score} \\ \hline
+\textbf{AlexNet}      & 0.9995       & 0.9995             & 0.9995          & 0.9950            \\ \hline
+\textbf{VGG16}        & 0.9970       & 0.9970             & 0.9970          & 0.9970            \\ \hline
+\textbf{ResNet18}     & 1            & 1                  & 1               & 1                 \\ \hline
+\textbf{ResNet34}     & 0.9995       & 0.9995             & 0.9995          & 0.9995            \\ \hline
+\textbf{ResNet50}     & 1            & 1                  & 1               & 1                 \\ \hline
+\textbf{ResNet101}    & 1            & 1                  & 1               & 1                 \\ \hline
+\textbf{ResNet152}    & 0.9995       & 0.9995             & 0.9995          & 0.9995            \\ \hline
+\end{tabular}
+\caption{Performance metrics from model train and test with \gls{LC25000} using adam optimizer}
+\end{table}
 
-The Results chapter is the climax of your TCC. 
+\begin{table}[]
+\centering
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\textbf{Architecture} & \textbf{ACC} & \textbf{Precision} & \textbf{Recall} & \textbf{F1-Score} \\ \hline
+\textbf{AlexNet}      & 0.5995       & 0.6674             & 0.5995          & 0.5543            \\ \hline
+\textbf{VGG16}        & 0.9945       & 0.9945             & 0.9945          & 0.9945            \\ \hline
+\textbf{ResNet18}     & 0.9960       & 0.9960             & 0.9960          & 0.9960            \\ \hline
+\textbf{ResNet34}     & 1            & 1                  & 1               & 1                 \\ \hline
+\textbf{ResNet50}     & 1            & 1                  & 1               & 1                 \\ \hline
+\textbf{ResNet101}    & 0.9995       & 0.9995             & 0.9995          & 0.9995            \\ \hline
+\textbf{ResNet152}    & 0.986        & 0.9864             & 0.986           & 0.986             \\ \hline
+\end{tabular}
+\caption{Performance metrics from model train and test with \gls{LC25000} using adamax optimizer}
+\end{table}
 
-Its sole purpose is to present the data collected during your experiments. It is a "just the facts" zone where you demonstrate whether your hypothesis held true under testing.
+\begin{table}[]
+\centering
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\textbf{Architecture} & \textbf{ACC} & \textbf{Precision} & \textbf{Recall} & \textbf{F1-Score} \\ \hline
+\textbf{AlexNet}      & 0.9940       & 0.9940             & 0.9940          & 0.9940            \\ \hline
+\textbf{VGG16}        & 0.8755       & 0.8785             & 0.8755          & 0.8753            \\ \hline
+\textbf{ResNet18}     & 1            & 1                  & 1               & 1                 \\ \hline
+\textbf{ResNet34}     & 0.9995       & 0.9995             & 0.9995          & 0.9995            \\ \hline
+\textbf{ResNet50}     & 1            & 1                  & 1               & 1                 \\ \hline
+\textbf{ResNet101}    & 0.999        & 0.999              & 0.999           & 0.999             \\ \hline
+\textbf{ResNet152}    & 1            & 1                  & 1               & 1                 \\ \hline
+\end{tabular}
+\caption{Performance metrics from model train and test with \gls{LC25000} using sgd optimizer}
+\end{table}
 
-The results should be organized around your research objectives. If you set out to compare KANs against traditional MLPs, this chapter must provide the direct numerical comparison of those two models.
+\begin{table}[]
+\centering
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\textbf{Architecture} & \textbf{ACC} & \textbf{Precision} & \textbf{Recall} & \textbf{F1-Score} \\ \hline
+\textbf{AlexNet}      & 0.9955       & 0.9955             & 0.9955          & 0.9955            \\ \hline
+\textbf{VGG16}        & 0.9985       & 0.9985             & 0.9985          & 0.9985            \\ \hline
+\textbf{ResNet18}     & 0.9990       & 0.9990             & 0.9990          & 0.9990            \\ \hline
+\textbf{ResNet34}     & 0.9985       & 0.9985             & 0.9985          & 0.9985            \\ \hline
+\textbf{ResNet50}     & 0.9960       & 0.9960             & 0.9960          & 0.9960            \\ \hline
+\textbf{ResNet101}    & 0.9885       & 0.9886             & 0.9885          & 0.9885            \\ \hline
+\textbf{ResNet152}    & 0.9895       & 0.9895             & 0.9895          & 0.9895            \\ \hline
+\end{tabular}
+\caption{Performance metrics from model train and test with \gls{LC25000} using adam optimizer with scheduler}
+\end{table}
 
-In a AI TCC, text is often secondary to visual data representation. This chapter consists of:
+\begin{table}[]
+\centering
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\textbf{Architecture} & \textbf{ACC} & \textbf{Precision} & \textbf{Recall} & \textbf{F1-Score} \\ \hline
+\textbf{AlexNet}      & 0.6055       & 0.655              & 0.6055          & 0.5713            \\ \hline
+\textbf{VGG16}        & 0.8940       & 0.8952             & 0.8940          & 0.8939            \\ \hline
+\textbf{ResNet18}     & 1            & 1                  & 1               & 1                 \\ \hline
+\textbf{ResNet34}     & 0.9985       & 0.9985             & 0.9985          & 0.9985            \\ \hline
+\textbf{ResNet50}     & 0.999        & 0.999              & 0.999           & 0.999             \\ \hline
+\textbf{ResNet101}    & 1            & 1                  & 1               & 1                 \\ \hline
+\textbf{ResNet152}    & 0.9995       & 0.9995             & 0.9995          & 0.9995            \\ \hline
+\end{tabular}
+\caption{Performance metrics from model train and test with \gls{LC25000} using adamax optimizer with scheduler}
+\end{table}
 
-- Performance Metrics: Tables comparing F1-scores, Precision, and Recall across different wound types (e.g., entrance vs. exit wounds).
-- Computational Efficiency: Graphs showing the training loss curves and the time taken per epoch, which is a major selling point for KAN architectures.
-- Confusion Matrices: These are vital for forensic applications, as they show exactly which types of wounds the AI is misidentifying.
-- Inference Examples: Visual examples of the model’s "predictions" on actual ballistic images, perhaps using heatmaps to show which parts of the wound the KAN layers focused on.
+\begin{table}[]
+\centering
+\begin{tabular}{|l|c|c|c|c|}
+\hline
+\multicolumn{1}{|c|}{\textbf{GPU}} & \textbf{ACC} & \textbf{Precision} & \textbf{Recall} & \textbf{F1-Score} \\ \hline
+Nvidia A100                        & 0.5355       & 0.7592             & 0.5355          & 0.4077            \\ \hline
+Nvidia A100                        & 0.8600       & 0.8670             & 0.8600          & 0.8593            \\ \hline
+Nvidia A100                        & 0.9995       & 0.9995             & 0.9995          & 0.9995            \\ \hline
+Nvidia A100                        & 1            & 1                  & 1               & 1                 \\ \hline
+Nvidia A100                        & 0.9990       & 0.9990             & 0.9990          & 0.9990            \\ \hline
+Nvidia A100                        & 0.9980       & 0.9980             & 0.9980          & 0.9980            \\ \hline
+Nvidia A100                        & 0.9985       & 0.9985             & 0.9985          & 0.9985            \\ \hline
+\end{tabular}
+\caption{Performance metrics from model train and test with \gls{LC25000} using sgd optimizer with scheduler}
+\end{table}
 
 
+\begin{table}[]
+\centering
+\begin{tabular}{|c|l|c|c|c|c|}
+\hline
+\textbf{Architecture}  & \multicolumn{1}{c|}{\textbf{Dataset}} & \textbf{ACC}          & \textbf{Precision}    & \textbf{Recall}       & \textbf{F1-Score}     \\ \hline
+\textbf{AlexNet}       & NCTCRCHE100K                          & 0.9779                & 0.9777                & 0.9779                & 0.9776                \\ \hline
+\textbf{VGG16}         & NCTCRCHE100K                          & 0.9907                & 0.9907                & 0.9907                & 0.9907                \\ \hline
+\textbf{ResNet18}      & NCTCRCHE100K                          & 0.9748                & 0.9757                & 0.9748                & 0.9751                \\ \hline
+\textbf{ResNet34}      & NCTCRCHE100K                          & 0.9741                & 0.9746                & 0.9741                & 0.9743                \\ \hline
+\textbf{ResNet50}      & NCTCRCHE100K                          & 0.9819                & 0.9823                & 0.9819                & 0.982                 \\ \hline
+\textbf{ResNet101}     & NCTCRCHE100K                          & 0.984                 & 0.9839                & 0.984                 & 0.9838                \\ \hline
+\textbf{ResNet152}     & NCTCRCHE100K                          & 0.9780                & 0.9787                & 0.9780                & 0.9782                \\ \hline
+\multicolumn{1}{|l|}{} &                                       & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} \\ \hline
+\textbf{AlexNet}       & LC25000                               & 0.5049                & 0.5288                & 0.5049                & 0.3753                \\ \hline
+\textbf{VGG16}         & LC25000                               & 0.5                   & 0.25                  & 0.5                   & 0.3333                \\ \hline
+\textbf{ResNet18}      & LC25000                               & 0.5                   & 0.25                  & 0.5                   & 0.3333                \\ \hline
+\textbf{ResNet34}      & LC25000                               & 0.5144                & 0.7537                & 0.5144                & 0.3646                \\ \hline
+\textbf{ResNet50}      & LC25000                               & 0.5001                & 0.75                  & 0.5001                & 0.3336                \\ \hline
+\textbf{ResNet101}     & LC25000                               & 0.5003                & 0.7501                & 0.5003                & 0.334                 \\ \hline
+\textbf{ResNet152}     & LC25000                               & 0.5003                & 0.7501                & 0.5003                & 0.334                 \\ \hline
+\multicolumn{1}{|l|}{} &                                       & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} \\ \hline
+\textbf{AlexNet}       & CRC5000                               & 0.8748                & 0.7656                & 0.8748                & 0.8166                \\ \hline
+\textbf{VGG16}         & CRC5000                               & 0.875                 & 0.7656                & 0.875                 & 0.8167                \\ \hline
+\textbf{ResNet18}      & CRC5000                               & 0.8032                & 0.7576                & 0.8032                & 0.7797                \\ \hline
+\textbf{ResNet34}      & CRC5000                               & 0.8138                & 0.7585                & 0.8138                & 0.7852                \\ \hline
+\textbf{ResNet50}      & CRC5000                               & 0.847                 & 0.7625                & 0.847                 & 0.8025                \\ \hline
+\textbf{ResNet101}     & CRC5000                               & 0.8738                & 0.7655                & 0.8738                & 0.8161                \\ \hline
+\textbf{ResNet152}     & CRC5000                               & 0.8166                & 0.7588                & 0.8166                & 0.7867                \\ \hline
+\end{tabular}
+\caption{Performance metrics from model train with \gls{NCTCRCHE100K} and test with all \gls{DS} using adam optimizer}
+\end{table}
+
+\begin{table}[]
+\centering
+\begin{tabular}{|c|l|c|c|c|c|}
+\hline
+\textbf{Architecture}  & \multicolumn{1}{c|}{\textbf{Dataset}} & \textbf{ACC}          & \textbf{Precision}    & \textbf{Recall}       & \textbf{F1-Score}     \\ \hline
+\textbf{AlexNet}       & NCTCRCHE100K                          & 0.9787                & 0.9791                & 0.9787                & 0.9788                \\ \hline
+\textbf{VGG16}         & NCTCRCHE100K                          & 0.9728                & 0.9730                & 0.9728                & 0.9721                \\ \hline
+\textbf{ResNet18}      & NCTCRCHE100K                          & 0.9837                & 0.9839                & 0.9837                & 0.9838                \\ \hline
+\textbf{ResNet34}      & NCTCRCHE100K                          & 0.9826                & 0.9827                & 0.9826                & 0.9826                \\ \hline
+\textbf{ResNet50}      & NCTCRCHE100K                          & 0.9876                & 0.9876                & 0.9876                & 0.9876                \\ \hline
+\textbf{ResNet101}     & NCTCRCHE100K                          & 0.9765                & 0.9767                & 0.9765                & 0.9766                \\ \hline
+\textbf{ResNet152}     & NCTCRCHE100K                          & 0.9680                & 0.9689                & 0.9680                & 0.9683                \\ \hline
+\multicolumn{1}{|l|}{} &                                       & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} \\ \hline
+\textbf{AlexNet}       & LC25000                               & 0.4695                & 0.2561                & 0.4695                & 0.321                 \\ \hline
+\textbf{VGG16}         & LC25000                               & 0.5                   & 0.25                  & 0.5                   & 0.3333                \\ \hline
+\textbf{ResNet18}      & LC25000                               & 0.4852                & 0.2884                & 0.4852                & 0.3292                \\ \hline
+\textbf{ResNet34}      & LC25000                               & 0.5005                & 0.7501                & 0.5005                & 0.3344                \\ \hline
+\textbf{ResNet50}      & LC25000                               & 0.5004                & 0.7501                & 0.,5004               & 0.3342                \\ \hline
+\textbf{ResNet101}     & LC25000                               & 0.5                   & 0.25                  & 0.5                   & 0.3333                \\ \hline
+\textbf{ResNet152}     & LC25000                               & 0.5                   & 0.25                  & 0.5                   & 0.3333                \\ \hline
+\multicolumn{1}{|l|}{} &                                       & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} \\ \hline
+\textbf{AlexNet}       & CRC5000                               & 0.8604                & 0.764                 & 0.8604                & 0.8093                \\ \hline
+\textbf{VGG16}         & CRC5000                               & 0.874                 & 0.7835                & 0.874                 & 0.8166                \\ \hline
+\textbf{ResNet18}      & CRC5000                               & 0.8626                & 0.7683                & 0.8626                & 0.8111                \\ \hline
+\textbf{ResNet34}      & CRC5000                               & 0.8366                & 0.7636                & 0.8366                & 0.798                 \\ \hline
+\textbf{ResNet50}      & CRC5000                               & 0.8674                & 0.7648                & 0.8674                & 0.8129                \\ \hline
+\textbf{ResNet101}     & CRC5000                               & 0.6656                & 0.741                 & 0.6656                & 0.701                 \\ \hline
+\textbf{ResNet152}     & CRC5000                               & 0.745                 & 0.75                  & 0.745                 & 0.7475                \\ \hline
+\end{tabular}
+\caption{Performance metrics from model train with \gls{NCTCRCHE100K} and test with all \gls{DS} using adamax optimizer}
+\end{table}
+
+\begin{table}[]
+\centering
+\begin{tabular}{|c|l|c|c|c|c|}
+\hline
+\textbf{Architecture}  & \multicolumn{1}{c|}{\textbf{Dataset}} & \textbf{ACC}          & \textbf{Precision}    & \textbf{Recall}       & \textbf{F1-Score}     \\ \hline
+\textbf{AlexNet}       & NCTCRCHE100K                          & 0.9826                & 0.9825                & 0.9826                & 0.9824                \\ \hline
+\textbf{VGG16}         & NCTCRCHE100K                          & 0.9877                & 0.9878                & 0.9877                & 0.9876                \\ \hline
+\textbf{ResNet18}      & NCTCRCHE100K                          & 0.9875                & 0.9874                & 0.9875                & 0.9874                \\ \hline
+\textbf{ResNet34}      & NCTCRCHE100K                          & 0.9873                & 0.9873                & 0.9873                & 0.9872                \\ \hline
+\textbf{ResNet50}      & NCTCRCHE100K                          & 0.9879                & 0.988                 & 0.9879                & 0.9879                \\ \hline
+\textbf{ResNet101}     & NCTCRCHE100K                          & 0.9773                & 0.9777                & 0.9773                & 0.9774                \\ \hline
+\textbf{ResNet152}     & NCTCRCHE100K                          & 0.9868                & 0.9867                & 0.9868                & 0.9867                \\ \hline
+\multicolumn{1}{|l|}{} &                                       & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} \\ \hline
+\textbf{AlexNet}       & LC25000                               & 0.499                 & 0.2497                & 0.499                 & 0.3329                \\ \hline
+\textbf{VGG16}         & LC25000                               & 0.5                   & 0.25                  & 0.5                   & 0.3333                \\ \hline
+\textbf{ResNet18}      & LC25000                               & 0.5001                & 0.75                  & 0.5001                & 0.3336                \\ \hline
+\textbf{ResNet34}      & LC25000                               & 0.5088                & 0.7467                & 0.5088                & 0.3528                \\ \hline
+\textbf{ResNet50}      & LC25000                               & 0.5                   & 0.25                  & 0.,5                  & 0.3333                \\ \hline
+\textbf{ResNet101}     & LC25000                               & 0.5                   & 0.25                  & 0.5                   & 0.3333                \\ \hline
+\textbf{ResNet152}     & LC25000                               & 0.5                   & 0.25                  & 0.5                   & 0.3333                \\ \hline
+\multicolumn{1}{|l|}{} &                                       & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} \\ \hline
+\textbf{AlexNet}       & CRC5000                               & 0.8752                & 0.8492                & 0.8752                & 0.8175                \\ \hline
+\textbf{VGG16}         & CRC5000                               & 0.8718                & 0.7827                & 0.8718                & 0.8162                \\ \hline
+\textbf{ResNet18}      & CRC5000                               & 0.8434                & 0.7621                & 0.8434                & 0.8007                \\ \hline
+\textbf{ResNet34}      & CRC5000                               & 0.855                 & 0.778                 & 0.855                 & 0.8107                \\ \hline
+\textbf{ResNet50}      & CRC5000                               & 0.864                 & 0.7644                & 0.864                 & 0.8112                \\ \hline
+\textbf{ResNet101}     & CRC5000                               & 0.8002                & 0.7568                & 0.8002                & 0.7779                \\ \hline
+\textbf{ResNet152}     & CRC5000                               & 0.8336                & 0.7616                & 0.8336                & 0.7959                \\ \hline
+\end{tabular}
+\caption{Performance metrics from model train with \gls{NCTCRCHE100K} and test with all \gls{DS} using sgd optimizer}
+\end{table}
+
+\begin{table}[]
+\centering
+\begin{tabular}{|c|l|c|c|c|c|}
+\hline
+\textbf{Architecture}  & \multicolumn{1}{c|}{\textbf{Dataset}} & \textbf{ACC}          & \textbf{Precision}    & \textbf{Recall}       & \textbf{F1-Score}     \\ \hline
+\textbf{AlexNet}       & NCTCRCHE100K                          & 0.9025                & 0.8992                & 0.9025                & 0.9004                \\ \hline
+\textbf{VGG16}         & NCTCRCHE100K                          & 0.8716                & 0.9129                & 0.8716                & 0.8821                \\ \hline
+\textbf{ResNet18}      & NCTCRCHE100K                          & 0.9461                & 0.9468                & 0.9461                & 0.9464                \\ \hline
+\textbf{ResNet34}      & NCTCRCHE100K                          & 0.9578                & 0.9573                & 0.9578                & 0.9575                \\ \hline
+\textbf{ResNet50}      & NCTCRCHE100K                          & 0.927                 & 0.9262                & 0.927                 & 0.9266                \\ \hline
+\textbf{ResNet101}     & NCTCRCHE100K                          & 0.9089                & 0.912                 & 0.9089                & 0.9102                \\ \hline
+\textbf{ResNet152}     & NCTCRCHE100K                          & 0.9258                & 0.9258                & 0.9258                & 0.9258                \\ \hline
+\multicolumn{1}{|l|}{} &                                       & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} \\ \hline
+\textbf{AlexNet}       & LC25000                               & 0.5586                & 0.5604                & 0.5586                & 0.5554                \\ \hline
+\textbf{VGG16}         & LC25000                               & 0.7474                & 0.7731                & 0.7474                & 0.7413                \\ \hline
+\textbf{ResNet18}      & LC25000                               & 0.5067                & 0.7517                & 0.5067                & 0.3481                \\ \hline
+\textbf{ResNet34}      & LC25000                               & 0.6972                & 0.768                 & 0.6972                & 0.6758                \\ \hline
+\textbf{ResNet50}      & LC25000                               & 0.5507                & 0.6334                & 0.5507                & 0.4683                \\ \hline
+\textbf{ResNet101}     & LC25000                               & 0.4341                & 0.4052                & 0.4341                & 0.3874                \\ \hline
+\textbf{ResNet152}     & LC25000                               & 0.4115                & 0.3897                & 0.4115                & 0.3809                \\ \hline
+\multicolumn{1}{|l|}{} &                                       & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} \\ \hline
+\textbf{AlexNet}       & CRC5000                               & 0.9254                & 0.9232                & 0.9254                & 0.9241                \\ \hline
+\textbf{VGG16}         & CRC5000                               & 0.9324                & 0.9283                & 0.9324                & 0.9289                \\ \hline
+\textbf{ResNet18}      & CRC5000                               & 0.936                 & 0.9323                & 0.936                 & 0.9314                \\ \hline
+\textbf{ResNet34}      & CRC5000                               & 0.933                 & 0.9335                & 0.933                 & 0.9333                \\ \hline
+\textbf{ResNet50}      & CRC5000                               & 0.903                 & 0.8954                & 0.903                 & 0.8822                \\ \hline
+\textbf{ResNet101}     & CRC5000                               & 0.9326                & 0.9285                & 0.9326                & 0.9268                \\ \hline
+\textbf{ResNet152}     & CRC5000                               & 0.944                 & 0.9423                & 0.944                 & 0.9429                \\ \hline
+\end{tabular}
+\caption{Performance metrics from model train with \gls{NCTCRCHE100K}-NoNorm and test with all \gls{DS} using adam optimizer}
+\end{table}
+
+\begin{table}[]
+\centering
+\begin{tabular}{|c|l|c|c|c|c|}
+\hline
+\textbf{Architecture}  & \multicolumn{1}{c|}{\textbf{Dataset}} & \textbf{ACC}          & \textbf{Precision}    & \textbf{Recall}       & \textbf{F1-Score}     \\ \hline
+\textbf{AlexNet}       & NCTCRCHE100K                          & 0.8412                & 0.8473                & 0.8412                & 0.8440                \\ \hline
+\textbf{VGG16}         & NCTCRCHE100K                          & 0.9187                & 0.9264                & 0.9187                & 0.9213                \\ \hline
+\textbf{ResNet18}      & NCTCRCHE100K                          & 0.916                 & 0.9122                & 0.916                 & 0.9116                \\ \hline
+\textbf{ResNet34}      & NCTCRCHE100K                          & 0.9217                & 0.9186                & 0.9217                & 0.9178                \\ \hline
+\textbf{ResNet50}      & NCTCRCHE100K                          & 0.8968                & 0.9049                & 0.8968                & 0.8999                \\ \hline
+\textbf{ResNet101}     & NCTCRCHE100K                          & 0.9323                & 0.9303                & 0.9323                & 0.9307                \\ \hline
+\textbf{ResNet152}     & NCTCRCHE100K                          & 0.9625                & 0.9619                & 0.9625                & 0.9619                \\ \hline
+\multicolumn{1}{|l|}{} &                                       & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} \\ \hline
+\textbf{AlexNet}       & LC25000                               & 0.5052                & 0.5054                & 0.5052                & 0.5014                \\ \hline
+\textbf{VGG16}         & LC25000                               & 0.5195                & 0.6992                & 0.5195                & 0.3796                \\ \hline
+\textbf{ResNet18}      & LC25000                               & 0.5297                & 0.7495                & 0.5297                & 0.3969                \\ \hline
+\textbf{ResNet34}      & LC25000                               & 0.5587                & 0.5821                & 0.5587                & 0.5248                \\ \hline
+\textbf{ResNet50}      & LC25000                               & 0.5514                & 0.6804                & 0.5514                & 0.4538                \\ \hline
+\textbf{ResNet101}     & LC25000                               & 0.4485                & 0.4474                & 0.4485                & 0.4455                \\ \hline
+\textbf{ResNet152}     & LC25000                               & 0.5969                & 0.6201                & 0.5969                & 0.5765                \\ \hline
+\multicolumn{1}{|l|}{} &                                       & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} \\ \hline
+\textbf{AlexNet}       & CRC5000                               & 0.92                  & 0.9192                & 0.92                  & 0.906                 \\ \hline
+\textbf{VGG16}         & CRC5000                               & 0.9108                & 0.9094                & 0.9108                & 0.8919                \\ \hline
+\textbf{ResNet18}      & CRC5000                               & 0.9336                & 0.9308                & 0.9336                & 0.9266                \\ \hline
+\textbf{ResNet34}      & CRC5000                               & 0.9568                & 0.9553                & 0.9568                & 0.9554                \\ \hline
+\textbf{ResNet50}      & CRC5000                               & 0.9368                & 0.9352                & 0.9368                & 0.9299                \\ \hline
+\textbf{ResNet101}     & CRC5000                               & 0.9398                & 0.9387                & 0.9398                & 0.9336                \\ \hline
+\textbf{ResNet152}     & CRC5000                               & 0.9362                & 0.9329                & 0.9362                & 0.9337                \\ \hline
+\end{tabular}
+\caption{Performance metrics from model train with \gls{NCTCRCHE100K}-NoNorm and test with all \gls{DS} using adammax optimizer}
+\end{table}
+
+\begin{table}[]
+\centering
+\begin{tabular}{|c|l|c|c|c|c|}
+\hline
+\textbf{Architecture}  & \multicolumn{1}{c|}{\textbf{Dataset}} & \textbf{ACC}          & \textbf{Precision}    & \textbf{Recall}       & \textbf{F1-Score}     \\ \hline
+\textbf{AlexNet}       & NCTCRCHE100K                          & 0.9060                & 0.9038                & 0.9060                & 0.9047                \\ \hline
+\textbf{VGG16}         & NCTCRCHE100K                          & 0.9266                & 0.9395                & 0.9266                & 0.9301                \\ \hline
+\textbf{ResNet18}      & NCTCRCHE100K                          & 0.9497                & 0.9488                & 0.9497                & 0.9491                \\ \hline
+\textbf{ResNet34}      & NCTCRCHE100K                          & 0.9038                & 0.9198                & 0.9038                & 0.9086                \\ \hline
+\textbf{ResNet50}      & NCTCRCHE100K                          & 0.9586                & 0.9581                & 0.9586                & 0.9583                \\ \hline
+\textbf{ResNet101}     & NCTCRCHE100K                          & 0.9109                & 0.9174                & 0.9109                & 0.9133                \\ \hline
+\textbf{ResNet152}     & NCTCRCHE100K                          & 0.9497                & 0.9486                & 0.9497                & 0.9487                \\ \hline
+\multicolumn{1}{|l|}{} &                                       & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} \\ \hline
+\textbf{AlexNet}       & LC25000                               & 0.7311                & 0.7311                & 0.7311                & 0.7311                \\ \hline
+\textbf{VGG16}         & LC25000                               & 0.5022                & 0.6839                & 0.5022                & 0.3389                \\ \hline
+\textbf{ResNet18}      & LC25000                               & 0.5238                & 0.6801                & 0.5238                & 0.3918                \\ \hline
+\textbf{ResNet34}      & LC25000                               & 0.5351                & 0.6727                & 0.5351                & 0.4195                \\ \hline
+\textbf{ResNet50}      & LC25000                               & 0.5757                & 0.7426                & 0.5757                & 0.4876                \\ \hline
+\textbf{ResNet101}     & LC25000                               & 0.5425                & 0.6712                & 0.5425                & 0.4366                \\ \hline
+\textbf{ResNet152}     & LC25000                               & 0.514                 & 0.5705                & 0.514                 & 0.3922                \\ \hline
+\multicolumn{1}{|l|}{} &                                       & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} \\ \hline
+\textbf{AlexNet}       & CRC5000                               & 0.9396                & 0.9374                & 0.9396                & 0.9381                \\ \hline
+\textbf{VGG16}         & CRC5000                               & 0.9362                & 0.9336                & 0.9362                & 0.9299                \\ \hline
+\textbf{ResNet18}      & CRC5000                               & 0.9362                & 0.9379                & 0.9362                & 0.937                 \\ \hline
+\textbf{ResNet34}      & CRC5000                               & 0.9476                & 0.9453                & 0.9476                & 0.9447                \\ \hline
+\textbf{ResNet50}      & CRC5000                               & 0.8706                & 0.9056                & 0.8706                & 0.8825                \\ \hline
+\textbf{ResNet101}     & CRC5000                               & 0.9468                & 0.9461                & 0.9468                & 0.9464                \\ \hline
+\textbf{ResNet152}     & CRC5000                               & 0.9342                & 0.9301                & 0.9342                & 0.9298                \\ \hline
+\end{tabular}
+\caption{Performance metrics from model train with \gls{NCTCRCHE100K}-NoNorm and test with all \gls{DS} using sgd optimizer}
+\end{table}
 \section{Discussion}
 
 A common mistake in undergraduate theses is mixing results with discussion. To maintain academic rigor, the beggining of Results chapter shows "What happened?" while the this subsection answers "What does it mean?". 
