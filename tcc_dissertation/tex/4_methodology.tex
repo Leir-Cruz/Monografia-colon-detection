@@ -91,7 +91,7 @@ All optimizers hyperparams were choosen based on references in chapter \ref{chap
 \label{sec_procediments}
 All development was built in \gls{VSCODE}, an \gls{IDE} with the "Colab" extension, where all dependecies were easily installed with a Jupyter Notebook comand. The datasets were downloaded through their respective \gls{API} inside the respective notebook.
 
-After downloading all images necessary, they were converted to a csv file per \gls{DS}. For all of them, the csv was generated with two columns: path and label. In the first one, was the path the program would need to course to get the image, while the second indicats the image class. For training using Pytorch library interface, label needed to be a numeric value, so the following transformation was made:
+After downloading all images necessary, they were converted to a \gls{CSV} file per \gls{DS}. For all of them, the \gls{CSV} was generated with two columns: path and label. In the first one, was the path the program would need to course to get the image, while the second indicats the image class. For training using Pytorch library interface, label needed to be a numeric value, so the following transformation was made:
 \begin{itemize}
     \item 1: cancer image
     \item 0: non-cancer image
@@ -102,7 +102,7 @@ With the respective \gls{CSV} file, the samples were splitted in validation, tes
 
 After transformation, all images are put in memory instead of storage, through DataLoader for velocity enhancement during training in batches of 64.
 
-Training is made using \gls{SL} with train and validation \gls{DS}. Through 50 epochs, each loss is calculated through Cross Entropy Function. If validation loss does not improve in 15 epochs, early stopped is activated and best model, model with best performancing (lowest validation loss) is saved and used for tests with test \gls{DS}.
+Training is made using \gls{SL} with train and validation \gls{DS}. Through 50 epochs, each loss is calculated through Cross Entropy Function. If validation loss does not improve in 15 epochs, early stopped is activated and the best model, with best performancing (lowest validation loss), is saved and used for tests with test \gls{DS}.
 
 
 \begin{figure}[htbp]
@@ -134,16 +134,76 @@ After train, the best model is validated through metrics \ref{sec_metrics}: accu
 \end{table}
 
 
-\section{First Attempt Procediments}
+\section{Train and test with LC25000}
 \label{sec_first_attempt}
-Based on Md. Bipul Hossain and Mohamed Shaban paper \cite{DBLP:conf/aibthings/HossainS24}, the \gls{DS} choosen in the first attempt for training and test was the \gls{LC25000}. 
+Based on Md. Bipul Hossain and Mohamed Shaban paper \cite{DBLP:conf/aibthings/HossainS24}, the \gls{DS} choosen in the first attempt for training and test was the \gls{LC25000}. First, lung images were discarted, remaining a total of ten thousand colon labeled images.
 
-\section{Second Attempt Procediments}
+Those images were splited using $train\_test\_split$ function from $sklearn$ python library. For the params of the function, it was passed $42$ to the $random_state$ params, which controls the shuffling applied to the data before applying the split. This number also was passed for reproducible output across multiple function calls. 
+
+During split process, the \gls{LC25000} \gls{DS} was divided between train and test, eighty percentage of the images for training, and twenty percentage for test usage. Then, those train images were also splitted with $train\_test\_split$ function, using the same parameters above, for create the validation image set. With ten percentage of those set for validation, and 90 percentage for train.
+\begin{equation}
+    train = 72\% = 7200  images
+\end{equation}
+\begin{equation}
+    test = 20\% = 2000  images
+\end{equation}
+\begin{equation}
+    validation = 8\%  = 800  images
+\end{equation}
+
+After train and saving the best model, it was validated with the 2000 images test \gls{DS}.
+
+As shown in \ref{chap:results}, some of the models did not converge into the best model during train with \gls{LC25000}. Because of that, this procediments were repeated, but with the use of a scheduler with the configurations described in \ref{sec_config}.
+
+\section{Train with LC25000 and test with CRC5000}
 \label{sec_second_attempt}
+The goal of this section was to verify if \gls{LC25000} was a reliable \gls{DS} for \gls{DL} applications, as discussed in the results \ref{chap:results} of \ref{sec_first_attempt}. Considering that, the only models used were AlexNet and Residual Network 152.
 
+In this case, images from \gls{LC25000} were modified as in the section above, with the exception of not splitting for test, only train and validation.
 
-\section{Third Attempt Procediments}
+For test, images of \gls{CRC5000} were converted in csv described in \ref{sec_config}, but excluding all images from the $03\_COMPLEX$ class, considering it could harm the system performance.
+The best model was used to test with the 4375 images from remaining \gls{CRC5000} \gls{DS}.
+
+\section{Train with NCTCRCHE100K and test with all datasets}
 \label{sec_third_attempt}
+The \gls{NCTCRCHE100K} was already divided in three different sets: "NCT-CRC-HE-100K", "NCT-CRC-HE-100K-NONORM" and "CRC-VAL-HE-7K". For this study case, were chosen "NCT-CRC-HE-100K" to train and validation and "CRC-VAL-HE-7K" to test. Also, \gls{LC25000} and \gls{CRC5000} were also used as test \gls{DS}. Those two were completed transformaded as in section \ref{sec_second_attempt}, with no split in their respectives images.
 
-\section{Final Attempt Procediments}
-\label{sec_final_attempt}
+The split of train and validation were eighty and twenty percentage respectively.
+
+\begin{equation}
+    number\_train\_images = 80,000
+\end{equation}
+\begin{equation}
+    number\_valdiation\_images = 20,000
+\end{equation}
+\begin{equation}
+    number\_test\_images = 7180
+\end{equation}
+\begin{equation}
+    number\_lc25000\_test\_images = 10000
+\end{equation}
+\begin{equation}
+    number\_crc5000\_test\_images = 4375
+\end{equation}
+
+\section{Train with NCTCRCHE100K-noNorm and test with all datasets}
+\label{sec_fourth_attempt}
+For this study case, were chosen "NCT-CRC-HE-100K-NoNorm" to train and validation and "CRC-VAL-HE-7K" to test. Also, \gls{LC25000} and \gls{CRC5000} were also used as test \gls{DS}. Those two were completed transformaded as in section \ref{sec_second_attempt}, with no split in their respectives images.
+
+The split of train and validation were eighty and twenty percentage respectively.
+
+\begin{equation}
+    number\_train\_images = 80,000
+\end{equation}
+\begin{equation}
+    number\_valdiation\_images = 20,000
+\end{equation}
+\begin{equation}
+    number\_test\_images = 7180
+\end{equation}
+\begin{equation}
+    number\_lc25000\_test\_images = 10000
+\end{equation}
+\begin{equation}
+    number\_crc5000\_test\_images = 4375
+\end{equation}
