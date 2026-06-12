@@ -95,6 +95,32 @@ Nvidia A100                        & 0.9985       & 0.9985             & 0.9985 
 \caption{Performance metrics from model train and test with \gls{LC25000} using sgd optimizer with scheduler}
 \end{table}
 
+\begin{table}[]
+\centering
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\textbf{Architecture} & \textbf{ACC} & \textbf{Precision} & \textbf{Recall} & \textbf{F1-Score} \\ \hline
+\textbf{AlexNet}      & 0.3051       & 0.8815             & 0.3051          & 0.3145            \\ \hline
+\textbf{ResNet152}    & 0.1447       & 0.8776             & 0.1447          & 0.0394 \           \\ \hline
+\end{tabular}
+\caption{Performance metrics from model train with \gls{LC25000} and test with \gls{CRC5000} using adam optimizer}
+\label{table_lc25000_crc5000_adam}
+\end{table}
+
+
+\begin{table}[]
+\centering
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\textbf{Architecture} & \textbf{ACC} & \textbf{Precision} & \textbf{Recall} & \textbf{F1-Score} \\ \hline
+\textbf{AlexNet}      & 0.000        & 0.000              & 0.000           & 0.000             \\ \hline
+\textbf{ResNet152}    & 0.000        & 0.000              & 0.000           & 0.000             \\ \hline
+\end{tabular}
+\caption{Performance metrics from model train with \gls{LC25000} and test with \gls{CRC5000} using sgd optimizer}
+\label{table_lc25000_crc5000_sgd}
+\end{table}
+
+
 
 \begin{table}[]
 \centering
@@ -128,6 +154,143 @@ Nvidia A100                        & 0.9985       & 0.9985             & 0.9985 
 \caption{Performance metrics from model train with \gls{NCTCRCHE100K} and test with all \gls{DS} using adam optimizer}
 \end{table}
 
+\begin{figure}[htbp]
+  \centering
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-alexnet-adam}
+    \caption{Alexnet}
+  \end{subfigure}%
+  \hfill
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-vgg16-adam}
+    \caption{Vgg16}
+  \end{subfigure}%
+  \hfill
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-resnet18-adam}
+    \caption{Resnet18}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-resnet34-adam}
+    \caption{Resnet34}
+  \end{subfigure}%
+  \hfill
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-resnet50-adam}
+    \caption{Resnet50}
+  \end{subfigure}%
+  \hfill
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-resnet101-adam}
+    \caption{Resnet101}
+  \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-resnet152-adam}
+    \caption{Resnet152}
+  \end{subfigure}
+  \caption{Confusion matrix using \gls{NCTCRCHE100K} using adam optimizer for training and test with it}
+  \label{fig:100K_adam}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-alexnet-adam-lc25000}
+    \caption{Alexnet}
+  \end{subfigure}%
+  \hfill
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-vgg16-adam-lc25000}
+    \caption{Vgg16}
+  \end{subfigure}%
+  \hfill
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-resnet18-adam-lc25000}
+    \caption{Resnet18}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-resnet34-adam-lc25000}
+    \caption{Resnet34}
+  \end{subfigure}%
+  \hfill
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-resnet50-adam-lc25000}
+    \caption{Resnet50}
+  \end{subfigure}%
+  \hfill
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-resnet101-adam-lc25000}
+    \caption{Resnet101}
+  \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-resnet152-adam-lc25000}
+    \caption{Resnet152}
+  \end{subfigure}
+  \caption{Confusion matrix using \gls{NCTCRCHE100K} using adam optimizer for training and test with \gls{LC25000}}
+  \label{fig:100K_adam_lc2500}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-alexnet-adam-crc5000}
+    \caption{Alexnet}
+  \end{subfigure}%
+  \hfill
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-vgg16-adam-crc5000}
+    \caption{Vgg16}
+  \end{subfigure}%
+  \hfill
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-resnet18-adam-crc5000}
+    \caption{Resnet18}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-resnet34-adam-crc5000}
+    \caption{Resnet34}
+  \end{subfigure}%
+  \hfill
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-resnet50-adam-crc5000}
+    \caption{Resnet50}
+  \end{subfigure}%
+  \hfill
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-resnet101-adam-crc5000}
+    \caption{Resnet101}
+  \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-resnet152-adam-crc5000}
+    \caption{Resnet152}
+  \end{subfigure}
+  \caption{Confusion matrix using \gls{NCTCRCHE100K} using adam optimizer for training and test with \gls{CRC5000}}
+  \label{fig:100K_adam_crc5000}
+\end{figure}
+
+
+
 \begin{table}[]
 \centering
 \begin{tabular}{|c|l|c|c|c|c|}
@@ -157,8 +320,144 @@ Nvidia A100                        & 0.9985       & 0.9985             & 0.9985 
 \textbf{ResNet101}     & CRC5000                               & 0.6656                & 0.741                 & 0.6656                & 0.701                 \\ \hline
 \textbf{ResNet152}     & CRC5000                               & 0.745                 & 0.75                  & 0.745                 & 0.7475                \\ \hline
 \end{tabular}
-\caption{Performance metrics from model train with \gls{NCTCRCHE100K} and test with all \gls{DS} using adamax optimizer}
+\caption{Performance metrics from model train with \gls{NCTCRCHE100K} and test with all \gls{DS} using adammax optimizer}
 \end{table}
+
+\begin{figure}[htbp]
+  \centering
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-alexnet-adammax}
+    \caption{Alexnet}
+  \end{subfigure}%
+  \hfill
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-vgg16-adammax}
+    \caption{Vgg16}
+  \end{subfigure}%
+  \hfill
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-resnet18-adammax}
+    \caption{Resnet18}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-resnet34-adammax}
+    \caption{Resnet34}
+  \end{subfigure}%
+  \hfill
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-resnet50-adammax}
+    \caption{Resnet50}
+  \end{subfigure}%
+  \hfill
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-resnet101-adammax}
+    \caption{Resnet101}
+  \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-resnet152-adammax}
+    \caption{Resnet152}
+  \end{subfigure}
+  \caption{Confusion matrix using \gls{NCTCRCHE100K} using adammax optimizer for training and test with it}
+  \label{fig:100K_adammax}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-alexnet-adammax-lc25000}
+    \caption{Alexnet}
+  \end{subfigure}%
+  \hfill
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-vgg16-adammax-lc25000}
+    \caption{Vgg16}
+  \end{subfigure}%
+  \hfill
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-resnet18-adammax-lc25000}
+    \caption{Resnet18}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-resnet34-adammax-lc25000}
+    \caption{Resnet34}
+  \end{subfigure}%
+  \hfill
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-resnet50-adammax-lc25000}
+    \caption{Resnet50}
+  \end{subfigure}%
+  \hfill
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-resnet101-adammax-lc25000}
+    \caption{Resnet101}
+  \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-resnet152-adammax-lc25000}
+    \caption{Resnet152}
+  \end{subfigure}
+  \caption{Confusion matrix using \gls{NCTCRCHE100K} using adammax optimizer for training and test with \gls{LC25000}}
+  \label{fig:100K_adammax_lc2500}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-alexnet-adammax-crc5000}
+    \caption{Alexnet}
+  \end{subfigure}%
+  \hfill
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-vgg16-adammax-crc5000}
+    \caption{Vgg16}
+  \end{subfigure}%
+  \hfill
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-resnet18-adammax-crc5000}
+    \caption{Resnet18}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-resnet34-adammax-crc5000}
+    \caption{Resnet34}
+  \end{subfigure}%
+  \hfill
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-resnet50-adammax-crc5000}
+    \caption{Resnet50}
+  \end{subfigure}%
+  \hfill
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-resnet101-adammax-crc5000}
+    \caption{Resnet101}
+  \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-resnet152-adammax-crc5000}
+    \caption{Resnet152}
+  \end{subfigure}
+  \caption{Confusion matrix using \gls{NCTCRCHE100K} using adammax optimizer for training and test with \gls{CRC5000}}
+  \label{fig:100K_adammax_crc5000}
+\end{figure}
+
 
 \begin{table}[]
 \centering
@@ -192,6 +491,143 @@ Nvidia A100                        & 0.9985       & 0.9985             & 0.9985 
 \caption{Performance metrics from model train with \gls{NCTCRCHE100K} and test with all \gls{DS} using sgd optimizer}
 \end{table}
 
+\begin{figure}[htbp]
+  \centering
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-alexnet-sgd}
+    \caption{Alexnet}
+  \end{subfigure}%
+  \hfill
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-vgg16-sgd}
+    \caption{Vgg16}
+  \end{subfigure}%
+  \hfill
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-resnet18-sgd}
+    \caption{Resnet18}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-resnet34-sgd}
+    \caption{Resnet34}
+  \end{subfigure}%
+  \hfill
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-resnet50-sgd}
+    \caption{Resnet50}
+  \end{subfigure}%
+  \hfill
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-resnet101-sgd}
+    \caption{Resnet101}
+  \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-resnet152-sgd}
+    \caption{Resnet152}
+  \end{subfigure}
+  \caption{Confusion matrix using \gls{NCTCRCHE100K} using sgd optimizer for training and test with it}
+  \label{fig:100K_sgd}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-alexnet-sgd-lc25000}
+    \caption{Alexnet}
+  \end{subfigure}%
+  \hfill
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-vgg16-sgd-lc25000}
+    \caption{Vgg16}
+  \end{subfigure}%
+  \hfill
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-resnet18-sgd-lc25000}
+    \caption{Resnet18}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-resnet34-sgd-lc25000}
+    \caption{Resnet34}
+  \end{subfigure}%
+  \hfill
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-resnet50-sgd-lc25000}
+    \caption{Resnet50}
+  \end{subfigure}%
+  \hfill
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-resnet101-sgd-lc25000}
+    \caption{Resnet101}
+  \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-resnet152-sgd-lc25000}
+    \caption{Resnet152}
+  \end{subfigure}
+  \caption{Confusion matrix using \gls{NCTCRCHE100K} using sgd optimizer for training and test with \gls{LC25000}}
+  \label{fig:100K_sgd_lc2500}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-alexnet-sgd-crc5000}
+    \caption{Alexnet}
+  \end{subfigure}%
+  \hfill
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-vgg16-sgd-crc5000}
+    \caption{Vgg16}
+  \end{subfigure}%
+  \hfill
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-resnet18-sgd-crc5000}
+    \caption{Resnet18}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-resnet34-sgd-crc5000}
+    \caption{Resnet34}
+  \end{subfigure}%
+  \hfill
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-resnet50-sgd-crc5000}
+    \caption{Resnet50}
+  \end{subfigure}%
+  \hfill
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-resnet101-sgd-crc5000}
+    \caption{Resnet101}
+  \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-resnet152-sgd-crc5000}
+    \caption{Resnet152}
+  \end{subfigure}
+  \caption{Confusion matrix using \gls{NCTCRCHE100K} using sgd optimizer for training and test with \gls{CRC5000}}
+  \label{fig:100K_sgd_crc5000}
+\end{figure}
+
+
+
 \begin{table}[]
 \centering
 \begin{tabular}{|c|l|c|c|c|c|}
@@ -223,6 +659,143 @@ Nvidia A100                        & 0.9985       & 0.9985             & 0.9985 
 \end{tabular}
 \caption{Performance metrics from model train with \gls{NCTCRCHE100K}-NoNorm and test with all \gls{DS} using adam optimizer}
 \end{table}
+
+
+\begin{figure}[htbp]
+  \centering
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-alexnet-nonorm-adam}
+    \caption{Alexnet}
+  \end{subfigure}%
+  \hfill
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-vgg16-nonorm-adam}
+    \caption{Vgg16}
+  \end{subfigure}%
+  \hfill
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-resnet18-nonorm-adam}
+    \caption{Resnet18}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-resnet34-nonorm-adam}
+    \caption{Resnet34}
+  \end{subfigure}%
+  \hfill
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-resnet50-nonorm-adam}
+    \caption{Resnet50}
+  \end{subfigure}%
+  \hfill
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-resnet101-nonorm-adam}
+    \caption{Resnet101}
+  \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-resnet152-nonorm-adam}
+    \caption{Resnet152}
+  \end{subfigure}
+  \caption{Confusion matrix using \gls{NCTCRCHE100K}-nonorm using adam optimizer for training and test with it}
+  \label{fig:100k-nonorm_adam}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-alexnet-nonorm-adam-lc25000}
+    \caption{Alexnet}
+  \end{subfigure}%
+  \hfill
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-vgg16-nonorm-adam-lc25000}
+    \caption{Vgg16}
+  \end{subfigure}%
+  \hfill
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-resnet18-nonorm-adam-lc25000}
+    \caption{Resnet18}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-resnet34-nonorm-adam-lc25000}
+    \caption{Resnet34}
+  \end{subfigure}%
+  \hfill
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-resnet50-nonorm-adam-lc25000}
+    \caption{Resnet50}
+  \end{subfigure}%
+  \hfill
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-resnet101-nonorm-adam-lc25000}
+    \caption{Resnet101}
+  \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-resnet152-nonorm-adam-lc25000}
+    \caption{Resnet152}
+  \end{subfigure}
+  \caption{Confusion matrix using \gls{NCTCRCHE100K}-nonorm using adam optimizer for training and test with \gls{LC25000}}
+  \label{fig:100K-nonorm_adam_lc2500}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-alexnet-nonorm-adam-crc5000}
+    \caption{Alexnet}
+  \end{subfigure}%
+  \hfill
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-vgg16-nonorm-adam-crc5000}
+    \caption{Vgg16}
+  \end{subfigure}%
+  \hfill
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-resnet18-nonorm-adam-crc5000}
+    \caption{Resnet18}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-resnet34-nonorm-adam-crc5000}
+    \caption{Resnet34}
+  \end{subfigure}%
+  \hfill
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-resnet50-nonorm-adam-crc5000}
+    \caption{Resnet50}
+  \end{subfigure}%
+  \hfill
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-resnet101-nonorm-adam-crc5000}
+    \caption{Resnet101}
+  \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-resnet152-nonorm-adam-crc5000}
+    \caption{Resnet152}
+  \end{subfigure}
+  \caption{Confusion matrix using \gls{NCTCRCHE100K}-nonorm using adam optimizer for training and test with \gls{CRC5000}}
+  \label{fig:100K-nonorm_adam_crc5000}
+\end{figure}
+
 
 \begin{table}[]
 \centering
@@ -256,6 +829,141 @@ Nvidia A100                        & 0.9985       & 0.9985             & 0.9985 
 \caption{Performance metrics from model train with \gls{NCTCRCHE100K}-NoNorm and test with all \gls{DS} using adammax optimizer}
 \end{table}
 
+\begin{figure}[htbp]
+  \centering
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-alexnet-nonorm-adammax}
+    \caption{Alexnet}
+  \end{subfigure}%
+  \hfill
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-vgg16-nonorm-adammax}
+    \caption{Vgg16}
+  \end{subfigure}%
+  \hfill
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-resnet18-nonorm-adammax}
+    \caption{Resnet18}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-resnet34-nonorm-adammax}
+    \caption{Resnet34}
+  \end{subfigure}%
+  \hfill
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-resnet50-nonorm-adammax}
+    \caption{Resnet50}
+  \end{subfigure}%
+  \hfill
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-resnet101-nonorm-adammax}
+    \caption{Resnet101}
+  \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-resnet152-nonorm-adammax}
+    \caption{Resnet152}
+  \end{subfigure}
+  \caption{Confusion matrix using \gls{NCTCRCHE100K}-nonorm using adammax optimizer for training and test with it}
+  \label{fig:100k-nonorm_adammax}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-alexnet-nonorm-adammax-lc25000}
+    \caption{Alexnet}
+  \end{subfigure}%
+  \hfill
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-vgg16-nonorm-adammax-lc25000}
+    \caption{Vgg16}
+  \end{subfigure}%
+  \hfill
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-resnet18-nonorm-adammax-lc25000}
+    \caption{Resnet18}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-resnet34-nonorm-adammax-lc25000}
+    \caption{Resnet34}
+  \end{subfigure}%
+  \hfill
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-resnet50-nonorm-adammax-lc25000}
+    \caption{Resnet50}
+  \end{subfigure}%
+  \hfill
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-resnet101-nonorm-adammax-lc25000}
+    \caption{Resnet101}
+  \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-resnet152-nonorm-adammax-lc25000}
+    \caption{Resnet152}
+  \end{subfigure}
+  \caption{Confusion matrix using \gls{NCTCRCHE100K}-nonorm using adammax optimizer for training and test with \gls{LC25000}}
+  \label{fig:100K-nonorm_adammax_lc2500}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-alexnet-nonorm-adammax-crc5000}
+    \caption{Alexnet}
+  \end{subfigure}%
+  \hfill
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-vgg16-nonorm-adammax-crc5000}
+    \caption{Vgg16}
+  \end{subfigure}%
+  \hfill
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-resnet18-nonorm-adammax-crc5000}
+    \caption{Resnet18}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-resnet34-nonorm-adammax-crc5000}
+    \caption{Resnet34}
+  \end{subfigure}%
+  \hfill
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-resnet50-nonorm-adammax-crc5000}
+    \caption{Resnet50}
+  \end{subfigure}%
+  \hfill
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-resnet101-nonorm-adammax-crc5000}
+    \caption{Resnet101}
+  \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-resnet152-nonorm-adammax-crc5000}
+    \caption{Resnet152}
+  \end{subfigure}
+  \caption{Confusion matrix using \gls{NCTCRCHE100K}-nonorm using adammax optimizer for training and test with \gls{CRC5000}}
+  \label{fig:100K-nonorm_adammax_crc5000}
+\end{figure}
+
 \begin{table}[]
 \centering
 \begin{tabular}{|c|l|c|c|c|c|}
@@ -287,8 +995,151 @@ Nvidia A100                        & 0.9985       & 0.9985             & 0.9985 
 \end{tabular}
 \caption{Performance metrics from model train with \gls{NCTCRCHE100K}-NoNorm and test with all \gls{DS} using sgd optimizer}
 \end{table}
+
+\begin{figure}[htbp]
+  \centering
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-alexnet-nonorm-sgd}
+    \caption{Alexnet}
+  \end{subfigure}%
+  \hfill
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-vgg16-nonorm-sgd}
+    \caption{Vgg16}
+  \end{subfigure}%
+  \hfill
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-resnet18-nonorm-sgd}
+    \caption{Resnet18}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-resnet34-nonorm-sgd}
+    \caption{Resnet34}
+  \end{subfigure}%
+  \hfill
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-resnet50-nonorm-sgd}
+    \caption{Resnet50}
+  \end{subfigure}%
+  \hfill
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-resnet101-nonorm-sgd}
+    \caption{Resnet101}
+  \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-resnet152-nonorm-sgd}
+    \caption{Resnet152}
+  \end{subfigure}
+  \caption{Confusion matrix using \gls{NCTCRCHE100K}-nonorm using sgd optimizer for training and test with it}
+  \label{fig:100k-nonorm_sgd}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-alexnet-nonorm-sgd-lc25000}
+    \caption{Alexnet}
+  \end{subfigure}%
+  \hfill
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-vgg16-nonorm-sgd-lc25000}
+    \caption{Vgg16}
+  \end{subfigure}%
+  \hfill
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-resnet18-nonorm-sgd-lc25000}
+    \caption{Resnet18}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-resnet34-nonorm-sgd-lc25000}
+    \caption{Resnet34}
+  \end{subfigure}%
+  \hfill
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-resnet50-nonorm-sgd-lc25000}
+    \caption{Resnet50}
+  \end{subfigure}%
+  \hfill
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-resnet101-nonorm-sgd-lc25000}
+    \caption{Resnet101}
+  \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-resnet152-nonorm-sgd-lc25000}
+    \caption{Resnet152}
+  \end{subfigure}
+  \caption{Confusion matrix using \gls{NCTCRCHE100K}-nonorm using sgd optimizer for training and test with \gls{LC25000}}
+  \label{fig:100K-nonorm_sgd_lc2500}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-alexnet-nonorm-sgd-crc5000}
+    \caption{Alexnet}
+  \end{subfigure}%
+  \hfill
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-vgg16-nonorm-sgd-crc5000}
+    \caption{Vgg16}
+  \end{subfigure}%
+  \hfill
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-resnet18-nonorm-sgd-crc5000}
+    \caption{Resnet18}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-resnet34-nonorm-sgd-crc5000}
+    \caption{Resnet34}
+  \end{subfigure}%
+  \hfill
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-resnet50-nonorm-sgd-crc5000}
+    \caption{Resnet50}
+  \end{subfigure}%
+  \hfill
+  \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-resnet101-nonorm-sgd-crc5000}
+    \caption{Resnet101}
+  \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{matriz-confusao-resnet152-nonorm-sgd-crc5000}
+    \caption{Resnet152}
+  \end{subfigure}
+  \caption{Confusion matrix using \gls{NCTCRCHE100K}-nonorm using sgd optimizer for training and test with \gls{CRC5000}}
+  \label{fig:100K-nonorm_sgd_crc5000}
+\end{figure}
+
 \section{Discussion}
 
-A common mistake in undergraduate theses is mixing results with discussion. To maintain academic rigor, the beggining of Results chapter shows "What happened?" while the this subsection answers "What does it mean?". 
+The 100\% accuracy in some cases of the train using \gls{LC25000} suggests overfitting during train phase. By analysing the \gls{DS} original paper \cite{borkowski2019lungcoloncancerhistopathological} it`s described that the twenty five thousand images were from an augmentation process from original seven hundred fifty. Considering that, there`s a high probability of the same image being used during train, validation and test, only variating from rotation or flips.
 
-For example, in the previous part of the result chapter, you can state that "The KAN model achieved a XX\% accuracy." In this Discussion subsection, you would say: "The 94\% accuracy suggests that KAN's spline-based activation is superior for capturing the irregular textures of ballistic trauma."
+The Loss images from it`s training process in this section show that, specially with the scheduler, that the Loss curve was converging to the global minimal. However, the quality of the samples were questionable. Due to institution permission, the original data was not provided in the article, making it impossible for trainning.
+
+The results in table \ref{table_lc25000_crc5000_adam} and table \ref{table_lc25000_crc5000_sgd} show that, for another set of images, \gls{LC25000} did not have a good performance, even with validation and train loss converging to global minimal, as shown 
+
+
+
+
+
