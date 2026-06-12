@@ -100,9 +100,7 @@ After downloading all images necessary, they were converted to a \gls{CSV} file 
 
 With the respective \gls{CSV} file, the samples were splitted in validation, test and train, while rezised to 224 x 224 pixels and normalized using ImageNet standarts  - 0.485, 0.456, 0.406 mean and 0.229, 0.224, 0.225  standard deviation to aid training convergence and efficiency \cite{DBLP:conf/nips/KrizhevskySH12} \cite{10913097}.
 
-After transformation, all images are put in memory instead of storage, through DataLoader for velocity enhancement during training in batches of 64.
-
-Training is made using \gls{SL} with train and validation \gls{DS}. Through 50 epochs, each loss is calculated through Cross Entropy Function. If validation loss does not improve in 15 epochs, early stopped is activated and the best model, with best performancing (lowest validation loss), is saved and used for tests with test \gls{DS}.
+After transformation, all images are put in memory instead of storage, through DataLoader for velocity enhancement during training in batches of 64. Training is made using \gls{SL} with train and validation \gls{DS}. Through 50 epochs, each loss is calculated through Cross Entropy Function. If validation loss does not improve in 15 epochs, early stopped is activated and the best model, with best performancing (lowest validation loss), is saved and used for tests with test \gls{DS}.
 
 
 \begin{figure}[htbp]
