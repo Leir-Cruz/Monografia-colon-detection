@@ -152,6 +152,7 @@ Nvidia A100                        & 0.9985       & 0.9985             & 0.9985 
 \textbf{ResNet152}     & CRC5000                               & 0.8166                & 0.7588                & 0.8166                & 0.7867                \\ \hline
 \end{tabular}
 \caption{Performance metrics from model train with \gls{NCTCRCHE100K} and test with all \gls{DS} using adam optimizer}
+\label{table_NCTCRCHE100K_adam}
 \end{table}
 
 \begin{figure}[htbp]
@@ -366,6 +367,7 @@ Nvidia A100                        & 0.9985       & 0.9985             & 0.9985 
 \textbf{ResNet152}     & CRC5000                               & 0.745                 & 0.75                  & 0.745                 & 0.7475                \\ \hline
 \end{tabular}
 \caption{Performance metrics from model train with \gls{NCTCRCHE100K} and test with all \gls{DS} using adammax optimizer}
+\label{table_NCTCRCHE100K_adammax}
 \end{table}
 
 \begin{figure}[htbp]
@@ -579,6 +581,7 @@ Nvidia A100                        & 0.9985       & 0.9985             & 0.9985 
 \textbf{ResNet152}     & CRC5000                               & 0.8336                & 0.7616                & 0.8336                & 0.7959                \\ \hline
 \end{tabular}
 \caption{Performance metrics from model train with \gls{NCTCRCHE100K} and test with all \gls{DS} using sgd optimizer}
+\label{table_NCTCRCHE100K_sgd}
 \end{table}
 
 \begin{figure}[htbp]
@@ -793,6 +796,7 @@ Nvidia A100                        & 0.9985       & 0.9985             & 0.9985 
 \textbf{ResNet152}     & CRC5000                               & 0.944                 & 0.9423                & 0.944                 & 0.9429                \\ \hline
 \end{tabular}
 \caption{Performance metrics from model train with \gls{NCTCRCHE100K}-NoNorm and test with all \gls{DS} using adam optimizer}
+\label{table_NCTCRCHE100K-nonorm_adam}
 \end{table}
 
 \begin{figure}[htbp]
@@ -1006,6 +1010,7 @@ Nvidia A100                        & 0.9985       & 0.9985             & 0.9985 
 \textbf{ResNet152}     & CRC5000                               & 0.9362                & 0.9329                & 0.9362                & 0.9337                \\ \hline
 \end{tabular}
 \caption{Performance metrics from model train with \gls{NCTCRCHE100K}-NoNorm and test with all \gls{DS} using adammax optimizer}
+\label{table_NCTCRCHE100K-nonorm_adammax}
 \end{table}
 
 \begin{figure}[htbp]
@@ -1218,6 +1223,7 @@ Nvidia A100                        & 0.9985       & 0.9985             & 0.9985 
 \textbf{ResNet152}     & CRC5000                               & 0.9342                & 0.9301                & 0.9342                & 0.9298                \\ \hline
 \end{tabular}
 \caption{Performance metrics from model train with \gls{NCTCRCHE100K}-NoNorm and test with all \gls{DS} using sgd optimizer}
+\label{table_NCTCRCHE100K-nonorm_sgd}
 \end{table}
 
 \begin{figure}[htbp]
@@ -1407,7 +1413,14 @@ The 100\% accuracy in some cases of the train using \gls{LC25000} suggests overf
 
 The Loss images from it`s training process in this section show that, specially with the scheduler, that the Loss curve was converging to the global minimal. However, the quality of the samples were questionable. Due to institution permission, the original data was not provided in the article, making it impossible for trainning.
 
-The results in table \ref{table_lc25000_crc5000_adam} and table \ref{table_lc25000_crc5000_sgd} show that, for another set of images, \gls{LC25000} did not have a good performance, even with validation and train loss converging to global minimal, as shown 
+The results in table \ref{table_lc25000_crc5000_adam} and table \ref{table_lc25000_crc5000_sgd} show that, for another set of images, \gls{LC25000} did not have a good performance, even with validation and train loss converging to global minimal.
+
+When training with \gls{NCTCRCHE100K}, the results were very different and metrics variates between two scenarios: using or not the "no-norm" variantion of the \gls{DS} and the test with different sources sets of images. Tables \ref{table_NCTCRCHE100K_adam},\ref{table_NCTCRCHE100K_adammax} and \ref{table_NCTCRCHE100K_sgd} results advocate that the models trained with this image set performed great, with all evaluation performance metrics being above above ninety-six percent testing with image set from the same \gls{DS}. Moreover, recorded a downfall of ten percent when evaluating with \gls{CRC5000}, what could, at a first impression, be explained to the fact the \gls{CRC5000} original size images being of 150 x 150 pixel resolution, instead of the resized size of 224 x 224, causing loss of sharpness in the image sample.
+
+However, comparing the results in tables \ref{table_NCTCRCHE100K-nonorm_adam},\ref{table_NCTCRCHE100K-nonorm_adammax} and \ref{table_NCTCRCHE100K-nonorm_sgd}, it`s possible to see a downfall in the performance using the test images from \gls{NCTCRCHE100K}, what is expected due to the different normalizations in NCT-CRC-HE-100K-NONORM and CRC-VAL-HE-7K, as exposed in section \ref{subsec_nct100k}. The major difference is the result validating with \gls{CRC5000} and \gls{LC25000}. The impromivement in the first one comparing to the standard NCT-CRC-HE-100K reveals that the the increment in their respective image sizes did not have a significant impact in the models. This indicats that the main reason of the downfall in the previous scenario was the difference in color normalization techniques \cite{5193250}.
+
+This conclusion is also reinforced by the outcome of the \gls{LC25000}, illustrated by the difference between \ref{fig:100K_adam_lc2500}, \ref{fig:100K_adammax_lc2500} and \ref{fig:100K_sgd_lc2500} and \ref{fig:100K-nonorm_adam_lc2500}, \ref{fig:100K-nonorm_adammax_lc2500} and \ref{fig:100K-nonorm_sgd_lc2500}. In the first case, all models were always predicting all images from \gls{LC25000} as "non-cancer", most likely due to Macenko's method color normalization in training set. However, by removing this feature, outcomes were more diverse and close to real.
+
 
 
 
