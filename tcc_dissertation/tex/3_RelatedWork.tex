@@ -1,4 +1,21 @@
 \label{chap:related}
 This chapter reviews the related work in the field of \gls{CRC} detection with \gls{DL} models. It covers challenges faced by researchers and the various approaches taken to address those challenges. The chapter also highlights the gaps in the existing literature and how this dissertation aims to fill those gaps.
 
+\section{Dataset Usage}
+\label{sec_dataset_usage}
+Md. Bipul Hossain and Mohamed Shaban \cite{DBLP:conf/aibthings/HossainS24}, despite the main goal of the article that was to find a ressource efficiency \gls{DL} architecture for \gls{CRC} detection, comparaded the result of residual networks and visual geometry group-16 using the \gls{LC25000} \gls{DS}. However, the results were extremally high (higher than 99\%) in all evaluated metrics \cite{metrics} used. Considering that, there`s a possible doubt if the architectures trained with this \gls{DS} can be used to evaluate image sets from other sources, as explored in chapter \ref{chap:methodology}.
+
+Kather et al. made available one hundred thousands histological images of human colorectal cancer and healthy tissue \cite{kather2018crc100k}. Research Ashish Tripathi et al. \cite{colonML} used traditional \gls{ML} algorithms to classified colon tissue, such as \gls{KNN} and \gls{RFR}, but misses the use of \gls{DL} models. In the \ref{chap:methodology} and \ref{chap:results}, this works explore \gls{DL} architectures trained with differents set available and validated with images from others \gls{DS} \cite{borkowski2019lungcoloncancerhistopathological} \cite{kather_2016_53169}.
+
+Yonathan Fanuel Mulyadi and Fitri Utaminingrum \cite{10913097} explored different architectures of residual networks with \gls{CRC5000} with imageNet standards normalization \cite{DBLP:conf/nips/KrizhevskySH12} with self-attention layer to colon tissue classificatio, but not use classic \gls{CNN} architectures in the study.
+
+\section{Quanvolution}
+\label{sec_quanvolution_related_works}
+Yasmin Rodrigues Sobrinho et al \cite{quanvolution} explored the potential of quantum machine learning for breast cancer detection with \gls{BC}. The conclusion of the work was a competitive performance compared to more complex \gls{CNN} models. This leads to question that, can the proposed solution be expanded to others use cases, such as \gls{CRC} detection? Can it be used to tissue detection?
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.6\textwidth]{quanvolution-circuit}
+    \caption{circuit model diagram, where ”Depth 1,” ”Depth
+2,” and ”Depth 3” represent the quantum circuits in \cite{quanvolution}}
+\end{figure}
 
