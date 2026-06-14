@@ -1,4 +1,6 @@
 \label{chap:results}
+This chapter describes the outcomes of the differents proposals of development in chapter \ref{chap:methodology}. The numeric results of each experiment uses the metrics described in section \ref{sec_metrics} in chapter \ref{chap:background}, accuracy, precision, recall and f-score. Those metrics were evaluated with outputs of \gls{BC} classification.
+
 \begin{table}[]
 \centering
 \begin{tabular}{|c|c|c|c|c|}
@@ -101,10 +103,32 @@ Nvidia A100                        & 0.9985       & 0.9985             & 0.9985 
 \hline
 \textbf{Architecture} & \textbf{ACC} & \textbf{Precision} & \textbf{Recall} & \textbf{F1-Score} \\ \hline
 \textbf{AlexNet}      & 0.3051       & 0.8815             & 0.3051          & 0.3145            \\ \hline
-\textbf{ResNet152}    & 0.1447       & 0.8776             & 0.1447          & 0.0394 \           \\ \hline
+\textbf{Vgg16}      & 0.2103       & 0.8790             & 0.2103          & 0.163            \\ \hline
+\textbf{ResNet18}     & 0.1438       & 0.8776             & 0.1438          & 0.0376            \\ \hline
+\textbf{ResNet34}     & 0.1431       & 0.8776             & 0.1431          & 0.0362            \\ \hline
+\textbf{ResNet50}     & 0.168       & 0.5788             & 0.168          & 0.1282            \\ \hline
+\textbf{ResNet101}     & 0.168       & 0.5788             & 0.168          & 0.1282            \\ \hline
+\textbf{ResNet152}    & 0.1591       & 0.7989             & 0.1591          & 0.0712 \           \\ \hline
 \end{tabular}
 \caption{Performance metrics from model train with \gls{LC25000} and test with \gls{CRC5000} using adam optimizer}
 \label{table_lc25000_crc5000_adam}
+\end{table}
+
+\begin{table}[]
+\centering
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\textbf{Architecture} & \textbf{ACC} & \textbf{Precision} & \textbf{Recall} & \textbf{F1-Score} \\ \hline
+\textbf{AlexNet}      & 0.8352        & 0.7319              & 0.8352           & 0.7802             \\ \hline
+\textbf{Vgg16}      & 0.1536        & 0.8778              & 0.1536           & 0.0573             \\ \hline
+\textbf{ResNet18}    & 0.1429        & 0.0204              & 0.1429           & 0.0357             \\ \hline
+\textbf{ResNet34}    & 0.3074        & 0.8816              & 0.3074           & 0.3178             \\ \hline
+\textbf{ResNet50}    & 0.1447        & 0.8776              & 0.1447           & 0.0394             \\ \hline
+\textbf{ResNet101}    & 0.1429        & 0.0204              & 0.1429           & 0.0357             \\ \hline
+\textbf{ResNet152}    & 0.1472        & 0.8776              & 0.1472           & 0.0445             \\ \hline
+\end{tabular}
+\caption{Performance metrics from model train with \gls{LC25000} and test with \gls{CRC5000} using adammax optimizer}
+\label{table_lc25000_crc5000_adammax}
 \end{table}
 
 
@@ -114,6 +138,11 @@ Nvidia A100                        & 0.9985       & 0.9985             & 0.9985 
 \hline
 \textbf{Architecture} & \textbf{ACC} & \textbf{Precision} & \textbf{Recall} & \textbf{F1-Score} \\ \hline
 \textbf{AlexNet}      & 0.7783        & 0.8487              & 0.7783           & 0.8029             \\ \hline
+\textbf{Vgg16}      & 0.5664        & 0.6845              & 0.5664           & 0.6199             \\ \hline
+\textbf{ResNet18}    & 0.1429        & 0.0204              & 0.1429           & 0.0357             \\ \hline
+\textbf{ResNet34}    & 0.1429        & 0.0204              & 0.1429           & 0.0357             \\ \hline
+\textbf{ResNet50}    & 0.1429        & 0.0204              & 0.1429           & 0.0357             \\ \hline
+\textbf{ResNet101}    & 0.1755        & 0.8782              & 0.1755           & 0.0997             \\ \hline
 \textbf{ResNet152}    & 0.2032        & 0.7634              & 0.2032           & 0.1657             \\ \hline
 \end{tabular}
 \caption{Performance metrics from model train with \gls{LC25000} and test with \gls{CRC5000} using sgd optimizer}
