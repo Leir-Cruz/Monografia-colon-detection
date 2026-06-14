@@ -155,9 +155,7 @@ As shown in \ref{chap:results}, some of the models did not converge into the bes
 
 \section{Train with LC25000 and test with CRC5000}
 \label{sec_second_attempt}
-The goal of this section was to verify if \gls{LC25000} was a reliable \gls{DS} for \gls{DL} applications, as discussed in the results \ref{chap:results} of \ref{sec_first_attempt}. Considering that, the only models used were AlexNet and Residual Network 152.
-
-In this case, images from \gls{LC25000} were modified as in the section above, with the exception of not splitting for test, only train and validation.
+The goal of this section was to verify if \gls{LC25000} was a reliable \gls{DS} for \gls{DL} applications without any additional color transformation. In this case, images from \gls{LC25000} were modified as in the section above, with the exception of not splitting for test, only train and validation.
 
 For test, images of \gls{CRC5000} were converted in csv described in \ref{sec_config}, but excluding all images from the $03\_COMPLEX$ class, considering it could harm the system performance.
 The best model was used to test with the 4375 images from remaining \gls{CRC5000} \gls{DS}.

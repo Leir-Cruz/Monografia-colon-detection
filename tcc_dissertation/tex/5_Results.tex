@@ -3,152 +3,78 @@ This chapter describes the outcomes of the differents proposals of development i
 
 \begin{table}[]
 \centering
-\begin{tabular}{|c|c|c|c|c|}
+\begin{tabular}{|c|l|c|c|c|c|}
 \hline
-\textbf{Architecture} & \textbf{ACC} & \textbf{Precision} & \textbf{Recall} & \textbf{F1-Score} \\ \hline
-\textbf{AlexNet}      & 0.9995       & 0.9995             & 0.9995          & 0.9950            \\ \hline
-\textbf{VGG16}        & 0.9970       & 0.9970             & 0.9970          & 0.9970            \\ \hline
-\textbf{ResNet18}     & 1            & 1                  & 1               & 1                 \\ \hline
-\textbf{ResNet34}     & 0.9995       & 0.9995             & 0.9995          & 0.9995            \\ \hline
-\textbf{ResNet50}     & 1            & 1                  & 1               & 1                 \\ \hline
-\textbf{ResNet101}    & 1            & 1                  & 1               & 1                 \\ \hline
-\textbf{ResNet152}    & 0.9995       & 0.9995             & 0.9995          & 0.9995            \\ \hline
+\textbf{Architecture} & \multicolumn{1}{c|}{\textbf{Dataset}}     & \textbf{ACC} & \textbf{Precision} & \textbf{Recall} & \textbf{F1-Score} \\ \hline
+\textbf{AlexNet}      & LC25000                                   & 0.9995       & 0.9995             & 0.9995          & 0.9950            \\ \hline
+\textbf{VGG16}        & LC25000                                   & 0.9970       & 0.9970             & 0.9970          & 0.9970            \\ \hline
+\textbf{ResNet18}     & LC25000                                   & 1            & 1                  & 1               & 1                 \\ \hline
+\textbf{ResNet34}     & LC25000                                   & 0.9995       & 0.9995             & 0.9995          & 0.9995            \\ \hline
+\textbf{ResNet50}     & LC25000                                   & 1            & 1                  & 1               & 1                 \\ \hline
+\textbf{ResNet101}    & LC25000                                  & 1            & 1                  & 1               & 1                 \\ \hline
+\textbf{ResNet152}    & LC25000                                   & 0.9995       & 0.9995             & 0.9995          & 0.9995            \\ \hline
+\multicolumn{1}{|l|}{} &                                       & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} \\ \hline
+\textbf{AlexNet}      & CRC5000                                    & 0.3051       & 0.8815             & 0.3051          & 0.3145            \\ \hline
+\textbf{Vgg16}      & CRC5000                                    & 0.2103       & 0.8790             & 0.2103          & 0.163            \\ \hline
+\textbf{ResNet18}     & CRC5000                                    & 0.1438       & 0.8776             & 0.1438          & 0.0376            \\ \hline
+\textbf{ResNet34}     & CRC5000                                    & 0.1431       & 0.8776             & 0.1431          & 0.0362            \\ \hline
+\textbf{ResNet50}     & CRC5000                                    & 0.168       & 0.5788             & 0.168          & 0.1282            \\ \hline
+\textbf{ResNet101}    & CRC5000                                     & 0.168       & 0.5788             & 0.168          & 0.1282            \\ \hline
+\textbf{ResNet152}    & CRC5000                                    & 0.1591       & 0.7989             & 0.1591          & 0.0712 \           \\ \hline
 \end{tabular}
-\caption{Performance metrics from model train and test with \gls{LC25000} using adam optimizer}
+\caption{Performance metrics from model train with \gls{LC25000} using adam optimizer}
+\label{table_lc25000_adam}
 \end{table}
 
 \begin{table}[]
 \centering
-\begin{tabular}{|c|c|c|c|c|}
+\begin{tabular}{|c|l|c|c|c|c|}
 \hline
-\textbf{Architecture} & \textbf{ACC} & \textbf{Precision} & \textbf{Recall} & \textbf{F1-Score} \\ \hline
-\textbf{AlexNet}      & 0.5995       & 0.6674             & 0.5995          & 0.5543            \\ \hline
-\textbf{VGG16}        & 0.9945       & 0.9945             & 0.9945          & 0.9945            \\ \hline
-\textbf{ResNet18}     & 0.9960       & 0.9960             & 0.9960          & 0.9960            \\ \hline
-\textbf{ResNet34}     & 1            & 1                  & 1               & 1                 \\ \hline
-\textbf{ResNet50}     & 1            & 1                  & 1               & 1                 \\ \hline
-\textbf{ResNet101}    & 0.9995       & 0.9995             & 0.9995          & 0.9995            \\ \hline
-\textbf{ResNet152}    & 0.986        & 0.9864             & 0.986           & 0.986             \\ \hline
+\textbf{Architecture} & \multicolumn{1}{c|}{\textbf{Dataset}}    & \textbf{ACC} & \textbf{Precision} & \textbf{Recall} & \textbf{F1-Score} \\ \hline
+\textbf{AlexNet}      & LC25000                                  & 0.5995       & 0.6674             & 0.5995          & 0.5543            \\ \hline
+\textbf{VGG16}        & LC25000                                  & 0.9945       & 0.9945             & 0.9945          & 0.9945            \\ \hline
+\textbf{ResNet18}     & LC25000                                  & 0.9960       & 0.9960             & 0.9960          & 0.9960            \\ \hline
+\textbf{ResNet34}     & LC25000                                  & 1            & 1                  & 1               & 1                 \\ \hline
+\textbf{ResNet50}     & LC25000                                  & 1            & 1                  & 1               & 1                 \\ \hline
+\textbf{ResNet101}    & LC25000                                  & 0.9995       & 0.9995             & 0.9995          & 0.9995            \\ \hline
+\textbf{ResNet152}    & LC25000                                  & 0.986        & 0.9864             & 0.986           & 0.986             \\ \hline
+\multicolumn{1}{|l|}{} &                                       & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} \\ \hline
+\textbf{AlexNet}      & CRC5000                                  & 0.8352        & 0.7319              & 0.8352           & 0.7802             \\ \hline
+\textbf{Vgg16}      & CRC5000                                    & 0.1536        & 0.8778              & 0.1536           & 0.0573             \\ \hline
+\textbf{ResNet18}    & CRC5000                                   & 0.1429        & 0.0204              & 0.1429           & 0.0357             \\ \hline
+\textbf{ResNet34}    & CRC5000                                   & 0.3074        & 0.8816              & 0.3074           & 0.3178             \\ \hline
+\textbf{ResNet50}    & CRC5000                                   & 0.1447        & 0.8776              & 0.1447           & 0.0394             \\ \hline
+\textbf{ResNet101}    & CRC5000                                  & 0.1429        & 0.0204              & 0.1429           & 0.0357             \\ \hline
+\textbf{ResNet152}    & CRC5000                                  & 0.1472        & 0.8776              & 0.1472           & 0.0445             \\ \hline
 \end{tabular}
-\caption{Performance metrics from model train and test with \gls{LC25000} using adamax optimizer}
+\caption{Performance metrics from model train with \gls{LC25000} using adamax optimizer}
+\label{table_lc25000_adammax}
 \end{table}
 
 \begin{table}[]
 \centering
-\begin{tabular}{|c|c|c|c|c|}
+\begin{tabular}{|c|l|c|c|c|c|}
 \hline
-\textbf{Architecture} & \textbf{ACC} & \textbf{Precision} & \textbf{Recall} & \textbf{F1-Score} \\ \hline
-\textbf{AlexNet}      & 0.9940       & 0.9940             & 0.9940          & 0.9940            \\ \hline
-\textbf{VGG16}        & 0.8755       & 0.8785             & 0.8755          & 0.8753            \\ \hline
-\textbf{ResNet18}     & 1            & 1                  & 1               & 1                 \\ \hline
-\textbf{ResNet34}     & 0.9995       & 0.9995             & 0.9995          & 0.9995            \\ \hline
-\textbf{ResNet50}     & 1            & 1                  & 1               & 1                 \\ \hline
-\textbf{ResNet101}    & 0.999        & 0.999              & 0.999           & 0.999             \\ \hline
-\textbf{ResNet152}    & 1            & 1                  & 1               & 1                 \\ \hline
+\textbf{Architecture} & \multicolumn{1}{c|}{\textbf{Dataset}}          & \textbf{ACC} & \textbf{Precision} & \textbf{Recall} & \textbf{F1-Score} \\ \hline
+\textbf{AlexNet}      & LC25000                                        & 0.9940       & 0.9940             & 0.9940          & 0.9940            \\ \hline
+\textbf{VGG16}        & LC25000                                        & 0.8755       & 0.8785             & 0.8755          & 0.8753            \\ \hline
+\textbf{ResNet18}     & LC25000                                        & 1            & 1                  & 1               & 1                 \\ \hline
+\textbf{ResNet34}     & LC25000                                        & 0.9995       & 0.9995             & 0.9995          & 0.9995            \\ \hline
+\textbf{ResNet50}     & LC25000                                        & 1            & 1                  & 1               & 1                 \\ \hline
+\textbf{ResNet101}    & LC25000                                        & 0.999        & 0.999              & 0.999           & 0.999             \\ \hline
+\textbf{ResNet152}    & LC25000                                        & 1            & 1                  & 1               & 1                 \\ \hline
+\multicolumn{1}{|l|}{} &                                       & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} \\ \hline
+\textbf{AlexNet}      & CRC5000                                         & 0.7783        & 0.8487              & 0.7783           & 0.8029             \\ \hline
+\textbf{Vgg16}        &CRC5000                                           & 0.5664        & 0.6845              & 0.5664           & 0.6199             \\ \hline
+\textbf{ResNet18}     & CRC5000                                          & 0.1429        & 0.0204              & 0.1429           & 0.0357             \\ \hline
+\textbf{ResNet34}    & CRC5000                                          & 0.1429        & 0.0204              & 0.1429           & 0.0357             \\ \hline
+\textbf{ResNet50}    & CRC5000                                          & 0.1429        & 0.0204              & 0.1429           & 0.0357             \\ \hline
+\textbf{ResNet101}    & CRC5000                                         & 0.1755        & 0.8782              & 0.1755           & 0.0997             \\ \hline
+\textbf{ResNet152}    & CRC5000                                         & 0.2032        & 0.7634              & 0.2032           & 0.1657             \\ \hline
 \end{tabular}
-\caption{Performance metrics from model train and test with \gls{LC25000} using sgd optimizer}
+\caption{Performance metrics from model train with \gls{LC25000} using sgd optimizer}
+\label{table_lc25000_sgd}
 \end{table}
-
-\begin{table}[]
-\centering
-\begin{tabular}{|c|c|c|c|c|}
-\hline
-\textbf{Architecture} & \textbf{ACC} & \textbf{Precision} & \textbf{Recall} & \textbf{F1-Score} \\ \hline
-\textbf{AlexNet}      & 0.9955       & 0.9955             & 0.9955          & 0.9955            \\ \hline
-\textbf{VGG16}        & 0.9985       & 0.9985             & 0.9985          & 0.9985            \\ \hline
-\textbf{ResNet18}     & 0.9990       & 0.9990             & 0.9990          & 0.9990            \\ \hline
-\textbf{ResNet34}     & 0.9985       & 0.9985             & 0.9985          & 0.9985            \\ \hline
-\textbf{ResNet50}     & 0.9960       & 0.9960             & 0.9960          & 0.9960            \\ \hline
-\textbf{ResNet101}    & 0.9885       & 0.9886             & 0.9885          & 0.9885            \\ \hline
-\textbf{ResNet152}    & 0.9895       & 0.9895             & 0.9895          & 0.9895            \\ \hline
-\end{tabular}
-\caption{Performance metrics from model train and test with \gls{LC25000} using adam optimizer with scheduler}
-\end{table}
-
-\begin{table}[]
-\centering
-\begin{tabular}{|c|c|c|c|c|}
-\hline
-\textbf{Architecture} & \textbf{ACC} & \textbf{Precision} & \textbf{Recall} & \textbf{F1-Score} \\ \hline
-\textbf{AlexNet}      & 0.6055       & 0.655              & 0.6055          & 0.5713            \\ \hline
-\textbf{VGG16}        & 0.8940       & 0.8952             & 0.8940          & 0.8939            \\ \hline
-\textbf{ResNet18}     & 1            & 1                  & 1               & 1                 \\ \hline
-\textbf{ResNet34}     & 0.9985       & 0.9985             & 0.9985          & 0.9985            \\ \hline
-\textbf{ResNet50}     & 0.999        & 0.999              & 0.999           & 0.999             \\ \hline
-\textbf{ResNet101}    & 1            & 1                  & 1               & 1                 \\ \hline
-\textbf{ResNet152}    & 0.9995       & 0.9995             & 0.9995          & 0.9995            \\ \hline
-\end{tabular}
-\caption{Performance metrics from model train and test with \gls{LC25000} using adamax optimizer with scheduler}
-\end{table}
-
-\begin{table}[]
-\centering
-\begin{tabular}{|l|c|c|c|c|}
-\hline
-\multicolumn{1}{|c|}{\textbf{GPU}} & \textbf{ACC} & \textbf{Precision} & \textbf{Recall} & \textbf{F1-Score} \\ \hline
-Nvidia A100                        & 0.5355       & 0.7592             & 0.5355          & 0.4077            \\ \hline
-Nvidia A100                        & 0.8600       & 0.8670             & 0.8600          & 0.8593            \\ \hline
-Nvidia A100                        & 0.9995       & 0.9995             & 0.9995          & 0.9995            \\ \hline
-Nvidia A100                        & 1            & 1                  & 1               & 1                 \\ \hline
-Nvidia A100                        & 0.9990       & 0.9990             & 0.9990          & 0.9990            \\ \hline
-Nvidia A100                        & 0.9980       & 0.9980             & 0.9980          & 0.9980            \\ \hline
-Nvidia A100                        & 0.9985       & 0.9985             & 0.9985          & 0.9985            \\ \hline
-\end{tabular}
-\caption{Performance metrics from model train and test with \gls{LC25000} using sgd optimizer with scheduler}
-\end{table}
-
-\begin{table}[]
-\centering
-\begin{tabular}{|c|c|c|c|c|}
-\hline
-\textbf{Architecture} & \textbf{ACC} & \textbf{Precision} & \textbf{Recall} & \textbf{F1-Score} \\ \hline
-\textbf{AlexNet}      & 0.3051       & 0.8815             & 0.3051          & 0.3145            \\ \hline
-\textbf{Vgg16}      & 0.2103       & 0.8790             & 0.2103          & 0.163            \\ \hline
-\textbf{ResNet18}     & 0.1438       & 0.8776             & 0.1438          & 0.0376            \\ \hline
-\textbf{ResNet34}     & 0.1431       & 0.8776             & 0.1431          & 0.0362            \\ \hline
-\textbf{ResNet50}     & 0.168       & 0.5788             & 0.168          & 0.1282            \\ \hline
-\textbf{ResNet101}     & 0.168       & 0.5788             & 0.168          & 0.1282            \\ \hline
-\textbf{ResNet152}    & 0.1591       & 0.7989             & 0.1591          & 0.0712 \           \\ \hline
-\end{tabular}
-\caption{Performance metrics from model train with \gls{LC25000} and test with \gls{CRC5000} using adam optimizer}
-\label{table_lc25000_crc5000_adam}
-\end{table}
-
-\begin{table}[]
-\centering
-\begin{tabular}{|c|c|c|c|c|}
-\hline
-\textbf{Architecture} & \textbf{ACC} & \textbf{Precision} & \textbf{Recall} & \textbf{F1-Score} \\ \hline
-\textbf{AlexNet}      & 0.8352        & 0.7319              & 0.8352           & 0.7802             \\ \hline
-\textbf{Vgg16}      & 0.1536        & 0.8778              & 0.1536           & 0.0573             \\ \hline
-\textbf{ResNet18}    & 0.1429        & 0.0204              & 0.1429           & 0.0357             \\ \hline
-\textbf{ResNet34}    & 0.3074        & 0.8816              & 0.3074           & 0.3178             \\ \hline
-\textbf{ResNet50}    & 0.1447        & 0.8776              & 0.1447           & 0.0394             \\ \hline
-\textbf{ResNet101}    & 0.1429        & 0.0204              & 0.1429           & 0.0357             \\ \hline
-\textbf{ResNet152}    & 0.1472        & 0.8776              & 0.1472           & 0.0445             \\ \hline
-\end{tabular}
-\caption{Performance metrics from model train with \gls{LC25000} and test with \gls{CRC5000} using adammax optimizer}
-\label{table_lc25000_crc5000_adammax}
-\end{table}
-
-
-\begin{table}[]
-\centering
-\begin{tabular}{|c|c|c|c|c|}
-\hline
-\textbf{Architecture} & \textbf{ACC} & \textbf{Precision} & \textbf{Recall} & \textbf{F1-Score} \\ \hline
-\textbf{AlexNet}      & 0.7783        & 0.8487              & 0.7783           & 0.8029             \\ \hline
-\textbf{Vgg16}      & 0.5664        & 0.6845              & 0.5664           & 0.6199             \\ \hline
-\textbf{ResNet18}    & 0.1429        & 0.0204              & 0.1429           & 0.0357             \\ \hline
-\textbf{ResNet34}    & 0.1429        & 0.0204              & 0.1429           & 0.0357             \\ \hline
-\textbf{ResNet50}    & 0.1429        & 0.0204              & 0.1429           & 0.0357             \\ \hline
-\textbf{ResNet101}    & 0.1755        & 0.8782              & 0.1755           & 0.0997             \\ \hline
-\textbf{ResNet152}    & 0.2032        & 0.7634              & 0.2032           & 0.1657             \\ \hline
-\end{tabular}
-\caption{Performance metrics from model train with \gls{LC25000} and test with \gls{CRC5000} using sgd optimizer}
-\label{table_lc25000_crc5000_sgd}
-\end{table}
-
 
 
 \begin{table}[]
@@ -1438,11 +1364,11 @@ Nvidia A100                        & 0.9985       & 0.9985             & 0.9985 
 
 \section{Discussion}
 
-The 100\% accuracy in some cases of the train and test using \gls{LC25000} suggests overfitting. By analysing the \gls{DS} original paper \cite{borkowski2019lungcoloncancerhistopathological}, it`s described that the twenty five thousand images were the outcome of an augmentation process in the original seven hundred fifty images. Considering that, there`s a high probability of the same base image being used during train, validation and test, only variating from rotation or flips.
+The 100\% accuracy in some cases of the train and test using \gls{LC25000} suggests overfitting. By analysing the \gls{DS} original paper \cite{borkowski2019lungcoloncancerhistopathological}, it`s described that the twenty five thousand images were the outcome of an augmentation process in the original seven hundred fifty images - five hundreds images from colon that were augmentated to ten thousand. Considering that, there`s a high probability of the same base image being used during train, validation and test, only variating from rotation or flips.
 
 The Loss images from it`s training process in this section show that, specially with the scheduler, that the Loss curve was converging to the global minimal. However, the quality of the samples were questionable. Due to institution permission, the original data was not provided in the article, making it impossible to split train and test images correctly.
 
-The results in table \ref{table_lc25000_crc5000_adam} and table \ref{table_lc25000_crc5000_sgd} show that, for another set of images, \gls{LC25000} did not have a good performance, even with validation and train loss converging to global minimal.
+The results in tables \ref{table_lc25000_adam}, \ref{table_lc25000_sgd} and \ref{table_lc25000_adammax} show that, for another set of images, \gls{LC25000} did not have a good performance to validate others images \gls{DS} without any color normalization technique \cite{5193250}, even with validation and train loss converging to global minimal. However, AlexNet tensor had great performance, specially using adammax \cite{DBLP:journals/corr/KingmaB14} and sgd \cite{articleDocReg} optimizers, what suggests that, as the train set images were originally from the same five hundred images, a small number of samples, the more complex models such as Residual nets and the visual geometry group-16 had difficult in generalize the parameters.
 
 When training with \gls{NCTCRCHE100K}, the results were very different and metrics variates between two scenarios: using or not the "no-norm" variantion of the \gls{DS} and the test with different sources sets of images. Tables \ref{table_NCTCRCHE100K_adam},\ref{table_NCTCRCHE100K_adammax} and \ref{table_NCTCRCHE100K_sgd} results advocate that the models trained with this image set performed great, with all evaluation metrics testing with image set from the same \gls{DS} being above above ninety-six percent . Moreover, recorded a downfall of ten percent when evaluating with \gls{CRC5000}, what could, at a first impression, be explained to the fact the \gls{CRC5000} original size images being of 150 x 150 pixel resolution, instead of the resized size of 224 x 224, causing loss of sharpness in the image sample.
 
