@@ -112,182 +112,47 @@ This chapter describes the outcomes of the differents proposals of development i
 
 \begin{figure}[htbp]
   \centering
-  \begin{subfigure}[b]{0.32\textwidth}
+  \begin{subfigure}[b]{0.48\textwidth}
     \centering
     \includegraphics[width=\textwidth]{loss-alexnet-adam}
     \caption{Alexnet}
-  \end{subfigure}%
+  \end{subfigure}
   \hfill
-  \begin{subfigure}[b]{0.32\textwidth}
+  \begin{subfigure}[b]{0.48\textwidth}
     \centering
     \includegraphics[width=\textwidth]{loss-vgg16-adam}
     \caption{Vgg16}
-  \end{subfigure}%
+  \end{subfigure}
   \hfill
-  \begin{subfigure}[b]{0.32\textwidth}
+  \begin{subfigure}[b]{0.48\textwidth}
     \centering
     \includegraphics[width=\textwidth]{loss-resnet18-adam}
     \caption{Resnet18}
   \end{subfigure}
-  \begin{subfigure}[b]{0.32\textwidth}
+  \begin{subfigure}[b]{0.48\textwidth}
     \centering
     \includegraphics[width=\textwidth]{loss-resnet34-adam}
     \caption{Resnet34}
-  \end{subfigure}%
+  \end{subfigure}
   \hfill
-  \begin{subfigure}[b]{0.32\textwidth}
+  \begin{subfigure}[b]{0.48\textwidth}
     \centering
     \includegraphics[width=\textwidth]{loss-resnet50-adam}
     \caption{Resnet50}
-  \end{subfigure}%
+  \end{subfigure}
   \hfill
-  \begin{subfigure}[b]{0.32\textwidth}
+  \begin{subfigure}[b]{0.48\textwidth}
     \centering
     \includegraphics[width=\textwidth]{loss-resnet101-adam}
     \caption{Resnet101}
   \end{subfigure}
-    \begin{subfigure}[b]{0.32\textwidth}
+    \begin{subfigure}[b]{0.48\textwidth}
     \centering
     \includegraphics[width=\textwidth]{loss-resnet152-adam}
     \caption{Resnet152}
   \end{subfigure}
   \caption{Train and validation Loss using \gls{NCTCRCHE100K} using adam optimizer}
   \label{fig:100K_adam_loss}
-\end{figure}
-
-\begin{figure}[htbp]
-  \centering
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-alexnet-adam}
-    \caption{Alexnet}
-  \end{subfigure}%
-  \hfill
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-vgg16-adam}
-    \caption{Vgg16}
-  \end{subfigure}%
-  \hfill
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-resnet18-adam}
-    \caption{Resnet18}
-  \end{subfigure}
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-resnet34-adam}
-    \caption{Resnet34}
-  \end{subfigure}%
-  \hfill
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-resnet50-adam}
-    \caption{Resnet50}
-  \end{subfigure}%
-  \hfill
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-resnet101-adam}
-    \caption{Resnet101}
-  \end{subfigure}
-    \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-resnet152-adam}
-    \caption{Resnet152}
-  \end{subfigure}
-  \caption{Confusion matrix using \gls{NCTCRCHE100K} using adam optimizer for training and test with it}
-  \label{fig:100K_adam}
-\end{figure}
-
-\begin{figure}[htbp]
-  \centering
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-alexnet-adam-lc25000}
-    \caption{Alexnet}
-  \end{subfigure}%
-  \hfill
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-vgg16-adam-lc25000}
-    \caption{Vgg16}
-  \end{subfigure}%
-  \hfill
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-resnet18-adam-lc25000}
-    \caption{Resnet18}
-  \end{subfigure}
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-resnet34-adam-lc25000}
-    \caption{Resnet34}
-  \end{subfigure}%
-  \hfill
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-resnet50-adam-lc25000}
-    \caption{Resnet50}
-  \end{subfigure}%
-  \hfill
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-resnet101-adam-lc25000}
-    \caption{Resnet101}
-  \end{subfigure}
-    \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-resnet152-adam-lc25000}
-    \caption{Resnet152}
-  \end{subfigure}
-  \caption{Confusion matrix using \gls{NCTCRCHE100K} using adam optimizer for training and test with \gls{LC25000}}
-  \label{fig:100K_adam_lc2500}
-\end{figure}
-
-\begin{figure}[htbp]
-  \centering
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-alexnet-adam-crc5000}
-    \caption{Alexnet}
-  \end{subfigure}%
-  \hfill
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-vgg16-adam-crc5000}
-    \caption{Vgg16}
-  \end{subfigure}%
-  \hfill
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-resnet18-adam-crc5000}
-    \caption{Resnet18}
-  \end{subfigure}
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-resnet34-adam-crc5000}
-    \caption{Resnet34}
-  \end{subfigure}%
-  \hfill
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-resnet50-adam-crc5000}
-    \caption{Resnet50}
-  \end{subfigure}%
-  \hfill
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-resnet101-adam-crc5000}
-    \caption{Resnet101}
-  \end{subfigure}
-    \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-resnet152-adam-crc5000}
-    \caption{Resnet152}
-  \end{subfigure}
-  \caption{Confusion matrix using \gls{NCTCRCHE100K} using adam optimizer for training and test with \gls{CRC5000}}
-  \label{fig:100K_adam_crc5000}
 \end{figure}
 
 
@@ -327,182 +192,47 @@ This chapter describes the outcomes of the differents proposals of development i
 
 \begin{figure}[htbp]
   \centering
-  \begin{subfigure}[b]{0.32\textwidth}
+  \begin{subfigure}[b]{0.48\textwidth}
     \centering
     \includegraphics[width=\textwidth]{loss-alexnet-adammax}
     \caption{Alexnet}
-  \end{subfigure}%
+  \end{subfigure}
   \hfill
-  \begin{subfigure}[b]{0.32\textwidth}
+  \begin{subfigure}[b]{0.48\textwidth}
     \centering
     \includegraphics[width=\textwidth]{loss-vgg16-adammax}
     \caption{Vgg16}
-  \end{subfigure}%
+  \end{subfigure}
   \hfill
-  \begin{subfigure}[b]{0.32\textwidth}
+  \begin{subfigure}[b]{0.48\textwidth}
     \centering
     \includegraphics[width=\textwidth]{loss-resnet18-adammax}
     \caption{Resnet18}
   \end{subfigure}
-  \begin{subfigure}[b]{0.32\textwidth}
+  \begin{subfigure}[b]{0.48\textwidth}
     \centering
     \includegraphics[width=\textwidth]{loss-resnet34-adammax}
     \caption{Resnet34}
-  \end{subfigure}%
+  \end{subfigure}
   \hfill
-  \begin{subfigure}[b]{0.32\textwidth}
+  \begin{subfigure}[b]{0.48\textwidth}
     \centering
     \includegraphics[width=\textwidth]{loss-resnet50-adammax}
     \caption{Resnet50}
-  \end{subfigure}%
+  \end{subfigure}
   \hfill
-  \begin{subfigure}[b]{0.32\textwidth}
+  \begin{subfigure}[b]{0.48\textwidth}
     \centering
     \includegraphics[width=\textwidth]{loss-resnet101-adammax}
     \caption{Resnet101}
   \end{subfigure}
-    \begin{subfigure}[b]{0.32\textwidth}
+    \begin{subfigure}[b]{0.48\textwidth}
     \centering
     \includegraphics[width=\textwidth]{loss-resnet152-adammax}
     \caption{Resnet152}
   \end{subfigure}
   \caption{Train and validation Loss using \gls{NCTCRCHE100K} using adammax optimizer}
   \label{fig:100K_adammax_loss}
-\end{figure}
-
-\begin{figure}[htbp]
-  \centering
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-alexnet-adammax}
-    \caption{Alexnet}
-  \end{subfigure}%
-  \hfill
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-vgg16-adammax}
-    \caption{Vgg16}
-  \end{subfigure}%
-  \hfill
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-resnet18-adammax}
-    \caption{Resnet18}
-  \end{subfigure}
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-resnet34-adammax}
-    \caption{Resnet34}
-  \end{subfigure}%
-  \hfill
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-resnet50-adammax}
-    \caption{Resnet50}
-  \end{subfigure}%
-  \hfill
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-resnet101-adammax}
-    \caption{Resnet101}
-  \end{subfigure}
-    \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-resnet152-adammax}
-    \caption{Resnet152}
-  \end{subfigure}
-  \caption{Confusion matrix using \gls{NCTCRCHE100K} using adammax optimizer for training and test with it}
-  \label{fig:100K_adammax}
-\end{figure}
-
-\begin{figure}[htbp]
-  \centering
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-alexnet-adammax-lc25000}
-    \caption{Alexnet}
-  \end{subfigure}%
-  \hfill
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-vgg16-adammax-lc25000}
-    \caption{Vgg16}
-  \end{subfigure}%
-  \hfill
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-resnet18-adammax-lc25000}
-    \caption{Resnet18}
-  \end{subfigure}
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-resnet34-adammax-lc25000}
-    \caption{Resnet34}
-  \end{subfigure}%
-  \hfill
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-resnet50-adammax-lc25000}
-    \caption{Resnet50}
-  \end{subfigure}%
-  \hfill
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-resnet101-adammax-lc25000}
-    \caption{Resnet101}
-  \end{subfigure}
-    \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-resnet152-adammax-lc25000}
-    \caption{Resnet152}
-  \end{subfigure}
-  \caption{Confusion matrix using \gls{NCTCRCHE100K} using adammax optimizer for training and test with \gls{LC25000}}
-  \label{fig:100K_adammax_lc2500}
-\end{figure}
-
-\begin{figure}[htbp]
-  \centering
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-alexnet-adammax-crc5000}
-    \caption{Alexnet}
-  \end{subfigure}%
-  \hfill
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-vgg16-adammax-crc5000}
-    \caption{Vgg16}
-  \end{subfigure}%
-  \hfill
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-resnet18-adammax-crc5000}
-    \caption{Resnet18}
-  \end{subfigure}
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-resnet34-adammax-crc5000}
-    \caption{Resnet34}
-  \end{subfigure}%
-  \hfill
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-resnet50-adammax-crc5000}
-    \caption{Resnet50}
-  \end{subfigure}%
-  \hfill
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-resnet101-adammax-crc5000}
-    \caption{Resnet101}
-  \end{subfigure}
-    \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-resnet152-adammax-crc5000}
-    \caption{Resnet152}
-  \end{subfigure}
-  \caption{Confusion matrix using \gls{NCTCRCHE100K} using adammax optimizer for training and test with \gls{CRC5000}}
-  \label{fig:100K_adammax_crc5000}
 \end{figure}
 
 
@@ -541,41 +271,41 @@ This chapter describes the outcomes of the differents proposals of development i
 
 \begin{figure}[htbp]
   \centering
-  \begin{subfigure}[b]{0.32\textwidth}
+  \begin{subfigure}[b]{0.48\textwidth}
     \centering
     \includegraphics[width=\textwidth]{loss-alexnet-sgd}
     \caption{Alexnet}
-  \end{subfigure}%
+  \end{subfigure}
   \hfill
-  \begin{subfigure}[b]{0.32\textwidth}
+  \begin{subfigure}[b]{0.48\textwidth}
     \centering
     \includegraphics[width=\textwidth]{loss-vgg16-sgd}
     \caption{Vgg16}
-  \end{subfigure}%
+  \end{subfigure}
   \hfill
-  \begin{subfigure}[b]{0.32\textwidth}
+  \begin{subfigure}[b]{0.48\textwidth}
     \centering
     \includegraphics[width=\textwidth]{loss-resnet18-sgd}
     \caption{Resnet18}
   \end{subfigure}
-  \begin{subfigure}[b]{0.32\textwidth}
+  \begin{subfigure}[b]{0.48\textwidth}
     \centering
     \includegraphics[width=\textwidth]{loss-resnet34-sgd}
     \caption{Resnet34}
-  \end{subfigure}%
+  \end{subfigure}
   \hfill
-  \begin{subfigure}[b]{0.32\textwidth}
+  \begin{subfigure}[b]{0.48\textwidth}
     \centering
     \includegraphics[width=\textwidth]{loss-resnet50-sgd}
     \caption{Resnet50}
-  \end{subfigure}%
+  \end{subfigure}
   \hfill
-  \begin{subfigure}[b]{0.32\textwidth}
+  \begin{subfigure}[b]{0.48\textwidth}
     \centering
     \includegraphics[width=\textwidth]{loss-resnet101-sgd}
     \caption{Resnet101}
   \end{subfigure}
-    \begin{subfigure}[b]{0.32\textwidth}
+    \begin{subfigure}[b]{0.48\textwidth}
     \centering
     \includegraphics[width=\textwidth]{loss-resnet152-sgd}
     \caption{Resnet152}
@@ -583,142 +313,6 @@ This chapter describes the outcomes of the differents proposals of development i
   \caption{Train and validation Loss using \gls{NCTCRCHE100K} using sgd optimizer}
   \label{fig:100K_sgd_loss}
 \end{figure}
-
-\begin{figure}[htbp]
-  \centering
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-alexnet-sgd}
-    \caption{Alexnet}
-  \end{subfigure}%
-  \hfill
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-vgg16-sgd}
-    \caption{Vgg16}
-  \end{subfigure}%
-  \hfill
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-resnet18-sgd}
-    \caption{Resnet18}
-  \end{subfigure}
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-resnet34-sgd}
-    \caption{Resnet34}
-  \end{subfigure}%
-  \hfill
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-resnet50-sgd}
-    \caption{Resnet50}
-  \end{subfigure}%
-  \hfill
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-resnet101-sgd}
-    \caption{Resnet101}
-  \end{subfigure}
-    \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-resnet152-sgd}
-    \caption{Resnet152}
-  \end{subfigure}
-  \caption{Confusion matrix using \gls{NCTCRCHE100K} using sgd optimizer for training and test with it}
-  \label{fig:100K_sgd}
-\end{figure}
-
-\begin{figure}[htbp]
-  \centering
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-alexnet-sgd-lc25000}
-    \caption{Alexnet}
-  \end{subfigure}%
-  \hfill
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-vgg16-sgd-lc25000}
-    \caption{Vgg16}
-  \end{subfigure}%
-  \hfill
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-resnet18-sgd-lc25000}
-    \caption{Resnet18}
-  \end{subfigure}
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-resnet34-sgd-lc25000}
-    \caption{Resnet34}
-  \end{subfigure}%
-  \hfill
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-resnet50-sgd-lc25000}
-    \caption{Resnet50}
-  \end{subfigure}%
-  \hfill
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-resnet101-sgd-lc25000}
-    \caption{Resnet101}
-  \end{subfigure}
-    \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-resnet152-sgd-lc25000}
-    \caption{Resnet152}
-  \end{subfigure}
-  \caption{Confusion matrix using \gls{NCTCRCHE100K} using sgd optimizer for training and test with \gls{LC25000}}
-  \label{fig:100K_sgd_lc2500}
-\end{figure}
-
-\begin{figure}[htbp]
-  \centering
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-alexnet-sgd-crc5000}
-    \caption{Alexnet}
-  \end{subfigure}%
-  \hfill
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-vgg16-sgd-crc5000}
-    \caption{Vgg16}
-  \end{subfigure}%
-  \hfill
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-resnet18-sgd-crc5000}
-    \caption{Resnet18}
-  \end{subfigure}
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-resnet34-sgd-crc5000}
-    \caption{Resnet34}
-  \end{subfigure}%
-  \hfill
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-resnet50-sgd-crc5000}
-    \caption{Resnet50}
-  \end{subfigure}%
-  \hfill
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-resnet101-sgd-crc5000}
-    \caption{Resnet101}
-  \end{subfigure}
-    \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-resnet152-sgd-crc5000}
-    \caption{Resnet152}
-  \end{subfigure}
-  \caption{Confusion matrix using \gls{NCTCRCHE100K} using sgd optimizer for training and test with \gls{CRC5000}}
-  \label{fig:100K_sgd_crc5000}
-\end{figure}
-
 
 
 \begin{table}[]
@@ -756,182 +350,47 @@ This chapter describes the outcomes of the differents proposals of development i
 
 \begin{figure}[htbp]
   \centering
-  \begin{subfigure}[b]{0.32\textwidth}
+  \begin{subfigure}[b]{0.48\textwidth}
     \centering
     \includegraphics[width=\textwidth]{loss-alexnet-nonorm-adam}
     \caption{Alexnet}
-  \end{subfigure}%
+  \end{subfigure}
   \hfill
-  \begin{subfigure}[b]{0.32\textwidth}
+  \begin{subfigure}[b]{0.48\textwidth}
     \centering
     \includegraphics[width=\textwidth]{loss-vgg16-nonorm-adam}
     \caption{Vgg16}
-  \end{subfigure}%
+  \end{subfigure}
   \hfill
-  \begin{subfigure}[b]{0.32\textwidth}
+  \begin{subfigure}[b]{0.48\textwidth}
     \centering
     \includegraphics[width=\textwidth]{loss-resnet18-nonorm-adam}
     \caption{Resnet18}
   \end{subfigure}
-  \begin{subfigure}[b]{0.32\textwidth}
+  \begin{subfigure}[b]{0.48\textwidth}
     \centering
     \includegraphics[width=\textwidth]{loss-resnet34-nonorm-adam}
     \caption{Resnet34}
-  \end{subfigure}%
+  \end{subfigure}
   \hfill
-  \begin{subfigure}[b]{0.32\textwidth}
+  \begin{subfigure}[b]{0.48\textwidth}
     \centering
     \includegraphics[width=\textwidth]{loss-resnet50-nonorm-adam}
     \caption{Resnet50}
-  \end{subfigure}%
+  \end{subfigure}
   \hfill
-  \begin{subfigure}[b]{0.32\textwidth}
+  \begin{subfigure}[b]{0.48\textwidth}
     \centering
     \includegraphics[width=\textwidth]{loss-resnet101-nonorm-adam}
     \caption{Resnet101}
   \end{subfigure}
-    \begin{subfigure}[b]{0.32\textwidth}
+  \begin{subfigure}[b]{0.48\textwidth}
     \centering
     \includegraphics[width=\textwidth]{loss-resnet152-nonorm-adam}
     \caption{Resnet152}
   \end{subfigure}
   \caption{Train and validation Loss using \gls{NCTCRCHE100K}-nonorm using adam optimizer}
   \label{fig:100K_adam-nonorm_loss}
-\end{figure}
-
-\begin{figure}[htbp]
-  \centering
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-alexnet-nonorm-adam}
-    \caption{Alexnet}
-  \end{subfigure}%
-  \hfill
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-vgg16-nonorm-adam}
-    \caption{Vgg16}
-  \end{subfigure}%
-  \hfill
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-resnet18-nonorm-adam}
-    \caption{Resnet18}
-  \end{subfigure}
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-resnet34-nonorm-adam}
-    \caption{Resnet34}
-  \end{subfigure}%
-  \hfill
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-resnet50-nonorm-adam}
-    \caption{Resnet50}
-  \end{subfigure}%
-  \hfill
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-resnet101-nonorm-adam}
-    \caption{Resnet101}
-  \end{subfigure}
-    \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-resnet152-nonorm-adam}
-    \caption{Resnet152}
-  \end{subfigure}
-  \caption{Confusion matrix using \gls{NCTCRCHE100K}-nonorm using adam optimizer for training and test with it}
-  \label{fig:100k-nonorm_adam}
-\end{figure}
-
-\begin{figure}[htbp]
-  \centering
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-alexnet-nonorm-adam-lc25000}
-    \caption{Alexnet}
-  \end{subfigure}%
-  \hfill
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-vgg16-nonorm-adam-lc25000}
-    \caption{Vgg16}
-  \end{subfigure}%
-  \hfill
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-resnet18-nonorm-adam-lc25000}
-    \caption{Resnet18}
-  \end{subfigure}
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-resnet34-nonorm-adam-lc25000}
-    \caption{Resnet34}
-  \end{subfigure}%
-  \hfill
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-resnet50-nonorm-adam-lc25000}
-    \caption{Resnet50}
-  \end{subfigure}%
-  \hfill
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-resnet101-nonorm-adam-lc25000}
-    \caption{Resnet101}
-  \end{subfigure}
-    \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-resnet152-nonorm-adam-lc25000}
-    \caption{Resnet152}
-  \end{subfigure}
-  \caption{Confusion matrix using \gls{NCTCRCHE100K}-nonorm using adam optimizer for training and test with \gls{LC25000}}
-  \label{fig:100K-nonorm_adam_lc2500}
-\end{figure}
-
-\begin{figure}[htbp]
-  \centering
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-alexnet-nonorm-adam-crc5000}
-    \caption{Alexnet}
-  \end{subfigure}%
-  \hfill
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-vgg16-nonorm-adam-crc5000}
-    \caption{Vgg16}
-  \end{subfigure}%
-  \hfill
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-resnet18-nonorm-adam-crc5000}
-    \caption{Resnet18}
-  \end{subfigure}
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-resnet34-nonorm-adam-crc5000}
-    \caption{Resnet34}
-  \end{subfigure}%
-  \hfill
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-resnet50-nonorm-adam-crc5000}
-    \caption{Resnet50}
-  \end{subfigure}%
-  \hfill
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-resnet101-nonorm-adam-crc5000}
-    \caption{Resnet101}
-  \end{subfigure}
-    \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-resnet152-nonorm-adam-crc5000}
-    \caption{Resnet152}
-  \end{subfigure}
-  \caption{Confusion matrix using \gls{NCTCRCHE100K}-nonorm using adam optimizer for training and test with \gls{CRC5000}}
-  \label{fig:100K-nonorm_adam_crc5000}
 \end{figure}
 
 
@@ -970,41 +429,40 @@ This chapter describes the outcomes of the differents proposals of development i
 
 \begin{figure}[htbp]
   \centering
-  \begin{subfigure}[b]{0.32\textwidth}
+  \begin{subfigure}[b]{0.48\textwidth}
     \centering
     \includegraphics[width=\textwidth]{loss-alexnet-nonorm-adammax}
     \caption{Alexnet}
-  \end{subfigure}%
+  \end{subfigure}
   \hfill
-  \begin{subfigure}[b]{0.32\textwidth}
+  \begin{subfigure}[b]{0.48\textwidth}
     \centering
     \includegraphics[width=\textwidth]{loss-vgg16-nonorm-adammax}
     \caption{Vgg16}
-  \end{subfigure}%
-  \hfill
-  \begin{subfigure}[b]{0.32\textwidth}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.48\textwidth}
     \centering
     \includegraphics[width=\textwidth]{loss-resnet18-nonorm-adammax}
     \caption{Resnet18}
   \end{subfigure}
-  \begin{subfigure}[b]{0.32\textwidth}
+  \hfill
+  \begin{subfigure}[b]{0.48\textwidth}
     \centering
     \includegraphics[width=\textwidth]{loss-resnet34-nonorm-adammax}
     \caption{Resnet34}
-  \end{subfigure}%
-  \hfill
-  \begin{subfigure}[b]{0.32\textwidth}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.48\textwidth}
     \centering
     \includegraphics[width=\textwidth]{loss-resnet50-nonorm-adammax}
     \caption{Resnet50}
-  \end{subfigure}%
+  \end{subfigure}
   \hfill
-  \begin{subfigure}[b]{0.32\textwidth}
+  \begin{subfigure}[b]{0.48\textwidth}
     \centering
     \includegraphics[width=\textwidth]{loss-resnet101-nonorm-adammax}
     \caption{Resnet101}
   \end{subfigure}
-    \begin{subfigure}[b]{0.32\textwidth}
+    \begin{subfigure}[b]{0.48\textwidth}
     \centering
     \includegraphics[width=\textwidth]{loss-resnet152-nonorm-adammax}
     \caption{Resnet152}
@@ -1013,140 +471,6 @@ This chapter describes the outcomes of the differents proposals of development i
   \label{fig:100K-nonorm_adammax_loss}
 \end{figure}
 
-\begin{figure}[htbp]
-  \centering
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-alexnet-nonorm-adammax}
-    \caption{Alexnet}
-  \end{subfigure}%
-  \hfill
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-vgg16-nonorm-adammax}
-    \caption{Vgg16}
-  \end{subfigure}%
-  \hfill
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-resnet18-nonorm-adammax}
-    \caption{Resnet18}
-  \end{subfigure}
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-resnet34-nonorm-adammax}
-    \caption{Resnet34}
-  \end{subfigure}%
-  \hfill
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-resnet50-nonorm-adammax}
-    \caption{Resnet50}
-  \end{subfigure}%
-  \hfill
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-resnet101-nonorm-adammax}
-    \caption{Resnet101}
-  \end{subfigure}
-    \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-resnet152-nonorm-adammax}
-    \caption{Resnet152}
-  \end{subfigure}
-  \caption{Confusion matrix using \gls{NCTCRCHE100K}-nonorm using adammax optimizer for training and test with it}
-  \label{fig:100k-nonorm_adammax}
-\end{figure}
-
-\begin{figure}[htbp]
-  \centering
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-alexnet-nonorm-adammax-lc25000}
-    \caption{Alexnet}
-  \end{subfigure}%
-  \hfill
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-vgg16-nonorm-adammax-lc25000}
-    \caption{Vgg16}
-  \end{subfigure}%
-  \hfill
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-resnet18-nonorm-adammax-lc25000}
-    \caption{Resnet18}
-  \end{subfigure}
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-resnet34-nonorm-adammax-lc25000}
-    \caption{Resnet34}
-  \end{subfigure}%
-  \hfill
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-resnet50-nonorm-adammax-lc25000}
-    \caption{Resnet50}
-  \end{subfigure}%
-  \hfill
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-resnet101-nonorm-adammax-lc25000}
-    \caption{Resnet101}
-  \end{subfigure}
-    \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-resnet152-nonorm-adammax-lc25000}
-    \caption{Resnet152}
-  \end{subfigure}
-  \caption{Confusion matrix using \gls{NCTCRCHE100K}-nonorm using adammax optimizer for training and test with \gls{LC25000}}
-  \label{fig:100K-nonorm_adammax_lc2500}
-\end{figure}
-
-\begin{figure}[htbp]
-  \centering
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-alexnet-nonorm-adammax-crc5000}
-    \caption{Alexnet}
-  \end{subfigure}%
-  \hfill
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-vgg16-nonorm-adammax-crc5000}
-    \caption{Vgg16}
-  \end{subfigure}%
-  \hfill
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-resnet18-nonorm-adammax-crc5000}
-    \caption{Resnet18}
-  \end{subfigure}
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-resnet34-nonorm-adammax-crc5000}
-    \caption{Resnet34}
-  \end{subfigure}%
-  \hfill
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-resnet50-nonorm-adammax-crc5000}
-    \caption{Resnet50}
-  \end{subfigure}%
-  \hfill
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-resnet101-nonorm-adammax-crc5000}
-    \caption{Resnet101}
-  \end{subfigure}
-    \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-resnet152-nonorm-adammax-crc5000}
-    \caption{Resnet152}
-  \end{subfigure}
-  \caption{Confusion matrix using \gls{NCTCRCHE100K}-nonorm using adammax optimizer for training and test with \gls{CRC5000}}
-  \label{fig:100K-nonorm_adammax_crc5000}
-\end{figure}
 
 \begin{table}[]
 \centering
@@ -1183,41 +507,40 @@ This chapter describes the outcomes of the differents proposals of development i
 
 \begin{figure}[htbp]
   \centering
-  \begin{subfigure}[b]{0.32\textwidth}
+  \begin{subfigure}[b]{0.48\textwidth}
     \centering
     \includegraphics[width=\textwidth]{loss-alexnet-nonorm-sgd}
     \caption{Alexnet}
-  \end{subfigure}%
+  \end{subfigure}
   \hfill
-  \begin{subfigure}[b]{0.32\textwidth}
+  \begin{subfigure}[b]{0.48\textwidth}
     \centering
     \includegraphics[width=\textwidth]{loss-vgg16-nonorm-sgd}
     \caption{Vgg16}
-  \end{subfigure}%
-  \hfill
-  \begin{subfigure}[b]{0.32\textwidth}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.48\textwidth}
     \centering
     \includegraphics[width=\textwidth]{loss-resnet18-nonorm-sgd}
     \caption{Resnet18}
   \end{subfigure}
-  \begin{subfigure}[b]{0.32\textwidth}
+  \hfill
+  \begin{subfigure}[b]{0.48\textwidth}
     \centering
     \includegraphics[width=\textwidth]{loss-resnet34-nonorm-sgd}
     \caption{Resnet34}
-  \end{subfigure}%
-  \hfill
-  \begin{subfigure}[b]{0.32\textwidth}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.48\textwidth}
     \centering
     \includegraphics[width=\textwidth]{loss-resnet50-nonorm-sgd}
     \caption{Resnet50}
-  \end{subfigure}%
+  \end{subfigure}
   \hfill
-  \begin{subfigure}[b]{0.32\textwidth}
+  \begin{subfigure}[b]{0.48\textwidth}
     \centering
     \includegraphics[width=\textwidth]{loss-resnet101-nonorm-sgd}
     \caption{Resnet101}
   \end{subfigure}
-    \begin{subfigure}[b]{0.32\textwidth}
+    \begin{subfigure}[b]{0.48\textwidth}
     \centering
     \includegraphics[width=\textwidth]{loss-resnet152-nonorm-sgd}
     \caption{Resnet152}
@@ -1226,141 +549,6 @@ This chapter describes the outcomes of the differents proposals of development i
   \label{fig:100K-nonorm_sgd_loss}
 \end{figure}
 
-
-\begin{figure}[htbp]
-  \centering
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-alexnet-nonorm-sgd}
-    \caption{Alexnet}
-  \end{subfigure}%
-  \hfill
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-vgg16-nonorm-sgd}
-    \caption{Vgg16}
-  \end{subfigure}%
-  \hfill
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-resnet18-nonorm-sgd}
-    \caption{Resnet18}
-  \end{subfigure}
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-resnet34-nonorm-sgd}
-    \caption{Resnet34}
-  \end{subfigure}%
-  \hfill
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-resnet50-nonorm-sgd}
-    \caption{Resnet50}
-  \end{subfigure}%
-  \hfill
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-resnet101-nonorm-sgd}
-    \caption{Resnet101}
-  \end{subfigure}
-    \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-resnet152-nonorm-sgd}
-    \caption{Resnet152}
-  \end{subfigure}
-  \caption{Confusion matrix using \gls{NCTCRCHE100K}-nonorm using sgd optimizer for training and test with it}
-  \label{fig:100k-nonorm_sgd}
-\end{figure}
-
-\begin{figure}[htbp]
-  \centering
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-alexnet-nonorm-sgd-lc25000}
-    \caption{Alexnet}
-  \end{subfigure}%
-  \hfill
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-vgg16-nonorm-sgd-lc25000}
-    \caption{Vgg16}
-  \end{subfigure}%
-  \hfill
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-resnet18-nonorm-sgd-lc25000}
-    \caption{Resnet18}
-  \end{subfigure}
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-resnet34-nonorm-sgd-lc25000}
-    \caption{Resnet34}
-  \end{subfigure}%
-  \hfill
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-resnet50-nonorm-sgd-lc25000}
-    \caption{Resnet50}
-  \end{subfigure}%
-  \hfill
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-resnet101-nonorm-sgd-lc25000}
-    \caption{Resnet101}
-  \end{subfigure}
-    \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-resnet152-nonorm-sgd-lc25000}
-    \caption{Resnet152}
-  \end{subfigure}
-  \caption{Confusion matrix using \gls{NCTCRCHE100K}-nonorm using sgd optimizer for training and test with \gls{LC25000}}
-  \label{fig:100K-nonorm_sgd_lc2500}
-\end{figure}
-
-\begin{figure}[htbp]
-  \centering
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-alexnet-nonorm-sgd-crc5000}
-    \caption{Alexnet}
-  \end{subfigure}%
-  \hfill
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-vgg16-nonorm-sgd-crc5000}
-    \caption{Vgg16}
-  \end{subfigure}%
-  \hfill
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-resnet18-nonorm-sgd-crc5000}
-    \caption{Resnet18}
-  \end{subfigure}
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-resnet34-nonorm-sgd-crc5000}
-    \caption{Resnet34}
-  \end{subfigure}%
-  \hfill
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-resnet50-nonorm-sgd-crc5000}
-    \caption{Resnet50}
-  \end{subfigure}%
-  \hfill
-  \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-resnet101-nonorm-sgd-crc5000}
-    \caption{Resnet101}
-  \end{subfigure}
-    \begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{matriz-confusao-resnet152-nonorm-sgd-crc5000}
-    \caption{Resnet152}
-  \end{subfigure}
-  \caption{Confusion matrix using \gls{NCTCRCHE100K}-nonorm using sgd optimizer for training and test with \gls{CRC5000}}
-  \label{fig:100K-nonorm_sgd_crc5000}
-\end{figure}
 
 \section{Discussion}
 
@@ -1374,7 +562,7 @@ When training with \gls{NCTCRCHE100K}, the results were very different and metri
 
 However, comparing the results in tables \ref{table_NCTCRCHE100K-nonorm_adam},\ref{table_NCTCRCHE100K-nonorm_adammax} and \ref{table_NCTCRCHE100K-nonorm_sgd}, it`s possible to see a downfall in the performance using the test images from \gls{NCTCRCHE100K}, what can be explained due to the different normalizations in NCT-CRC-HE-100K-NONORM and CRC-VAL-HE-7K, as exposed in section \ref{subsec_nct100k}. The major difference is the result validating with \gls{CRC5000} and \gls{LC25000}. The impromivement in the first one comparing to the standard NCT-CRC-HE-100K reveals that the the increment in their respective image sizes did not have a significant impact in the models as it first estimation. This indicats that the main reason of the downfall in the previous scenario was the difference in color normalization techniques applied to the images set used for train and test \cite{5193250}.
 
-This conclusion is also reinforced by the outcome of the \gls{LC25000}, illustrated by the difference between \ref{fig:100K_adam_lc2500}, \ref{fig:100K_adammax_lc2500} and \ref{fig:100K_sgd_lc2500} tables and \ref{fig:100K-nonorm_adam_lc2500}, \ref{fig:100K-nonorm_adammax_lc2500} and \ref{fig:100K-nonorm_sgd_lc2500}. In the first case, all models were always predicting all images from \gls{LC25000} as "non-cancer", most likely due to Macenko's method color normalization in training set. However, by removing this feature in the train stage, outcomes were more diverse and close to real classification. Performance was not great, which in that case could be explained original dimension of \gls{LC25000} samples, which were 768 x 768 pixels.
+This conclusion is also reinforced by the outcome.... (TODO )most likely due to Macenko's method color normalization in training set. However, by removing this feature in the train stage, outcomes were more diverse and close to real classification. Performance was not great, which in that case could be explained original dimension of \gls{LC25000} samples, which were 768 x 768 pixels.
 
 
 
