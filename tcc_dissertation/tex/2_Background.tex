@@ -99,7 +99,7 @@ David appointed that the total error of an multi-layered \gls{ANN} could be, sim
 \begin{equation} 
     E = \frac{1}{2} \sum_{c} \sum_{j} (y_{j,c} - d_{j,c})^2 
 \end{equation}
-where ($c$) is an index over cases, ($j$) is index over outputs units and ($y$) the actual state of the output. The main point, as in Rosenblatt article \cite{Rosenblatt1963PRINCIPLESON}, is minimize ($E$). To make this, is suggested the use of \gls{GD} \cite{5a25e804-97fa-3be4-ac27-50be05d4f28d}, mathematical method to find local points of minima.
+where ($c$) is an index over cases, ($j$) is index over outputs units and ($y$) the actual state of the output. The main point, as in Rosenblatt article \cite{Rosenblatt1963PRINCIPLESON}, is minimize ($E$). To achieve it, is suggested the use of \gls{GD} \cite{5a25e804-97fa-3be4-ac27-50be05d4f28d}, mathematical method to find local points of minima.
 By calculating the partial derivatives of the error and applying calculus chain rule, it is possible how the change in the input or the weight of a layer ($j$) affects the error:
 \begin{equation} 
     \frac{\partial E}{\partial x_j} = \frac{\partial E}{\partial y_j} y_j (1 - y_j) 
@@ -131,12 +131,47 @@ Where ($t$) where ¢ is incremented by 1 for each sweep through the whole set of
 The work of David et al \cite{Rumelhart1986LearningRB} discussed in he section above \ref{sec_neural_networks} was the bases of modern \gls{DL}, which popularized the use of \gls{BP} in \gls{ANN}. By applying a non-linear function in the response-unit of all neurons in the hidden and output layer, those models earns the hability of approximating any measurable function to any desired degree of accuracy, as concluded in 1989 Kurt Hornik et al. work Multilayer Feedforward Networks are
 Universal Approximators \cite{HORNIK1989359}.
 
-In 1998 \cite{articleDocReg} a lot of recognition system were already using some form of multilayer \gls{ANN} trained with \gls{BP}. These habilities made them to be a heavily study candidate for pattern recognition tasks, such as image recognition, which was proven by as Kunihiko Fukushima work \cite{Fukushima1980NeocognitronAS}, showing how  organizating hierarchically the hidden layers ends up to extraction available features and pattern in a 2D image.
+In 1998 a lot of recognition system were already using some form of multilayer \gls{ANN} trained with \gls{BP} \cite{articleDocReg}. These habilities made them to be a heavily study candidate for pattern recognition tasks, such as image recognition, which was proven by as Kunihiko Fukushima work \cite{Fukushima1980NeocognitronAS}, showing how  organizating hierarchically the hidden layers ends up to extraction available features and pattern in a 2D image. Image \ref{fig_fuklishima_layer_connection} illustrates how units are interconnected in a cascade.
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.8\textwidth]{Fukushima-layer-connection}
     \caption{Diagram illustrating interconnections between layers provided in \cite{Fukushima1980NeocognitronAS}.}
+    \label{fig_fuklishima_layer_connection}
 \end{figure}
+
+\subsection{Convolutional Neuron Network}
+\label{sec_cnn}
+Kurt Hornik and Maxwell Stinchcombe and Halbert White \cite{HORNIK1989359} established hat standard multilayer feedforward networks are capable of approximating any measurable function to any degree of accuracy. Which implies that applications can reach desired results by an adequate learning process, numbers of hidden units or the quality of a deterministic relationship between input and target. 
+
+In Y. LeCun paper \cite{6795724}, different from other previous results, was proposed an architecture with learning procedure directly fed with images, rather than feature vectors. The main goal to achieve was the image recognition from handwritten zip code digits from U.S Postal Service. Another contrast from other earliers work was the fact that all connections in the network were trained using \gls{BP}, where the first few layers of connections used to be handchosen constants implemented on a neural-network chip for the specific task. To storage all the complex information derivated from an entire image instead of a vector and extract common features in pattern recognition, the weight share technique was apllied to extract local features and combine them to form higher order features.
+
+The proposed network had three hidden-layers: two convolutional feature-extraction layers followed by one fully connected classification layer, which were later referenced as a \gls{CNN}, by the fact the function performed by a feature map can thus be interpreted as a nonlınear subsampled convolution with a 5 by 5 kernel, as described in equation \ref{convolution}.
+
+\begin{equation}
+x_j^{\,l}
+=
+f\!\left(
+\sum_{i \in M_j}
+x_i^{\,l-1} * k_{ij}^{\,l}
++
+b_j^{\,l}
+\right)
+\label{convolution}
+\end{equation}
+
+Yann LeCun et all \cite{articleDocReg} describes a \gls{CNN} as a network that combine three architectural: local receptive fields, shared weights, and spatial or temporal sub-sampling.  The local receptive fields can extract elementary visual features such
+as oriented edges, end-points and corners. These features are combined by the subsequent layers in order to detect higher-order features, such as object detection. 
+
+All the units in a feature map share the same set ofweights and the same bias so they can detect the same feature at all possible locations on the input, while a convolutional layer is composed of several feature maps with differets weights vector, to multiple features be extracts in the same locations.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=1\textwidth]{lenet5-architecture}
+    \caption{LeNet-5, a Convolutional Neural Network, architecture in  \cite{articleDocReg}.}
+\end{figure}
+
+
+
 
 \section{Evaluated Metrics}
 \label{sec_metrics}
