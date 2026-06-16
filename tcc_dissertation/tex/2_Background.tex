@@ -139,6 +139,25 @@ In 1998 a lot of recognition system were already using some form of multilayer \
     \label{fig_fuklishima_layer_connection}
 \end{figure}
 
+\section{Overfitting and Early Stop}
+\label{sec_overfitting}
+Obtain a network with optimal generalization performance is achievement of the train process. However, \gls{ANN} architecture can suffer from overfitting: the error during train phase to get worse at some point, instead of improving \cite{articleEarlyStopping}.
+
+Lutz Prechelt \cite{articleEarlyStopping} the early stop technique as a simple and efficiency procedure to avoid error from growing while train.  First, the training data is splitted into a training set and a validation set. Then, training only occurs on the training set and evaluating the per-example error on the validation set once in a while. Finally, stoping training as soon as the error on the validation set is higher than it was the last time it was checked, saving the weights the network had in that previous step as the result of the
+training run. 
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.6\textwidth]{example-overfitting}
+    \caption{Example of overfitting with validation error curve, vertical: errors, horizontal: time \cite{articleEarlyStopping}.}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.6\textwidth]{ideal-validation-curve}
+    \caption{Example of ideal validation error validation error curve, vertical: errors, horizontal: time \cite{articleEarlyStopping}.}
+\end{figure}
+
+
 \subsection{Convolutional Neuron Networks}
 \label{sec_cnn}
 Kurt Hornik and Maxwell Stinchcombe and Halbert White \cite{HORNIK1989359} established hat standard multilayer feedforward networks are capable of approximating any measurable function to any degree of accuracy. Which implies that applications can reach desired results by an adequate learning process, numbers of hidden units or the quality of a deterministic relationship between input and target. 
@@ -233,7 +252,6 @@ The deeper the neural network the problems of exploding gradients \cite{279181}.
 y = F(x, \{W_i\}) + x
 \label{residual block}
 \end{equation}
-
 
 
 
