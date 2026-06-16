@@ -221,6 +221,18 @@ The work propose five different architectures, one of them with 13 hidden layers
 
 \section{Residual Neural Networks}
 \label{sec_residual}
+The deeper the neural network the problems of exploding gradients \cite{279181}. With the network depth increasing, accuracy gets saturated and then degrades rapidly, with adding more layers eads to higher training error. Kaiming He et al \cite{DBLP:journals/corr/HeZRS15} approach this, exposing that it`s not an overfitting problem, the model does not suffer from memorizing only the samples used in training and without generalizing. This degradation that it`s not resolved by adding more layers, instead it can be solved by explicitling let  layers fit a residual mapping.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=1\textwidth]{residual-block}
+    \caption{Diagram of residual block learning available in \cite{DBLP:journals/corr/HeZRS15}}
+\end{figure}
+
+\begin{equation}
+y = F(x, \{W_i\}) + x
+\label{residual block}
+\end{equation}
 
 
 
