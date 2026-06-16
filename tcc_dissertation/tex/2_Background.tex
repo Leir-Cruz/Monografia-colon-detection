@@ -139,13 +139,13 @@ In 1998 a lot of recognition system were already using some form of multilayer \
     \label{fig_fuklishima_layer_connection}
 \end{figure}
 
-\subsection{Convolutional Neuron Network}
+\subsection{Convolutional Neuron Networks}
 \label{sec_cnn}
 Kurt Hornik and Maxwell Stinchcombe and Halbert White \cite{HORNIK1989359} established hat standard multilayer feedforward networks are capable of approximating any measurable function to any degree of accuracy. Which implies that applications can reach desired results by an adequate learning process, numbers of hidden units or the quality of a deterministic relationship between input and target. 
 
 In Y. LeCun paper \cite{6795724}, different from other previous results, was proposed an architecture with learning procedure directly fed with images, rather than feature vectors. The main goal to achieve was the image recognition from handwritten zip code digits from U.S Postal Service. Another contrast from other earliers work was the fact that all connections in the network were trained using \gls{BP}, where the first few layers of connections used to be handchosen constants implemented on a neural-network chip for the specific task. To storage all the complex information derivated from an entire image instead of a vector and extract common features in pattern recognition, the weight share technique was apllied to extract local features and combine them to form higher order features.
 
-The proposed network had three hidden-layers: two convolutional feature-extraction layers followed by one fully connected classification layer, which were later referenced as a \gls{CNN}, by the fact the function performed by a feature map can thus be interpreted as a nonlınear subsampled convolution with a 5 by 5 kernel, as described in equation \ref{convolution}.
+The proposed network had three hidden-layers: two convolutional feature-extraction layers followed by one fully connected classification layer, which were later referenced as a \gls{CNN}, by the fact the function performed by a feature map can thus be interpreted as a nonlınear subsampled convolution with a 5 by 5 kernel, which is the set of connection weights used by the units in the feature map, as described in equation \ref{convolution}.
 
 \begin{equation}
 x_j^{\,l}
@@ -169,6 +169,25 @@ All the units in a feature map share the same set ofweights and the same bias so
     \includegraphics[width=1\textwidth]{lenet5-architecture}
     \caption{LeNet-5, a Convolutional Neural Network, architecture in  \cite{articleDocReg}.}
 \end{figure}
+
+In 2012 Alex Krizhevsky et al \cite{DBLP:conf/nips/KrizhevskySH12} proposed a very efficient \gls{GPU} implementation of the convolution operation to train a neural network with 60 million parameters and 650,000 neurons. This achievement provided the application of \gls{CNN} attractive to classification problems with large scale to high-resolution images. This architecture was later called alexNet.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=1\textwidth]{alexnet-architecture}
+    \caption{AlexNet, a Convolutional Neural Network, architecture in  \cite{articleDocReg}.}
+\end{figure}
+
+The alexNet architecture contains five convolutional and three fully-connected. For the nonlineariry of the neurons, was used the Rectified Linear Units \cite{Relu}, from Nair and Hinton. The \gls{DL} networks train Relu with ReLUs train several times faster than their equivalents with classic tanh units. In addition, the architecture proposed supports train cros-\gls{GPU} parallelization, enabling read from and write to one another’s memory directly, without going through host machine memory.
+
+\begin{equation}
+f(x) = \tanh(x)
+\end{equation}
+
+\begin{equation}
+f(x) = \max(0, x)
+\label{Relu function}
+\end{equation}
 
 
 
