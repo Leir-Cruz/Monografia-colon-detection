@@ -253,6 +253,23 @@ y = F(x, \{W_i\}) + x
 \label{residual block}
 \end{equation}
 
+\section{Quanvolutional Neural Networks}
+\label{sec_quanvolutional}
+Traditional modern \gls{ML} algorithms and networks, such as \gls{CNN} and \gls{RNN}, have the ability to extract features from the data in a hierarchical manner, as exposed in sections \ref{sec_cnn} and \ref{sec_residual}. It gives probabilistics results and have been improved over the years \cite{DBLP:conf/nips/KrizhevskySH12} \cite{DBLP:journals/cacm/KrizhevskySH17} \cite{DBLP:journals/corr/HeZRS15}, but it still vulnerable to suffer from computational bottlenecks due to high dimensional inputs. Seth Lloyd et al \cite{articlequantum} showes that \gls{QML} can provide exponential speed-ups over classical computers for problems involving large numbers of vectors as well.
+
+Maxwell Henderson et al \cite{Henderson2019QuanvolutionalNN} proposed a new type of model, the \gls{QNN}. The architecture add a new type of transformational layer to the standard \gls{CNN}, the quantum convolutional layer. Simillar to classical convolutional layer, the quanvolutional layers are made of a group of $N$ filters, producing feature maps by transforming input data, but uses random quantum circuits.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{quantum-convolutional-layer}
+    \caption{Figure A is an example o a quantum convolutional layer in full network stack;  B provides an in-depth of the processing into the quanvolutional filter \cite{Henderson2019QuanvolutionalNN}}
+    \label{fig_quantum_layer_example}
+\end{figure}
+
+Each quanvolutional filter produce a feature map when applied to an input tensor,similiar to convolutional filter. Nevertheless, instead of the element-wise matrix multiplication of the convolutional filter, the quanvolutional transforms the input data using a quantum circuit. For each filter will be applied an enconding function that will be applied to the input. Then, quantum computation will be applied to the encoded input. Image \ref{fig_quantum_layer_example}.B provides displays the encoding / applied circuit / decoding process.
+
+The conclusion of Maxwell Henderson et al \cite{Henderson2019QuanvolutionalNN} comproved that the hybrid proposed model provided an  and scalable \gls{QML} application for
+real-world problems, such as image recognition.
 
 
 \section{Evaluated Metrics}
