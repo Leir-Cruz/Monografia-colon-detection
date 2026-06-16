@@ -162,7 +162,14 @@ b_j^{\,l}
 Yann LeCun et all \cite{articleDocReg} describes a \gls{CNN} as a network that combine three architectural: local receptive fields, shared weights, and spatial or temporal sub-sampling.  The local receptive fields can extract elementary visual features such
 as oriented edges, end-points and corners. These features are combined by the subsequent layers in order to detect higher-order features, such as object detection. 
 
-All the units in a feature map share the same set ofweights and the same bias so they can detect the same feature at all possible locations on the input, while a convolutional layer is composed of several feature maps with differets weights vector, to multiple features be extracts in the same locations.
+All the units in a feature map share the same set of weights and the same bias so they can detect the same feature at all possible locations on the input, while a convolutional layer is composed of several feature maps with differets weights vector, to multiple features be extracts in the same locations.
+
+Futhermore, \gls{CNN} architecture owns a sub-sampling layers which performs a local averaging and a sub-sampling, reducing the resolution of the feature map. For example, the second hidden layer of LeNet-5 comprises six features maps, each unit computing the average of its four inputs, multipling it by a trainable coeficient and then adding a trainable bias, which the result is passed through a sigmoid function.
+
+\begin{equation}
+\sigma(x) = \frac{1}{1 + e^{-x}}
+\label{sigmoid_function}
+\end{equation}
 
 \begin{figure}[htbp]
     \centering
@@ -188,6 +195,32 @@ f(x) = \tanh(x)
 f(x) = \max(0, x)
 \label{Relu function}
 \end{equation}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=1\textwidth]{visual-convolutional}
+    \caption{Visual representation of convolution process}
+\end{figure}
+
+Not only convolutional layers, AlexNet also have pooling layers, previouslly referenced as sub-sampling, that summarize outputs of neighboring groups of neurons in the same kernel
+map. It keeps the essential features and reduce the number of parameters and complexity of the model.
+
+
+The great success of the \gls{CNN} for image recognition allied to the the availability of very large datasets for studies, multiple attempts  have been made to improve the original architecture of Krizhevsky et al. \cite{DBLP:conf/nips/KrizhevskySH12}. Multiples studies of different lines of improvements were made, in special, with the depth of the networks.
+
+By increasing the depth of a network by adding more convolutional layers, by using small (3 x 3) filters in all layers, Karen Simonyan and Andrew Zisserman \cite{DBLP:journals/corr/SimonyanZ14a} develop an architecture with significantly more accurate results, achieve the state-of-the-art accuracy desired. A stack of convolutional layers is followed by three fully connected layers, with final layer is the soft-max layer.
+
+All hiden layers uses Rectified Linear Units non-linearity.
+The work propose five different architectures, one of them with 13 hidden layers and three fully connected layers, the "configuration D" is used in chapter \ref{chap:methodology}, latter assigned as Vgg16. 
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=1\textwidth]{vgg16-configuration}
+    \caption{Vgg16 configuration and other configurations exposed \cite{DBLP:journals/corr/SimonyanZ14a}}
+\end{figure}
+
+
+\section{Residual Neural Networks}
+\label{sec_residual}
 
 
 
