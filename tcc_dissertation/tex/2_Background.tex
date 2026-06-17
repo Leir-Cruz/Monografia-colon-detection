@@ -2,43 +2,43 @@
 
 The \gls{CL} is a procedure that allows doctors to examine the inner lining of the colon and rectum using a flexible tube with a lighted camera. The \gls{CLP} passes through the anus and rectum into the colon, providing images of the interior. Those images can be used to identify abnormalities such as polyps, which are growths that can develop into colorectal cancer if left untreated. 
 
-However, the accuracy of \gls{CL} can be affected by various factors, as discussed in Introduction \ref{chap:introduction}. Considering the importance of early detection of colorectal cancer, is undeniable that improving the accuracy of \gls{CL} is a critical area of research. 
+However, the accuracy of \gls{CL} can be affected by various factors, as discussed in Introduction \ref{chap:introduction}. Considering the importance of early detection of colorectal cancer, it is undeniable that improving the accuracy of \gls{CL} is a critical area of research. 
 
 \section{Machine Learning and Computer Vision}
 \label{sec_machine_learning}
 
-In 1943 the first mathematical model of what would be the bases of \gls{AI}, field of computer science dedicated to creating systems capable of performing tasks that typically require human intelligence, was published by Warren McCulloch and Walter Pitts \cite{mcculloch1943}. The article evalueats the neuron activity as a character of "all or none", where their events can be treated by propositional logic. Biologically, the brain cell has needs to receive an excitation higher than it`s thredhold to trigger an impulse, which is determined by their own characteristcs.
+In 1943 the first mathematical model of what would be the bases of \gls{AI}, field of computer science dedicated to creating systems capable of performing tasks that typically require human intelligence, was published by Warren McCulloch and Walter Pitts \cite{mcculloch1943}. The article evaluates the neuron activity as a character of "all or none", where their events can be treated by propositional logic. Biologically, the brain cell has needs to receive an excitation higher than it`s threshold to trigger an impulse, which is determined by their own characteristics.
 
-Considering that, the authors claim that a neuron can be described as a logic block, executing logical function. Brain cells could be organized in nets that could describe any logical preposition. In 1950, with the question 'Can machines think?', Alan Turing starts his paper \cite{DBLP:journals/x/Turing50}, describing thinking habilities as problem-solving, decision-making and pattern recognition. In this approach, intelligence could be simulated by computational process. However, there is philosophical question to be made that is what exactly is intelligence? By stating that machines could emulate human intelligence, it`s necessary to delimit what it is and how it can be mesaured. In his article, Turing affirms that years from there, machines would be able to similute human behavior in such a way, that a regular person would not be able to distinguish whether is a machine or not they are interacting with. And that would be the parameter to determinat whether or not machines had achieved human intelligence.
+Considering that, the authors claim that a neuron can be described as a logic block, executing logical function. Brain cells could be organized in nets that could describe any logical proposition. In 1950, with the question 'Can machines think?', Alan Turing starts his paper \cite{DBLP:journals/x/Turing50}, describing thinking abilities as problem-solving, decision-making and pattern recognition. In this approach, intelligence could be simulated by computational process. However, there is philosophical question to be made that is what exactly is intelligence? By stating that machines could emulate human intelligence, it`s necessary to delimit what it is and how it can be measured. In his article, Turing affirms that years from there, machines would be able to simulate human behavior in such a way, that a regular person would not be able to distinguish whether is a machine or not they are interacting with. And that would be the parameter to determine whether or not machines had achieved human intelligence.
 
 
-By comparing the human brain to digital computer, Turing suggests that it was not necessary to build a machine comparable to an adult human intelligence capacity, but one with capacity of apprenticeship. Suggesting that a "child machine" should be subject to "education" through rewards and punishments, analogous to how children learn. \gls{ML} is an area of knowledge that focus on developing algorithms that allow computer system to learn from data and improve their performance without being explicit programmed, this mathematical relationship derived from the data is called model. Each revelant feature, or characteristc of data, must be represented numerically, so the model can learn. In \cite{5392560}, Samuel, A. L shows a computer that learns to play a game called checker better than the person who wrote the program. The game was chosen because of the simplicity of its rules and transparency of the computer learning progress. 
+By comparing the human brain to digital computer, Turing suggests that it was not necessary to build a machine comparable to an adult human intelligence capacity, but one with capacity of apprenticeship. Suggesting that a "child machine" should be subject to "education" through rewards and punishments, analogous to how children learn. \gls{ML} is an area of knowledge that focus on developing algorithms that allow computer system to learn from data and improve their performance without being explicitly programmed, this mathematical relationship derived from the data is called model. Each revelant feature, or characteristc of data, must be represented numerically, so the model can learn. In \cite{5392560}, Samuel, A. L shows a computer that learns to play a game called checker better than the person who wrote the program. The game was chosen because of the simplicity of its rules and transparency of the computer learning progress. 
 
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.6\textwidth]{checker}
-    \caption{Eight move opening in checker by machine learning model. This image is derivated from Samuel paper \cite{5392560}.
+    \caption{Eight move opening in checker by machine learning model. This image is derived from Samuel paper \cite{5392560}.
     \label{Eight move opening in checker by machine learning model.}}
 \end{figure}
 
-The machine should look ahead a few moves and evalueats the result board position.  The algorithm should find out which of those parameters was relevant, being an example of experience based learning, such as the suggested by Turing \cite{DBLP:journals/x/Turing50}, wtih the score result position in terms of linear polynomial with a total of 38 parameters, but evalueats only 16 at a time for a question of efficiency and relevance. The conclusion of the 1959`s article was that devise learning schemes would outperform an average person and those schemes should be applied to real-life problems.
+The machine should look ahead a few moves and evaluates the result board position.  The algorithm should find out which of those parameters was relevant, being an example of experience based learning, such as the suggested by Turing \cite{DBLP:journals/x/Turing50}, with the score result position in terms of linear polynomial with a total of 38 parameters, but evaluates only 16 at a time for a question of efficiency and relevance. The conclusion of the 1959`s article was that devise learning schemes would outperform an average person and those schemes should be applied to real-life problems.
 
-Lawrence G. Roberts with his work Machine Perception of Three-Dimensional Solids \cite{Roberts1963MachinePO}, build some of the basis of what later on would be called \gls{CV}, the field of computer science that studies how to enable computers to extract and understand information on visual data, such as images or videos. In his paper, the author showed how a computer could infer 3D structure from 2D images of simple polyhedral objects, such as edge detection and geomtric reasoning, which later were used for image detection and classification as more discussed in \ref{sec_deep_learning}.
+Lawrence G. Roberts with his work Machine Perception of Three-Dimensional Solids \cite{Roberts1963MachinePO}, build some of the basis of what later on would be called \gls{CV}, the field of computer science that studies how to enable computers to extract and understand information on visual data, such as images or videos. In his paper, the author showed how a computer could infer 3D structure from 2D images of simple polyhedral objects, such as edge detection and geometric reasoning, which later were used for image detection and classification as more discussed in \ref{sec_deep_learning}.
 
 \section{Data organization and Datasets}
 \label{sec_dataset}
 Not only in \gls{AI} context, data organization is more important than ever in the XXI century, considering that companies collect large amounts of data from various sources daily. Considering that, data must often be organized collections that make information accessible for analysis and application - called \gls{DS}.
 However, there are more than one way of storing data, and different types of \gls{DS} store it in various ways. 
 
-Structured \gls{DS} organize information in predefined structure, normally tables which each column is an attribute and each row an instance. In other hand, unstructured \gls{DS} contain information that does not fit in a rigid schema or cannot be resumed to a numerical or text value. Some examples of it can be images, videos, web-pages, documents or even applications. Futhermore, semistructured \gls{DS} don't follow rigid schemas, they incorporate defined syntax, such as \gls{JSON}, \gls{HTML} or \gls{XML}.
+Structured \gls{DS} organize information in predefined structure, normally tables which each column is an attribute and each row an instance. On the other hand, unstructured \gls{DS} contain information that does not fit in a rigid schema or cannot be resumed to a numerical or text value. Some examples of it can be images, videos, web-pages, documents or even applications. Furthermore, semistructured \gls{DS} don't follow rigid schemas, they incorporate defined syntax, such as \gls{JSON}, \gls{HTML} or \gls{XML}.
 
 The type of task that can be solved or explored using \gls{ML} and \gls{AI} depends not only in the quality of data, but the type of the \gls{DS} that will train the model.
 
 \section{Neurons and Supervised Learning}
 \label{sec_supervised_learning}
-Frank Rosenblatt work \cite{rosenblatt1958perceptron} proposed in 1958 a model to explain how the human brain storages data and utilize it for pattern recognition and behavior. He was compromissed in understand how information contained in storage influence regonition. Like Alan Turing \cite{DBLP:journals/x/Turing50}, Resenblatt also belived in the application of positive or negative reinforcement to make the system learn. Not only that, but also expanded to his machine model the biological concept that similar stimulus should activate the same nets cells.
+Frank Rosenblatt work \cite{rosenblatt1958perceptron} proposed in 1958 a model to explain how the human brain storages data and utilize it for pattern recognition and behavior. He was compromissed in understand how information contained in storage influence regonition. Like Alan Turing \cite{DBLP:journals/x/Turing50}, Rosenblatt also belived in the application of positive or negative reinforcement to make the system learn. Not only that, but also expanded to his machine model the biological concept that similar stimuli should activate the same nets cells.
 
-This probabilistic model called perceptron is divided in three layers: Sensority units that respondes to impulses in all or nothing bases; Association units receives the transmitted impulses and, if the algebric sum of those are greated than the unit thredhold, it fires and generates the responses of some Response units. Each response unit has feedbacks connections that can be excitatory or inhibitory and are mutually exclusive. This means that, if a response unit is trigged during a stimulus, it will inhibit others from trigger to other similar ones.
+This probabilistic model called perceptron is divided in three layers: Sensory units that responds to impulses in all or nothing bases; Association units receives the transmitted impulses and, if the algebraic sum of those are greater than the unit threshold, it fires and generates the responses of some Response units. Each response unit has feedbacks connections that can be excitatory or inhibitory and are mutually exclusive. This means that, if a response unit is triggered during a stimulus, it will inhibit others from trigger to other similar ones.
 
 \begin{figure}[htbp]
     \centering
@@ -47,32 +47,32 @@ This probabilistic model called perceptron is divided in three layers: Sensority
 }
 \end{figure}
 
-A stimulus can be classified in classes, which provokes a stronger impulse of it corresponding response. However, those responses are not based on boolean algebra, but probabilistic logic. The system is capable of modifying association units or their connections based on the stimulus and impulses provided. Frank calls "differentiated environment" where each response is associeated to a distinct class of similar stimulus, where performance can be enhanced by the use of binary system. To a neuron itself, it was shown the capacity of learning from experience.
+A stimulus can be classified in classes, which provokes a stronger impulse of it corresponding response. However, those responses are not based on boolean algebra, but probabilistic logic. The system is capable of modifying association units or their connections based on the stimulus and impulses provided. Frank calls "differentiated environment" where each response is associated to a distinct class of similar stimuli, where performance can be enhanced by the use of binary system. To a neuron itself, it was shown the capacity of learning from experience.
 
 
-The perceptron error was calcullated from the mistakes classifications, as it learning procedure. The main achievement of it, was the possibility of predicting learning curves and the growth of probability of correct classificaion as the number of inputs rise. 
+The perceptron error was calcullated from the mistakes classifications, as it learning procedure. The main achievement of it, was the possibility of predicting learning curves and the growth of probability of correct classification as the number of inputs rise. 
 
 
 Bernard Widrow \cite{widrow1960adaptive} develop a neural network that learns by giving a lot of examples of inputs and their respective desired outputs The quality of the system performance is directly related to the number of examples given and, to illustrate it, a machine called \gls{ADALINE} was built. Similar to von Neumann \cite{Neumann1956ProbabilisticLA} with his neuron built as a combinatorial logic circuit, each input is linearly combined with it respectives weights, which are setted during the training procedure.
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.6\textwidth]{vonNeumein-neuron}
-    \caption{Adjustable neuron cited by Bernard Window \cite{widrow1960adaptive}.
+    \caption{Adjustable neuron cited by Bernard Widrow \cite{widrow1960adaptive}.
     \label{fig:adjustable neuron}}
 \end{figure}
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.6\textwidth]{adaline-schematic}
-    \caption{Adaline schematic cited by Bernard Window \cite{widrow1960adaptive}.
+    \caption{Adaline schematic cited by Bernard Widrow \cite{widrow1960adaptive}.
     }
 \end{figure}
 
-Just as the perceptron, \gls{ADALINE} had one layer aside from input and output, but it`s learning was stored at the weights a0...a16 and can be used to classify the original patterns and noisy it`s distorsed versions. The training method was an iterative search process to find the best gain set, which can be look by the error of an instance:
+Just as the perceptron, \gls{ADALINE} had one layer aside from input and output, but it`s learning was stored at the weights a0...a16 and can be used to classify the original patterns and noisy it`s distorted versions. The training method was an iterative search process to find the best gain set, which can be look by the error of an instance:
 \begin{equation}
     \epsilon(k) = d(k) - [a_0 + \sum_{j=1}^{n} a_j s_j(k)]
 \end{equation}
 
-Widrow and Holf demonstrated mathematically that the use \gls{MSE} to adaptation weights was because of it parabolic propertys of single global minimum.
+Widrow and Holf demonstrated mathematically that the use \gls{MSE} to adaptation weights was because of it parabolic properties of single global minimum.
 \begin{equation} 
     MSE = \frac{1}{m} \sum_{i=1}^{m} (\hat{y}^{(i)} - y^{(i)})^2 
 \end{equation}
@@ -83,7 +83,7 @@ With that, minimizing \gls{MSE} is equivalent to minimizing the average number o
 
 \section{Artificial Neural Networks and Gradient Descent}
 \label{sec_neural_networks}
-The perceptron \cite{rosenblatt1958perceptron} can be considered as the first published attempet to build a \gls{ANN} that could learn from examples. However, it was only a single layer aside from input and output. Later, in his book Principles of Neurodynamics \cite{Rosenblatt1963PRINCIPLESON}, the author explicit discusses multilayer perceptron architectures, with multiple neurons organized in series. As in figure \ref{fig:adjustable neuron}, the output of a neuron is connect serves as input of the next one.
+The perceptron \cite{rosenblatt1958perceptron} can be considered as the first published attempt to build a \gls{ANN} that could learn from examples. However, it was only a single layer aside from input and output. Later, in his book Principles of Neurodynamics \cite{Rosenblatt1963PRINCIPLESON}, the author explicitly discusses multilayer perceptron architectures, with multiple neurons organized in series. As in figure \ref{fig:adjustable neuron}, the output of a neuron is connect serves as input of the next one.
 
 It was with David E. Rumelhart et al \cite{Rumelhart1986LearningRB} that an \gls{ANN} training procedure was shown useful in practice, because of the high cost of adjusting all weights of the neuron. Those extra layers between output and input were called hidden-layers, or hiddens units, and they introduce more difficult to find the learning rules, or the corrects weights, to reduce the difference between the actual and desired outputs. The input of a neuron in j layer is a linear function of the outputs ($y_i$) multiplied by their respective weights ($w_{ij}$).
 \begin{equation} 
@@ -116,7 +116,7 @@ The derivates above propagates from the top layer back to the bottom one after, 
 
 Where ($t$) where ¢ is incremented by 1 for each sweep through the whole set of input-output cases, and ($\alpha$) is an exponential decay factor between 0 and 1 that determines the contribution of the current gradient and earlier gradients to the weight change.
 
- This new method of learning with \gls{BP} and \gls{GD} made multilayer neural networks available in every-day use, overcomming perceptron limitation that could only solve linearly separable problems.
+ This new method of learning with \gls{BP} and \gls{GD} made multilayer neural networks available in every-day use, overcoming perceptron limitation that could only solve linearly separable problems.
 
  \begin{figure}[htbp]
     \centering
@@ -127,10 +127,10 @@ Where ($t$) where ¢ is incremented by 1 for each sweep through the whole set of
 
 \section{Deep Learning and Image Recognition}
 \label{sec_deep_learning}
-The work of David et al \cite{Rumelhart1986LearningRB} discussed in he section above \ref{sec_neural_networks} was the bases of modern \gls{DL}, which popularized the use of \gls{BP} in \gls{ANN}. By applying a non-linear function in the response-unit of all neurons in the hidden and output layer, those models earns the hability of approximating any measurable function to any desired degree of accuracy, as concluded in 1989 Kurt Hornik et al. work Multilayer Feedforward Networks are
+The work of David et al \cite{Rumelhart1986LearningRB} discussed in he section above \ref{sec_neural_networks} was the bases of modern \gls{DL}, which popularized the use of \gls{BP} in \gls{ANN}. By applying a non-linear function in the response-unit of all neurons in the hidden and output layer, those models earns the ability of approximating any measurable function to any desired degree of accuracy, as concluded in 1989 Kurt Hornik et al. work Multilayer Feedforward Networks are
 Universal Approximators \cite{HORNIK1989359}.
 
-In 1998 a lot of recognition system were already using some form of multilayer \gls{ANN} trained with \gls{BP} \cite{articleDocReg}. These habilities made them to be a heavily study candidate for pattern recognition tasks, such as image recognition, which was proven by as Kunihiko Fukushima work \cite{Fukushima1980NeocognitronAS}, showing how  organizating hierarchically the hidden layers ends up to extraction available features and pattern in a 2D image. Image \ref{fig_fuklishima_layer_connection} illustrates how units are interconnected in a cascade.
+In 1998 a ot of recognition systems were already using some form of multilayer \gls{ANN} trained with \gls{BP} \cite{articleDocReg}. These abilities made them to be a heavily study candidate for pattern recognition tasks, such as image recognition, which was proven by as Kunihiko Fukushima work \cite{Fukushima1980NeocognitronAS}, showing how  organizating hierarchically the hidden layers ends up to extraction available features and pattern in a 2D image. Image \ref{fig_fuklishima_layer_connection} illustrates how units are interconnected in a cascade.
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.8\textwidth]{Fukushima-layer-connection}
@@ -142,7 +142,7 @@ In 1998 a lot of recognition system were already using some form of multilayer \
 \label{sec_overfitting}
 Obtain a network with optimal generalization performance is achievement of the train process. However, \gls{ANN} architecture can suffer from overfitting: the error during train phase to get worse at some point, instead of improving \cite{articleEarlyStopping}.
 
-Lutz Prechelt \cite{articleEarlyStopping} the early stop technique as a simple and efficiency procedure to avoid error from growing while train.  First, the training data is splitted into a training set and a validation set. Then, training only occurs on the training set and evaluating the per-example error on the validation set once in a while. Finally, stoping training as soon as the error on the validation set is higher than it was the last time it was checked, saving the weights the network had in that previous step as the result of the
+Lutz Prechelt \cite{articleEarlyStopping} the early stop technique as a simple and efficiency procedure to avoid error from growing while train.  First, the training data is split into a training set and a validation set. Then, training only occurs on the training set and evaluating the per-example error on the validation set once in a while. Finally, stopping training as soon as the error on the validation set is higher than it was the last time it was checked, saving the weights the network had in that previous step as the result of the
 training run. 
 \begin{figure}[htbp]
     \centering
@@ -161,7 +161,7 @@ training run.
 \label{sec_cnn}
 Kurt Hornik and Maxwell Stinchcombe and Halbert White \cite{HORNIK1989359} established hat standard multilayer feedforward networks are capable of approximating any measurable function to any degree of accuracy. Which implies that applications can reach desired results by an adequate learning process, numbers of hidden units or the quality of a deterministic relationship between input and target. 
 
-In Y. LeCun paper \cite{6795724}, different from other previous results, was proposed an architecture with learning procedure directly fed with images, rather than feature vectors. The main goal to achieve was the image recognition from handwritten zip code digits from U.S Postal Service. Another contrast from other earliers work was the fact that all connections in the network were trained using \gls{BP}, where the first few layers of connections used to be handchosen constants implemented on a neural-network chip for the specific task. To storage all the complex information derivated from an entire image instead of a vector and extract common features in pattern recognition, the weight share technique was apllied to extract local features and combine them to form higher order features.
+In Y. LeCun paper \cite{6795724}, different from other previous results, was proposed an architecture with learning procedure directly fed with images, rather than feature vectors. The main goal to achieve was the image recognition from handwritten zip code digits from U.S Postal Service. Another contrast from other earliers work was the fact that all connections in the network were trained using \gls{BP}, where the first few layers of connections used to be handchosen constants implemented on a neural-network chip for the specific task. To storage all the complex information derived from an entire image instead of a vector and extract common features in pattern recognition, the weight share technique was apllied to extract local features and combine them to form higher order features.
 
 The proposed network had three hidden-layers: two convolutional feature-extraction layers followed by one fully connected classification layer, which were later referenced as a \gls{CNN}, by the fact the function performed by a feature map can thus be interpreted as a nonlınear subsampled convolution with a 5 by 5 kernel, which is the set of connection weights used by the units in the feature map, as described in equation \ref{convolution}.
 
@@ -182,7 +182,7 @@ as oriented edges, end-points and corners. These features are combined by the su
 
 All the units in a feature map share the same set of weights and the same bias so they can detect the same feature at all possible locations on the input, while a convolutional layer is composed of several feature maps with differets weights vector, to multiple features be extracts in the same locations.
 
-Futhermore, \gls{CNN} architecture owns a sub-sampling layers which performs a local averaging and a sub-sampling, reducing the resolution of the feature map. For example, the second hidden layer of LeNet-5 comprises six features maps, each unit computing the average of its four inputs, multipling it by a trainable coeficient and then adding a trainable bias, which the result is passed through a sigmoid function.
+Furthermore, \gls{CNN} architecture owns a sub-sampling layers which performs a local averaging and a sub-sampling, reducing the resolution of the feature map. For example, the second hidden layer of LeNet-5 comprises six features maps, each unit computing the average of its four inputs, multipling it by a trainable coeficient and then adding a trainable bias, which the result is passed through a sigmoid function.
 
 \begin{equation}
 \sigma(x) = \frac{1}{1 + e^{-x}}
@@ -203,7 +203,7 @@ In 2012 Alex Krizhevsky et al \cite{DBLP:conf/nips/KrizhevskySH12} proposed a ve
     \caption{AlexNet, a Convolutional Neural Network, architecture in  \cite{articleDocReg}.}
 \end{figure}
 
-The alexNet architecture contains five convolutional and three fully-connected. For the nonlineariry of the neurons, was used the Rectified Linear Units \cite{Relu}, from Nair and Hinton. The \gls{DL} networks train Relu with ReLUs train several times faster than their equivalents with classic tanh units. In addition, the architecture proposed supports train cros-\gls{GPU} parallelization, enabling read from and write to one another’s memory directly, without going through host machine memory.
+The alexNet architecture contains five convolutional and three fully-connected. For the nonlinearity of the neurons, was used the Rectified Linear Units \cite{Relu}, from Nair and Hinton. The \gls{DL} networks train Relu with ReLUs train several times faster than their equivalents with classic tanh units. In addition, the architecture proposed supports train cross-\gls{GPU} parallelization, enabling read from and write to one another’s memory directly, without going through host machine memory.
 
 \begin{equation}
 f(x) = \tanh(x)
@@ -273,12 +273,12 @@ real-world problems, such as image recognition.
 
 \section{Evaluated Metrics}
 \label{sec_metrics}
-In classification models in tasks such as image and pattern recognition, it`s important to have a way of mesuare how well a \gls{DL} model is performing. The simplest case of classification is the binary classification, where there are only two classes a sample can be, normally labed as Positive (P) or Negative (N). There`re total outcomes of four outcomes to a binary classifier \cite{metrics}:
+In classification models in tasks such as image and pattern recognition, it`s important to have a way of mesuare how well a \gls{DL} model is performing. The simplest case of classification is the binary classification, where there are only two classes a sample can be, normally labeled as Positive (P) or Negative (N). There`re total outcomes of four outcomes to a binary classifier \cite{metrics}:
 \begin{itemize}
-    \item \gls{TP}: Predictions where the model correct predicted the sample to belongs to a "class A".
-    \item \gls{TN}: Predictions where the model correct predicted the sample to not belongs to a "class A".
+    \item \gls{TP}: Predictions where the model correctly predicted the sample to belongs to a "class A".
+    \item \gls{TN}: Predictions where the model correctly predicted the sample to not belongs to a "class A".
     \item \gls{FP}: Predictions where the model incorrectly predicted the sample to belongs to "class A".
-    \item \gls{FN}: Predicctions where the model incorrectly predicted the sample to not belongs to "class A".
+    \item \gls{FN}: Predictions where the model incorrectly predicted the sample to not belongs to "class A".
 \end{itemize}
 
 \begin{figure}[htbp]
@@ -295,7 +295,7 @@ The most common way to visualize those outcomes is using the confusion matrix. I
     \caption{Confusion matrix for binary classification problems \cite{metrics}.}
 \end{figure}
 
-Considering the possibles outcomes of binary classification sample, there are different metrics, which evalueats different characteristcs of the model performance that should be considered during training phase. As discussed in \ref{chap:methodology}, four of those metrics were used during this work, which will be explained next.
+Considering the possibles outcomes of binary classification sample, there are different metrics, which evaluates different characteristics of the model performance that should be considered during training phase. As discussed in \ref{chap:methodology}, four of those metrics were used during this work, which will be explained next.
 
 \subsection{Accuracy}
 \label{sub_sec_accuracy}
