@@ -220,16 +220,14 @@ f(x) = \max(0, x)
     \caption{Visual representation of convolution process}
 \end{figure}
 
-Not only convolutional layers, AlexNet also have pooling layers, previouslly referenced as sub-sampling, that summarize outputs of neighboring groups of neurons in the same kernel
-map. It keeps the essential features and reduce the number of parameters and complexity of the model.
+Not only convolutional layers, AlexNet also have pooling layers, previously referenced as sub-sampling, that summarize outputs of neighboring groups of neurons in the same kernel map. It keeps the essential features and reduce the number of parameters and complexity of the model.
 
 
 The great success of the \gls{CNN} for image recognition allied to the the availability of very large datasets for studies, multiple attempts  have been made to improve the original architecture of Krizhevsky et al. \cite{DBLP:conf/nips/KrizhevskySH12}. Multiples studies of different lines of improvements were made, in special, with the depth of the networks.
 
-By increasing the depth of a network by adding more convolutional layers, by using small (3 x 3) filters in all layers, Karen Simonyan and Andrew Zisserman \cite{DBLP:journals/corr/SimonyanZ14a} develop an architecture with significantly more accurate results, achieve the state-of-the-art accuracy desired. A stack of convolutional layers is followed by three fully connected layers, with final layer is the soft-max layer.
+By increasing the depth of a network by adding more convolutional layers, through using small (3 x 3) filters in all layers, Karen Simonyan and Andrew Zisserman \cite{DBLP:journals/corr/SimonyanZ14a} developed an architecture with significantly more accurate results, achieve the state-of-the-art accuracy desired. A stack of convolutional layers is followed by three fully connected layers, with the final layer being the soft-max layer.
 
-All hiden layers uses Rectified Linear Units non-linearity.
-The work propose five different architectures, one of them with 13 hidden layers and three fully connected layers, the "configuration D" is used in chapter \ref{chap:methodology}, latter assigned as Vgg16. 
+All hiden layers uses Rectified Linear Units non-linearity. The work propose five different architectures, one of them with 13 hidden layers and three fully connected layers, the "configuration D" is used in chapter \ref{chap:methodology}, latter assigned as Vgg16. 
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=1\textwidth]{vgg16-configuration}
@@ -239,7 +237,7 @@ The work propose five different architectures, one of them with 13 hidden layers
 
 \section{Residual Neural Networks}
 \label{sec_residual}
-The deeper the neural network the problems of exploding gradients \cite{279181}. With the network depth increasing, accuracy gets saturated and then degrades rapidly, with adding more layers eads to higher training error. Kaiming He et al \cite{DBLP:journals/corr/HeZRS15} approach this, exposing that it`s not an overfitting problem, the model does not suffer from memorizing only the samples used in training and without generalizing. This degradation that it`s not resolved by adding more layers, instead it can be solved by explicitling let  layers fit a residual mapping.
+The deeper the neural network, higher the chances of exploding gradients \cite{279181}. With the network depth increasing, accuracy gets saturated and then degrades rapidly, with adding more layers leads to higher training error. Kaiming He et al \cite{DBLP:journals/corr/HeZRS15} approach this, exposing that it`s not an overfitting problem, the model does not suffer from memorizing only the samples used in training and without generalizing. This degradation that it`s not resolved by adding more layers, instead it can be solved by explicitling let  layers fit a residual mapping.
 
 \begin{figure}[htbp]
     \centering
