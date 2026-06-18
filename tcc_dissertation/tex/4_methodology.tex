@@ -25,7 +25,7 @@ All images were equally distributed between classes above, with five thousand sa
 
 \section{Environment}
 \label{sec_environment}
-Considering hardware limitation by the lack of \gls{GPU} during experiments, it was necessary a cloud-based service to run the \gls{DL} models through training phase. Google Colab, a Jupyter Notebook environment provided by Google, was chosen due to facility in configuration and it`s reliability in the Pro+ plan. The service have a free use option, however it suffer from interrupting overtime and less capable \gls{GPU} accessible. All models ran with Nvidia A100-SXM4 with 40Gb VRAM.
+Considering hardware limitation by the lack of \gls{GPU} during experiments, it was necessary a cloud-based service to run the \gls{DL} models through training phase. Google Colab, a Jupyter Notebook environment provided by Google, was chosen due to facility in configuration and it's reliability in the Pro+ plan. The service have a free use option, however it suffer from interrupting overtime and less capable \gls{GPU} accessible. All models ran with Nvidia A100-SXM4 with 40Gb VRAM.
 
 All models Tensors were gotten from Pytorch python library. The ones used were: AlexNet, VGG 16, ResNet 18, ResNet 34, ResNet 50, ResNet 101 and ResNet 152.
 
@@ -129,4 +129,4 @@ To verify it the size of the \gls{DS} was not the problem, it was also tested wi
 
 Considering this scenario of resource limitation, images samples from all \gls{DS} were resized to 28 x 28 pixels resolution.
 
-There were three different scenarios: Train with \gls{LC25000} and test with it and the \gls{CRC5000} \gls{DS}; Train with \gls{NCTCRCHE100K} and test it with all datasets; Train with \gls{NCTCRCHE100K}-NoNorm and test it with all datasets. They used the same Procedures describes in section \ref{sec_second_attempt} \ref{sec_third_attempt} \ref{sec_fourth_attempt}, respectively. However, the amount of data was still making training time consuming. Then, \gls{LC25000} and \gls{CRC5000} was reduced for only ten percent of it`s total samples, while \gls{NCTCRCHE100K} was reduced in for only 1 percent, considering the amount of images, approximately with the same number of the first scenario described.
+There were three different scenarios: Train with \gls{LC25000} and test with it and the \gls{CRC5000} \gls{DS}; Train with \gls{NCTCRCHE100K} and test it with all datasets; Train with \gls{NCTCRCHE100K}-NoNorm and test it with all datasets. They used the same Procedures describes in section \ref{sec_second_attempt} \ref{sec_third_attempt} \ref{sec_fourth_attempt}, respectively. However, the amount of data was still making training time consuming. Then, \gls{LC25000} and \gls{CRC5000} was reduced for only ten percent of it's total samples, while \gls{NCTCRCHE100K} was reduced in for only 1 percent, considering the amount of images, approximately with the same number of the first scenario described.

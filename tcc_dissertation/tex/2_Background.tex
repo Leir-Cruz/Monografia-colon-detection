@@ -7,9 +7,9 @@ However, the accuracy of \gls{CL} can be affected by various factors, as discuss
 \section{Machine Learning and Computer Vision}
 \label{sec_machine_learning}
 
-In 1943 the first mathematical model of what would be the bases of \gls{AI} was published by Warren McCulloch and Walter Pitts \cite{mcculloch1943}, proposing the existence of systems capable of performing tasks that typically require human intelligence. The article evaluates the neuron activity as a character of "all or none", where their events can be treated by propositional logic. Biologically, the brain cell has needs to receive an excitation higher than it`s threshold to trigger an impulse, which is determined by their own characteristics.
+In 1943 the first mathematical model of what would be the bases of \gls{AI} was published by Warren McCulloch and Walter Pitts \cite{mcculloch1943}, proposing the existence of systems capable of performing tasks that typically require human intelligence. The article evaluates the neuron activity as a character of "all or none", where their events can be treated by propositional logic. Biologically, the brain cell has needs to receive an excitation higher than it's threshold to trigger an impulse, which is determined by their own characteristics.
 
-Considering that, the authors claim that a neuron can be described as a logic block, executing logical function. Brain cells could be organized in nets that could describe any logical proposition. In 1950, with the question 'Can machines think?', Alan Turing starts his paper \cite{DBLP:journals/x/Turing50}, describing thinking abilities as problem-solving, decision-making and pattern recognition. In this approach, intelligence could be simulated by computational process. However, there is philosophical question to be made that is what exactly is intelligence? By stating that machines could emulate human intelligence, it`s necessary to delimit what it is and how it can be measured. In his article, Turing affirms that years from there, machines would be able to simulate human behavior in such a way, that a regular person would not be able to distinguish whether if is a machine or not that they are interacting with. And that would be the parameter to determine whether or not machines had achieved human intelligence.
+Considering that, the authors claim that a neuron can be described as a logic block, executing logical function. Brain cells could be organized in nets that could describe any logical proposition. In 1950, with the question 'Can machines think?', Alan Turing starts his paper \cite{DBLP:journals/x/Turing50}, describing thinking abilities as problem-solving, decision-making and pattern recognition. In this approach, intelligence could be simulated by computational process. However, there is philosophical question to be made that is what exactly is intelligence? By stating that machines could emulate human intelligence, it's necessary to delimit what it is and how it can be measured. In his article, Turing affirms that years from there, machines would be able to simulate human behavior in such a way, that a regular person would not be able to distinguish whether if is a machine or not that they are interacting with. And that would be the parameter to determine whether or not machines had achieved human intelligence.
 
 
 By comparing the human brain to digital computer, Turing suggests that it was not necessary to build a machine comparable to an adult human intelligence capacity, but one with capacity of apprenticeship. Suggesting that a "child machine" should be subject to "education" through rewards and punishments, analogous to how children learn. \gls{ML} is an area of knowledge that focus on developing algorithms that allows computer system to learn from data and improve their performance without being explicitly programmed, this mathematical relationship derived from the data is called model. Each relevant feature, or characteristc of data, must be represented numerically, so the model can learn. In \cite{5392560}, Samuel, A. L shows a computer that learns to play a game called checker better than the person who wrote the program. The game was chosen because of the simplicity of its rules and transparency of the computer learning progress. 
@@ -67,7 +67,7 @@ Bernard Widrow \cite{widrow1960adaptive} developed a neural network that learns 
     }
 \end{figure}
 
-Just as the perceptron, \gls{ADALINE} had one layer aside from input and output, but it`s learning was stored at the weights a0...a16 and can be used to classify the original patterns and noise. The training method was an iterative search process to find the best gain set, which can be looked by the error of an instance:
+Just as the perceptron, \gls{ADALINE} had one layer aside from input and output, but it's learning was stored at the weights a0...a16 and can be used to classify the original patterns and noise. The training method was an iterative search process to find the best gain set, which can be looked by the error of an instance:
 \begin{equation}
     \epsilon(k) = d(k) - [a_0 + \sum_{j=1}^{n} a_j s_j(k)]
 \end{equation}
@@ -237,7 +237,7 @@ All hiden layers uses Rectified Linear Units non-linearity. The work propose fiv
 
 \section{Residual Neural Networks}
 \label{sec_residual}
-The deeper the neural network, higher the chances of exploding gradients \cite{279181}. With the network depth increasing, accuracy gets saturated and then degrades rapidly, with adding more layers leads to higher training error. Kaiming He et al \cite{DBLP:journals/corr/HeZRS15} approach this, exposing that it`s not an overfitting problem, the model does not suffer from memorizing only the samples used in training and without generalizing. This degradation that it`s not resolved by adding more layers, instead it can be solved by explicitling let  layers fit a residual mapping.
+The deeper the neural network, higher the chances of exploding gradients \cite{279181}. With the network depth increasing, accuracy gets saturated and then degrades rapidly, with adding more layers leads to higher training error. Kaiming He et al \cite{DBLP:journals/corr/HeZRS15} approached this, exposing that it's not an overfitting problem, the model does not suffer from memorizing only the samples used in training and without generalizing. This degradation that it's not resolved by adding more layers, instead it can be solved by expliciting let  layers fit a residual mapping.
 
 \begin{figure}[htbp]
     \centering
@@ -271,7 +271,7 @@ real-world problems, such as image recognition.
 
 \section{Evaluated Metrics}
 \label{sec_metrics}
-In classification models in tasks such as image and pattern recognition, it`s important to have a way of mesuare how well a \gls{DL} model is performing. The simplest case of classification is the binary classification, where there are only two classes a sample can be, normally labeled as Positive (P) or Negative (N). There`re total outcomes of four outcomes to a binary classifier \cite{metrics}:
+In classification models in tasks such as image and pattern recognition, it's important to have a way of mesuare how well a \gls{DL} model is performing. The simplest case of classification is the binary classification, where there are only two classes a sample can be, normally labeled as Positive (P) or Negative (N). There`re total outcomes of four outcomes to a binary classifier \cite{metrics}:
 \begin{itemize}
     \item \gls{TP}: Predictions where the model correctly predicted the sample to belongs to a "class A".
     \item \gls{TN}: Predictions where the model correctly predicted the sample to not belongs to a "class A".
@@ -285,7 +285,7 @@ In classification models in tasks such as image and pattern recognition, it`s im
     \caption{Representation of the four outcomes of a classifier \cite{metrics}.}
 \end{figure}
 
-The most common way to visualize those outcomes is using the confusion matrix. It`s a table with four different combinations of predicted and actual value of labeled samples \cite{metrics}.
+The most common way to visualize those outcomes is using the confusion matrix. it's a table with four different combinations of predicted and actual value of labeled samples \cite{metrics}.
 
 \begin{figure}[htbp]
     \centering
