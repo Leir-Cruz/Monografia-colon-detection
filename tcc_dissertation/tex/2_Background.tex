@@ -85,11 +85,11 @@ With that, minimizing \gls{MSE} is equivalent to minimizing the average number o
 \label{sec_neural_networks}
 The perceptron \cite{rosenblatt1958perceptron} can be considered as the first published attempt to build a \gls{ANN} that could learn from examples. However, it was only a single layer aside from input and output. Later, in his book Principles of Neurodynamics \cite{Rosenblatt1963PRINCIPLESON}, the author explicitly discusses multilayer perceptron architectures, with multiple neurons organized in series. As in figure \ref{fig:adjustable neuron}, the output of a neuron is connect serves as input of the next one.
 
-It was with David E. Rumelhart et al \cite{Rumelhart1986LearningRB} that an \gls{ANN} training procedure was shown useful in practice, because of the high cost of adjusting all weights of the neuron. Those extra layers between output and input were called hidden-layers, or hiddens units, and they introduce more difficult to find the learning rules, or the corrects weights, to reduce the difference between the actual and desired outputs. The input of a neuron in j layer is a linear function of the outputs ($y_i$) multiplied by their respective weights ($w_{ij}$).
+It was with David E. Rumelhart et al \cite{Rumelhart1986LearningRB} that an \gls{ANN} training procedure was shown useful in practice, because of the high cost of adjusting all weights of the neuron. Those extra layers between output and input were called hidden-layers, or hiddens units, and they introduce more difficult to find the learning rules, or the correct weights, to reduce the difference between the actual and desired outputs. The input of a neuron in j layer is a linear function of the outputs ($y_i$) multiplied by their respective weights ($w_{ij}$).
 \begin{equation} 
     x_j = \sum_{i} y_i w_{ij} 
 \end{equation}
-One important difference pointed in \cite{Rumelhart1986LearningRB} is each hidden-layer output is followed by a non-linear function, different than \gls{ADALINE}, which all layers had as output a linear-function. This occurs because series linear function only could be simply replaced by a single one, just adjusting the weight, which would limit the system capacity of learning.
+One important difference pointed in \cite{Rumelhart1986LearningRB} is each hidden-layer output is followed by a non-linear function, unlike \gls{ADALINE}, which all layers had as output a linear-function. This occurs because series of linear functions could be simply replaced by a single one, just adjusting the weight, which would limit the system capacity of learning.
 For example, in binary classification, as explored in chapter \ref{chap:methodology}, is very common to use sigmoid function as the non-linear function of the neurons output:
 \begin{equation}
      y_j = \frac{1}{1 + e^{-x_j}} \label{sigmoid_func}
@@ -98,8 +98,8 @@ David appointed that the total error of an multi-layered \gls{ANN} could be, sim
 \begin{equation} 
     E = \frac{1}{2} \sum_{c} \sum_{j} (y_{j,c} - d_{j,c})^2 
 \end{equation}
-where ($c$) is an index over cases, ($j$) is index over outputs units and ($y$) the actual state of the output. The main point, as in Rosenblatt article \cite{Rosenblatt1963PRINCIPLESON}, is minimize ($E$). To achieve it, is suggested the use of \gls{GD} \cite{5a25e804-97fa-3be4-ac27-50be05d4f28d}, mathematical method to find local points of minima.
-By calculating the partial derivatives of the error and applying calculus chain rule, it is possible how the change in the input or the weight of a layer ($j$) affects the error:
+where ($c$) is an index over cases, ($j$) is index over outputs units and ($y$) the actual state of the output. The main point, as in Rosenblatt article \cite{Rosenblatt1963PRINCIPLESON}, is minimize ($E$). To achieve it, is suggested the use of \gls{GD} \cite{5a25e804-97fa-3be4-ac27-50be05d4f28d}, a mathematical method to find local points of minima.
+By calculating the partial derivatives of the error and applying the calculus chain rule, it is possible to visualize how the change in the input or the weight of a layer ($j$) affects the error:
 \begin{equation} 
     \frac{\partial E}{\partial x_j} = \frac{\partial E}{\partial y_j} y_j (1 - y_j) 
 \end{equation} 
@@ -108,15 +108,15 @@ By calculating the partial derivatives of the error and applying calculus chain 
     \frac{\partial E}{\partial w_{ij}} = \frac{\partial E}{\partial x_j} y_i 
 \end{equation}
 
-The derivates above propagates from the top layer back to the bottom one after, updating the weights of the \gls{ANN}:
+The derivates above propagate from the top layer back to the bottom one after, updating the weights of the \gls{ANN}:
 
 \begin{equation} 
     \Delta w(t) = -\epsilon \frac{\partial E}{\partial w(t)} + \alpha \Delta w(t-1) 
 \end{equation}
 
-Where ($t$) where ¢ is incremented by 1 for each sweep through the whole set of input-output cases, and ($\alpha$) is an exponential decay factor between 0 and 1 that determines the contribution of the current gradient and earlier gradients to the weight change.
+Where ($t$) is incremented by 1 for each sweep through the whole set of input-output cases, and ($\alpha$) is an exponential decay factor between 0 and 1 that determines the contribution of the current gradient and earlier gradients to the weight change.
 
- This new method of learning with \gls{BP} and \gls{GD} made multilayer neural networks available in every-day use, overcoming perceptron limitation that could only solve linearly separable problems.
+ This new method of learning with \gls{BP} and \gls{GD} made multilayer neural networks available in everyday use, overcoming perceptron limitation that could only solve linearly separable problems.
 
  \begin{figure}[htbp]
     \centering
@@ -127,10 +127,10 @@ Where ($t$) where ¢ is incremented by 1 for each sweep through the whole set of
 
 \section{Deep Learning and Image Recognition}
 \label{sec_deep_learning}
-The work of David et al \cite{Rumelhart1986LearningRB} discussed in he section above \ref{sec_neural_networks} was the bases of modern \gls{DL}, which popularized the use of \gls{BP} in \gls{ANN}. By applying a non-linear function in the response-unit of all neurons in the hidden and output layer, those models earns the ability of approximating any measurable function to any desired degree of accuracy, as concluded in 1989 Kurt Hornik et al. work Multilayer Feedforward Networks are
+The work of David et al \cite{Rumelhart1986LearningRB} discussed in the section above \ref{sec_neural_networks} was the base of modern \gls{DL}, which popularized the use of \gls{BP} in \gls{ANN}. By applying a non-linear function in the response-unit of all neurons in the hidden and output layers, those models earn the ability of approximating any measurable function to any desired degree of accuracy, as concluded in 1989 Kurt Hornik et al. work Multilayer Feedforward Networks are
 Universal Approximators \cite{HORNIK1989359}.
 
-In 1998 a ot of recognition systems were already using some form of multilayer \gls{ANN} trained with \gls{BP} \cite{articleDocReg}. These abilities made them to be a heavily study candidate for pattern recognition tasks, such as image recognition, which was proven by as Kunihiko Fukushima work \cite{Fukushima1980NeocognitronAS}, showing how  organizating hierarchically the hidden layers ends up to extraction available features and pattern in a 2D image. Image \ref{fig_fuklishima_layer_connection} illustrates how units are interconnected in a cascade.
+In 1998 a lot of recognition systems were already using some form of multilayer \gls{ANN} trained with \gls{BP} \cite{articleDocReg}. These abilities made them to be a heavily study candidate for pattern recognition tasks, such as image recognition, which was proven by Kunihiko Fukushima work \cite{Fukushima1980NeocognitronAS}, showing how  organizating hierarchically the hidden layers ends up to extraction available features and pattern in a 2D image. Image \ref{fig_fuklishima_layer_connection} illustrates how units are interconnected in a cascade.
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.8\textwidth]{Fukushima-layer-connection}
@@ -140,9 +140,9 @@ In 1998 a ot of recognition systems were already using some form of multilayer \
 
 \section{Overfitting and Early Stop}
 \label{sec_overfitting}
-Obtain a network with optimal generalization performance is achievement of the train process. However, \gls{ANN} architecture can suffer from overfitting: the error during train phase to get worse at some point, instead of improving \cite{articleEarlyStopping}.
+Obtain a network with optimal generalization performance is the goal of the train process. However, \gls{ANN} architecture can suffer from overfitting: the error during train phase gets worse at some point, instead of improving \cite{articleEarlyStopping}.
 
-Lutz Prechelt \cite{articleEarlyStopping} the early stop technique as a simple and efficiency procedure to avoid error from growing while train.  First, the training data is split into a training set and a validation set. Then, training only occurs on the training set and evaluating the per-example error on the validation set once in a while. Finally, stopping training as soon as the error on the validation set is higher than it was the last time it was checked, saving the weights the network had in that previous step as the result of the
+Lutz Prechelt \cite{articleEarlyStopping} describes the early stop technique as a simple and efficiency procedure to avoid error from growing while training.  First, data is split into a training set and a validation set. Then, train only occurs on the training set and evaluating the per-example error on the validation set once in a while. Finally, the stops occurs as soon as the error on the validation set is higher than it was the last time it was checked, saving the weights the network had in that previous step as the result of the
 training run. 
 \begin{figure}[htbp]
     \centering
@@ -159,7 +159,7 @@ training run.
 
 \subsection{Convolutional Neuron Networks}
 \label{sec_cnn}
-Kurt Hornik and Maxwell Stinchcombe and Halbert White \cite{HORNIK1989359} established hat standard multilayer feedforward networks are capable of approximating any measurable function to any degree of accuracy. Which implies that applications can reach desired results by an adequate learning process, numbers of hidden units or the quality of a deterministic relationship between input and target. 
+Kurt Hornik and Maxwell Stinchcombe and Halbert White \cite{HORNIK1989359} established that standard multilayer feedforward networks are capable of approximating any measurable function to any degree of accuracy. Which implies that applications can reach desired results by an adequate learning process, numbers of hidden units or the quality of a deterministic relationship between input and target. 
 
 In Y. LeCun paper \cite{6795724}, different from other previous results, was proposed an architecture with learning procedure directly fed with images, rather than feature vectors. The main goal to achieve was the image recognition from handwritten zip code digits from U.S Postal Service. Another contrast from other earliers work was the fact that all connections in the network were trained using \gls{BP}, where the first few layers of connections used to be handchosen constants implemented on a neural-network chip for the specific task. To storage all the complex information derived from an entire image instead of a vector and extract common features in pattern recognition, the weight share technique was apllied to extract local features and combine them to form higher order features.
 
@@ -178,9 +178,9 @@ b_j^{\,l}
 \end{equation}
 
 Yann LeCun et all \cite{articleDocReg} describes a \gls{CNN} as a network that combine three architectural: local receptive fields, shared weights, and spatial or temporal sub-sampling.  The local receptive fields can extract elementary visual features such
-as oriented edges, end-points and corners. These features are combined by the subsequent layers in order to detect higher-order features, such as object detection. 
+as oriented edges, end-points and corners. These features are combined by the subsequent layers in order to detect higher-order features, such as object recognition. 
 
-All the units in a feature map share the same set of weights and the same bias so they can detect the same feature at all possible locations on the input, while a convolutional layer is composed of several feature maps with differets weights vector, to multiple features be extracts in the same locations.
+All the units in a feature map share the same set of weights and the same bias so they can detect the same feature at all possible locations on the input, while a convolutional layer is composed of several feature maps with differents weight vectors, to multiple features extracted in the same locations.
 
 Furthermore, \gls{CNN} architecture owns a sub-sampling layers which performs a local averaging and a sub-sampling, reducing the resolution of the feature map. For example, the second hidden layer of LeNet-5 comprises six features maps, each unit computing the average of its four inputs, multipling it by a trainable coeficient and then adding a trainable bias, which the result is passed through a sigmoid function.
 
@@ -195,7 +195,7 @@ Furthermore, \gls{CNN} architecture owns a sub-sampling layers which performs a 
     \caption{LeNet-5, a Convolutional Neural Network, architecture in  \cite{articleDocReg}.}
 \end{figure}
 
-In 2012 Alex Krizhevsky et al \cite{DBLP:conf/nips/KrizhevskySH12} proposed a very efficient \gls{GPU} implementation of the convolution operation to train a neural network with 60 million parameters and 650,000 neurons. This achievement provided the application of \gls{CNN} attractive to classification problems with large scale to high-resolution images. This architecture was later called alexNet.
+In 2012 Alex Krizhevsky et al \cite{DBLP:conf/nips/KrizhevskySH12} proposed a very efficient \gls{GPU} implementation of the convolution operation to train a neural network with 60 million parameters and 650,000 neurons. This achievement turned back the attractiveness the application of \gls{CNN} in classification problems with large scale to high-resolution images. This architecture was later called alexNet.
 
 \begin{figure}[htbp]
     \centering
@@ -203,7 +203,7 @@ In 2012 Alex Krizhevsky et al \cite{DBLP:conf/nips/KrizhevskySH12} proposed a ve
     \caption{AlexNet, a Convolutional Neural Network, architecture in  \cite{articleDocReg}.}
 \end{figure}
 
-The alexNet architecture contains five convolutional and three fully-connected. For the nonlinearity of the neurons, was used the Rectified Linear Units \cite{Relu}, from Nair and Hinton. The \gls{DL} networks train Relu with ReLUs train several times faster than their equivalents with classic tanh units. In addition, the architecture proposed supports train cross-\gls{GPU} parallelization, enabling read from and write to one another’s memory directly, without going through host machine memory.
+The alexNet architecture contains five convolutional and three fully-connected. For the nonlinearity of the neurons was used the Rectified Linear Units \cite{Relu}, from Nair and Hinton. The \gls{DL} networks train Relu with ReLUs train several times faster than their equivalents with classic tanh units. In addition, the architecture proposed supports train cross-\gls{GPU} parallelization, enabling read from and write to one another’s memory directly, without going through host machine memory.
 
 \begin{equation}
 f(x) = \tanh(x)
