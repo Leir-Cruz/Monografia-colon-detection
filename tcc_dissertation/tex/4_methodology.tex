@@ -120,13 +120,13 @@ The python library for quantum computing and machine learning "pennylane" was us
     \caption{Diagram of the circuit model proposed by Yasmin Rodrigues Sobrinho et al \cite{quanvolution} , where "Depth 1", "Depth 2", and "Depth 3" represent the quantum circuits}
 \end{figure}
 
-For approximating the results achieved Yasmin Rodrigues Sobrinho et al \cite{quanvolution}, the hyperparameters chosen were Adam optimizer with an initial learning
+To get close to the results achieved Yasmin Rodrigues Sobrinho et al \cite{quanvolution}, the hyperparameters chosen were Adam optimizer with an initial learning
 rate of 0.01, which is adjusted every five epochs throughout 20 epochs and batch size of 32. However, the transformations applied to the images set were the same in section \ref{sec_config}. 
 
 During experimentation, resizing images to 224 x 224 pixels made the train phase not feasible in Google Colab environment. The computational cost of train a \gls{QNN} without the dedicated quantum hardware was tremendous. The 7200 samples of \gls{LC25000} took more than 10 hours to train less than one epoch, what would exceed the cloud service kernel time-limit of 24 hour run without interruptions.
 
-To verify it the size of the \gls{DS} was not the problem, it was also tested with only ten percent of total samples of the \gls{LC25000}. However, in ten hours it ran 6 epochs. Calculating, it would need more than thirty hours to train all 20 epochs.
+To verify if the size of the \gls{DS} was not the problem, it was also tested with only 10\% of the total samples of the \gls{LC25000}. However, in 10 hours it ran 6 epochs. Calculating, it would need more than thirty hours to train all 20 epochs.
 
-Considering this scenario of resource limitation, images samples from all \gls{DS} were resized to 28 x 28 pixels resolution.
+Considering this scenario of resource limitation, image samples from all \gls{DS} were resized to 28 x 28 pixels resolution.
 
-There were three different scenarios: Train with \gls{LC25000} and test with it and the \gls{CRC5000} \gls{DS}; Train with \gls{NCTCRCHE100K} and test it with all datasets; Train with \gls{NCTCRCHE100K}-NoNorm and test it with all datasets. They used the same Procedures describes in section \ref{sec_second_attempt} \ref{sec_third_attempt} \ref{sec_fourth_attempt}, respectively. However, the amount of data was still making training time consuming. Then, \gls{LC25000} and \gls{CRC5000} was reduced for only ten percent of it's total samples, while \gls{NCTCRCHE100K} was reduced in for only 1 percent, considering the amount of images, approximately with the same number of the first scenario described.
+There were three different scenarios: Train with \gls{LC25000} and test with it and the \gls{CRC5000} \gls{DS}; Train with \gls{NCTCRCHE100K} and test it with all datasets; Train with \gls{NCTCRCHE100K}-NoNorm and test it with all datasets. They used the same Procedures described in sections \ref{sec_second_attempt}, \ref{sec_third_attempt} and \ref{sec_fourth_attempt}, respectively. However, the amount of data was still making training time consuming. Then, \gls{LC25000} and \gls{CRC5000} was reduced for only ten percent of its total samples, while \gls{NCTCRCHE100K} was reduced in for only 1 percent, considering the amount of images, approximately with the same number of the first scenario described.
