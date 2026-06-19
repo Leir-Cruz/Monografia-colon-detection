@@ -1,15 +1,15 @@
 \label{chap:methodology}
-This chapter describes experimental designs and implementation details of this work. What libraries, hardware, datasets and Procedures were used to achieve the results in chapter \ref{chap:results}. The goal of this study was to train and compare different \gls{DL} architectures to \gls{BC} images samples from \gls{CL} in order to detect \gls{CRC}.
+This chapter describes experimental designs and implementation details of this work. What libraries, hardware, datasets and procedures were used to achieve the results in chapter \ref{chap:results}. The goal of this study was to train and compare different \gls{DL} architectures to \gls{BC} images samples from \gls{CL} in order to detect \gls{CRC}.
 
 \section{Datasets}
 \label{sec_datasets}
-For this survey, three different datasets were used, all of them suffered transformations to convert their respectives classes in \gls{BC} staintment.
+For this survey, three different datasets were used, all of them suffered transformations to convert their respectives classes in \gls{BC} statement.
 
 \subsection{100,000 histological images of human colorectal cancer and healthy tissue}
 \label{subsec_nct100k}
-The main successfully \gls{DS} of this study was \gls{NCTCRCHE100K}, by Kather et al. \cite{kather2018crc100k}. Samples were collected from the NCT Biobank (National Center for Tumor Diseases, Heidelberg, Germany) and the UMM pathology archive (University Medical Center Mannheim, Mannheim, Germany). All images were 224 x 224 pixels at 0.5 MMP and classified as one of the nine classes above: Adipose (ADI), background (BACK), debris (DEB), lymphocytes (LYM), mucus (MUC), smooth muscle (MUS), normal colon mucosa (NORM), cancer-associated stroma (STR), colorectal adenocarcinoma epithelium (TUM).
+The most successfully \gls{DS} of this study was \gls{NCTCRCHE100K}, by Kather et al. \cite{kather2018crc100k}. Samples were collected from the NCT Biobank (National Center for Tumor Diseases, Heidelberg, Germany) and the UMM pathology archive (University Medical Center Mannheim, Mannheim, Germany). All images were 224 x 224 pixels at 0.5 MMP and classified as one of the nine classes above: Adipose (ADI), background (BACK), debris (DEB), lymphocytes (LYM), mucus (MUC), smooth muscle (MUS), normal colon mucosa (NORM), cancer-associated stroma (STR), colorectal adenocarcinoma epithelium (TUM).
 
-The \gls{DS} in three differents sets:, CT-CRC-HE-100K: contains one hundred thousand images color-normalized using Macenko's method \cite{5193250}; CRC-VAL-HE-7K: contains 7180 image from 50 different patients with no overlap with the ones in "NCT-CRC-HE-100K" and NCT-CRC-HE-100K-NONORM: created from the same raw data as "NCT-CRC-HE-100K", however with no color normalization applied.
+The \gls{DS} in three differents sets: CT-CRC-HE-100K: contains one hundred thousand images color-normalized using Macenko's method \cite{5193250}; CRC-VAL-HE-7K: 7180 image from 50 different patients with no overlap with the ones in "NCT-CRC-HE-100K" and NCT-CRC-HE-100K-NONORM: created from the same raw data as "NCT-CRC-HE-100K", however with no color normalization applied.
 
 \subsection{Collection of textures in colorectal cancer histology}
 \label{subsec_crc5000}
@@ -18,14 +18,14 @@ The \gls{DS} in three differents sets:, CT-CRC-HE-100K: contains one hundred tho
 \subsection{Lung and Colon Cancer Histopathological Image
 Dataset (LC25000)}
 \label{subsec_lc25000}
-Composed of twenty five thousand images of colon and lung tissues, the \gls{LC25000} were created from originally seven hundred fifty total images of lung tissue (250 benign lung tissue, 250 lung adenocarcinomas, and 250 lung squamous cell carcinomas) and 500 total images of colon tissue (250 benign colon tissue and 250 colon adenocarcinomas). All images were cropped to square sizes of 768 x 768 pixels from original 1024 x 768 pixels and augmented using the Augmentor software package from python programming language, by applying: left and right rotations (up to 25 degrees,1.0 probability) and by horizontal and vertical flips (0.5 probability).
+Composed of twenty five thousand images of colon and lung tissues, the \gls{LC25000} were created from originally seven hundred fifty total images of lung tissue (250 benign lung tissue, 250 lung adenocarcinomas, and 250 lung squamous cell carcinomas) and 500 total images of colon tissue (250 benign colon tissue and 250 colon adenocarcinomas). All images were cropped to square sizes of 768 x 768 pixels from original 1024 x 768 pixels and augmented using the Augmentor software package from python programming language, by applying left and right rotations (up to 25 degrees, 1.0 probability) and by horizontal and vertical flips (0.5 probability).
 The classes in the datasets are: colon adenocarcinoma, benign colonic tissues, lung adenocarcinomas, lung squamous cell carcinoma, benign lung tissues. 
 
-All images were equally distributed between classes above, with five thousand samples for each one.
+All images were equally distributed between classes above, with five thousand samples each one.
 
 \section{Environment}
 \label{sec_environment}
-Considering hardware limitation by the lack of \gls{GPU} during experiments, it was necessary a cloud-based service to run the \gls{DL} models through training phase. Google Colab, a Jupyter Notebook environment provided by Google, was chosen due to facility in configuration and it's reliability in the Pro+ plan. The service have a free use option, however it suffer from interrupting overtime and less capable \gls{GPU} accessible. All models ran with Nvidia A100-SXM4 with 40Gb VRAM.
+Considering hardware limitation by the lack of \gls{GPU} during experiments, it was necessary a cloud-based service to run the \gls{DL} models through training phase. Google Colab, a Jupyter Notebook environment provided by Google, was chosen due the facility in configuration and it's reliability in the Pro+ plan. The service have a free use option, however it suffer from interrupting overtime and less accessible capable \gls{GPU}. All models ran with Nvidia A100-SXM4 with 40Gb VRAM.
 
 All models Tensors were gotten from Pytorch python library. The ones used were: AlexNet, VGG 16, ResNet 18, ResNet 34, ResNet 50, ResNet 101 and ResNet 152.
 
@@ -34,19 +34,19 @@ Development was built in \gls{VSCODE}, an \gls{IDE} with the "Colab" extension, 
 \section{Common Configurations to all classic architecture scenarios}
 \label{sec_config}
 
-During train phase, all models listed in \ref{sec_environment} were read with batch size of 64 samples. With 50 epochs per train and 15 early stop behavior, all models were trained with the following optimizers configuration: Adam: learning rate of $1\times 10^{-4}$; SGD: learning rate of $1\times 10^{-2}$, momentum of 0.9 and weight decay of $5\times 10^{-4}$; AdamMax: learning rate of $1\times 10^{-2}$, $\beta_1$ of 0.9, $\beta_2$ of 0.999, weight decay of $1\times 10^{-4}$ and $\varepsilon$ of $1\times 10^{-8}$.
+During train phase, all models listed in section \ref{sec_environment} were read with batch size of 64 samples. With 50 epochs per train and 15 early stop behavior, all models were trained with the following optimizers configuration: Adam: learning rate of $1\times 10^{-4}$; SGD: learning rate of $1\times 10^{-2}$, momentum of 0.9 and weight decay of $5\times 10^{-4}$; AdamMax: learning rate of $1\times 10^{-2}$, $\beta_1$ of 0.9, $\beta_2$ of 0.999, weight decay of $1\times 10^{-4}$ and $\varepsilon$ of $1\times 10^{-8}$.
 
-All optimizers hyperparams were chosen based on references in chapter \ref{chap:related}, for a measurable comparasions with other results, as detailed in \ref{chap:results}. Also, when applied, scheduler was configured with step size of 5 and $\gamma$ of $0.1$.
+All optimizers hyperparams were chosen based on references in chapter \ref{chap:related}, for a measurable comparasions with other results, as detailed in chapter \ref{chap:results}. Also, when applied, scheduler was configured with step size of 5 and $\gamma$ of $0.1$.
 
 
 \section{Procedures}
 \label{sec_procediments}
-After downloading all images necessary, they were converted to a \gls{CSV} file per \gls{DS}. For all of them, the \gls{CSV} was generated with two columns: path and label. In the first one, was the path the program would need to course to get the image, while the second indicats the image class. For training using Pytorch library interface, label needed to be a numeric value, so the following transformation was made: 1 for cancer image and 0 for non-cancer image.
+After downloading all images necessary, they were converted to a \gls{CSV} file per \gls{DS}. For all of them, the \gls{CSV} was generated with two columns: path and label. In the first one, was the path the program would need to course to get the image, while the second indicates the image class. For training using Pytorch library interface, label needed to be a numeric value, so the following transformation was made: 1 for cancer image and 0 for non-cancer image.
 
 
 With the respective \gls{CSV} file, the samples were split in validation, test and train, while resized to 224 x 224 pixels and normalized using ImageNet standards  - 0.485, 0.456, 0.406 mean and 0.229, 0.224, 0.225  standard deviation to aid training convergence and efficiency \cite{DBLP:conf/nips/KrizhevskySH12} \cite{10913097}.
 
-After transformation, all images are put in memory instead of storage, through DataLoader for velocity enhancement during training in batches of 64. Training is made using \gls{SL} with train and validation \gls{DS}. Through 50 epochs, each loss is calculated through Cross Entropy Function. If validation loss does not improve in 15 epochs, early stopped is activated and the best model, with best performance (lowest validation loss), is saved and used for tests with test \gls{DS}.
+After transformation, all images are put in memory instead of storage, through DataLoader for velocity enhancement during training in batches of 64. Training is made using \gls{SL} with train and validation \gls{DS}. Through 50 epochs, each loss is calculated through Cross Entropy Function. If validation loss does not improve in 15 epochs, early stopped is activated and the best model, with best performance (lowest validation loss), is saved and used for tests with the test set \gls{DS}.
 
 
 \begin{figure}[htbp]
@@ -82,12 +82,12 @@ After train, the best model is validated through metrics \ref{sec_metrics}: accu
 \label{sec_first_attempt}
 Based on Md. Bipul Hossain and Mohamed Shaban paper \cite{DBLP:conf/aibthings/HossainS24}, the \gls{DS} chosen in the first attempt for training and test was the \gls{LC25000}. First, lung images were discarted, remaining a total of ten thousand colon labeled images.
 
-Those images were splited using $train\_test\_split$ function from $sklearn$ python library. For the params of the function, it was passed $42$ to the $random_state$ params, which controls the shuffling applied to the data before applying the split. This number also was passed for reproducible output across multiple function calls. 
+Those images were splited using $train\_test\_split$ function from $sklearn$ python library. For the params of the function, it was passed $42$ to the $random_state$ params, which controls the shuffling  data suffered before applying the split. This number also was passed for reproducible output across multiple function calls. 
 
 During split process, the \gls{LC25000} \gls{DS} was divided between train and test, eighty percent of the images for training, and twenty percent for test usage. Then, those train images were also split with $train\_test\_split$ function, using the same parameters above, for create the validation image set. With ten percent of those set for validation, and 90 percent for train.
 7200 images were for train, 800 for validation. After train and saving the best model, it was validated with the remaining 2000 images test \gls{DS}.
 
-As shown in \ref{chap:results}, some of the models did not converge into the best model during train with \gls{LC25000}. Because of that, this Procedures were repeated, but with the use of a scheduler with the configurations described in \ref{sec_config}.
+As shown in chapter \ref{chap:results}, some of the models did not converge into the best model during train with \gls{LC25000}. Because of that, this procedure was repeated, but with the use of a scheduler with the configurations described in \ref{sec_config}.
 
 \section{Train with LC25000 and test classic architectures  with CRC5000}
 \label{sec_second_attempt}
@@ -98,19 +98,19 @@ The best model was used to test with the 4375 images from remaining \gls{CRC5000
 
 \section{Train with NCTCRCHE100K and test classic architectures  with all datasets}
 \label{sec_third_attempt}
-The \gls{NCTCRCHE100K} was already divided in three different sets: "NCT-CRC-HE-100K", "NCT-CRC-HE-100K-NONORM" and "CRC-VAL-HE-7K". For this study case, were chosen "NCT-CRC-HE-100K" to train and validation and "CRC-VAL-HE-7K" to test. Also, \gls{LC25000} and \gls{CRC5000} were also used as test \gls{DS}. Those two were completed transformed as in section \ref{sec_second_attempt}, with no split in their respectives images.
+The \gls{NCTCRCHE100K} was already divided in three different sets: "NCT-CRC-HE-100K", "NCT-CRC-HE-100K-NONORM" and "CRC-VAL-HE-7K". For this study case, were chosen "NCT-CRC-HE-100K" to train and validation and "CRC-VAL-HE-7K" to test. Also, \gls{LC25000} and \gls{CRC5000} were also used as test \gls{DS}. Those two were completed transformated as in section \ref{sec_second_attempt}, with no split in their respectives images.
 
-The split of train and validation were eighty and twenty percent respectively. 80 thousand images were used for train, while the remaining 20 thousand were used for validation. To test, all 7180 images from "CRC-VAL-HE-7K" were used in a test evaluation. The 10 thousand colon samples from \gls{LC25000} were used in another round, same for the 4375 images from \gls{CRC5000}.
+The split of train and validation were eighty and twenty percent respectively. 80000 images were used for train, while the remaining 20000 were used for validation. To test, all 7180 images from "CRC-VAL-HE-7K" were used in a test evaluation. The 10000 colon samples from \gls{LC25000} were used in another round, same for the 4375 images from \gls{CRC5000}.
 
 \section{Train with NCTCRCHE100K-noNorm and test classic architectures  with all datasets}
 \label{sec_fourth_attempt}
-For this study case, were chosen "NCT-CRC-HE-100K-NoNorm" to train and validation and "CRC-VAL-HE-7K" to test. Also, \gls{LC25000} and \gls{CRC5000} were also used as test \gls{DS}. Those two were completed transformed as in section \ref{sec_second_attempt}, with no split in their respectives images.
+For this study case, were chosen "NCT-CRC-HE-100K-NoNorm" to train and validation and "CRC-VAL-HE-7K" to test. Also, \gls{LC25000} and \gls{CRC5000} were used as test \gls{DS}. Those two were completed transformated as in section \ref{sec_second_attempt}, with no split in their respective images.
 
 The split of train and validation was the same applied in \ref{sec_third_attempt}, with the same test evaluations.
 
 \section{Quantum architecture Procedure}
 \label{sec_quantum_first}
-First, for equal parameterization of the classical architecture in section \ref{sec_procediments}, all images downloaded were converted to \gls{CSV} with applying label conversion to binary - for cancer image and 0 for non-cancer image.
+First, for equal parameterization of the classical architecture in section \ref{sec_procediments}, all images downloaded were converted to \gls{CSV} with applying label conversion to binary - 1 for cancer image and 0 for non-cancer image.
 
 The python library for quantum computing and machine learning "pennylane" was used to build the hybrid quantum model used in this experiment. Based on Yasmin Rodrigues Sobrinho et al \cite{quanvolution} architecture developed for Breast Cancer classification, the goal was to simulate the same circuit and evaluate the possibility of it be used for \gls{CRC} classification. 
 

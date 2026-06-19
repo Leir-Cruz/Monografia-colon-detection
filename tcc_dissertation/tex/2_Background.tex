@@ -263,20 +263,19 @@ Maxwell Henderson et al \cite{Henderson2019QuanvolutionalNN} proposed a new type
     \label{fig_quantum_layer_example}
 \end{figure}
 
-Each quanvolutional filter produce a feature map when applied to an input tensor,similiar to convolutional filter. Nevertheless, instead of the element-wise matrix multiplication of the convolutional filter, the quanvolutional transforms the input data using a quantum circuit. For each filter will be applied an enconding function that will be applied to the input. Then, quantum computation will be applied to the encoded input. Image \ref{fig_quantum_layer_example}.B provides displays the encoding / applied circuit / decoding process.
+Each quanvolutional filter produce a feature map when applied to an input tensor, similar to convolutional filter. Nevertheless, instead of the element-wise matrix multiplication of the convolutional filter, the quanvolutional transforms the input data using a quantum circuit. For each filter will be applied an enconding function then and the outcome to the input. Then, quantum computation will be applied to the encoded input. Image \ref{fig_quantum_layer_example}.B provides displays the encoding / applied circuit / decoding process.
 
-The conclusion of Maxwell Henderson et al \cite{Henderson2019QuanvolutionalNN} comproved that the hybrid proposed model provided an  and scalable \gls{QML} application for
-real-world problems, such as image recognition.
+The conclusion of Maxwell Henderson et al \cite{Henderson2019QuanvolutionalNN} comproved that the hybrid proposed model provided an scalable \gls{QML} application for real-world problems, such as image recognition.
 
 
 \section{Evaluated Metrics}
 \label{sec_metrics}
-In classification models in tasks such as image and pattern recognition, it's important to have a way of mesuare how well a \gls{DL} model is performing. The simplest case of classification is the binary classification, where there are only two classes a sample can be, normally labeled as Positive (P) or Negative (N). There`re total outcomes of four outcomes to a binary classifier \cite{metrics}:
+In classification models in tasks such as image and pattern recognition, it's important to have a way of measure how well a \gls{DL} model is performing. The simplest case of classification is the binary classification, where there are only two classes that a sample can be, normally labeled as Positive (P) or Negative (N). The total outcomes of a binary classifier are \cite{metrics}:
 \begin{itemize}
-    \item \gls{TP}: Predictions where the model correctly predicted the sample to belongs to a "class A".
-    \item \gls{TN}: Predictions where the model correctly predicted the sample to not belongs to a "class A".
-    \item \gls{FP}: Predictions where the model incorrectly predicted the sample to belongs to "class A".
-    \item \gls{FN}: Predictions where the model incorrectly predicted the sample to not belongs to "class A".
+    \item \gls{TP}: Predictions where the model correctly predicted the sample to belong to a "class A".
+    \item \gls{TN}: Predictions where the model correctly predicted the sample to not belong to a "class A".
+    \item \gls{FP}: Predictions where the model incorrectly predicted the sample to belong to "class A".
+    \item \gls{FN}: Predictions where the model incorrectly predicted the sample to not belong to "class A".
 \end{itemize}
 
 \begin{figure}[htbp]
@@ -318,7 +317,7 @@ Specifity is the number of correct false predictions by the number of total fals
 
 \subsection{Precision}
 \label{sub_sec_precision}
-Precision is the number of correct positive predictions by the total number of positive predictions. It can be interpreted as the reliability of a correct positive prediction.
+Precision is the number of correct positive predictions by the total number of positive. It can be interpreted as the reliability of a correct positive prediction.
 \begin{equation}
     \frac{TP}{TP + FP}
 \end{equation}
