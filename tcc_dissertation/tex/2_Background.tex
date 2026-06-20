@@ -88,7 +88,7 @@ It was through the work of David E. Rumelhart et al. \cite{Rumelhart1986Learning
     x_j = \sum_{i} y_i w_{ij} 
 \end{equation}
 One important difference pointed out in \cite{Rumelhart1986LearningRB} is that each hidden layer output is followed by a non-linear function, unlike \gls{ADALINE}, where all layers had a linear function as an output. This change is necessary because a series of linear functions could otherwise be simplified and replaced by a single linear function through weight adjustment, which would limit the learning capacity of the system.
-For example, in binary classification, as explored in Chapter \ref{chap:methodology}, it is very common to use a sigmoid function as the non-linear activation function of the neuron output:
+For example, in binary classification, as explored in Chapter \ref{chap:methodology}, it is very common to use a sigmoid function as the non-linear activation function of the neuron output. Equation \ref{sigmoid_func} demonstrated sigmoid
 \begin{equation}
      y_j = \frac{1}{1 + e^{-x_j}} \label{sigmoid_func}
 \end{equation}
@@ -205,15 +205,16 @@ In 2012, Alex Krizhevsky et al. \cite{DBLP:conf/nips/KrizhevskySH12} proposed a 
     \label{fig:alexnet_architecture}
 \end{figure}
 
-The AlexNet architecture contains five convolutional layers and three fully connected layers. For the non-linearity of the neurons, \glspl{ReLU} from Nair and Hinton \cite{Relu} were used. Deep learning networks using ReLUs train several times faster than their equivalents using classic tanh units. In addition, the proposed architecture supports cross-\gls{GPU} parallel training, enabling the systems to read from and write to one another's memory directly without going through the host machine memory.
+demonstrated sigmoidThe AlexNet architecture contains five convolutional layers and three fully connected layers. For the non-linearity of the neurons, \glspl{ReLU} from Nair and Hinton \cite{Relu} were used. Deep learning networks using ReLUs train several times faster than their equivalents using classic tanh units. In addition, the proposed architecture supports cross-\gls{GPU} parallel training, enabling the systems to read from and write to one another's memory directly without going through the host machine memory. Equations \ref{eq_tanh_function} and \ref{eq_relu_function} illustrates the non-linearity above:
 
 \begin{equation}
 f(x) = \tanh(x)
+\label{eq_tanh_function}
 \end{equation}
 
 \begin{equation}
 f(x) = \max(0, x)
-\label{Relu function}
+\label{eq_relu_function}
 \end{equation}
 
 \begin{figure}[htbp]
@@ -335,3 +336,8 @@ The F-score is the harmonic mean of precision and recall.
 \begin{equation}
     \frac{2 \cdot Precision \cdot Recall}{Precision + Recall} = \frac{2 \cdot TP}{2 \cdot TP + FP + FN}
 \end{equation}
+
+
+\section{Final Considerations}
+\label{sec_final_considerations}
+ The study of the performance of \gls{DL} and quantum modern architectures in different generalization tasks can be very useful for the society, specially when it comes to medical application. Next chapters in this research verify applicability of \gls{DL} and \gls{QNN} models in \gls{CRC} \gls{BC}, with the presented scientific foundation in this chapter.
