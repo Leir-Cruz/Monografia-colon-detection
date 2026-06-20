@@ -1,33 +1,33 @@
 \label{chap:introduction}
 
-
 \section{Problem Statement}
 \label{sec_problem}
 
-Worldwide, colorectal cancer is one of the most common and deadly types of cancer. The third most common cancer, accounting for approximately 10\% of all cases, it is the second leading cause of cancer-related deaths. According to Our World Data ong  {owid-cancer}, there were an estimated 1.9 million new cases and more than 900,000 deaths globally in 2022 alone.
-The symptoms include blood in the stool, changes in bowel habits, such as diarrhea or constipation, abdominal pain and unexplained weight loss. 
+Globally, colorectal cancer remains one of the most prevalent and lethal malignancies. As the third most common cancer worldwide, it accounts for approximately 10\% of all oncological cases and stands as the second leading cause of cancer-related mortality. According to data from Our World in Data~\cite{owid-cancer}, an estimated 1.9 million new cases and over 900,000 deaths were recorded globally in 2022 alone. Common clinical symptoms include hematochezia (blood in the stool), persistent changes in bowel habits (such as diarrhea or constipation), abdominal pain, and unexplained weight loss.
 
-Besides being more common in individuals over 50 years old, studies \cite{DEKKER20191467} show that there are a lot of factors that can escalate the risk of developing the disease, such as low diet in fruits and vegetables, high consumption of red and processed meats, physical inactivity and obesity. Alcohol consumption and smoking are also associated with an increased risk of developing colorectal cancer. In addition, there are some hereditary conditions that can increase the risk, such as familial adenomatous polyposis (FAP) and Lynch syndrome.
-People with inflammatory bowel disease have higher chances of colon cancer, the worse the severity of the inflammation.
+While incidence rates are higher in individuals over 50 years of age, clinical studies~\cite{DEKKER20191467} indicate that various modifiable lifestyle factors significantly escalate risk. These include diets low in fruits and vegetables, high consumption of red and processed meats, physical inactivity, obesity, alcohol consumption, and smoking. Furthermore, chronic inflammatory bowel diseases and hereditary predispositions—such as familial adenomatous polyposis (FAP) and Lynch syndrome—dramatically increase patient vulnerability.
 
-The most efficient way to treat, and even cure, a pacient diagnosed with colorectal cancer, is through early detection of the tumor. However, colonoscopy is a very invasive procedure and not always can detect precisely the presence or absence of the polyps, which are the main precursors of colorectal cancer. Furthermore, the accuracy of colonoscopy can be affected by third-party factors, such as the experience of the endoscopist and the quality of the bowel preparation. In addition, the lack of access to screening exams, especially in low-income regions, contributes to late diagnosis and worse prognosis for patients with colorectal cancer. Therefore, there is a need for more accurate and efficient methods for early detection of colorectal cancer, which can improve patient outcomes and reduce the burden of this disease on healthcare systems worldwide.
+Early detection of neoplastic polyps remains the most effective strategy to improve patient survival rates and achieve clinical remission. However, standard colonoscopy is highly invasive, and its diagnostic accuracy is heavily dependent on operator experience and the quality of bowel preparation. Furthermore, limited access to screening facilities in low-income regions frequently leads to late-stage diagnoses and poor patient prognoses. Consequently, there is an urgent need for automated, highly accurate, and efficient diagnostic methods to support early detection and alleviate the global healthcare burden.
 
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.5\textwidth]{tumor}
-    \caption{Tumor image from colonoscopy from dataset \cite{kather2018crc100k}.
-    \label{Tumor image from colonoscopy}}
+    \caption{Sample colonoscopy image depicting a colorectal tumor, sourced from the dataset by Kather et al.~\cite{kather2018crc100k}.}
+    \label{fig:colonoscopy_tumor}
 \end{figure}
 
-
-\section{Research Objectives}
+\section{Research Objectives and Contributions}
 \label{sec_goals}
 
-To improve the early detection of colorectal cancer, this work aims to analyze different architectures of deep neural networks for the classification of colonoscopy images. In addition, the study also includes different networks architectures, such as quantum neural networks, to evaluate their performance in a low deep scenario. The main goal is to develop a more exact and efficient method for early detection of colorectal cancer, which can improve patient outcomes and reduce the burden of this disease on healthcare systems worldwide.
+To address these diagnostic challenges, this research evaluates the efficacy of various deep learning architectures in classifying colonoscopy images. Specifically, this work investigates standard deep neural networks alongside emerging quantum neural networks (QNNs) to analyze their performance within shallow (low-depth) architectural constraints. 
 
+The primary contributions of this work includes:
+\begin{itemize}
+    \item A comparative performance analysis of classical deep learning models against quantum alternatives for colorectal tissue classification.
+    \item An evaluation of model efficiency and accuracy under strict, resource-constrained shallow network architectures.
+\end{itemize}
 
-\section{Organization of This Document}
+\section{Organization of the Document}
 \label{sec_about}
 
-
-This thesis is organized in five chapters, including this introduction. Chapter 2 presents the scientific foundation of this work, details of colorectal cancer, what is machine learning and deep learning and the structure of the neural networks used in this paper. Also, the methrics used to evaluate the performance of the models are described in this chapter. Chapter 3 presents other related works that have been done in the area of computer vision applied to medical images, with a focus on the ones that use colonoscopy images. Chapter 4 illustrates the methodology used in this study, including the set of images used, their transformation and details of training. Finally, chapter 5 approaches the results obtained and their analysis, while chapter 6 concludes the work, with a summary of the main contributions and future works.
+This work is organized into six chapters, including this introductory chapter. Chapter 2 establishes the scientific foundation of this research, detailing the pathophysiology of colorectal cancer, the fundamentals of machine learning and deep learning, and the specific structural frameworks of the utilized neural networks. Chapter 3 reviews relevant literature in computer vision applied to medical imaging, focusing on state-of-the-art colonoscopy analysis. Chapter 4 delineates the methodology, including dataset characteristics, image preprocessing techniques, and experimental training protocols. Chapter 5 presents the experimental results alongside a comprehensive comparative analysis. Finally, Chapter 6 concludes the document, summarizing the primary contributions and outlining avenues for future work.
