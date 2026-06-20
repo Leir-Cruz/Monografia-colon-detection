@@ -5,29 +5,29 @@
 
 Globally, colorectal cancer remains one of the most prevalent and lethal malignancies. As the third most common cancer worldwide, it accounts for approximately 10\% of all oncological cases and stands as the second leading cause of cancer-related mortality. According to data from Our World in Data~\cite{owid-cancer}, an estimated 1.9 million new cases and over 900,000 deaths were recorded globally in 2022 alone. Common clinical symptoms include hematochezia (blood in the stool), persistent changes in bowel habits (such as diarrhea or constipation), abdominal pain, and unexplained weight loss.
 
-While incidence rates are higher in individuals over 50 years of age, clinical studies~\cite{DEKKER20191467} indicate that various modifiable lifestyle factors significantly escalate risk. These include diets low in fruits and vegetables, high consumption of red and processed meats, physical inactivity, obesity, alcohol consumption, and smoking. Furthermore, chronic inflammatory bowel diseases and hereditary predispositions—such as familial adenomatous polyposis (FAP) and Lynch syndrome—dramatically increase patient vulnerability.
+While incidence rates are higher in individuals over 50 years of age, clinical studies~\cite{DEKKER20191467} indicate that various modifiable lifestyle factors significantly escalate risk. These include diets low in fruits and vegetables, high consumption of red and processed meats, physical inactivity, obesity, alcohol consumption, and smoking. Furthermore, chronic inflammatory bowel diseases and hereditary predispositions such as \gls{FAP} and Lynch syndrome can increase dramatically the patient vulnerability.
 
 Early detection of neoplastic polyps remains the most effective strategy to improve patient survival rates and achieve clinical remission. However, standard colonoscopy is highly invasive, and its diagnostic accuracy is heavily dependent on operator experience and the quality of bowel preparation. Furthermore, limited access to screening facilities in low-income regions frequently leads to late-stage diagnoses and poor patient prognoses. Consequently, there is an urgent need for automated, highly accurate, and efficient diagnostic methods to support early detection and alleviate the global healthcare burden.
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.5\textwidth]{tumor}
-    \caption{Sample colonoscopy image depicting a colorectal tumor, sourced from the dataset by Kather et al.~\cite{kather2018crc100k}.}
+    \includegraphics[width=0.4\textwidth]{tumor}
+    \caption{Sample colonoscopy image depicting a colorectal tumor (Kather et al.~\cite{kather2018crc100k}).}
     \label{fig:colonoscopy_tumor}
 \end{figure}
 
 \section{Research Objectives and Contributions}
 \label{sec_goals}
 
-To address these diagnostic challenges, this research evaluates the efficacy of various deep learning architectures in classifying colonoscopy images. Specifically, this work investigates standard deep neural networks alongside emerging quantum neural networks (QNNs) to analyze their performance within shallow (low-depth) architectural constraints. 
+To address these diagnostic challenges, this research evaluates the efficacy of various deep learning architectures in classifying colonoscopy images. Specifically, this work investigates standard deep neural networks alongside emerging \glspl{QNN} to analyze their performance within shallow (low-depth) architectural constraints. 
 
-The primary contributions of this work includes:
+The primary contributions of this work includes
 \begin{itemize}
-    \item A comparative performance analysis of classical deep learning models against quantum alternatives for colorectal tissue classification.
-    \item An evaluation of model efficiency and accuracy under strict, resource-constrained shallow network architectures.
+    \item a comparative performance analysis of classical deep learning models against quantum alternatives for colorectal tissue classification;
+    \item an evaluation of model efficiency and accuracy under strict, resource-constrained shallow network architectures.
 \end{itemize}
 
 \section{Organization of the Document}
 \label{sec_about}
 
-This work is organized into six chapters, including this introductory chapter. Chapter 2 establishes the scientific foundation of this research, detailing the pathophysiology of colorectal cancer, the fundamentals of machine learning and deep learning, and the specific structural frameworks of the utilized neural networks. Chapter 3 reviews relevant literature in computer vision applied to medical imaging, focusing on state-of-the-art colonoscopy analysis. Chapter 4 delineates the methodology, including dataset characteristics, image preprocessing techniques, and experimental training protocols. Chapter 5 presents the experimental results alongside a comprehensive comparative analysis. Finally, Chapter 6 concludes the document, summarizing the primary contributions and outlining avenues for future work.
+This work is organized into six chapters, including this introductory chapter. Chapter~\ref{2_Background} establishes the scientific foundation of this research, detailing the pathophysiology of colorectal cancer, the fundamentals of machine learning and deep learning, and the specific structural frameworks of the utilized neural networks. Chapter~\ref{3_RelatedWork} reviews relevant literature in computer vision applied to medical imaging, focusing on state-of-the-art colonoscopy analysis. Chapter~\ref{4_methodology} delineates the methodology, including dataset characteristics, image preprocessing techniques, and experimental training protocols. Chapter~\ref{5_Results} presents the experimental results alongside a comprehensive comparative analysis. Finally, Chapter~\ref{6_Conclusions} concludes the document, summarizing the primary contributions and outlining avenues for future work.
