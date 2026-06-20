@@ -1,21 +1,21 @@
 \label{chap:related}
-This chapter reviews the related work in the field of \gls{CRC} detection with \gls{DL} models. It covers challenges faced by researchers and the various approaches taken to address those challenges. The chapter also highlights the gaps in the existing literature and how this dissertation aims to fill those gaps.
+This chapter reviews the related work in the field of \gls{CRC} detection using \gls{DL} models. It covers the challenges faced by researchers and the various approaches taken to address these difficulties. Furthermore, this chapter highlights the gaps in the existing literature and outlines how this dissertation aims to fill those gaps.
 
 \section{Dataset Usage}
 \label{sec_dataset_usage}
-Md. Bipul Hossain and Mohamed Shaban \cite{DBLP:conf/aibthings/HossainS24} compared the result of residual networks and visual geometry group-16 using the \gls{LC25000} \gls{DS}. Despite the main goal of the article was to find a ressource efficiency \gls{DL} architecture for \gls{CRC} detection. However, the results were extremely high (higher than 99\%) in all evaluated metrics \cite{metrics} used. Considering that, there`s a possible doubt if the architectures trained with this \gls{DS} can be used to evaluate image sets from other sources, as explored in chapter \ref{chap:methodology}.
+Hossain \& Shaban \cite{DBLP:conf/aibthings/HossainS24} compared the results of residual networks and the Visual Geometry Group 16 architecture using the \gls{LC25000} \gls{DS}. Although the primary objective of their article was to find a resource efficient \gls{DL} architecture for \gls{CRC} detection, the results were extremely high, exceeding 99\% across all evaluated metrics \cite{metrics}. Given these exceptionally high scores, there is a valid concern regarding whether models trained exclusively on this \gls{DS} can generalize effectively to image sets from alternative sources, a problem that is explored in Chapter~\ref{chap:methodology}.
 
-Kather et al. made available one hundred thousands histological images of human colorectal cancer and healthy tissue \cite{kather2018crc100k}. Research Ashish Tripathi et al. \cite{colonML} used traditional \gls{ML} algorithms to classify colon tissue, such as \gls{KNN} and \gls{RFR}, but misses the use of \gls{DL} models. In chapters \ref{chap:methodology} and \ref{chap:results}, this works explore \gls{DL} architectures trained with differents sets available and validated with images from others \gls{DS} \cite{borkowski2019lungcoloncancerhistopathological} \cite{kather_2016_53169}.
+Kather et al. made available a dataset containing one hundred thousand histological images of human colorectal cancer and healthy tissue \cite{kather2018crc100k}. Researchers Tripathi et al.~\cite{colonML} utilized traditional \gls{ML} algorithms, such as \gls{KNN} and \gls{RFR}, to classify colon tissue, but their study lacks the inclusion of \gls{DL} models. In Chapters \ref{chap:methodology} and \ref{chap:results}, we address this gap by exploring \gls{DL} architectures trained on different available datasets and validated with images from external sources~\cite{borkowski2019lungcoloncancerhistopathological, kather_2016_53169}.
 
-Yonathan Fanuel Mulyadi and Fitri Utaminingrum \cite{10913097} explored different architectures of residual networks with \gls{CRC5000} with imageNet standards normalization \cite{DBLP:conf/nips/KrizhevskySH12} with self-attention layer to colon tissue classification, but not use classic \gls{CNN} architectures in the study.
+Mulyadi \& Utaminingrum~\cite{10913097} explored different configurations of residual networks combined with a self-attention layer for colon tissue classification using the \gls{CRC5000} dataset alongside ImageNet standard normalization \cite{DBLP:conf/nips/KrizhevskySH12}. However, their study did not include classic \gls{CNN} architectures for comparison.
 
 \section{Quanvolution}
 \label{sec_quanvolution_related_works}
-Yasmin Rodrigues Sobrinho et al \cite{quanvolution} explored the potential of quantum machine learning for breast cancer detection with \gls{BC}. The conclusion of the work was a competitive performance compared to more complex \gls{CNN} models. This leads to question: Can the proposed solution be expanded to others use cases, such as \gls{CRC} detection? Can it be used to colon tissue detection?
+Sobrinho et al.~\cite{quanvolution} explored the potential of \gls{QML} for breast cancer detection using the \gls{BC} dataset. The conclusion of their work demonstrated that quantum models can achieve competitive performance compared to more complex, traditional \gls{CNN} models. This outcome raises important questions: Can this quantum solution be successfully expanded to other medical use cases, such as \gls{CRC} detection? Furthermore, can it be effectively applied to colon tissue detection?
+
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=1\textwidth]{mama-cancer-quanvolution}
-    \caption{Visual representation of proposed hybrid quantum-classical
-model of Sobrinho et al \cite{quanvolution}}
+    \caption{Visual representation of the proposed hybrid quantum classical model. Image taken from \cite{quanvolution}.}
+    \label{fig:breast_cancer_quanvolution}
 \end{figure}
-
