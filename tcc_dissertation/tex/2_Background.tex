@@ -6,7 +6,7 @@ However, the accuracy of \gls{CL} can be affected by various factors, as discuss
 \section{Machine Learning and Computer Vision}
 \label{sec_machine_learning}
 
-In 1943, the first mathematical model establishing the foundations of \gls{AI} was published by Warren McCulloch and Walter Pitts \cite{mcculloch1943}, proposing the existence of systems capable of performing tasks that typically require human intelligence. The article evaluates neuronal activity as an "all or none" characteristic, where events can be treated by propositional logic. Biologically, a brain cell needs to receive an excitation higher than its threshold to trigger an impulse, which is determined by its own characteristics.
+In 1943, the first mathematical model establishing the foundations of \gls{AI} was published by Warren McCulloch and Walter Pitts~\cite{mcculloch1943}, proposing the existence of systems capable of performing tasks that typically require human intelligence. The article evaluates neuronal activity as an "all or none" characteristic, where events can be treated by propositional logic. Biologically, a brain cell needs to receive an excitation higher than its threshold to trigger an impulse, which is determined by its own characteristics.
 
 Considering this, the authors claim that a neuron can be described as a logic block executing logical functions. Brain cells could be organized in networks that could describe any logical proposition. In 1950, with the question "Can machines think?", Alan Turing started his seminal paper \cite{DBLP:journals/x/Turing50} by describing thinking abilities in terms of problem-solving, decision-making, and pattern recognition. In this approach, intelligence could be simulated by computational processes. However, a philosophical question must be raised: what exactly is intelligence? By stating that machines could emulate human intelligence, it is necessary to delimit what it is and how it can be measured. In his article, Turing affirms that years later, machines would be able to simulate human behavior in such a way that a regular person would not be able to distinguish whether they are interacting with a machine or a human. This would serve as the parameter to determine whether or not machines had achieved human intelligence.
 
@@ -34,7 +34,7 @@ The type of task that can be solved or explored using \gls{ML} and \gls{AI} depe
 
 \section{Neurons and Supervised Learning}
 \label{sec_supervised_learning}
-Frank Rosenblatt proposed a model in 1958 \cite{rosenblatt1958perceptron} to explain how the human brain stores data and utilizes it for pattern recognition and behavior. He was committed to understanding how information contained in storage influences recognition. Like Alan Turing \cite{DBLP:journals/x/Turing50}, Rosenblatt also believed in the application of positive or negative reinforcement to make the system learn. Not only that, but he also expanded the biological concept to his machine model, stating that similar stimuli should activate the same networks of cells.
+Frank Rosenblatt~\cite{rosenblatt1958perceptron} proposed a model in 1958 to explain how the human brain stores data and utilizes it for pattern recognition and behavior. He was committed to understanding how information contained in storage influences recognition. Like Alan Turing~\cite{DBLP:journals/x/Turing50}, Rosenblatt also believed in the application of positive or negative reinforcement to make the system learn. Not only that, but he also expanded the biological concept to his machine model, stating that similar stimuli should activate the same networks of cells.
 
 This probabilistic model, called the perceptron, is divided into three layers: sensory units that respond to impulses on an all or nothing basis; association units that receive the transmitted impulses and, if the algebraic sum of those impulses is greater than the unit threshold, fire and trigger responses in certain response units. Each response unit has feedback connections that can be excitatory or inhibitory and are mutually exclusive. This means that if a response unit is triggered during a stimulus, it will inhibit others from triggering for other similar stimuli.
 
@@ -49,7 +49,7 @@ A stimulus can be classified into classes, which provokes a stronger impulse fro
 
 The perceptron error was calculated from misclassifications as part of its learning procedure. The main achievement of this work was the possibility of predicting learning curves and the growth of the probability of correct classification as the number of inputs rises. 
 
-Bernard Widrow \cite{widrow1960adaptive} developed a neural network that learns by being presented with many examples of inputs and their respective desired outputs. The quality of the system performance is directly related to the number of examples given, and a machine called \gls{ADALINE} was built to illustrate this. Similar to John von Neumann \cite{Neumann1956ProbabilisticLA}, who built his neuron as a combinatorial logic circuit, each input in this model is linearly combined with its respective weights, which are set during the training procedure.
+Bernard Widrow~\cite{widrow1960adaptive} developed a neural network that learns by being presented with many examples of inputs and their respective desired outputs. The quality of the system performance is directly related to the number of examples given, and a machine called \gls{ADALINE} was built to illustrate this. Similar to John von Neumann~\cite{Neumann1956ProbabilisticLA}, who built his neuron as a combinatorial logic circuit, each input in this model is linearly combined with its respective weights, which are set during the training procedure.
 
 \begin{figure}[t!]
     \centering
@@ -81,9 +81,9 @@ Consequently, minimizing the \gls{MSE} is equivalent to minimizing the average n
 
 \section{Artificial Neural Networks and Gradient Descent}
 \label{sec_neural_networks}
-The perceptron \cite{rosenblatt1958perceptron} can be considered the first published attempt to build an \gls{ANN} that could learn from examples. However, it consisted of only a single layer aside from the input and output. Later, in his book Principles of Neurodynamics \cite{Rosenblatt1963PRINCIPLESON}, the author explicitly discusses multilayer perceptron architectures with multiple neurons organized in series. As shown in Figure \ref{fig:adjustable_neuron}, the output of one neuron serves as the input for the next.
+The perceptron~\cite{rosenblatt1958perceptron} can be considered the first published attempt to build an \gls{ANN} that could learn from examples. However, it consisted of only a single layer aside from the input and output. Later, in his book Principles of Neurodynamics~\cite{Rosenblatt1963PRINCIPLESON}, the author explicitly discusses multilayer perceptron architectures with multiple neurons organized in series. As shown in Figure \ref{fig:adjustable_neuron}, the output of one neuron serves as the input for the next.
 
-It was through the work of David E. Rumelhart et al. \cite{Rumelhart1986LearningRB} that an \gls{ANN} training procedure was shown to be useful in practice, overcoming the high cost of manually adjusting all the weights of the neurons. These extra layers between the input and output were called hidden layers, or hidden units. They introduced greater complexity in finding the learning rules, or the correct weights, required to reduce the difference between the actual and desired outputs. The input of a neuron in layer $j$ is a linear function of the outputs ($y_i$) from the previous layer multiplied by their respective weights ($w_{ij}$).
+It was through the work of Rumelhart et al.~\cite{Rumelhart1986LearningRB} that an \gls{ANN} training procedure was shown to be useful in practice, overcoming the high cost of manually adjusting all the weights of the neurons. These extra layers between the input and output were called hidden layers, or hidden units. They introduced greater complexity in finding the learning rules, or the correct weights, required to reduce the difference between the actual and desired outputs. The input of a neuron in layer $j$ is a linear function of the outputs ($y_i$) from the previous layer multiplied by their respective weights ($w_{ij}$).
 \begin{equation} 
     x_j = \sum_{i} y_i w_{ij} 
 \end{equation}
@@ -96,7 +96,7 @@ Rumelhart noted that the total error of a multi-layered \gls{ANN} could be calcu
 \begin{equation} 
     E = \frac{1}{2} \sum_{c} \sum_{j} (y_{j,c} - d_{j,c})^2 
 \end{equation}
-where ($c$) is an index over cases, ($j$) is an index over output units, and ($y$) is the actual state of the output. The main objective, as in Rosenblatt's work \cite{Rosenblatt1963PRINCIPLESON}, is to minimize ($E$). To achieve this, the use of \gls{GD} \cite{5a25e804-97fa-3be4-ac27-50be05d4f28d} is suggested, which is a mathematical method used to find local minima points.
+where ($c$) is an index over cases, ($j$) is an index over output units, and ($y$) is the actual state of the output. The main objective, as in Rosenblatt's work~\cite{Rosenblatt1963PRINCIPLESON}, is to minimize ($E$). To achieve this, the use of \gls{GD} \cite{5a25e804-97fa-3be4-ac27-50be05d4f28d} is suggested, which is a mathematical method used to find local minima points.
 By calculating the partial derivatives of the error and applying the calculus chain rule, it is possible to visualize how a change in the input or the weight of a layer ($j$) affects the total error:
 \begin{equation} 
     \frac{\partial E}{\partial x_j} = \frac{\partial E}{\partial y_j} y_j (1 - y_j) 
@@ -126,7 +126,7 @@ This new method of learning with \gls{BP} and \gls{GD} made multilayer neural ne
 
 \section{Deep Learning and Image Recognition}
 \label{sec_deep_learning}
-The work of Rumelhart et al. \cite{Rumelhart1986LearningRB} discussed in Section \ref{sec_neural_networks} formed the basis of modern \gls{DL}, which popularized the use of \gls{BP} in \gls{ANN}. By applying a non-linear function to the response units of all neurons in the hidden and output layers, these models gained the ability to approximate any measurable function to any desired degree of accuracy, as concluded in the 1989 work by Kurt Hornik et al. titled Multilayer Feedforward Networks are Universal Approximators \cite{HORNIK1989359}.
+The work of Rumelhart et al.~\cite{Rumelhart1986LearningRB} discussed in Section \ref{sec_neural_networks} formed the basis of modern \gls{DL}, which popularized the use of \gls{BP} in \gls{ANN}. By applying a non-linear function to the response units of all neurons in the hidden and output layers, these models gained the ability to approximate any measurable function to any desired degree of accuracy, as concluded in the 1989 work by Kurt Hornik et al. titled Multilayer Feedforward Networks are Universal Approximators \cite{HORNIK1989359}.
 
 By 1998, many recognition systems were already using some form of multilayer \gls{ANN} trained with \gls{BP} \cite{articleDocReg}. These abilities made them heavily studied candidates for pattern recognition tasks, such as image recognition. This potential was proven by the work of Kunihiko Fukushima \cite{Fukushima1980NeocognitronAS}, which showed how organizing the hidden layers hierarchically results in the extraction of available features and patterns in a 2D image. Figure \ref{fig_fuklishima_layer_connection} illustrates how these units are interconnected in a cascade configuration.
 
@@ -141,7 +141,7 @@ By 1998, many recognition systems were already using some form of multilayer \gl
 \label{sec_overfitting}
 Obtaining a network with optimal generalization performance is the ultimate goal of the training process. However, \gls{ANN} architectures can suffer from overfitting, a phenomenon where the error during the training phase continues to decrease while the validation error begins to worsen at some point \cite{articleEarlyStopping}.
 
-Lutz Prechelt \cite{articleEarlyStopping} describes the early stopping technique as a simple and efficient procedure to avoid validation error growth during training. First, the data is split into a training set and a validation set. Then, training occurs only on the training set, while the per-example error is evaluated on the validation set at regular intervals. Finally, the training stops as soon as the error on the validation set becomes higher than it was the last time it was checked. The weights the network had in that previous step are saved as the final result of the training run.
+Lutz Prechelt~\cite{articleEarlyStopping} describes the early stopping technique as a simple and efficient procedure to avoid validation error growth during training. First, the data is split into a training set and a validation set. Then, training occurs only on the training set, while the per-example error is evaluated on the validation set at regular intervals. Finally, the training stops as soon as the error on the validation set becomes higher than it was the last time it was checked. The weights the network had in that previous step are saved as the final result of the training run.
 
 \begin{figure}[htbp]
     \centering
@@ -196,7 +196,7 @@ Furthermore, the \gls{CNN} architecture includes sub-sampling layers that perfor
     \label{fig:lenet5_architecture}
 \end{figure}
 
-In 2012, Alex Krizhevsky et al. \cite{DBLP:conf/nips/KrizhevskySH12} proposed a highly efficient \gls{GPU} implementation of the convolution operation to train a neural network with 60 million parameters and 650,000 neurons. This achievement restored the attractiveness of applying \gls{CNN} architectures to large scale classification problems featuring high-resolution images. This architecture was later called AlexNet.
+In 2012, Krizhevsky et al.~\cite{DBLP:conf/nips/KrizhevskySH12} proposed a highly efficient \gls{GPU} implementation of the convolution operation to train a neural network with 60 million parameters and 650,000 neurons. This achievement restored the attractiveness of applying \gls{CNN} architectures to large scale classification problems featuring high-resolution images. This architecture was later called AlexNet.
 
 \begin{figure}[htbp]
     \centering
@@ -228,7 +228,7 @@ In addition to convolutional layers, AlexNet also utilizes pooling layers, previ
 
 Following the success of the \gls{CNN} in image recognition, alongside the growing availability of very large \gls{DS} for academic studies, multiple attempts have been made to improve the original architecture of Krizhevsky et al. \cite{DBLP:conf/nips/KrizhevskySH12}. Multiple lines of improvement have been explored, with a particular focus on the depth of the networks.
 
-By increasing the depth of a network through the addition of more convolutional layers and using small (3 x 3) filters in all layers, Karen Simonyan and Andrew Zisserman \cite{DBLP:journals/corr/SimonyanZ14a} developed an architecture that delivered significantly more accurate results, achieving the desired state-of-the-art accuracy. A stack of convolutional layers is followed by three fully connected layers, with the final layer being a soft-max layer.
+By increasing the depth of a network through the addition of more convolutional layers and using small (3 x 3) filters in all layers, Simonyan \& Zisserman~\cite{DBLP:journals/corr/SimonyanZ14a} developed an architecture that delivered significantly more accurate results, achieving the desired state-of-the-art accuracy. A stack of convolutional layers is followed by three fully connected layers, with the final layer being a soft-max layer.
 
 All hidden layers utilize Rectified Linear Units for non-linearity. Their work proposes five different architectures. One of them features 13 hidden layers and three fully connected layers, known as "configuration D". This configuration is used in Chapter \ref{chap:methodology} and is referred to as \gls{VGG} 16. 
 
