@@ -1,8 +1,11 @@
 \label{chap:results}
-This chapter describes the outcomes of the differents proposals of development in chapter \ref{chap:methodology}. The numeric results of each experiment uses the metrics described in section \ref{sec_metrics} in chapter \ref{chap:background}, accuracy, precision, recall and f-score. Those metrics were evaluated with outputs of \gls{BC} classification.
+This chapter describes the outcomes of the different development proposals outlined in Chapter \ref{chap:methodology}. The numerical results of each experiment are evaluated using the metrics described in Section \ref{sec_metrics} of Chapter \ref{chap:background}: accuracy, precision, recall, and F-score. These metrics were computed based on the outputs of the binary tissue classification models.
 
-\begin{table}[]
+\begin{table}[t!]
 \centering
+\caption{Performance metrics from model trained with \gls{LC25000} using adam optimizer}
+\label{table_lc25000_adam}
+
 \begin{tabular}{|c|l|c|c|c|c|}
 \hline
 \textbf{Architecture} & \multicolumn{1}{c|}{\textbf{Dataset}}     & \textbf{ACC} & \textbf{Precision} & \textbf{Recall} & \textbf{F1-Score} \\ \hline
@@ -22,12 +25,14 @@ This chapter describes the outcomes of the differents proposals of development i
 \textbf{ResNet101}    & CRC5000                                     & 0.168       & 0.5788             & 0.168          & 0.1282            \\ \hline
 \textbf{ResNet152}    & CRC5000                                    & 0.1591       & 0.7989             & 0.1591          & 0.0712 \           \\ \hline
 \end{tabular}
-\caption{Performance metrics from model trained with \gls{LC25000} using adam optimizer}
-\label{table_lc25000_adam}
 \end{table}
 
-\begin{figure}[htbp]
+\begin{figure}[t!]
   \centering
+
+    \caption{Train/validation loss using \gls{LC25000} using adam optimizer}
+  \label{fig:LC25000_adam_loss}
+
   \begin{subfigure}[b]{0.44\textwidth}
     \centering
     \includegraphics[width=\textwidth]{loss-alexnet-adam-lc25000-crc5000}
@@ -66,12 +71,15 @@ This chapter describes the outcomes of the differents proposals of development i
     \includegraphics[width=\textwidth]{loss-resnet152-adam-lc25000-crc5000}
     \caption{Resnet152}
   \end{subfigure}
-  \caption{Train and validation Loss using \gls{LC25000} using adam optimizer}
-  \label{fig:LC25000_adam_loss}
+
 \end{figure}
 
-\begin{table}[]
+\begin{table}[t!]
 \centering
+
+\caption{Performance metrics from model trained with \gls{LC25000} using adamax optimizer}
+\label{table_lc25000_adammax}
+
 \begin{tabular}{|c|l|c|c|c|c|}
 \hline
 \textbf{Architecture} & \multicolumn{1}{c|}{\textbf{Dataset}}    & \textbf{ACC} & \textbf{Precision} & \textbf{Recall} & \textbf{F1-Score} \\ \hline
@@ -91,12 +99,15 @@ This chapter describes the outcomes of the differents proposals of development i
 \textbf{ResNet101}    & CRC5000                                  & 0.1429        & 0.0204              & 0.1429           & 0.0357             \\ \hline
 \textbf{ResNet152}    & CRC5000                                  & 0.1472        & 0.8776              & 0.1472           & 0.0445             \\ \hline
 \end{tabular}
-\caption{Performance metrics from model trained with \gls{LC25000} using adamax optimizer}
-\label{table_lc25000_adammax}
+
 \end{table}
 
-\begin{figure}[htbp]
+\begin{figure}[t!]
   \centering
+
+  \caption{Train/validation loss using \gls{LC25000} using adammax optimizer}
+  \label{fig:LC25000_adammax_loss}
+
   \begin{subfigure}[b]{0.44\textwidth}
     \centering
     \includegraphics[width=\textwidth]{loss-alexnet-adammax-lc25000-crc5000}
@@ -135,12 +146,14 @@ This chapter describes the outcomes of the differents proposals of development i
     \includegraphics[width=\textwidth]{loss-resnet152-adammax-lc25000-crc5000}
     \caption{Resnet152}
   \end{subfigure}
-  \caption{Train and validation Loss using \gls{LC25000} using adammax optimizer}
-  \label{fig:LC25000_adammax_loss}
 \end{figure}
 
-\begin{table}[]
+\begin{table}[t!]
 \centering
+
+\caption{Performance metrics from model trained with \gls{LC25000} using sgd optimizer}
+\label{table_lc25000_sgd}
+
 \begin{tabular}{|c|l|c|c|c|c|}
 \hline
 \textbf{Architecture} & \multicolumn{1}{c|}{\textbf{Dataset}}          & \textbf{ACC} & \textbf{Precision} & \textbf{Recall} & \textbf{F1-Score} \\ \hline
@@ -160,12 +173,15 @@ This chapter describes the outcomes of the differents proposals of development i
 \textbf{ResNet101}    & CRC5000                                         & 0.1755        & 0.8782              & 0.1755           & 0.0997             \\ \hline
 \textbf{ResNet152}    & CRC5000                                         & 0.2032        & 0.7634              & 0.2032           & 0.1657             \\ \hline
 \end{tabular}
-\caption{Performance metrics from model trained with \gls{LC25000} using sgd optimizer}
-\label{table_lc25000_sgd}
+
 \end{table}
 
-\begin{figure}[htbp]
+\begin{figure}[t!]
   \centering
+
+  \caption{Train/validation loss using \gls{LC25000} using sgd optimizer}
+  \label{fig:LC25000_sgd_loss}
+
   \begin{subfigure}[b]{0.44\textwidth}
     \centering
     \includegraphics[width=\textwidth]{loss-alexnet-sgd-lc25000-crc5000}
@@ -204,13 +220,16 @@ This chapter describes the outcomes of the differents proposals of development i
     \includegraphics[width=\textwidth]{loss-resnet152-sgd-lc25000-crc5000}
     \caption{Resnet152}
   \end{subfigure}
-  \caption{Train and validation Loss using \gls{LC25000} using sgd optimizer}
-  \label{fig:LC25000_sgd_loss}
+
 \end{figure}
 
 
-\begin{table}[]
+\begin{table}[t!]
 \centering
+
+\caption{Performance metrics from model trained with \gls{NCTCRCHE100K} and test with all \gls{DS} using adam optimizer}
+\label{table_NCTCRCHE100K_adam}
+
 \begin{tabular}{|c|l|c|c|c|c|}
 \hline
 \textbf{Architecture}  & \multicolumn{1}{c|}{\textbf{Dataset}} & \textbf{ACC}          & \textbf{Precision}    & \textbf{Recall}       & \textbf{F1-Score}     \\ \hline
@@ -238,12 +257,15 @@ This chapter describes the outcomes of the differents proposals of development i
 \textbf{ResNet101}     & CRC5000                               & 0.8738                & 0.7655                & 0.8738                & 0.8161                \\ \hline
 \textbf{ResNet152}     & CRC5000                               & 0.8166                & 0.7588                & 0.8166                & 0.7867                \\ \hline
 \end{tabular}
-\caption{Performance metrics from model trained with \gls{NCTCRCHE100K} and test with all \gls{DS} using adam optimizer}
-\label{table_NCTCRCHE100K_adam}
+
 \end{table}
 
-\begin{figure}[htbp]
+\begin{figure}[t!]
   \centering
+
+    \caption{Train/validation loss using \gls{NCTCRCHE100K} using adam optimizer}
+  \label{fig:100K_adam_loss}
+
   \begin{subfigure}[b]{0.44\textwidth}
     \centering
     \includegraphics[width=\textwidth]{loss-alexnet-adam}
@@ -282,14 +304,17 @@ This chapter describes the outcomes of the differents proposals of development i
     \includegraphics[width=\textwidth]{loss-resnet152-adam}
     \caption{Resnet152}
   \end{subfigure}
-  \caption{Train and validation Loss using \gls{NCTCRCHE100K} using adam optimizer}
-  \label{fig:100K_adam_loss}
+
 \end{figure}
 
 
 
-\begin{table}[]
+\begin{table}[t!]
 \centering
+
+\caption{Performance metrics from model trained with \gls{NCTCRCHE100K} and test with all \gls{DS} using adammax optimizer}
+\label{table_NCTCRCHE100K_adammax}
+
 \begin{tabular}{|c|l|c|c|c|c|}
 \hline
 \textbf{Architecture}  & \multicolumn{1}{c|}{\textbf{Dataset}} & \textbf{ACC}          & \textbf{Precision}    & \textbf{Recall}       & \textbf{F1-Score}     \\ \hline
@@ -317,12 +342,15 @@ This chapter describes the outcomes of the differents proposals of development i
 \textbf{ResNet101}     & CRC5000                               & 0.6656                & 0.741                 & 0.6656                & 0.701                 \\ \hline
 \textbf{ResNet152}     & CRC5000                               & 0.745                 & 0.75                  & 0.745                 & 0.7475                \\ \hline
 \end{tabular}
-\caption{Performance metrics from model trained with \gls{NCTCRCHE100K} and test with all \gls{DS} using adammax optimizer}
-\label{table_NCTCRCHE100K_adammax}
+
 \end{table}
 
-\begin{figure}[htbp]
+\begin{figure}[t!]
   \centering
+
+  \caption{Train/validation loss using \gls{NCTCRCHE100K} using adammax optimizer}
+  \label{fig:100K_adammax_loss}
+
   \begin{subfigure}[b]{0.44\textwidth}
     \centering
     \includegraphics[width=\textwidth]{loss-alexnet-adammax}
@@ -361,13 +389,16 @@ This chapter describes the outcomes of the differents proposals of development i
     \includegraphics[width=\textwidth]{loss-resnet152-adammax}
     \caption{Resnet152}
   \end{subfigure}
-  \caption{Train and validation Loss using \gls{NCTCRCHE100K} using adammax optimizer}
-  \label{fig:100K_adammax_loss}
+
 \end{figure}
 
 
-\begin{table}[]
+\begin{table}[t!]
 \centering
+
+\caption{Performance metrics from model trained with \gls{NCTCRCHE100K} and test with all \gls{DS} using sgd optimizer}
+\label{table_NCTCRCHE100K_sgd}
+
 \begin{tabular}{|c|l|c|c|c|c|}
 \hline
 \textbf{Architecture}  & \multicolumn{1}{c|}{\textbf{Dataset}} & \textbf{ACC}          & \textbf{Precision}    & \textbf{Recall}       & \textbf{F1-Score}     \\ \hline
@@ -395,12 +426,14 @@ This chapter describes the outcomes of the differents proposals of development i
 \textbf{ResNet101}     & CRC5000                               & 0.8002                & 0.7568                & 0.8002                & 0.7779                \\ \hline
 \textbf{ResNet152}     & CRC5000                               & 0.8336                & 0.7616                & 0.8336                & 0.7959                \\ \hline
 \end{tabular}
-\caption{Performance metrics from model trained with \gls{NCTCRCHE100K} and test with all \gls{DS} using sgd optimizer}
-\label{table_NCTCRCHE100K_sgd}
+
 \end{table}
 
-\begin{figure}[htbp]
+\begin{figure}[t!]
   \centering
+
+
+
   \begin{subfigure}[b]{0.44\textwidth}
     \centering
     \includegraphics[width=\textwidth]{loss-alexnet-sgd}
@@ -439,13 +472,19 @@ This chapter describes the outcomes of the differents proposals of development i
     \includegraphics[width=\textwidth]{loss-resnet152-sgd}
     \caption{Resnet152}
   \end{subfigure}
-  \caption{Train and validation Loss using \gls{NCTCRCHE100K} using sgd optimizer}
+
+  \caption{Train/validation loss using \gls{NCTCRCHE100K} using sgd optimizer}
   \label{fig:100K_sgd_loss}
+
 \end{figure}
 
 
-\begin{table}[]
+\begin{table}[t!]
 \centering
+
+\caption{Performance metrics from model trained with \gls{NCTCRCHE100K}-NoNorm and test with all \gls{DS} using adam optimizer}
+\label{table_NCTCRCHE100K-nonorm_adam}
+
 \begin{tabular}{|c|l|c|c|c|c|}
 \hline
 \textbf{Architecture}  & \multicolumn{1}{c|}{\textbf{Dataset}} & \textbf{ACC}          & \textbf{Precision}    & \textbf{Recall}       & \textbf{F1-Score}     \\ \hline
@@ -473,11 +512,10 @@ This chapter describes the outcomes of the differents proposals of development i
 \textbf{ResNet101}     & CRC5000                               & 0.9326                & 0.9285                & 0.9326                & 0.9268                \\ \hline
 \textbf{ResNet152}     & CRC5000                               & 0.944                 & 0.9423                & 0.944                 & 0.9429                \\ \hline
 \end{tabular}
-\caption{Performance metrics from model trained with \gls{NCTCRCHE100K}-NoNorm and test with all \gls{DS} using adam optimizer}
-\label{table_NCTCRCHE100K-nonorm_adam}
+
 \end{table}
 
-\begin{figure}[htbp]
+\begin{figure}[t!]
   \centering
   \begin{subfigure}[b]{0.44\textwidth}
     \centering
@@ -517,13 +555,17 @@ This chapter describes the outcomes of the differents proposals of development i
     \includegraphics[width=\textwidth]{loss-resnet152-nonorm-adam}
     \caption{Resnet152}
   \end{subfigure}
-  \caption{Train and validation Loss using \gls{NCTCRCHE100K}-nonorm using adam optimizer}
+  \caption{Train/validation loss using \gls{NCTCRCHE100K}-nonorm using adam optimizer}
   \label{fig:100K_adam-nonorm_loss}
 \end{figure}
 
 
-\begin{table}[]
+\begin{table}[t!]
 \centering
+
+\caption{Performance metrics from model trained with \gls{NCTCRCHE100K}-NoNorm and test with all \gls{DS} using adammax optimizer}
+\label{table_NCTCRCHE100K-nonorm_adammax}
+
 \begin{tabular}{|c|l|c|c|c|c|}
 \hline
 \textbf{Architecture}  & \multicolumn{1}{c|}{\textbf{Dataset}} & \textbf{ACC}          & \textbf{Precision}    & \textbf{Recall}       & \textbf{F1-Score}     \\ \hline
@@ -551,11 +593,10 @@ This chapter describes the outcomes of the differents proposals of development i
 \textbf{ResNet101}     & CRC5000                               & 0.9398                & 0.9387                & 0.9398                & 0.9336                \\ \hline
 \textbf{ResNet152}     & CRC5000                               & 0.9362                & 0.9329                & 0.9362                & 0.9337                \\ \hline
 \end{tabular}
-\caption{Performance metrics from model trained with \gls{NCTCRCHE100K}-NoNorm and test with all \gls{DS} using adammax optimizer}
-\label{table_NCTCRCHE100K-nonorm_adammax}
 \end{table}
 
-\begin{figure}[htbp]
+
+\begin{figure}[t!]
   \centering
   \begin{subfigure}[b]{0.44\textwidth}
     \centering
@@ -595,13 +636,17 @@ This chapter describes the outcomes of the differents proposals of development i
     \includegraphics[width=\textwidth]{loss-resnet152-nonorm-adammax}
     \caption{Resnet152}
   \end{subfigure}
-  \caption{Train and validation Loss using \gls{NCTCRCHE100K}-nonorm using adammax optimizer}
+  \caption{Train/validation loss using \gls{NCTCRCHE100K}-nonorm using adammax optimizer}
   \label{fig:100K-nonorm_adammax_loss}
 \end{figure}
 
 
-\begin{table}[]
+\begin{table}[t!]
 \centering
+
+\caption{Performance metrics from model trained with \gls{NCTCRCHE100K}-NoNorm and test with all \gls{DS} using sgd optimizer}
+\label{table_NCTCRCHE100K-nonorm_sgd}
+
 \begin{tabular}{|c|l|c|c|c|c|}
 \hline
 \textbf{Architecture}  & \multicolumn{1}{c|}{\textbf{Dataset}} & \textbf{ACC}          & \textbf{Precision}    & \textbf{Recall}       & \textbf{F1-Score}     \\ \hline
@@ -629,11 +674,10 @@ This chapter describes the outcomes of the differents proposals of development i
 \textbf{ResNet101}     & CRC5000                               & 0.9468                & 0.9461                & 0.9468                & 0.9464                \\ \hline
 \textbf{ResNet152}     & CRC5000                               & 0.9342                & 0.9301                & 0.9342                & 0.9298                \\ \hline
 \end{tabular}
-\caption{Performance metrics from model trained with \gls{NCTCRCHE100K}-NoNorm and test with all \gls{DS} using sgd optimizer}
-\label{table_NCTCRCHE100K-nonorm_sgd}
 \end{table}
 
-\begin{figure}[htbp]
+
+\begin{figure}[t!]
   \centering
   \begin{subfigure}[b]{0.44\textwidth}
     \centering
@@ -673,39 +717,46 @@ This chapter describes the outcomes of the differents proposals of development i
     \includegraphics[width=\textwidth]{loss-resnet152-nonorm-sgd}
     \caption{Resnet152}
   \end{subfigure}
-  \caption{Train and validation Loss using \gls{NCTCRCHE100K}-nonorm using sgd optimizer}
+  \caption{Train/validation loss using \gls{NCTCRCHE100K}-nonorm using sgd optimizer}
   \label{fig:100K-nonorm_sgd_loss}
 \end{figure}
 
-\begin{figure}[htbp]
+\begin{figure}[t!]
     \centering
     \includegraphics[width=0.6\textwidth]{loss-quanvolution-lc25000}
-    \caption{Train and Validation loss of the quanvolution architecture by training using \gls{LC25000}}
+    \caption{Train/validation loss of the \gls{QNN} using \gls{LC25000}}
     \label{loss_quanvolution_lc25000}
 \end{figure}
 
-\begin{table}[]
+\begin{table}[t!]
 \centering
+
+\caption{Performance metrics from quanvolution model trained with \gls{LC25000}}
+\label{table_quanvolution_lc25000}
+
 \begin{tabular}{|c|c|c|c|c|}
 \hline
 \textbf{Dataset} & \textbf{ACC}          & \textbf{Precision}    & \textbf{Recall}       & \textbf{F1-Score}     \\ \hline
 LC25000                               & 0.755                & 0.7581               & 0.755                 & 0.7543           \\ \hline
 CRC5000                          & 0.4302                & 0.8864                & 0.4302                & 0.4788                \\ \hline
 \end{tabular}
-\caption{Performance metrics from quanvolution model trained with \gls{LC25000}}
-\label{table_quanvolution_lc25000}
+
 \end{table}
 
 
-\begin{figure}[htbp]
+\begin{figure}[t!]
     \centering
     \includegraphics[width=0.6\textwidth]{loss-quanvolution-nctc100k}
-    \caption{Train and Validation loss of the quanvolution architecture by training using \gls{NCTCRCHE100K}}
+    \caption{Train/validation loss of the \gls{QNN} using \gls{NCTCRCHE100K}}
     \label{loss_quanvolution_100k}
 \end{figure}
 
-\begin{table}[]
+\begin{table}[t!]
 \centering
+
+\caption{Performance metrics from quanvolution model trained with \gls{NCTCRCHE100K}}
+\label{table_quanvolution_nctcrche100k}
+
 \begin{tabular}{|c|c|c|c|c|}
 \hline
 \textbf{Dataset} & \textbf{ACC}          & \textbf{Precision}    & \textbf{Recall}       & \textbf{F1-Score}     \\ \hline
@@ -713,20 +764,23 @@ NCTCRCHE100K                               & 0.8245                & 0.7853     
 LC25000                          & 0.505                & 0.5476                & 0.505                & 0.3623                \\ \hline
 CRC5000                               & 0.7712                & 0.7345                & 0.7712                 & 7521           \\ \hline
 \end{tabular}
-\caption{Performance metrics from quanvolution model trained with \gls{NCTCRCHE100K}}
-\label{table_quanvolution_nctcrche100k}
+
 \end{table}
 
 
-\begin{figure}[htbp]
+\begin{figure}[ht!]
     \centering
     \includegraphics[width=0.6\textwidth]{loss-quanvolution-nctc100k-nonorm}
-    \caption{Train and Validation loss of the quanvolution architecture by training using \gls{NCTCRCHE100K}-noNorm}
+    \caption{Train/validation loss of the \gls{QNN} using \gls{NCTCRCHE100K}-noNorm}
     \label{loss_quanvolution_nonorm}
 \end{figure}
 
-\begin{table}[]
+\begin{table}[t!]
 \centering
+
+\caption{Performance metrics from quanvolution model trained with \gls{NCTCRCHE100K}-noNorm}
+\label{table_quanvolution_nctcrche100k-nonorm}
+
 \begin{tabular}{|c|c|c|c|c|}
 \hline
 \textbf{Dataset} & \textbf{ACC}          & \textbf{Precision}    & \textbf{Recall}       & \textbf{F1-Score}     \\ \hline
@@ -734,27 +788,26 @@ NCTCRCHE100K                               & 0.8148                & 0.735      
 LC25000                               & 0.503                & 0.6508                & 0.503                & 0.3417           \\ \hline
 CRC5000                          & 0.8535                & 0.786                & 0.8535                & 0.7983                \\ \hline
 \end{tabular}
-\caption{Performance metrics from quanvolution model trained with \gls{NCTCRCHE100K}-noNorm}
-\label{table_quanvolution_nctcrche100k-nonorm}
+
 \end{table}
 
 
-\section{Discussion}
+%\section{Discussion}
 
-The 100\% accuracy in some cases of the train and test using \gls{LC25000} suggests overfitting. By analysing the \gls{DS} original paper \cite{borkowski2019lungcoloncancerhistopathological}, it's described that the twenty five thousand images were the outcome of an augmentation process in the original seven hundred fifty images - five hundred images from colon that were augmented to ten thousand. Considering that, there`s a high probability of the same base image being used during train, validation and test, only varying from rotation or flips.
+The 100\% accuracy observed in some cases during the training and testing phases using the \gls{LC25000} dataset strongly suggests overfitting. An analysis of the original dataset paper \cite{borkowski2019lungcoloncancerhistopathological} reveals that the twenty five thousand images were generated through an data augmentation process from an original set of only seven hundred fifty images. Specifically, five hundred original colon images were augmented to produce ten thousand images. Given this methodology, there is a high probability that the exact same base images were distributed across the training, validation, and testing sets, only varying by rotation or horizontal and vertical flips.
 
-The Loss images from its training process in this section show, specially with the scheduler, that the Loss curve was converging to the global minimal. However, the quality of the samples were questionable. Due to the lack of institution permission, the original data was not provided in the article, making it impossible to split train and test images correctly.
+The loss curves recorded during the training process in this section demonstrate, particularly when the learning rate scheduler was applied, that the models successfully converged toward a global minimum. However, the integrity of these samples remains questionable. Due to a lack of institutional permission, the original, unaugmented data was not provided in the article, making it impossible to separate the training and testing images prior to augmentation.
 
-The results in tables \ref{table_lc25000_adam},  \ref{table_lc25000_adammax} and \ref{table_lc25000_sgd} show that, for another set of images, \gls{LC25000} did not have a good performance to validate others images \gls{DS} without any color normalization technique \cite{5193250}, even with validation and train loss converging to global minimal. However, AlexNet tensor had great performance, specially using adammax \cite{DBLP:journals/corr/KingmaB14} and sgd \cite{articleDocReg} optimizers. What suggests that, as the train set images were originally from the same five hundred images, a small number of samples, the more complex models such as Residual nets and the visual geometry group-16 had difficult in generalize the parameters.
+The results presented in Tables~\ref{table_lc25000_adam}, \ref{table_lc25000_adammax}, and \ref{table_lc25000_sgd} show that the models trained on the \gls{LC25000} dataset exhibited poor performance when validating external image datasets that lacked color normalization techniques \cite{5193250}, despite the training and validation loss curves converging toward a global minimum. Conversely, the AlexNet architecture achieved excellent performance, particularly when paired with the AdamMax \cite{DBLP:journals/corr/KingmaB14} and SGD \cite{articleDocReg} optimizers. This behavior suggests that because the training set images originated from a small pool of only five hundred unique samples, more complex architectures such as Residual Networks and the Visual Geometry Group 16 model struggled to generalize their learned parameters effectively.
 
-When training with \gls{NCTCRCHE100K}, the results were very different and metrics variates between two scenarios: using or not the "no-norm" variation of the \gls{DS} and the test with different sources sets of images. Tables \ref{table_NCTCRCHE100K_adam},\ref{table_NCTCRCHE100K_adammax} and \ref{table_NCTCRCHE100K_sgd} results advocate that the models trained with this image set performed great, with all evaluation metrics testing with image set from the same \gls{DS} being above ninety-six percent. Moreover, recorded a downfall of ten percent when evaluating with \gls{CRC5000}, what could, at a first impression, be explained to the fact the \gls{CRC5000} original size images being of 150 x 150 pixel resolution, instead of the resized size of 224 x 224, causing loss of sharpness in the image sample.
+When training was conducted with the \gls{NCTCRCHE100K} dataset, the outcomes differed substantially, and the evaluation metrics varied significantly between two distinct configurations: utilizing the unnormalized variant of the dataset versus the standard variant, and evaluating across different external image sources. The results in Tables \ref{table_NCTCRCHE100K_adam}, \ref{table_NCTCRCHE100K_adammax}, and \ref{table_NCTCRCHE100K_sgd} indicate that the models trained on this dataset performed exceptionally well, achieving evaluation scores above ninety six percent when tested against images from the same dataset source. However, a performance drop of approximately ten percent was observed when evaluating these models against the \gls{CRC5000} dataset. At first glance, this drop might be attributed to the fact that the original images in the \gls{CRC5000} dataset have a resolution of 150 x 150 pixels instead of the target resolution of 224 x 224 pixels, potentially causing a loss of sharpness during interpolation.
 
-However, comparing the results in tables \ref{table_NCTCRCHE100K-nonorm_adam},\ref{table_NCTCRCHE100K-nonorm_adammax} and \ref{table_NCTCRCHE100K-nonorm_sgd}, it's possible to see a downfall in the performance using the test images from \gls{NCTCRCHE100K}, what can be explained due to the different normalizations in NCT-CRC-HE-100K-NONORM and CRC-VAL-HE-7K, as exposed in section \ref{subsec_nct100k}. The major difference is the result validating with \gls{CRC5000} and \gls{LC25000} samples. The improvement in the first one comparing to the standard NCT-CRC-HE-100K reveals that the increment in their respective image sizes did not have a significant impact in the models as it firsts estimation. This indicates that the main reason of the downfall in the previous scenario was the difference in color normalization techniques applied to the images set used for train and test \cite{5193250}.
+Nevertheless, comparing these findings with the results in Tables \ref{table_NCTCRCHE100K-nonorm_adam}, \ref{table_NCTCRCHE100K-nonorm_adammax}, and \ref{table_NCTCRCHE100K-nonorm_sgd} reveals a performance decline when testing with images from \gls{NCTCRCHE100K}. This trend can be explained by the conflicting normalization states present between the NCT-CRC-HE-100K-NONORM training set and the CRC-VAL-HE-7K testing set, as discussed in Section \ref{subsec_nct100k}. The most notable difference lies in the validation results obtained using the \gls{CRC5000} and \gls{LC25000} samples. The performance improvement observed on the \gls{CRC5000} dataset compared to the standard, normalized NCT-CRC-HE-100K training scenario demonstrates that the upscaling of the image dimensions did not impact the models as severely as initially estimated. This indicates that the primary cause of the performance decline in the previous scenario was the discrepancy between the color normalization techniques applied to the training and testing subsets \cite{5193250}.
 
-This conclusion is also reinforced by tables \ref{table_NCTCRCHE100K-nonorm_adam}, \ref{table_NCTCRCHE100K-nonorm_adammax} and \ref{table_NCTCRCHE100K-nonorm_sgd}, most likely due to Macenko's method color normalization in training set. However, by removing this feature in the train stage, outcomes were more diverse and close to real classification. Performance was not great, which in that case could be explained original dimension of \gls{LC25000} samples, which were 768 x 768 pixels, and the distribution of images in this \gls{DS}.
+This conclusion is further supported by the data in Tables \ref{table_NCTCRCHE100K-nonorm_adam}, \ref{table_NCTCRCHE100K-nonorm_adammax}, and \ref{table_NCTCRCHE100K-nonorm_sgd}, highlighting the rigid dependency introduced by Macenko's color normalization method in the normalized training set. By removing this feature during the training stage, the resulting outcomes became more diverse and aligned closely with real world classification conditions. Although the absolute performance metrics were lower, this outcome can be attributed to the original 768 x 768 pixel dimensions of the \gls{LC25000} samples and the specific class distributions within that dataset.
 
-Before analyzing \gls{QNN} architecture performance, it is necessary to point that, in a cloud service \gls{ML} environment with time limit session like Google Colab, quantum computational without appropriate hardware remain limited for large \gls{DS}. With that said, as an early-adoption study, tables \ref{table_quanvolution_lc25000}, \ref{table_quanvolution_nctcrche100k} and \ref{table_quanvolution_nctcrche100k-nonorm} illustrat that the model achieved strong performance. The best result accomplished by training with \gls{NCTCRCHE100K}-nonorm and testing with \gls{CRC5000} samples reached almost 80 percent of F-Score, maintaining accuracy and recall higher than 85 percent.
+Before analyzing the performance of the \gls{QNN} architecture, it is necessary to point out that within a cloud based machine learning environment subject to session runtime limits, such as Google Colab, quantum computing simulation without specialized hardware remains constrained when handling large datasets. Given these boundaries, this exploratory study presents promising results in Tables \ref{table_quanvolution_lc25000}, \ref{table_quanvolution_nctcrche100k}, and \ref{table_quanvolution_nctcrche100k-nonorm}. The most optimal configuration was achieved by training on the unnormalized \gls{NCTCRCHE100K} variant and testing against \gls{CRC5000} samples, reaching an F-Score of nearly 80 percent while maintaining accuracy and recall metrics above 85 percent.
 
-Comparing classic \gls{CNN} and \gls{RNN} with the proposed quanvolutional model, the robustness across the tested \gls{DS} repeated the same pattern described previously, with a downgrade of 10 percent in all scenarious. Nonetheless, considering the simplicity of the circuit proposed and the converging loss in graphics \ref{loss_quanvolution_lc25000}, \ref{loss_quanvolution_100k} and \ref{loss_quanvolution_nonorm}, it is undeniable the hybrid architecture capacity of feature extraction and generalization for medical application as \gls{CRC} classification.
+When comparing the classical convolutional and recurrent neural network architectures with the proposed quanvolutional model, the robustness across the evaluated datasets followed a similar pattern to the one described previously, exhibiting a performance drop of roughly 10 percent across all scenarios. Nonetheless, given the structural simplicity of the proposed quantum circuit and the successfully converging loss curves illustrated in Figures \ref{loss_quanvolution_lc25000}, \ref{loss_quanvolution_100k}, and \ref{loss_quanvolution_nonorm}, the capability of this hybrid architecture to perform feature extraction and generalize effectively for medical applications such as colorectal cancer classification remains evident.
 
 
