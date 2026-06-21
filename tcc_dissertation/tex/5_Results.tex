@@ -1,7 +1,8 @@
 \label{chap:results}
+
 This chapter describes the outcomes of the different development proposals outlined in Chapter \ref{chap:methodology}. The numerical results of each experiment are evaluated using the metrics described in Section \ref{sec_metrics} of Chapter \ref{chap:background}: accuracy, precision, recall, and F-score. These metrics were computed based on the outputs of the binary tissue classification models.
 
-\begin{table}[t!]
+\begin{table}[h!]
 \centering
 \caption{Performance metrics from model trained with \gls{LC25000} using adam optimizer}
 \label{table_lc25000_adam}
@@ -105,7 +106,7 @@ This chapter describes the outcomes of the different development proposals outli
 \begin{figure}[t!]
   \centering
 
-  \caption{Train/validation loss using \gls{LC25000} using adammax optimizer}
+  \caption{Train/validation loss using \gls{LC25000} using AdamMax optimizer}
   \label{fig:LC25000_adammax_loss}
 
   \begin{subfigure}[b]{0.44\textwidth}
@@ -312,7 +313,7 @@ This chapter describes the outcomes of the different development proposals outli
 \begin{table}[t!]
 \centering
 
-\caption{Performance metrics from model trained with \gls{NCTCRCHE100K} and test with all \gls{DS} using adammax optimizer}
+\caption{Performance metrics from model trained with \gls{NCTCRCHE100K} and test with all \gls{DS} using AdamMax optimizer}
 \label{table_NCTCRCHE100K_adammax}
 
 \begin{tabular}{|c|l|c|c|c|c|}
@@ -348,7 +349,7 @@ This chapter describes the outcomes of the different development proposals outli
 \begin{figure}[t!]
   \centering
 
-  \caption{Train/validation loss using \gls{NCTCRCHE100K} using adammax optimizer}
+  \caption{Train/validation loss using \gls{NCTCRCHE100K} using AdamMax optimizer}
   \label{fig:100K_adammax_loss}
 
   \begin{subfigure}[b]{0.44\textwidth}
@@ -563,7 +564,7 @@ This chapter describes the outcomes of the different development proposals outli
 \begin{table}[t!]
 \centering
 
-\caption{Performance metrics from model trained with \gls{NCTCRCHE100K}-NoNorm and test with all \gls{DS} using adammax optimizer}
+\caption{Performance metrics from model trained with \gls{NCTCRCHE100K}-NoNorm and test with all \gls{DS} using AdamMax optimizer}
 \label{table_NCTCRCHE100K-nonorm_adammax}
 
 \begin{tabular}{|c|l|c|c|c|c|}
@@ -636,7 +637,7 @@ This chapter describes the outcomes of the different development proposals outli
     \includegraphics[width=\textwidth]{loss-resnet152-nonorm-adammax}
     \caption{Resnet152}
   \end{subfigure}
-  \caption{Train/validation loss using \gls{NCTCRCHE100K}-nonorm using adammax optimizer}
+  \caption{Train/validation loss using \gls{NCTCRCHE100K}-nonorm using AdamMax optimizer}
   \label{fig:100K-nonorm_adammax_loss}
 \end{figure}
 
