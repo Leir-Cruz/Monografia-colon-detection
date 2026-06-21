@@ -3,23 +3,23 @@
 \section{Problem Statement}
 \label{sec_problem}
 
-Globally, colorectal cancer remains one of the most prevalent and lethal malignancies. As the third most common cancer worldwide, it accounts for approximately 10\% of all oncological cases and stands as the second leading cause of cancer-related mortality. According to data from Our World in Data~\cite{owid-cancer}, an estimated 1.9 million new cases and over 900,000 deaths were recorded globally in 2022 alone. Common clinical symptoms include hematochezia (blood in the stool), persistent changes in bowel habits (such as diarrhea or constipation), abdominal pain, and unexplained weight loss.
+Globally, \gls{CRC} remains one of the most prevalent and lethal malignancies. As the third most common cancer worldwide, it accounts for approximately 10\% of all oncological cases and stands as the second leading cause of cancer-related mortality. According to data from Our World in Data~\cite{owid-cancer}, an estimated 1.9 million new cases and over 900,000 deaths were recorded globally in 2022 alone. Common clinical symptoms include hematochezia (blood in the stool), persistent changes in bowel habits (such as diarrhea or constipation), abdominal pain, and unexplained weight loss.
 
 While incidence rates are higher in individuals over 50 years of age, clinical studies~\cite{DEKKER20191467} indicate that various modifiable lifestyle factors significantly escalate risk. These include diets low in fruits and vegetables, high consumption of red and processed meats, physical inactivity, obesity, alcohol consumption, and smoking. Furthermore, chronic inflammatory bowel diseases and hereditary predispositions such as \gls{FAP} and Lynch syndrome can increase dramatically the patient vulnerability.
 
-Early detection of neoplastic polyps remains the most effective strategy to improve patient survival rates and achieve clinical remission. However, standard colonoscopy is highly invasive, and its diagnostic accuracy is heavily dependent on operator experience and the quality of bowel preparation. Furthermore, limited access to screening facilities in low-income regions frequently leads to late-stage diagnoses and poor patient prognoses. Consequently, there is an urgent need for automated, highly accurate, and efficient diagnostic methods to support early detection and alleviate the global healthcare burden.
+Early detection of neoplastic polyps remains the most effective strategy to improve patient survival rates and achieve clinical remission. However, standard \gls{CL} is highly invasive, and its diagnostic accuracy is heavily dependent on operator experience and the quality of bowel preparation. Furthermore, limited access to screening facilities in low-income regions frequently leads to late-stage diagnoses and poor patient prognoses. Consequently, there is an urgent need for automated, highly accurate, and efficient diagnostic methods to support early detection and alleviate the global healthcare burden.
 
-\begin{figure}[htbp]
+\begin{figure}[htbp]colonoscopy
     \centering
     \includegraphics[width=0.4\textwidth]{tumor}
-    \caption{Sample colonoscopy image depicting a colorectal tumor (Kather et al.~\cite{kather2018crc100k}).}
+    \caption{Sample  image depicting a colorectal tumor (Kather et al.~\cite{kather2018crc100k}).}
     \label{fig:colonoscopy_tumor}
 \end{figure}
 
 \section{Research Objectives and Contributions}
 \label{sec_goals}
 
-To address these diagnostic challenges, this research evaluates the efficacy of various deep learning architectures in classifying colonoscopy images. Specifically, this work investigates standard deep neural networks alongside emerging \glspl{QNN} to analyze their performance within shallow (low-depth) architectural constraints. 
+To address these diagnostic challenges, this research evaluates the efficacy of various deep learning architectures in classifying \gls{CL} images. Specifically, this work investigates standard deep neural networks alongside emerging \glspl{QNN} to analyze their performance within shallow (low-depth) architectural constraints. 
 
 The primary contributions of this work includes
 \begin{itemize}
