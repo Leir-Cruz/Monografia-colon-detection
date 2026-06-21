@@ -24,9 +24,7 @@ All images were equally distributed among the five classes mentioned above, resu
 \section{Environment}
 \label{sec_environment}
 Considering the hardware limitations caused by the lack of a local \gls{GPU} during experiments, a cloud based service was necessary to run the \gls{DL} models through the training phase. Google Colab, a Jupyter Notebook environment provided by Google, was chosen due to its ease of configuration and its reliability within the Pro+ plan. While the service provides a free tier option, it suffers from runtime interruptions and offers less capable \gls{GPU} instances. All models in this study were executed using an Nvidia A100-SXM4 GPU with 40GB of VRAM.
-
 All model tensor configurations were obtained from the PyTorch Python library. The architectures evaluated were AlexNet, VGG 16, ResNet 18, ResNet 34, ResNet 50, ResNet 101, and ResNet 152.
-
 Development was conducted using \gls{VSCODE}, an \gls{IDE} utilizing the Colab extension, where all dependencies were installed via Jupyter Notebook commands. The datasets were downloaded through their respective programmatic \gls{API} endpoints directly inside the notebook environment.
 
 \section{Common Configurations to All Classic Architecture Scenarios}
