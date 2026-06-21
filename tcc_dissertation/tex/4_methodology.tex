@@ -105,22 +105,72 @@ The split proportions for training and validation matched those applied in Secti
 \section{Quantum Architecture Procedure}
 \label{sec_quantum_first}
 First, to maintain equal parameterization with the classical architectures described in Section \ref{sec_procediments}, all downloaded images were converted to \gls{CSV} files, applying a binary label conversion where 1 represents a cancer image and 0 represents a non cancer image.
-
-The Python library Pennylane, designed for quantum computing and quantum machine learning, was used to build the hybrid quantum model used in this experiment. Based on the architecture developed by Yasmin Rodrigues Sobrinho et al. \cite{quanvolution} for breast cancer classification, the objective was to simulate the same circuit framework and evaluate its feasibility for \gls{CRC} tissue classification. 
+Pennylane~\cite{Bergholm_2018}, a Python library designed for quantum computing and \gls{QML}, was used to build the hybrid quantum model used in this experiment. Based on the architecture developed by Sobrinho et al. \cite{quanvolution} for breast cancer classification, the objective was to simulate the same circuit framework and evaluate its feasibility for \gls{CRC} tissue classification. 
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.8\textwidth]{quanvolution-circuit}
-    \caption{Diagram of the quantum circuit model proposed by Yasmin Rodrigues Sobrinho et al. \cite{quanvolution}, where Depth 1, Depth 2, and Depth 3 represent the sequential quantum layers.}
+    %\includegraphics[width=0.8\textwidth]{quanvolution-circuit}
+
+% ----------------------------------------------------
+    % DEPTH 1
+    % ----------------------------------------------------
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \textbf{Depth 1}\\[1ex]
+        \scalebox{0.85}{
+        \Qcircuit @C=1em @R=1.2em {
+            l_0 & \gate{R_Y(\theta)} & \qw                & \qw      & \qw \\
+            l_1 & \gate{R_Y(\theta)} & \gate{R_Y(\theta)} & \ctrl{2} & \qw \\
+            l_2 & \gate{R_Y(\theta)} & \gate{R_X(\theta)} & \qw      & \gate{R_Z(\theta)} & \gate{R_X(\theta)} & \qw \\
+            l_3 & \gate{R_Y(\theta)} & \qw                & \targ    & \qw
+        }
+        }
+    \end{minipage}
+
+     \vspace{3ex}
+
+     % ----------------------------------------------------
+    % DEPTH 2
+    % ----------------------------------------------------
+    \begin{minipage}{0.52\textwidth}
+        \centering
+        \textbf{Depth 2}\\[1ex]
+        \scalebox{0.85}{
+        \Qcircuit @C=0.8em @R=1.2em {
+            l_0 & \gate{R_Y(\theta)} & \qw                & \qw      & \qswap   & \qw      & \qw      & \qw \\
+            l_1 & \gate{R_Y(\theta)} & \gate{R_Y(\theta)} & \ctrl{2} & \qswap \qwx & \gate{R_Y(\theta)} & \qw & \qw \\
+            l_2 & \gate{R_Y(\theta)} & \gate{R_X(\theta)} & \qw      & \qw      & \gate{R_Z(\theta)} & \gate{R_X(\theta)} & \gate{R_Y(\theta)} & \ctrl{1} & \gate{R_Y(\theta)} & \qw \\
+            l_3 & \gate{R_Y(\theta)} & \qw                & \targ    & \gate{R_Y(\theta)} & \qw & \qw & \qw & \targ    & \qw      & \qw
+        }
+        }
+    \end{minipage}
+
+    \vspace{3ex}
+
+    % ----------------------------------------------------
+    % DEPTH 3
+    % ----------------------------------------------------
+    \begin{minipage}{1\textwidth}
+        \centering
+        \textbf{Depth 3}\\[1ex]
+        \scalebox{0.85}{
+        \Qcircuit @C=0.9em @R=1.2em {
+            l_0 & \gate{R_Y(\theta)} & \qw                & \qw      & \ctrl{1} & \qw      & \qw      & \qw      & \qw      & \qw      & \ctrl{2} & \qw \\
+            l_1 & \gate{R_Y(\theta)} & \gate{R_Y(\theta)} & \ctrl{2} & \targ    & \gate{R_Y(\theta)} & \gate{R_X(\theta)} & \gate{R_Z(\theta)} & \qw & \qw & \qw & \qw \\
+            l_2 & \gate{R_Y(\theta)} & \gate{R_X(\theta)} & \qw      & \qw      & \gate{R_Z(\theta)} & \gate{R_X(\theta)} & \gate{R_Y(\theta)} & \ctrl{1} & \gate{R_Y(\theta)} & \targ    & \qw \\
+            l_3 & \gate{R_Y(\theta)} & \qw                & \targ    & \gate{R_Y(\theta)} & \qw      & \qw      & \qw      & \targ    & \gate{R_Z(\theta)} & \gate{R_Y(\theta)} & \qw
+        }
+        }
+    \end{minipage}
+
+    \caption{Diagram of the quantum circuit model proposed by Sobrinho et al. \cite{quanvolution}, where Depth 1, Depth 2, and Depth 3 represent the sequential quantum layers.}
     \label{fig:quantum_circuit}
 \end{figure}
 
-To replicate the results achieved by Yasmin Rodrigues Sobrinho et al. \cite{quanvolution}, the selected hyperparameters included the Adam optimizer with an initial learning rate of 0.01, which was decayed every five epochs across a total of 20 training epochs, utilizing a batch size of 32. The spatial and normalization transformations applied to the image sets remained identical to those detailed in Section \ref{sec_config}. 
+To replicate the results achieved by Sobrinho et al. \cite{quanvolution}, the selected hyperparameters included the Adam optimizer with an initial learning rate of 0.01, which was decayed every five epochs across a total of 20 training epochs, utilizing a batch size of 32. The spatial and normalization transformations applied to the image sets remained identical to those detailed in Section \ref{sec_config}. 
 
 During initial experimentation, resizing images to a standard 224 x 224 pixel resolution made the training phase completely unfeasible within the Google Colab environment. The computational overhead of simulating a \gls{QNN} without dedicated quantum hardware was exceptionally high. Processing the 7,200 samples of the \gls{LC25000} dataset required more than 10 hours to complete less than a single epoch, a rate that would violate the cloud service maximum continuous virtual machine kernel limit of 24 hours.
 
-To verify if the overall size of the dataset was the primary bottleneck, an experiment was conducted using only 10\% of the total samples available in \gls{LC25000}. However, this configuration still required 10 hours to execute 6 epochs. Extrapolating from this performance, it would require more than thirty hours of continuous computation to complete all 20 training epochs.
-
-Given this scenario of severe resource limitations, the image samples from all datasets were downscaled to a resolution of 28 x 28 pixels.
+To verify if the overall size of the dataset was the primary bottleneck, an experiment was conducted using only 10\% of the total samples available in \gls{LC25000}. However, this configuration still required 10 hours to execute 6 epochs. Extrapolating from this performance, it would require more than thirty hours of continuous computation to complete all 20 training epochs. Given this scenario of severe resource limitations, the image samples from all datasets were downscaled to a resolution of 28 x 28 pixels.
 
 Three different experimental scenarios were then established: training with \gls{LC25000} and testing against both its internal split and the \gls{CRC5000} dataset; training with \gls{NCTCRCHE100K} and testing against all datasets; and training with NCT-CRC-HE-100K-NONORM while testing against all datasets. These scenarios followed the exact procedures described in Sections \ref{sec_second_attempt}, \ref{sec_third_attempt}, and \ref{sec_fourth_attempt}, respectively. Because the volume of data still resulted in high training times, the \gls{LC25000} and \gls{CRC5000} datasets were subsampled to ten percent of their total images, while the \gls{NCTCRCHE100K} dataset was subsampled to one percent of its total volume, matching the approximate sample size used in the first quantum scenario.
