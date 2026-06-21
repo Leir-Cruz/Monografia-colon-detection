@@ -6,7 +6,7 @@ However, the accuracy of \gls{CL} can be affected by various factors, as discuss
 \section{Machine Learning and Computer Vision}
 \label{sec_machine_learning}
 
-In 1943, the first mathematical model establishing the foundations of \gls{AI} was published by Warren McCulloch and Walter Pitts~\cite{mcculloch1943}, proposing the existence of systems capable of performing tasks that typically require human intelligence. The article evaluates neuronal activity as an "all or none" characteristic, where events can be treated by propositional logic. Biologically, a brain cell needs to receive an excitation higher than its threshold to trigger an impulse, which is determined by its own characteristics.
+In 1943, the first mathematical model establishing the foundations of \gls{AI} was published by McCulloch \& Pitts~\cite{mcculloch1943}, proposing the existence of systems capable of performing tasks that typically require human intelligence. The article evaluates neuronal activity as an "all or none" characteristic, where events can be treated by propositional logic. Biologically, a brain cell needs to receive an excitation higher than its threshold to trigger an impulse, which is determined by its own characteristics.
 
 Considering this, the authors claim that a neuron can be described as a logic block executing logical functions. Brain cells could be organized in networks that could describe any logical proposition. In 1950, with the question "Can machines think?", Alan Turing started his seminal paper \cite{DBLP:journals/x/Turing50} by describing thinking abilities in terms of problem-solving, decision-making, and pattern recognition. In this approach, intelligence could be simulated by computational processes. However, a philosophical question must be raised: what exactly is intelligence? By stating that machines could emulate human intelligence, it is necessary to delimit what it is and how it can be measured. In his article, Turing affirms that years later, machines would be able to simulate human behavior in such a way that a regular person would not be able to distinguish whether they are interacting with a machine or a human. This would serve as the parameter to determine whether or not machines had achieved human intelligence.
 
@@ -19,7 +19,7 @@ By comparing the human brain to a digital computer, Turing suggests that it was 
     \label{fig:checker_opening}
 \end{figure}
 
-The machine would look ahead a few moves and evaluate the resulting board position. The algorithm had to find out which of those parameters were relevant, serving as an example of experience based learning like that suggested by Turing \cite{DBLP:journals/x/Turing50}. The score of the resulting position was expressed in terms of a linear polynomial with a total of 38 parameters, but it evaluated only 16 at a time for reasons of efficiency and relevance. The conclusion of the 1959 article was that such devised learning schemes would outperform an average person and that these schemes should be applied to real-life problems.
+The machine would look ahead a few moves and evaluate the resulting board position, as examplified by figure \ref{fig:checker_opening}. The algorithm had to find out which of those parameters were relevant, serving as an example of experience based learning like that suggested by Turing \cite{DBLP:journals/x/Turing50}. The score of the resulting position was expressed in terms of a linear polynomial with a total of 38 parameters, but it evaluated only 16 at a time for reasons of efficiency and relevance. The conclusion of the 1959 article was that such devised learning schemes would outperform an average person and that these schemes should be applied to real-life problems.
 
 Lawrence G. Roberts, with his work Machine Perception of Three-Dimensional Solids \cite{Roberts1963MachinePO}, built some of the foundations of what later would be called \gls{CV}, which is the field of computer science that studies how to enable computers to extract and understand information from visual data, such as images or videos. In his paper, the author showed how a computer could infer 3D structures from 2D images of simple polyhedral objects using techniques such as edge detection and geometric reasoning, which later were used for image detection and classification as discussed further in Section \ref{sec_deep_learning}.
 
@@ -36,7 +36,7 @@ The type of task that can be solved or explored using \gls{ML} and \gls{AI} depe
 \label{sec_supervised_learning}
 Frank Rosenblatt~\cite{rosenblatt1958perceptron} proposed a model in 1958 to explain how the human brain stores data and utilizes it for pattern recognition and behavior. He was committed to understanding how information contained in storage influences recognition. Like Alan Turing~\cite{DBLP:journals/x/Turing50}, Rosenblatt also believed in the application of positive or negative reinforcement to make the system learn. Not only that, but he also expanded the biological concept to his machine model, stating that similar stimuli should activate the same networks of cells.
 
-This probabilistic model, called the perceptron, is divided into three layers: sensory units that respond to impulses on an all or nothing basis; association units that receive the transmitted impulses and, if the algebraic sum of those impulses is greater than the unit threshold, fire and trigger responses in certain response units. Each response unit has feedback connections that can be excitatory or inhibitory and are mutually exclusive. This means that if a response unit is triggered during a stimulus, it will inhibit others from triggering for other similar stimuli.
+This probabilistic model, called the perceptron, is divided into three layers: sensory units that respond to impulses on an all or nothing basis; association units that receive the transmitted impulses and, if the algebraic sum of those impulses is greater than the unit threshold, fire and trigger responses in certain response units, illustrated in figure \ref{fig:perceptron_model}. Each response unit has feedback connections that can be excitatory or inhibitory and are mutually exclusive. This means that if a response unit is triggered during a stimulus, it will inhibit others from triggering for other similar stimuli.
 
 \begin{figure}[htbp]
     \centering
@@ -88,7 +88,7 @@ It was through the work of Rumelhart et al.~\cite{Rumelhart1986LearningRB} that 
     x_j = \sum_{i} y_i w_{ij} 
 \end{equation}
 One important difference pointed out in \cite{Rumelhart1986LearningRB} is that each hidden layer output is followed by a non-linear function, unlike \gls{ADALINE}, where all layers had a linear function as an output. This change is necessary because a series of linear functions could otherwise be simplified and replaced by a single linear function through weight adjustment, which would limit the learning capacity of the system.
-For example, in \gls{BC}, as explored in Chapter \ref{chap:methodology}, it is very common to use a sigmoid function as the non-linear activation function of the neuron output. Equation \ref{sigmoid_func} demonstrated sigmoid
+For example, in \gls{BC}, as explored in Chapter \ref{chap:methodology}, it is very common to use a sigmoid function, demonstrated in equation \ref{sigmoid_func}, as the non-linear activation function of the neuron output.
 \begin{equation}
      y_j = \frac{1}{1 + e^{-x_j}} \label{sigmoid_func}
 \end{equation}
@@ -205,7 +205,7 @@ In 2012, Krizhevsky et al.~\cite{DBLP:conf/nips/KrizhevskySH12} proposed a highl
     \label{fig:alexnet_architecture}
 \end{figure}
 
-demonstrated sigmoidThe AlexNet architecture contains five convolutional layers and three fully connected layers. For the non-linearity of the neurons, \glspl{ReLU} from Nair \& Hinton \cite{Relu} were used. Deep learning networks using \glspl{ReLU} train several times faster than their equivalents using classic tanh units. In addition, the proposed architecture supports cross-\gls{GPU} parallel training, enabling the systems to read from and write to one another's memory directly without going through the host machine memory. Equations \ref{eq_tanh_function} and \ref{eq_relu_function} illustrates the non-linearity above:
+The AlexNet architecture contains five convolutional layers and three fully connected layers. For the non-linearity of the neurons, \glspl{ReLU} from Nair \& Hinton \cite{Relu} were used. Deep learning networks using \glspl{ReLU} train several times faster than their equivalents using classic tanh units. In addition, the proposed architecture supports cross-\gls{GPU} parallel training, enabling the systems to read from and write to one another's memory directly without going through the host machine memory. Equations \ref{eq_tanh_function} and \ref{eq_relu_function} illustrates the non-linearity above:
 
 \begin{equation}
 f(x) = \tanh(x)
@@ -226,11 +226,11 @@ f(x) = \max(0, x)
 
 In addition to convolutional layers, AlexNet also utilizes pooling layers, previously referenced as sub-sampling, which summarize the outputs of neighboring groups of neurons in the same kernel map. This operation retains essential features while reducing the number of parameters and the overall complexity of the model.
 
-Following the success of the \gls{CNN} in image recognition, alongside the growing availability of very large \gls{DS} for academic studies, multiple attempts have been made to improve the original architecture of Krizhevsky et al. \cite{DBLP:conf/nips/KrizhevskySH12}. Multiple lines of improvement have been explored, with a particular focus on the depth of the networks.
+Following the success of the \gls{CNN} in image recognition, alongside the growing availability of very large \glspl{DS} for academic studies, multiple attempts have been made to improve the original architecture of Krizhevsky et al. \cite{DBLP:conf/nips/KrizhevskySH12}. Multiple lines of improvement have been explored, with a particular focus on the depth of the networks.
 
 By increasing the depth of a network through the addition of more convolutional layers and using small (3 x 3) filters in all layers, Simonyan \& Zisserman~\cite{DBLP:journals/corr/SimonyanZ14a} developed an architecture that delivered significantly more accurate results, achieving the desired state-of-the-art accuracy. A stack of convolutional layers is followed by three fully connected layers, with the final layer being a soft-max layer.
 
-All hidden layers utilize Rectified Linear Units for non-linearity. Their work proposes five different architectures. One of them features 13 hidden layers and three fully connected layers, known as "configuration D". This configuration is used in Chapter \ref{chap:methodology} and is referred to as \gls{VGG} 16. 
+All hidden layers utilize \glspl{ReLU} for non-linearity. Their work proposes five different architectures. One of them features 13 hidden layers and three fully connected layers, known as "configuration D". This configuration is used in Chapter \ref{chap:methodology} and is referred to as \gls{VGG} 16. 
 
 \begin{figure}[t!]
     \centering
@@ -260,7 +260,7 @@ y = F(x, \{W_i\}) + x
 \label{sec_quanvolutional}
 Traditional modern \gls{ML} algorithms and networks, such as \gls{CNN} and \gls{RNN} models, have the ability to extract features from data in a hierarchical manner, as exposed in Sections \ref{sec_cnn} and \ref{sec_residual}. These models provide probabilistic results and have been consistently improved over the years \cite{DBLP:conf/nips/KrizhevskySH12, DBLP:journals/cacm/KrizhevskySH17, DBLP:journals/corr/HeZRS15}, but they remain vulnerable to computational bottlenecks when dealing with high-dimensional inputs. Seth Lloyd et al. \cite{articlequantum} showed that \gls{QML} can provide exponential speedups over classical computers for problems involving large numbers of vectors.
 
-Maxwell Henderson et al. \cite{Henderson2019QuanvolutionalNN} proposed a new type of model called the \gls{QNN}. This architecture adds a new type of transformational layer to the standard \gls{CNN}, known as the quantum convolutional layer. Similar to a classical convolutional layer, quanvolutional layers are made of a group of $N$ filters that produce feature maps by transforming input data, but they utilize random quantum circuits instead.
+Henderson et al. \cite{Henderson2019QuanvolutionalNN} proposed a new type of model called the \gls{QNN}. This architecture adds a new type of transformational layer to the standard \gls{CNN}, known as the quantum convolutional layer. Similar to a classical convolutional layer, quanvolutional layers are made of a group of $N$ filters that produce feature maps by transforming input data, but they utilize random quantum circuits instead.
 
 \begin{figure}[htbp]
     \centering
@@ -271,7 +271,7 @@ Maxwell Henderson et al. \cite{Henderson2019QuanvolutionalNN} proposed a new typ
 
 Each quanvolutional filter produces a feature map when applied to an input tensor, just like a convolutional filter. Nevertheless, instead of the element-wise matrix multiplication used by a convolutional filter, the quanvolutional layer transforms the input data using a quantum circuit. For each filter, an encoding function is applied to the input data. Then, a quantum computation is executed on the encoded input before decoding occurs. Figure \ref{fig_quantum_layer_example}.B displays this encoding, circuit execution, and decoding process.
 
-The conclusions drawn by Maxwell Henderson et al. \cite{Henderson2019QuanvolutionalNN} proved that the proposed hybrid model provided a scalable \gls{QML} application for real-world tasks, such as image recognition.
+The conclusions drawn by Henderson et al. \cite{Henderson2019QuanvolutionalNN} proved that the proposed hybrid model provided a scalable \gls{QML} application for real-world tasks, such as image recognition.
 
 
 \section{Evaluation Metrics}
@@ -340,4 +340,4 @@ The F-score is the harmonic mean of precision and recall.
 
 \section{Final Considerations}
 \label{sec_final_considerations}
- The study of the performance of \gls{DL} and quantum modern architectures in different generalization tasks can be very useful for the society, specially when it comes to medical application. Next chapters in this research verify applicability of \gls{DL} and \gls{QNN} models in \gls{CRC} \gls{BC}, with the presented scientific foundation in this chapter.
+ The study of the performance of \gls{DL} and quantum modern architectures in different generalization tasks can be very useful for the society, specially when it comes to medical application. Next chapters in this research verify applicability of \gls{DL} and \gls{QNN} models in \gls{CRC} \gls{BC}, with the presented scientific foundation in this chapter and using the exposed evaluation metrics.
