@@ -1,7 +1,7 @@
 \label{chap:background}
 
-The \gls{CL} is a procedure that allows doctors to examine the inner lining of the colon and rectum using a flexible tube with a lighted camera. The \gls{CLP} passes through the anus and rectum into the colon, providing images of the interior. These images can be used to identify abnormalities such as polyps, which can develop into colorectal cancer if left untreated. 
-However, the accuracy of \gls{CL} can be affected by various factors, as discussed in Chapter \ref{chap:introduction}. Considering the importance of early detection of colorectal cancer, improving the accuracy of \gls{CL} is undeniably a critical area of research. 
+The \gls{CL} is a procedure that allows doctors to examine the inner lining of the colon and rectum using a flexible tube with a lighted camera. The \gls{CLP} passes through the anus and rectum into the colon, providing images of the interior. These images can be used to identify abnormalities such as polyps, which can develop into \gls{CRC} if left untreated. 
+However, the accuracy of \gls{CL} can be affected by various factors, as discussed in Chapter \ref{chap:introduction}. Considering the importance of early detection of \gls{CRC}, improving the accuracy of \gls{CL} is undeniably a critical area of research. 
 
 \section{Machine Learning and Computer Vision}
 \label{sec_machine_learning}
@@ -70,7 +70,7 @@ Just like the perceptron, \gls{ADALINE} had one layer aside from the input and o
     \epsilon(k) = d(k) - \left[a_0 + \sum_{j=1}^{n} a_j s_j(k)\right]
 \end{equation}
 
-Widrow and Hoff demonstrated mathematically that the use of \gls{MSE} to adapt weights was advantageous because of its parabolic properties, which guarantee a single global minimum.
+Widrow \& Hoff demonstrated mathematically that the use of \gls{MSE} to adapt weights was advantageous because of its parabolic properties, which guarantee a single global minimum.
 \begin{equation} 
     MSE = \frac{1}{m} \sum_{i=1}^{m} (\hat{y}^{(i)} - y^{(i)})^2 
 \end{equation}
@@ -88,7 +88,7 @@ It was through the work of David E. Rumelhart et al. \cite{Rumelhart1986Learning
     x_j = \sum_{i} y_i w_{ij} 
 \end{equation}
 One important difference pointed out in \cite{Rumelhart1986LearningRB} is that each hidden layer output is followed by a non-linear function, unlike \gls{ADALINE}, where all layers had a linear function as an output. This change is necessary because a series of linear functions could otherwise be simplified and replaced by a single linear function through weight adjustment, which would limit the learning capacity of the system.
-For example, in binary classification, as explored in Chapter \ref{chap:methodology}, it is very common to use a sigmoid function as the non-linear activation function of the neuron output. Equation \ref{sigmoid_func} demonstrated sigmoid
+For example, in \gls{BC}, as explored in Chapter \ref{chap:methodology}, it is very common to use a sigmoid function as the non-linear activation function of the neuron output. Equation \ref{sigmoid_func} demonstrated sigmoid
 \begin{equation}
      y_j = \frac{1}{1 + e^{-x_j}} \label{sigmoid_func}
 \end{equation}
@@ -160,7 +160,7 @@ Lutz Prechelt \cite{articleEarlyStopping} describes the early stopping technique
 
 \subsection{Convolutional Neural Networks}
 \label{sec_cnn}
-Kurt Hornik, Maxwell Stinchcombe, and Halbert White \cite{HORNIK1989359} established that standard multilayer feedforward networks are capable of approximating any measurable function to any degree of accuracy. This implies that applications can reach desired results given an adequate learning process, an appropriate number of hidden units, or a high-quality deterministic relationship between the input and the target. 
+Hornik et al. \cite{HORNIK1989359} established that standard multilayer feedforward networks are capable of approximating any measurable function to any degree of accuracy. This implies that applications can reach desired results given an adequate learning process, an appropriate number of hidden units, or a high-quality deterministic relationship between the input and the target. 
 
 In the paper by Y. LeCun \cite{6795724}, an architecture was proposed where the learning procedure was fed directly with images rather than handcrafted feature vectors. The main goal was to achieve handwritten zip code digit recognition using data from the U.S. Postal Service. Another contrast with earlier works was that all connections in the network were trained using \gls{BP}, whereas the first few layers of connections previously used to be handchosen constants implemented on a neural network chip for specific tasks. To store the complex information derived from an entire image instead of a vector and to extract common features in pattern recognition, the weight sharing technique was applied to extract local features and combine them into higher-order features.
 
@@ -205,7 +205,7 @@ In 2012, Alex Krizhevsky et al. \cite{DBLP:conf/nips/KrizhevskySH12} proposed a 
     \label{fig:alexnet_architecture}
 \end{figure}
 
-demonstrated sigmoidThe AlexNet architecture contains five convolutional layers and three fully connected layers. For the non-linearity of the neurons, \glspl{ReLU} from Nair and Hinton \cite{Relu} were used. Deep learning networks using ReLUs train several times faster than their equivalents using classic tanh units. In addition, the proposed architecture supports cross-\gls{GPU} parallel training, enabling the systems to read from and write to one another's memory directly without going through the host machine memory. Equations \ref{eq_tanh_function} and \ref{eq_relu_function} illustrates the non-linearity above:
+demonstrated sigmoidThe AlexNet architecture contains five convolutional layers and three fully connected layers. For the non-linearity of the neurons, \glspl{ReLU} from Nair \& Hinton \cite{Relu} were used. Deep learning networks using \glspl{ReLU} train several times faster than their equivalents using classic tanh units. In addition, the proposed architecture supports cross-\gls{GPU} parallel training, enabling the systems to read from and write to one another's memory directly without going through the host machine memory. Equations \ref{eq_tanh_function} and \ref{eq_relu_function} illustrates the non-linearity above:
 
 \begin{equation}
 f(x) = \tanh(x)
@@ -226,11 +226,11 @@ f(x) = \max(0, x)
 
 In addition to convolutional layers, AlexNet also utilizes pooling layers, previously referenced as sub-sampling, which summarize the outputs of neighboring groups of neurons in the same kernel map. This operation retains essential features while reducing the number of parameters and the overall complexity of the model.
 
-Following the success of the \gls{CNN} in image recognition, alongside the growing availability of very large datasets for academic studies, multiple attempts have been made to improve the original architecture of Krizhevsky et al. \cite{DBLP:conf/nips/KrizhevskySH12}. Multiple lines of improvement have been explored, with a particular focus on the depth of the networks.
+Following the success of the \gls{CNN} in image recognition, alongside the growing availability of very large \gls{DS} for academic studies, multiple attempts have been made to improve the original architecture of Krizhevsky et al. \cite{DBLP:conf/nips/KrizhevskySH12}. Multiple lines of improvement have been explored, with a particular focus on the depth of the networks.
 
 By increasing the depth of a network through the addition of more convolutional layers and using small (3 x 3) filters in all layers, Karen Simonyan and Andrew Zisserman \cite{DBLP:journals/corr/SimonyanZ14a} developed an architecture that delivered significantly more accurate results, achieving the desired state-of-the-art accuracy. A stack of convolutional layers is followed by three fully connected layers, with the final layer being a soft-max layer.
 
-All hidden layers utilize Rectified Linear Units for non-linearity. Their work proposes five different architectures. One of them features 13 hidden layers and three fully connected layers, known as "configuration D". This configuration is used in Chapter \ref{chap:methodology} and is referred to as VGG16. 
+All hidden layers utilize Rectified Linear Units for non-linearity. Their work proposes five different architectures. One of them features 13 hidden layers and three fully connected layers, known as "configuration D". This configuration is used in Chapter \ref{chap:methodology} and is referred to as \gls{VGG} 16. 
 
 \begin{figure}[t!]
     \centering
@@ -276,7 +276,7 @@ The conclusions drawn by Maxwell Henderson et al. \cite{Henderson2019Quanvolutio
 
 \section{Evaluation Metrics}
 \label{sec_metrics}
-In classification tasks such as image and pattern recognition, it is important to have a reliable way of measuring how well a \gls{DL} model is performing. The simplest case of classification is binary classification, where there are only two classes to which a sample can belong, normally labeled as Positive (P) or Negative (N). The total outcomes of a binary classifier are defined as follows \cite{metrics}:
+In classification tasks such as image and pattern recognition, it is important to have a reliable way of measuring how well a \gls{DL} model is performing. The simplest case of classification is \gls{BC}, where there are only two classes to which a sample can belong, normally labeled as Positive (P) or Negative (N). The total outcomes of a binary classifier are defined as follows \cite{metrics}:
 \begin{itemize}
     \item \gls{TP}: sample is actually positive and the model correctly predicts positive.
     \item \gls{TN}: sample is actually negative and the model correctly predicts negative.
@@ -300,11 +300,11 @@ The most common way to visualize these outcomes is by using a confusion matrix. 
     \label{fig:confusion_matrix_explain}
 \end{figure}
 
-Considering the possible outcomes of a binary classification sample, there are different metrics that evaluate distinct characteristics of model performance during the training phase. As discussed in Chapter \ref{chap:methodology}, five of those metrics were used during this work, which are explained below.
+Considering the possible outcomes of a \gls{BC} sample, there are different metrics that evaluate distinct characteristics of model performance during the training phase. As discussed in Chapter \ref{chap:methodology}, five of those metrics were used during this work, which are explained below.
 
 \subsection{Accuracy}
 \label{sub_sec_accuracy}
-Accuracy is defined as the number of all correct predictions divided by the total number of samples in the dataset.
+Accuracy is defined as the number of all correct predictions divided by the total number of samples in the \gls{DS}.
 \begin{equation}
     \frac{TP + TN}{TP + FP + TN + FN}
 \end{equation}

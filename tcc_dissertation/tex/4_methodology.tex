@@ -3,7 +3,7 @@ This chapter describes the experimental designs and implementation details of th
 
 \section{Datasets}
 \label{sec_datasets}
-For this survey, three different datasets were utilized. All of them underwent transformations to map their respective original classes into a binary classification statement.
+For this survey, three different \gls{DS} were utilized. All of them underwent transformations to map their respective original classes into a \gls{BC} statement.
 
 \subsection{100,000 Histological Images of Human Colorectal Cancer and Healthy Tissue}
 \label{subsec_nct100k}
@@ -13,11 +13,11 @@ The \gls{DS} is divided into three distinct sets. The first is NCT-CRC-HE-100K, 
 
 \subsection{Collection of Textures in Colorectal Cancer Histology}
 \label{subsec_crc5000}
-The \gls{CRC5000} dataset by Kather et al. \cite{kather_2016_53169} groups histological samples from colon tissues into 8 different classes: TUMOR, STROMA, COMPLEX, LYMPHO, DEBRIS, MUCOSA, ADIPOSE, and EMPTY. 
+The \gls{CRC5000} \gls{DS} by Kather et al. \cite{kather_2016_53169} groups histological samples from colon tissues into 8 different classes: TUMOR, STROMA, COMPLEX, LYMPHO, DEBRIS, MUCOSA, ADIPOSE, and EMPTY. 
  
 \subsection{Lung and Colon Cancer Histopathological Image Dataset (LC25000)}
 \label{subsec_lc25000}
-Composed of twenty five thousand images of colon and lung tissues, the \gls{LC25000} dataset was originally generated from seven hundred fifty total images of lung tissue (250 benign lung tissue, 250 lung adenocarcinomas, and 250 lung squamous cell carcinomas) and 500 total images of colon tissue (250 benign colon tissue and 250 colon adenocarcinomas). All images were cropped to square dimensions of 768 x 768 pixels from the original 1024 x 768 pixel resolution and were augmented using the Augmentor software package in the Python programming language. This augmentation process applied left and right rotations of up to 25 degrees with a probability of 1.0, as well as horizontal and vertical flips with a probability of 0.5. The classes in the dataset include colon adenocarcinoma, benign colonic tissues, lung adenocarcinomas, lung squamous cell carcinoma, and benign lung tissues. 
+Composed of twenty five thousand images of colon and lung tissues, the \gls{LC25000} \gls{DS} was originally generated from seven hundred fifty total images of lung tissue (250 benign lung tissue, 250 lung adenocarcinomas, and 250 lung squamous cell carcinomas) and 500 total images of colon tissue (250 benign colon tissue and 250 colon adenocarcinomas). All images were cropped to square dimensions of 768 x 768 pixels from the original 1024 x 768 pixel resolution and were augmented using the Augmentor software package in the Python programming language. This augmentation process applied left and right rotations of up to 25 degrees with a probability of 1.0, as well as horizontal and vertical flips with a probability of 0.5. The classes in the \gls{DS} include colon adenocarcinoma, benign colonic tissues, lung adenocarcinomas, lung squamous cell carcinoma, and benign lung tissues. 
 
 All images were equally distributed among the five classes mentioned above, resulting in five thousand samples per class.
 
@@ -25,7 +25,7 @@ All images were equally distributed among the five classes mentioned above, resu
 \label{sec_environment}
 Considering the hardware limitations caused by the lack of a local \gls{GPU} during experiments, a cloud based service was necessary to run the \gls{DL} models through the training phase. Google Colab, a Jupyter Notebook environment provided by Google, was chosen due to its ease of configuration and its reliability within the Pro+ plan. While the service provides a free tier option, it suffers from runtime interruptions and offers less capable \gls{GPU} instances. All models in this study were executed using an Nvidia A100-SXM4 GPU with 40GB of VRAM.
 All model tensor configurations were obtained from the PyTorch Python library. The architectures evaluated were AlexNet, VGG 16, ResNet 18, ResNet 34, ResNet 50, ResNet 101, and ResNet 152.
-Development was conducted using \gls{VSCODE}, an \gls{IDE} utilizing the Colab extension, where all dependencies were installed via Jupyter Notebook commands. The datasets were downloaded through their respective programmatic \gls{API} endpoints directly inside the notebook environment.
+Development was conducted using \gls{VSCODE}, an \gls{IDE} utilizing the Colab extension, where all dependencies were installed via Jupyter Notebook commands. The \glspl{DS} were downloaded through their respective programmatic \gls{API} endpoints directly inside the notebook environment.
 
 \section{Common Configurations to All Classic Architecture Scenarios}
 \label{sec_config}
@@ -36,11 +36,11 @@ All optimizer hyperparameters were chosen based on the literature reviewed in Ch
 
 \section{Procedures}
 \label{sec_procediments}
-After downloading the necessary images, they were indexed into a \gls{CSV} file for each dataset. For all data sources, the \gls{CSV} file was generated with two columns: path and label. The first column contains the absolute path the program follows to load the image, while the second column indicates the image class. For training via the PyTorch library interface, labels had to be represented as numeric values, meaning the following mapping was performed: 1 for a cancer image and 0 for a non cancer image.
+After downloading the necessary images, they were indexed into a \gls{CSV} file for each \gls{DS}. For all data sources, the \gls{CSV} file was generated with two columns: path and label. The first column contains the absolute path the program follows to load the image, while the second column indicates the image class. For training via the PyTorch library interface, labels had to be represented as numeric values, meaning the following mapping was performed: 1 for a cancer image and 0 for a non cancer image.
 
 Using the respective \gls{CSV} file, the samples were split into validation, test, and training sets, while being resized to 224 x 224 pixels and normalized using ImageNet standards. This normalization utilized a mean of 0.485, 0.456, 0.406 and a standard deviation of 0.229, 0.224, 0.225 to aid training convergence and computational efficiency \cite{DBLP:conf/nips/KrizhevskySH12, 10913097}.
 
-Following these transformations, all images were loaded into system memory instead of being read continuously from storage, utilizing the DataLoader utility to enhance processing velocity during batch training. Training was conducted via supervised learning using the training and validation splits. Across the 50 epochs, the loss was calculated using the Cross Entropy loss function. If the validation loss failed to improve for 15 consecutive epochs, early stopping was activated, and the model state achieving the best performance (the lowest validation loss) was saved and evaluated using the independent test set.
+Following these transformations, all images were loaded into system memory instead of being read continuously from storage, utilizing the DataLoader utility to enhance processing velocity during batch training. Training was conducted via \gls{SL} using the training and validation splits. Across the 50 epochs, the loss was calculated using the Cross Entropy \gls{LF}. If the validation loss failed to improve for 15 consecutive epochs, early stopping was activated, and the model state achieving the best performance (the lowest validation loss) was saved and evaluated using the independent test set.
 
 \begin{figure}[htbp]
     \centering
@@ -49,10 +49,12 @@ Following these transformations, all images were loaded into system memory inste
     \label{fig:loss_resnet18}
 \end{figure}
 
-Following the training phase, the optimized model was validated using the metrics described in Section \ref{sec_metrics}: accuracy, recall, precision, specificity, and F-Score on the test dataset.
+Following the training phase, the optimized model was validated using the metrics described in Section \ref{sec_metrics}: accuracy, recall, precision, specificity, and F-Score on the test \gls{DS}.
 
 \begin{table}[htbp]
     \centering
+    \caption{Example performance metrics for the test phase of Residual Network 18 using AdamMax as the optimizer and the \gls{NCTCRCHE100K} dataset.}
+    \label{table:metrics_resnet18}
     \begin{tabular}{|l|l|}
     \hline
     Metrics   & Value  \\ \hline
@@ -61,35 +63,34 @@ Following the training phase, the optimized model was validated using the metric
     Recall    & 0.916  \\ \hline
     F-score   & 0.9116 \\ \hline
     \end{tabular}
-    \caption{Example performance metrics for the test phase of Residual Network 18 using AdamMax as the optimizer and the \gls{NCTCRCHE100K} dataset.}
-    \label{table:metrics_resnet18}
+
 \end{table}
 
 \section{Training and Testing Classic Architectures with LC25000}
 \label{sec_first_attempt}
-Based on the paper by Md. Bipul Hossain and Mohamed Shaban \cite{DBLP:conf/aibthings/HossainS24}, the dataset chosen for the initial training and testing attempt was \gls{LC25000}. First, the lung tissue images were discarded, leaving a total of ten thousand labeled colon images.
+Based on the paper by Hossain \& Shaban \cite{DBLP:conf/aibthings/HossainS24}, the \gls{DS} chosen for the initial training and testing attempt was \gls{LC25000}. First, the lung tissue images were discarded, leaving a total of ten thousand labeled colon images.
 
 These images were partitioned using the $train\_test\_split$ function from the scikit learn Python library. For the function parameters, a value of 42 was passed to $random\_state$, which controls the data shuffling applied before the split. This specific seed value was chosen to ensure reproducible outputs across multiple function executions. 
 
-During the splitting process, the \gls{LC25000} dataset was divided into training and testing sets, allocating eighty percent of the images for training and twenty percent for testing. Afterward, the training images were partitioned a second time using the same parameters to create a validation set, separating ten percent of the training subset for validation and ninety percent for actual training. This resulted in 7,200 images for training and 800 images for validation. After training completed and the best model was saved, it was validated using the remaining 2,000 images in the test set.
+During the splitting process, the \gls{LC25000} \gls{DS} was divided into training and testing sets, allocating eighty percent of the images for training and twenty percent for testing. Afterward, the training images were partitioned a second time using the same parameters to create a validation set, separating ten percent of the training subset for validation and ninety percent for actual training. This resulted in 7,200 images for training and 800 images for validation. After training completed and the best model was saved, it was validated using the remaining 2,000 images in the test set.
 
-As shown in Chapter \ref{chap:results}, some of the models failed to converge effectively during training with the \gls{LC25000} dataset. For this reason, the procedure was repeated utilizing a learning rate scheduler with the configurations described in Section \ref{sec_config}.
+As shown in Chapter \ref{chap:results}, some of the models failed to converge effectively during training with the \gls{LC25000} \gls{DS}. For this reason, the procedure was repeated utilizing a learning rate scheduler with the configurations described in Section \ref{sec_config}.
 
 \section{Training with LC25000 and Testing Classic Architectures with CRC5000}
 \label{sec_second_attempt}
-The goal of this section was to verify whether the \gls{LC25000} dataset served as a reliable data source for \gls{DL} applications without any additional color transformations. In this scenario, images from \gls{LC25000} were processed as described in the previous section, with the exception that no data was withheld for testing, utilizing the full set exclusively for training and validation splits.
+The goal of this section was to verify whether the \gls{LC25000} \gls{DS} served as a reliable data source for \gls{DL} applications without any additional color transformations. In this scenario, images from \gls{LC25000} were processed as described in the previous section, with the exception that no data was withheld for testing, utilizing the full set exclusively for training and validation splits.
 
-For testing purposes, images from the \gls{CRC5000} dataset were converted into the CSV format described in Section \ref{sec_config}, while excluding all images from the COMPLEX class, as it was determined that this class could negatively impact system performance. The optimal saved model was then tested against the 4,375 images remaining in the \gls{CRC5000} dataset.
+For testing purposes, images from the \gls{CRC5000} \gls{DS} were converted into the CSV format described in Section \ref{sec_config}, while excluding all images from the COMPLEX class, as it was determined that this class could negatively impact system performance. The optimal saved model was then tested against the 4,375 images remaining in the \gls{CRC5000}.
 
 \section{Training with NCTCRCHE100K and Testing Classic Architectures with All Datasets}
 \label{sec_third_attempt}
-The \gls{NCTCRCHE100K} dataset was already provided in three separate sets: NCT-CRC-HE-100K, NCT-CRC-HE-100K-NONORM, and CRC-VAL-HE-7K. For this case study, the normalized NCT-CRC-HE-100K set was chosen for training and validation, while CRC-VAL-HE-7K was reserved for testing. Additionally, the \gls{LC25000} and \gls{CRC5000} datasets were used as external test data sources. These two external sets were completely transformed according to the criteria in Section \ref{sec_second_attempt} without any data splitting.
+The \gls{NCTCRCHE100K} \gls{DS} was already provided in three separate sets: NCT-CRC-HE-100K, NCT-CRC-HE-100K-NONORM, and CRC-VAL-HE-7K. For this case study, the normalized NCT-CRC-HE-100K set was chosen for training and validation, while CRC-VAL-HE-7K was reserved for testing. Additionally, the \gls{LC25000} and \gls{CRC5000} \gls{DS} were used as external test data sources. These two external sets were completely transformed according to the criteria in Section \ref{sec_second_attempt} without any data splitting.
 
 The training and validation split was configured at eighty percent and twenty percent, respectively. Consequently, 80,000 images were used for training, while the remaining 20,000 images were allocated for validation. For evaluation, all 7,180 images from CRC-VAL-HE-7K were used in a test pass. The 10,000 colon samples from \gls{LC25000} were used in a separate test round, and the same evaluation was performed for the 4,375 images from \gls{CRC5000}.
 
 \section{Training with NCTCRCHE100K-NONORM and Testing Classic Architectures with All Datasets}
 \label{sec_fourth_attempt}
-For this experimental scenario, the unnormalized NCT-CRC-HE-100K-NONORM set was selected for training and validation, while CRC-VAL-HE-7K was chosen for testing. Furthermore, the \gls{LC25000} and \gls{CRC5000} datasets were utilized as additional external test sets. Both external sets were transformed according to the process outlined in Section \ref{sec_second_attempt} without splitting their images.
+For this experimental scenario, the unnormalized NCT-CRC-HE-100K-NONORM set was selected for training and validation, while CRC-VAL-HE-7K was chosen for testing. Furthermore, the \gls{LC25000} and \gls{CRC5000} were utilized as additional external test sets. Both external sets were transformed according to the process outlined in Section \ref{sec_second_attempt} without splitting their images.
 
 The split proportions for training and validation matched those applied in Section \ref{sec_third_attempt}, and the models underwent the same sequential test evaluations.
 
@@ -162,6 +163,6 @@ To replicate the results achieved by Sobrinho et al. \cite{quanvolution}, the se
 
 During initial experimentation, resizing images to a standard 224 x 224 pixel resolution made the training phase completely unfeasible within the Google Colab environment. The computational overhead of simulating a \gls{QNN} without dedicated quantum hardware was exceptionally high. Processing the 7,200 samples of the \gls{LC25000} dataset required more than 10 hours to complete less than a single epoch, a rate that would violate the cloud service maximum continuous virtual machine kernel limit of 24 hours.
 
-To verify if the overall size of the dataset was the primary bottleneck, an experiment was conducted using only 10\% of the total samples available in \gls{LC25000}. However, this configuration still required 10 hours to execute 6 epochs. Extrapolating from this performance, it would require more than thirty hours of continuous computation to complete all 20 training epochs. Given this scenario of severe resource limitations, the image samples from all datasets were downscaled to a resolution of 28 x 28 pixels.
+To verify if the overall size of the \gls{DS} was the primary bottleneck, an experiment was conducted using only 10\% of the total samples available in \gls{LC25000}. However, this configuration still required 10 hours to execute 6 epochs. Extrapolating from this performance, it would require more than thirty hours of continuous computation to complete all 20 training epochs. Given this scenario of severe resource limitations, the image samples from all \glspl{DS} were downscaled to a resolution of 28 x 28 pixels.
 
-Three different experimental scenarios were then established: training with \gls{LC25000} and testing against both its internal split and the \gls{CRC5000} dataset; training with \gls{NCTCRCHE100K} and testing against all datasets; and training with NCT-CRC-HE-100K-NONORM while testing against all datasets. These scenarios followed the exact procedures described in Sections \ref{sec_second_attempt}, \ref{sec_third_attempt}, and \ref{sec_fourth_attempt}, respectively. Because the volume of data still resulted in high training times, the \gls{LC25000} and \gls{CRC5000} datasets were subsampled to ten percent of their total images, while the \gls{NCTCRCHE100K} dataset was subsampled to one percent of its total volume, matching the approximate sample size used in the first quantum scenario.
+Three different experimental scenarios were then established: training with \gls{LC25000} and testing against both its internal split and the \gls{CRC5000}; training with \gls{NCTCRCHE100K} and testing against all \glspl{DS}; and training with NCT-CRC-HE-100K-NONORM while testing against all \glspl{DS}. These scenarios followed the exact procedures described in Sections \ref{sec_second_attempt}, \ref{sec_third_attempt}, and \ref{sec_fourth_attempt}, respectively. Because the volume of data still resulted in high training times, the \gls{LC25000} and \gls{CRC5000} were subsampled to ten percent of their total images, while the \gls{NCTCRCHE100K} was subsampled to one percent of its total volume, matching the approximate sample size used in the first quantum scenario.
