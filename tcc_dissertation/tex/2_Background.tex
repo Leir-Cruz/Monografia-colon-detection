@@ -1,7 +1,6 @@
 \label{chap:background}
 
-The \gls{CL} is a procedure that allows doctors to examine the inner lining of the colon and rectum using a flexible tube with a lighted camera. The \gls{CLP} passes through the anus and rectum into the colon, providing images of the interior. These images can be used to identify abnormalities such as polyps, which can develop into \gls{CRC} if left untreated. 
-However, the accuracy of \gls{CL} can be affected by various factors, as discussed in Chapter \ref{chap:introduction}. Considering the importance of early detection of \gls{CRC}, improving the accuracy of \gls{CL} is undeniably a critical area of research. 
+TODO: introduce ML and DL
 
 \section{Machine Learning and Computer Vision}
 \label{sec_machine_learning}
@@ -19,7 +18,7 @@ By comparing the human brain to a digital computer, Turing suggests that it was 
     \label{fig:checker_opening}
 \end{figure}
 
-The machine would look ahead a few moves and evaluate the resulting board position, as examplified by figure \ref{fig:checker_opening}. The algorithm had to find out which of those parameters were relevant, serving as an example of experience based learning like that suggested by Turing \cite{DBLP:journals/x/Turing50}. The score of the resulting position was expressed in terms of a linear polynomial with a total of 38 parameters, but it evaluated only 16 at a time for reasons of efficiency and relevance. The conclusion of the 1959 article was that such devised learning schemes would outperform an average person and that these schemes should be applied to real-life problems.
+The machine would look ahead a few moves and evaluate the resulting board position, as examplified by Figure \ref{fig:checker_opening}. The algorithm had to find out which of those parameters were relevant, serving as an example of experience based learning like that suggested by Turing \cite{DBLP:journals/x/Turing50}. The score of the resulting position was expressed in terms of a linear polynomial with a total of 38 parameters, but it evaluated only 16 at a time for reasons of efficiency and relevance. The conclusion of the 1959 article was that such devised learning schemes would outperform an average person and that these schemes should be applied to real-life problems.
 
 Lawrence G. Roberts, with his work Machine Perception of Three-Dimensional Solids \cite{Roberts1963MachinePO}, built some of the foundations of what later would be called \gls{CV}, which is the field of computer science that studies how to enable computers to extract and understand information from visual data, such as images or videos. In his paper, the author showed how a computer could infer 3D structures from 2D images of simple polyhedral objects using techniques such as edge detection and geometric reasoning, which later were used for image detection and classification as discussed further in Section \ref{sec_deep_learning}.
 
@@ -36,7 +35,7 @@ The type of task that can be solved or explored using \gls{ML} and \gls{AI} depe
 \label{sec_supervised_learning}
 Frank Rosenblatt~\cite{rosenblatt1958perceptron} proposed a model in 1958 to explain how the human brain stores data and utilizes it for pattern recognition and behavior. He was committed to understanding how information contained in storage influences recognition. Like Alan Turing~\cite{DBLP:journals/x/Turing50}, Rosenblatt also believed in the application of positive or negative reinforcement to make the system learn. Not only that, but he also expanded the biological concept to his machine model, stating that similar stimuli should activate the same networks of cells.
 
-This probabilistic model, called the perceptron, is divided into three layers: sensory units that respond to impulses on an all or nothing basis; association units that receive the transmitted impulses and, if the algebraic sum of those impulses is greater than the unit threshold, fire and trigger responses in certain response units, illustrated in figure \ref{fig:perceptron_model}. Each response unit has feedback connections that can be excitatory or inhibitory and are mutually exclusive. This means that if a response unit is triggered during a stimulus, it will inhibit others from triggering for other similar stimuli.
+This probabilistic model, called the perceptron, is divided into three layers: sensory units that respond to impulses on an all or nothing basis; association units that receive the transmitted impulses and, if the algebraic sum of those impulses is greater than the unit threshold, fire and trigger responses in certain response units, illustrated in Figure \ref{fig:perceptron_model}. Each response unit has feedback connections that can be excitatory or inhibitory and are mutually exclusive. This means that if a response unit is triggered during a stimulus, it will inhibit others from triggering for other similar stimuli.
 
 \begin{figure}[htbp]
     \centering

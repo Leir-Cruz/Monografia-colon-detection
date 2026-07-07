@@ -1,25 +1,71 @@
 \label{chap:introduction}
 
+The \gls{CL} is a procedure that allows doctors to examine the inner lining of the colon and rectum using a flexible tube with a lighted camera. The \gls{CLP} passes through the anus and rectum into the colon, providing images of the interior. During \gls{CL} analysis, healthcare professionals extract a small sample of tissue from the colon region for biopsy that can be used to identify abnormalities such as polyps, which can develop into \gls{CRC} if left untreated. Figure \ref{fig:histo_samples} illustrates possibles tissue classes.
+
 \section{Problem Statement}
 \label{sec_problem}
 
-Globally, \gls{CRC} remains one of the most prevalent and lethal malignancies. As the third most common cancer worldwide, it accounts for approximately 10\% of all oncological cases and stands as the second leading cause of cancer-related mortality. According to data from Our World in Data~\cite{owid-cancer}, an estimated 1.9 million new cases and over 900,000 deaths were recorded globally in 2022 alone. Common clinical symptoms include hematochezia (blood in the stool), persistent changes in bowel habits (such as diarrhea or constipation), abdominal pain, and unexplained weight loss.
+Globally, \gls{CRC} remains one of the most prevalent and lethal malignancies. As the third most common cancer worldwide, it accounts for approximately 10\% of all oncological cases and stands as the second leading cause of cancer-related mortality. According to data from Our World in Data~\cite{owid-cancer}, an estimated 1.9 million new cases and over 900,000 deaths were recorded globally in 2022 alone. In Brazil, \gls{INCA} researchers ~\cite{10.3389/fonc.2022.1060608} revealed that \gls{CRC} mortality rates will increase for both sexes in all country regions except the Southeast. The study also confirmed that the country follows the global tendency with \gls{CRC} being the third most common oncological disease. Clinical symptoms include hematochezia (blood in the stool), persistent changes in bowel habits (such as diarrhea or constipation), abdominal pain, and unexplained weight loss.
 
 While incidence rates are higher in individuals over 50 years of age, clinical studies~\cite{DEKKER20191467} indicate that various modifiable lifestyle factors significantly escalate risk. These include diets low in fruits and vegetables, high consumption of red and processed meats, physical inactivity, obesity, alcohol consumption, and smoking. Furthermore, chronic inflammatory bowel diseases and hereditary predispositions such as \gls{FAP} and Lynch syndrome can increase dramatically the patient vulnerability.
 
 Early detection of neoplastic polyps remains the most effective strategy to improve patient survival rates and achieve clinical remission. However, standard \gls{CL} is highly invasive, and its diagnostic accuracy is heavily dependent on operator experience and the quality of bowel preparation. Furthermore, limited access to screening facilities in low-income regions frequently leads to late-stage diagnoses and poor patient prognoses. Consequently, there is an urgent need for automated, highly accurate, and efficient diagnostic methods to support early detection and alleviate the global healthcare burden.
 
-\begin{figure}[htbp]
+
+\begin{figure}[t!]
+  \centering
+  \begin{subfigure}[b]{0.22\textwidth}
     \centering
-    \includegraphics[width=0.4\textwidth]{tumor}
-    \caption{Sample  image depicting a colorectal tumor (Kather et al.~\cite{kather2018crc100k}).}
-    \label{fig:colonoscopy_tumor}
+    \includegraphics[width=\textwidth]{TUM-TCGA-ANEVLWNA}
+    \caption{Tumor}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.22\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{STR-TCGA-YAMRKPRF}
+    \caption{Stroma}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.22\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{LYM-TCGA-YYICSNSS}
+    \caption{Lymphocytes}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.22\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{DEB-TCGA-VVNKGFLN}
+    \caption{Debtris}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.22\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{MUS-TCGA-AASRLCCT}
+    \caption{Smooth Muscle}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.22\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{MUC-TCGA-AADHFQAT}
+    \caption{Mucus}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.22\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{NORM-TCGA-ACEQSEEM}
+    \caption{Colon Mucosa}
+  \end{subfigure}
+\begin{subfigure}[b]{0.22\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{ADI-TCGA-AAWDNKDK}
+    \caption{Adipose}
+  \end{subfigure}
+  \caption{Samples histopathological tissue images from (Kather et al.~\cite{kather2018crc100k}).}
+  \label{fig:histo_samples}
 \end{figure}
+
+\section{Literature contributions}
+\label{sec_current_contribution}
+TODO
 
 \section{Research Objectives and Contributions}
 \label{sec_goals}
 
-To address these diagnostic challenges, this research evaluates the efficacy of various \gls{DL} architectures in classifying \gls{CL} images. Specifically, this work investigates standard deep neural networks alongside emerging \glspl{QNN} to analyze their performance within shallow (low-depth) architectural constraints. 
+To address these diagnostic challenges, this research evaluates the efficacy of various \gls{DL} architectures in classifying histopathological images. Specifically, this work investigates standard deep neural networks alongside emerging \glspl{QNN} to analyze their performance within shallow (low-depth) architectural constraints. 
 
 The primary contributions of this work includes
 \begin{itemize}
@@ -30,4 +76,4 @@ The primary contributions of this work includes
 \section{Organization of the Document}
 \label{sec_about}
 
-This work is organized into six chapters, including this introductory chapter. Chapter~\ref{2_Background} establishes the scientific foundation of this research, detailing the pathophysiology of \gls{CRC}, the fundamentals of \gls{ML} and \gls{DL}, and the specific structural frameworks of the utilized neural networks. Chapter~\ref{3_RelatedWork} reviews relevant literature in \gls{CV} applied to medical imaging, focusing on state-of-the-art \gls{CL} analysis. Chapter~\ref{4_methodology} delineates the methodology, including dataset characteristics, image preprocessing techniques, and experimental training protocols. Chapter~\ref{5_Results} presents the experimental results alongside a comprehensive comparative analysis. Finally, Chapter~\ref{6_Conclusions} concludes the document, summarizing the primary contributions and outlining avenues for future work.
+This work is organized into six chapters, including this introductory chapter. Chapter~\ref{2_Background} establishes the scientific foundation of this research, detailing the pathophysiology of \gls{CRC}, the fundamentals of \gls{ML} and \gls{DL}, and the specific structural frameworks of the utilized neural networks. Chapter~\ref{3_RelatedWork} reviews relevant literature in \gls{CV} applied to medical imaging, focusing on state-of-the-art histopathological analysis. Chapter~\ref{4_methodology} delineates the methodology, including dataset characteristics, image preprocessing techniques, and experimental training protocols. Chapter~\ref{5_Results} presents the experimental results alongside a comprehensive comparative analysis. Finally, Chapter~\ref{6_Conclusions} concludes the document, summarizing the primary contributions and outlining avenues for future work.
