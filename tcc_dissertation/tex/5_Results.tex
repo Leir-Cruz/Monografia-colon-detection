@@ -4,7 +4,7 @@ This chapter describes the outcomes of the different development proposals outli
 
 \begin{table}[h!]
 \centering
-\caption{Performance metrics from model trained with \gls{LC25000} using adam optimizer}
+\caption{Performance metrics from model trained with \gls{LC25000} using Adam optimizer. The top-performing results are highlighted in bold.}
 \label{table_lc25000_adam}
 
 \begin{tabular}{|c|l|c|c|c|c|}
@@ -12,10 +12,10 @@ This chapter describes the outcomes of the different development proposals outli
 \textbf{Architecture} & \multicolumn{1}{c|}{\textbf{Dataset}}     & \textbf{Accuracy} & \textbf{Precision} & \textbf{Recall} & \textbf{F1-Score} \\ \hline
 \textbf{AlexNet}      & LC25000                                   & 0.9995       & 0.9995             & 0.9995          & 0.9950            \\ \hline
 \textbf{VGG16}        & LC25000                                   & 0.9970       & 0.9970             & 0.9970          & 0.9970            \\ \hline
-\textbf{ResNet18}     & LC25000                                   & 1            & 1                  & 1               & 1                 \\ \hline
+\textbf{ResNet18}     & LC25000                                   & \textbf{1}            & \textbf{1}                  & \textbf{1}               & \textbf{1}                 \\ \hline
 \textbf{ResNet34}     & LC25000                                   & 0.9995       & 0.9995             & 0.9995          & 0.9995            \\ \hline
-\textbf{ResNet50}     & LC25000                                   & 1            & 1                  & 1               & 1                 \\ \hline
-\textbf{ResNet101}    & LC25000                                  & 1            & 1                  & 1               & 1                 \\ \hline
+\textbf{ResNet50}     & LC25000                                   & \textbf{1}            & \textbf{1}                  & \textbf{1}               & \textbf{1}                 \\ \hline
+\textbf{ResNet101}    & LC25000                                  & \textbf{1}            & \textbf{1}                  & \textbf{1}               & \textbf{1}                 \\ \hline
 \textbf{ResNet152}    & LC25000                                   & 0.9995       & 0.9995             & 0.9995          & 0.9995            \\ \hline
 \multicolumn{1}{|l|}{} &                                       & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} \\ \hline
 \textbf{AlexNet}      & CRC5000                                    & 0.3051       & 0.8815             & 0.3051          & 0.3145            \\ \hline
@@ -31,7 +31,7 @@ This chapter describes the outcomes of the different development proposals outli
 \begin{figure}[t!]
   \centering
 
-    \caption{Train/validation loss using \gls{LC25000} using adam optimizer}
+    \caption{Train/validation loss using \gls{LC25000} using Adam optimizer.}
   \label{fig:LC25000_adam_loss}
 
   \begin{subfigure}[b]{0.44\textwidth}
@@ -78,7 +78,7 @@ This chapter describes the outcomes of the different development proposals outli
 \begin{table}[t!]
 \centering
 
-\caption{Performance metrics from model trained with \gls{LC25000} using adamax optimizer}
+\caption{Performance metrics from model trained with \gls{LC25000} using Adamax optimizer. The top-performing results are highlighted in bold.}
 \label{table_lc25000_adammax}
 
 \begin{tabular}{|c|l|c|c|c|c|}
@@ -87,8 +87,8 @@ This chapter describes the outcomes of the different development proposals outli
 \textbf{AlexNet}      & LC25000                                  & 0.5995       & 0.6674             & 0.5995          & 0.5543            \\ \hline
 \textbf{VGG16}        & LC25000                                  & 0.9945       & 0.9945             & 0.9945          & 0.9945            \\ \hline
 \textbf{ResNet18}     & LC25000                                  & 0.9960       & 0.9960             & 0.9960          & 0.9960            \\ \hline
-\textbf{ResNet34}     & LC25000                                  & 1            & 1                  & 1               & 1                 \\ \hline
-\textbf{ResNet50}     & LC25000                                  & 1            & 1                  & 1               & 1                 \\ \hline
+\textbf{ResNet34}     & LC25000                                  & \textbf{1}            & \textbf{1}                  & \textbf{1}               & \textbf{1}                 \\ \hline
+\textbf{ResNet50}     & LC25000                                  & \textbf{1}            & \textbf{1}                  & \textbf{1}               & \textbf{1}                 \\ \hline
 \textbf{ResNet101}    & LC25000                                  & 0.9995       & 0.9995             & 0.9995          & 0.9995            \\ \hline
 \textbf{ResNet152}    & LC25000                                  & 0.986        & 0.9864             & 0.986           & 0.986             \\ \hline
 \multicolumn{1}{|l|}{} &                                       & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} \\ \hline
@@ -152,7 +152,7 @@ This chapter describes the outcomes of the different development proposals outli
 \begin{table}[t!]
 \centering
 
-\caption{Performance metrics from model trained with \gls{LC25000} using sgd optimizer}
+\caption{Performance metrics from model trained with \gls{LC25000} using SGD optimizer. The top-performing results are highlighted in bold.}
 \label{table_lc25000_sgd}
 
 \begin{tabular}{|c|l|c|c|c|c|}
@@ -160,11 +160,11 @@ This chapter describes the outcomes of the different development proposals outli
 \textbf{Architecture} & \multicolumn{1}{c|}{\textbf{Dataset}}          & \textbf{Accuracy} & \textbf{Precision} & \textbf{Recall} & \textbf{F1-Score} \\ \hline
 \textbf{AlexNet}      & LC25000                                        & 0.9940       & 0.9940             & 0.9940          & 0.9940            \\ \hline
 \textbf{VGG16}        & LC25000                                        & 0.8755       & 0.8785             & 0.8755          & 0.8753            \\ \hline
-\textbf{ResNet18}     & LC25000                                        & 1            & 1                  & 1               & 1                 \\ \hline
+\textbf{ResNet18}     & LC25000                                        & \textbf{1}            & \textbf{1}                  & \textbf{1}               & \textbf{1}                 \\ \hline
 \textbf{ResNet34}     & LC25000                                        & 0.9995       & 0.9995             & 0.9995          & 0.9995            \\ \hline
-\textbf{ResNet50}     & LC25000                                        & 1            & 1                  & 1               & 1                 \\ \hline
+\textbf{ResNet50}     & LC25000                                        & \textbf{1}            & \textbf{1}                  & \textbf{1}               & \textbf{1}                 \\ \hline
 \textbf{ResNet101}    & LC25000                                        & 0.999        & 0.999              & 0.999           & 0.999             \\ \hline
-\textbf{ResNet152}    & LC25000                                        & 1            & 1                  & 1               & 1                 \\ \hline
+\textbf{ResNet152}    & LC25000                                        & \textbf{1}            & \textbf{1}                  & \textbf{1}               & \textbf{1}                 \\ \hline
 \multicolumn{1}{|l|}{} &                                       & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} \\ \hline
 \textbf{AlexNet}      & CRC5000                                         & 0.7783        & 0.8487              & 0.7783           & 0.8029             \\ \hline
 \textbf{Vgg16}        &CRC5000                                           & 0.5664        & 0.6845              & 0.5664           & 0.6199             \\ \hline
@@ -180,7 +180,7 @@ This chapter describes the outcomes of the different development proposals outli
 \begin{figure}[t!]
   \centering
 
-  \caption{Train/validation loss using \gls{LC25000} using sgd optimizer}
+  \caption{Train/validation loss using \gls{LC25000} using SGD optimizer}
   \label{fig:LC25000_sgd_loss}
 
   \begin{subfigure}[b]{0.44\textwidth}
@@ -228,14 +228,14 @@ This chapter describes the outcomes of the different development proposals outli
 \begin{table}[t!]
 \centering
 
-\caption{Performance metrics from model trained with \gls{NCTCRCHE100K} and test with all datasets using adam optimizer}
+\caption{Performance metrics from model trained with \gls{NCTCRCHE100K} and test with all datasets using Adam optimizer. The top-performing results are highlighted in bold.}
 \label{table_NCTCRCHE100K_adam}
 
 \begin{tabular}{|c|l|c|c|c|c|}
 \hline
 \textbf{Architecture}  & \multicolumn{1}{c|}{\textbf{Dataset}} & \textbf{Accuracy}          & \textbf{Precision}    & \textbf{Recall}       & \textbf{F1-Score}     \\ \hline
 \textbf{AlexNet}       & NCTCRCHE100K                          & 0.9779                & 0.9777                & 0.9779                & 0.9776                \\ \hline
-\textbf{VGG16}         & NCTCRCHE100K                          & 0.9907                & 0.9907                & 0.9907                & 0.9907                \\ \hline
+\textbf{VGG16}         & NCTCRCHE100K                          & \textbf{0.9907}                & \textbf{0.9907}                & \textbf{0.9907}                & \textbf{0.9907}                \\ \hline
 \textbf{ResNet18}      & NCTCRCHE100K                          & 0.9748                & 0.9757                & 0.9748                & 0.9751                \\ \hline
 \textbf{ResNet34}      & NCTCRCHE100K                          & 0.9741                & 0.9746                & 0.9741                & 0.9743                \\ \hline
 \textbf{ResNet50}      & NCTCRCHE100K                          & 0.9819                & 0.9823                & 0.9819                & 0.982                 \\ \hline
@@ -264,7 +264,7 @@ This chapter describes the outcomes of the different development proposals outli
 \begin{figure}[t!]
   \centering
 
-    \caption{Train/validation loss using \gls{NCTCRCHE100K} using adam optimizer}
+    \caption{Train/validation loss using \gls{NCTCRCHE100K} using Adam optimizer}
   \label{fig:100K_adam_loss}
 
   \begin{subfigure}[b]{0.44\textwidth}
@@ -313,7 +313,7 @@ This chapter describes the outcomes of the different development proposals outli
 \begin{table}[t!]
 \centering
 
-\caption{Performance metrics from model trained with \gls{NCTCRCHE100K} and test with all datasets using AdamMax optimizer}
+\caption{Performance metrics from model trained with \gls{NCTCRCHE100K} and test with all datasets using AdamMax optimizer. The top-performing results are highlighted in bold.}
 \label{table_NCTCRCHE100K_adammax}
 
 \begin{tabular}{|c|l|c|c|c|c|}
@@ -323,7 +323,7 @@ This chapter describes the outcomes of the different development proposals outli
 \textbf{VGG16}         & NCTCRCHE100K                          & 0.9728                & 0.9730                & 0.9728                & 0.9721                \\ \hline
 \textbf{ResNet18}      & NCTCRCHE100K                          & 0.9837                & 0.9839                & 0.9837                & 0.9838                \\ \hline
 \textbf{ResNet34}      & NCTCRCHE100K                          & 0.9826                & 0.9827                & 0.9826                & 0.9826                \\ \hline
-\textbf{ResNet50}      & NCTCRCHE100K                          & 0.9876                & 0.9876                & 0.9876                & 0.9876                \\ \hline
+\textbf{ResNet50}      & NCTCRCHE100K                          & \textbf{0.9876}                & \textbf{0.9876}                & \textbf{0.9876}                & \textbf{0.9876}                \\ \hline
 \textbf{ResNet101}     & NCTCRCHE100K                          & 0.9765                & 0.9767                & 0.9765                & 0.9766                \\ \hline
 \textbf{ResNet152}     & NCTCRCHE100K                          & 0.9680                & 0.9689                & 0.9680                & 0.9683                \\ \hline
 \multicolumn{1}{|l|}{} &                                       & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} \\ \hline
@@ -397,7 +397,7 @@ This chapter describes the outcomes of the different development proposals outli
 \begin{table}[t!]
 \centering
 
-\caption{Performance metrics from model trained with \gls{NCTCRCHE100K} and test with all datasets using sgd optimizer}
+\caption{Performance metrics from model trained with \gls{NCTCRCHE100K} and test with all datasets using SGD optimizer. The top-performing results are highlighted in bold.}
 \label{table_NCTCRCHE100K_sgd}
 
 \begin{tabular}{|c|l|c|c|c|c|}
@@ -407,7 +407,7 @@ This chapter describes the outcomes of the different development proposals outli
 \textbf{VGG16}         & NCTCRCHE100K                          & 0.9877                & 0.9878                & 0.9877                & 0.9876                \\ \hline
 \textbf{ResNet18}      & NCTCRCHE100K                          & 0.9875                & 0.9874                & 0.9875                & 0.9874                \\ \hline
 \textbf{ResNet34}      & NCTCRCHE100K                          & 0.9873                & 0.9873                & 0.9873                & 0.9872                \\ \hline
-\textbf{ResNet50}      & NCTCRCHE100K                          & 0.9879                & 0.988                 & 0.9879                & 0.9879                \\ \hline
+\textbf{ResNet50}      & NCTCRCHE100K                          & \textbf{0.9879}                & \textbf{0.988}                 & \textbf{0.9879}                & \textbf{0.9879}                \\ \hline
 \textbf{ResNet101}     & NCTCRCHE100K                          & 0.9773                & 0.9777                & 0.9773                & 0.9774                \\ \hline
 \textbf{ResNet152}     & NCTCRCHE100K                          & 0.9868                & 0.9867                & 0.9868                & 0.9867                \\ \hline
 \multicolumn{1}{|l|}{} &                                       & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} \\ \hline
@@ -474,7 +474,7 @@ This chapter describes the outcomes of the different development proposals outli
     \caption{Resnet152}
   \end{subfigure}
 
-  \caption{Train/validation loss using \gls{NCTCRCHE100K} using sgd optimizer}
+  \caption{Train/validation loss using \gls{NCTCRCHE100K} using SGD optimizer}
   \label{fig:100K_sgd_loss}
 
 \end{figure}
@@ -483,7 +483,7 @@ This chapter describes the outcomes of the different development proposals outli
 \begin{table}[t!]
 \centering
 
-\caption{Performance metrics from model trained with \gls{NCTCRCHE100K}-NoNorm and test with all datasets using adam optimizer}
+\caption{Performance metrics from model trained with \gls{NCTCRCHE100K}-NoNorm and test with all datasets using Adam optimizer. The top-performing results are highlighted in bold.}
 \label{table_NCTCRCHE100K-nonorm_adam}
 
 \begin{tabular}{|c|l|c|c|c|c|}
@@ -492,7 +492,7 @@ This chapter describes the outcomes of the different development proposals outli
 \textbf{AlexNet}       & NCTCRCHE100K                          & 0.9025                & 0.8992                & 0.9025                & 0.9004                \\ \hline
 \textbf{VGG16}         & NCTCRCHE100K                          & 0.8716                & 0.9129                & 0.8716                & 0.8821                \\ \hline
 \textbf{ResNet18}      & NCTCRCHE100K                          & 0.9461                & 0.9468                & 0.9461                & 0.9464                \\ \hline
-\textbf{ResNet34}      & NCTCRCHE100K                          & 0.9578                & 0.9573                & 0.9578                & 0.9575                \\ \hline
+\textbf{ResNet34}      & NCTCRCHE100K                          & \textbf{0.9578}                & \textbf{0.9573}                & \textbf{0.9578}                & \textbf{0.9575}                \\ \hline
 \textbf{ResNet50}      & NCTCRCHE100K                          & 0.927                 & 0.9262                & 0.927                 & 0.9266                \\ \hline
 \textbf{ResNet101}     & NCTCRCHE100K                          & 0.9089                & 0.912                 & 0.9089                & 0.9102                \\ \hline
 \textbf{ResNet152}     & NCTCRCHE100K                          & 0.9258                & 0.9258                & 0.9258                & 0.9258                \\ \hline
@@ -556,7 +556,7 @@ This chapter describes the outcomes of the different development proposals outli
     \includegraphics[width=\textwidth]{loss-resnet152-nonorm-adam}
     \caption{Resnet152}
   \end{subfigure}
-  \caption{Train/validation loss using \gls{NCTCRCHE100K}-nonorm using adam optimizer}
+  \caption{Train/validation loss using \gls{NCTCRCHE100K}-nonorm using Adam optimizer}
   \label{fig:100K_adam-nonorm_loss}
 \end{figure}
 
@@ -564,7 +564,7 @@ This chapter describes the outcomes of the different development proposals outli
 \begin{table}[t!]
 \centering
 
-\caption{Performance metrics from model trained with \gls{NCTCRCHE100K}-NoNorm and test with all datasets using AdamMax optimizer}
+\caption{Performance metrics from model trained with \gls{NCTCRCHE100K}-NoNorm and test with all datasets using AdamMax optimizer. The top-performing results are highlighted in bold.}
 \label{table_NCTCRCHE100K-nonorm_adammax}
 
 \begin{tabular}{|c|l|c|c|c|c|}
@@ -576,7 +576,7 @@ This chapter describes the outcomes of the different development proposals outli
 \textbf{ResNet34}      & NCTCRCHE100K                          & 0.9217                & 0.9186                & 0.9217                & 0.9178                \\ \hline
 \textbf{ResNet50}      & NCTCRCHE100K                          & 0.8968                & 0.9049                & 0.8968                & 0.8999                \\ \hline
 \textbf{ResNet101}     & NCTCRCHE100K                          & 0.9323                & 0.9303                & 0.9323                & 0.9307                \\ \hline
-\textbf{ResNet152}     & NCTCRCHE100K                          & 0.9625                & 0.9619                & 0.9625                & 0.9619                \\ \hline
+\textbf{ResNet152}     & NCTCRCHE100K                          & \textbf{0.9625}                & \textbf{0.9619}                & \textbf{0.9625}                & \textbf{0.9619}                \\ \hline
 \multicolumn{1}{|l|}{} &                                       & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} \\ \hline
 \textbf{AlexNet}       & LC25000                               & 0.5052                & 0.5054                & 0.5052                & 0.5014                \\ \hline
 \textbf{VGG16}         & LC25000                               & 0.5195                & 0.6992                & 0.5195                & 0.3796                \\ \hline
@@ -645,7 +645,7 @@ This chapter describes the outcomes of the different development proposals outli
 \begin{table}[t!]
 \centering
 
-\caption{Performance metrics from model trained with \gls{NCTCRCHE100K}-NoNorm and test with all datasets using sgd optimizer}
+\caption{Performance metrics from model trained with \gls{NCTCRCHE100K}-NoNorm and test with all datasets using SGD optimizer. The top-performing results are highlighted in bold.}
 \label{table_NCTCRCHE100K-nonorm_sgd}
 
 \begin{tabular}{|c|l|c|c|c|c|}
@@ -655,7 +655,7 @@ This chapter describes the outcomes of the different development proposals outli
 \textbf{VGG16}         & NCTCRCHE100K                          & 0.9266                & 0.9395                & 0.9266                & 0.9301                \\ \hline
 \textbf{ResNet18}      & NCTCRCHE100K                          & 0.9497                & 0.9488                & 0.9497                & 0.9491                \\ \hline
 \textbf{ResNet34}      & NCTCRCHE100K                          & 0.9038                & 0.9198                & 0.9038                & 0.9086                \\ \hline
-\textbf{ResNet50}      & NCTCRCHE100K                          & 0.9586                & 0.9581                & 0.9586                & 0.9583                \\ \hline
+\textbf{ResNet50}      & NCTCRCHE100K                          & \textbf{0.9586}                & \textbf{0.9581}                & \textbf{0.9586}                & \textbf{0.9583}                \\ \hline
 \textbf{ResNet101}     & NCTCRCHE100K                          & 0.9109                & 0.9174                & 0.9109                & 0.9133                \\ \hline
 \textbf{ResNet152}     & NCTCRCHE100K                          & 0.9497                & 0.9486                & 0.9497                & 0.9487                \\ \hline
 \multicolumn{1}{|l|}{} &                                       & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} \\ \hline
@@ -718,7 +718,7 @@ This chapter describes the outcomes of the different development proposals outli
     \includegraphics[width=\textwidth]{loss-resnet152-nonorm-sgd}
     \caption{Resnet152}
   \end{subfigure}
-  \caption{Train/validation loss using \gls{NCTCRCHE100K}-nonorm using sgd optimizer}
+  \caption{Train/validation loss using \gls{NCTCRCHE100K}-nonorm using SGD optimizer}
   \label{fig:100K-nonorm_sgd_loss}
 \end{figure}
 
@@ -732,14 +732,14 @@ This chapter describes the outcomes of the different development proposals outli
 \begin{table}[t!]
 \centering
 
-\caption{Performance metrics from quanvolution model trained with \gls{LC25000}}
+\caption{Performance metrics from quanvolution model trained with \gls{LC25000}. The top-performing results are highlighted in bold.}
 \label{table_quanvolution_lc25000}
 
 \begin{tabular}{|c|c|c|c|c|}
 \hline
 \textbf{Dataset} & \textbf{Accuracy}          & \textbf{Precision}    & \textbf{Recall}       & \textbf{F1-Score}     \\ \hline
-LC25000                               & 0.755                & 0.7581               & 0.755                 & 0.7543           \\ \hline
-CRC5000                          & 0.4302                & 0.8864                & 0.4302                & 0.4788                \\ \hline
+LC25000                               & \textbf{0.755}                & 0.7581               & \textbf{0.755}                 & \textbf{0.7543}           \\ \hline
+CRC5000                          & 0.4302                & \textbf{0.8864}                & 0.4302                & 0.4788                \\ \hline
 \end{tabular}
 
 \end{table}
@@ -755,13 +755,13 @@ CRC5000                          & 0.4302                & 0.8864               
 \begin{table}[t!]
 \centering
 
-\caption{Performance metrics from quanvolution model trained with \gls{NCTCRCHE100K}}
+\caption{Performance metrics from quanvolution model trained with \gls{NCTCRCHE100K}. The top-performing results are highlighted in bold.}
 \label{table_quanvolution_nctcrche100k}
 
 \begin{tabular}{|c|c|c|c|c|}
 \hline
 \textbf{Dataset} & \textbf{Accuracy}          & \textbf{Precision}    & \textbf{Recall}       & \textbf{F1-Score}     \\ \hline
-NCTCRCHE100K                               & 0.8245                & 0.7853                & 0.8245                 & 0.7687           \\ \hline
+NCTCRCHE100K                               & \textbf{0.8245}                & \textbf{0.7853}                & \textbf{0.8245}                 & \textbf{0.7687}           \\ \hline
 LC25000                          & 0.505                & 0.5476                & 0.505                & 0.3623                \\ \hline
 CRC5000                               & 0.7712                & 0.7345                & 0.7712                 & 0.7521           \\ \hline
 \end{tabular}
@@ -779,7 +779,7 @@ CRC5000                               & 0.7712                & 0.7345          
 \begin{table}[t!]
 \centering
 
-\caption{Performance metrics from quanvolution model trained with \gls{NCTCRCHE100K}-noNorm}
+\caption{Performance metrics from quanvolution model trained with \gls{NCTCRCHE100K}-noNorm. The top-performing results are highlighted in bold.}
 \label{table_quanvolution_nctcrche100k-nonorm}
 
 \begin{tabular}{|c|c|c|c|c|}
@@ -787,7 +787,7 @@ CRC5000                               & 0.7712                & 0.7345          
 \textbf{Dataset} & \textbf{Accuracy}          & \textbf{Precision}    & \textbf{Recall}       & \textbf{F1-Score}     \\ \hline
 NCTCRCHE100K                               & 0.8148                & 0.735                & 0.8148                 & 0.7463           \\ \hline
 LC25000                               & 0.503                & 0.6508                & 0.503                & 0.3417           \\ \hline
-CRC5000                          & 0.8535                & 0.786                & 0.8535                & 0.7983                \\ \hline
+CRC5000                          & \textbf{0.8535}                & \textbf{0.786}                & \textbf{0.8535}                & \textbf{0.7983}                \\ \hline
 \end{tabular}
 
 \end{table}
@@ -795,7 +795,7 @@ CRC5000                          & 0.8535                & 0.786                
 
 %\section{Discussion}
 
-The 100\% accuracy observed in some cases during the training and testing phases using the \gls{LC25000} dataset strongly suggests overfitting. An analysis of the original dataset paper \cite{borkowski2019lungcoloncancerhistopathological} reveals that the twenty five thousand images were generated through an data augmentation process from an original set of only seven hundred fifty images. Specifically, five hundred original colon images were augmented to produce ten thousand images. Given this methodology, there is a high probability that the exact same base images were distributed across the training, validation, and testing sets, only varying by rotation or horizontal and vertical flips.
+The 100\% accuracy observed in some cases during the training and testing phases using the \gls{LC25000} dataset strongly suggests overfitting. An analysis of the original dataset paper \cite{borkowski2019lungcoloncancerhistopathological} reveals that the twenty five thousand images were generated through a data augmentation process from an original set of only seven hundred fifty images. Specifically, five hundred original colon images were augmented to produce ten thousand images. Given this methodology, there is a high probability that the exact same base images were distributed across the training, validation, and testing sets, only varying by rotation or horizontal and vertical flips.
 
 The loss curves recorded during the training process in this section demonstrate, particularly when the learning rate scheduler was applied, that the models successfully converged toward a global minimum. However, the integrity of these samples remains questionable. Due to a lack of institutional permission, the original, unaugmented data was not provided in the article, making it impossible to separate the training and testing images prior to augmentation.
 

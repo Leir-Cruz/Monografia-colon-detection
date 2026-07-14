@@ -48,7 +48,7 @@ A stimulus can be classified into classes, which provokes a stronger impulse fro
 
 The perceptron error was calculated from misclassifications as part of its learning procedure. The main achievement of this work was the possibility of predicting learning curves and the growth of the probability of correct classification as the number of inputs rises. 
 
-Bernard Widrow~\cite{widrow1960adaptive} developed a neural network that learns by being presented with many examples of inputs and their respective desired outputs. The quality of the system performance is directly related to the number of examples given, and a machine called \gls{ADALINE} was built to illustrate this. Similar to John von Neumann~\cite{Neumann1956ProbabilisticLA}, who built his neuron as a combinatorial logic circuit, each input in this model is linearly combined with its respective weights, which are set during the training procedure.
+Bernard Widrow~\cite{widrow1960adaptive} developed a neural network that learns by being presented with many examples of inputs and their respective desired outputs. The quality of the system performance is directly related to the number of examples given, and a machine called \gls{ADALINE} was built to illustrate this, as shown in Figure~\ref{fig:adaline_schematic}. Similar to John von Neumann~\cite{Neumann1956ProbabilisticLA}, who built his neuron as a combinatorial logic circuit, each input in this model is linearly combined with its respective weights, which are set during the training procedure, as presented in the Figure~\ref{fig:adjustable_neuron}.
 
 \begin{figure}[t!]
     \centering
@@ -64,25 +64,23 @@ Bernard Widrow~\cite{widrow1960adaptive} developed a neural network that learns 
     \label{fig:adaline_schematic}
 \end{figure}
 
-Just like the perceptron, \gls{ADALINE} had one layer aside from the input and output, but its learning was stored in the weights $a_0 \dots a_{16}$ and could be used to classify the original patterns and noise. The training method was an iterative search process to find the best set of gains, which can be observed through the error of an instance:
+Just like the perceptron, \gls{ADALINE} had one layer aside from the input and output, but its learning was stored in the weights $a_0 \dots a_{16}$ and could be used to classify the original patterns and noise. The training method was an iterative search process to find the best set of gains, which can be observed through the error of an instance, where $d(k)$ is the expected output and $s_j(k)$ are the input signals of the $k$ instance:
 \begin{equation}
     \epsilon(k) = d(k) - \left[a_0 + \sum_{j=1}^{n} a_j s_j(k)\right]
 \end{equation}
 
-Widrow \& Hoff demonstrated mathematically that the use of \gls{MSE} to adapt weights was advantageous because of its parabolic properties, which guarantee a single global minimum.
+
+Widrow \& Hoff demonstrated mathematically that the use of \gls{MSE} to adapt weights was advantageous because of its parabolic properties, which guarantee a single global minimum. $\hat{y}^{(i)}$ is the prediction output, while $y^{(i)}$ the expected / real instance value.
 \begin{equation} 
     MSE = \frac{1}{m} \sum_{i=1}^{m} (\hat{y}^{(i)} - y^{(i)})^2 
 \end{equation}
 Consequently, minimizing the \gls{MSE} is equivalent to minimizing the average number of neuron errors, which leads to the best set of weights. The training process uses partial derivatives of the formula above, showing that the direction and the magnitude of each weight adaptation depend exclusively on the input signal and the error magnitude, as detailed in Section \ref{sec_neural_networks}.
-\begin{equation} 
-\frac{\partial \epsilon^2(k)}{\partial a_j} = -2s_j(k)\epsilon(k) 
-\end{equation}
 
 \section{Artificial Neural Networks and Gradient Descent}
 \label{sec_neural_networks}
 The perceptron~\cite{rosenblatt1958perceptron} can be considered the first published attempt to build an \gls{ANN} that could learn from examples. However, it consisted of only a single layer aside from the input and output. Later, in his book Principles of Neurodynamics~\cite{Rosenblatt1963PRINCIPLESON}, the author explicitly discusses multilayer perceptron architectures with multiple neurons organized in series. As shown in Figure \ref{fig:adjustable_neuron}, the output of one neuron serves as the input for the next.
 
-It was through the work of Rumelhart et al.~\cite{Rumelhart1986LearningRB} that an \gls{ANN} training procedure was shown to be useful in practice, overcoming the high cost of manually adjusting all the weights of the neurons. These extra layers between the input and output were called hidden layers, or hidden units. They introduced greater complexity in finding the learning rules, or the correct weights, required to reduce the difference between the actual and desired outputs. The input of a neuron in layer $j$ is a linear function of the outputs ($y_i$) from the previous layer multiplied by their respective weights ($w_{ij}$).
+It was through the work of Rumelhart et al.~\cite{Rumelhart1986LearningRB} that an \gls{ANN} training procedure was shown to be useful in practice, overcoming the high cost of manually adjusting all the weights of the neurons. These extra layers between the input and output were called hidden layers, or hidden units, as presented in the Figure~\ref{fig:neural_network_example}. They introduced greater complexity in finding the learning rules, or the correct weights, required to reduce the difference between the actual and desired outputs. The input of a neuron in layer $j$ is a linear function of the outputs ($y_i$) from the previous layer multiplied by their respective weights ($w_{ij}$).
 \begin{equation} 
     x_j = \sum_{i} y_i w_{ij} 
 \end{equation}
@@ -138,7 +136,7 @@ By 1998, many recognition systems were already using some form of multilayer \gl
 
 \section{Overfitting and Early Stopping}
 \label{sec_overfitting}
-Obtaining a network with optimal generalization performance is the ultimate goal of the training process. However, \gls{ANN} architectures can suffer from overfitting, a phenomenon where the error during the training phase continues to decrease while the validation error begins to worsen at some point \cite{articleEarlyStopping}.
+Obtaining a network with optimal generalization performance is the ultimate goal of the training process. However, \gls{ANN} architectures can suffer from overfitting, a phenomenon where the error during the training phase continues to decrease while the validation error begins to worsen at some point \cite{articleEarlyStopping}. Figures \ref{fig:example_overfitting} and \ref{fig:ideal_validation_curve} illustrate the difference between an ideal and an overfitting learning curve.
 
 Lutz Prechelt~\cite{articleEarlyStopping} describes the early stopping technique as a simple and efficient procedure to avoid validation error growth during training. First, the data is split into a training set and a validation set. Then, training occurs only on the training set, while the per-example error is evaluated on the validation set at regular intervals. Finally, the training stops as soon as the error on the validation set becomes higher than it was the last time it was checked. The weights the network had in that previous step are saved as the final result of the training run.
 
@@ -229,7 +227,7 @@ Following the success of the \gls{CNN} in image recognition, alongside the growi
 
 By increasing the depth of a network through the addition of more convolutional layers and using small (3 x 3) filters in all layers, Simonyan \& Zisserman~\cite{DBLP:journals/corr/SimonyanZ14a} developed an architecture that delivered significantly more accurate results, achieving the desired state-of-the-art accuracy. A stack of convolutional layers is followed by three fully connected layers, with the final layer being a soft-max layer.
 
-All hidden layers utilize \glspl{ReLU} for non-linearity. Their work proposes five different architectures. One of them features 13 hidden layers and three fully connected layers, known as ``configuration D''. This configuration is used in Chapter \ref{chap:methodology} and is referred to as \gls{VGG} 16. 
+All hidden layers utilize \glspl{ReLU} for non-linearity. Their work proposes five different architectures. One of them features 13 hidden layers and three fully connected layers, known as ``configuration D'', as shown in the Figure~\ref{fig:vgg16_configs}. This configuration is used in Chapter \ref{chap:methodology} and is referred to as \gls{VGG} 16. 
 
 \begin{figure}[t!]
     \centering
@@ -241,7 +239,7 @@ All hidden layers utilize \glspl{ReLU} for non-linearity. Their work proposes fi
 
 \section{Residual Neural Networks}
 \label{sec_residual}
-The deeper a neural network becomes, the higher the chances of encountering exploding or vanishing gradients \cite{279181}. As network depth increases, accuracy becomes saturated and then degrades rapidly, meaning that adding more layers can paradoxically lead to higher training error. Kaiming He et al. \cite{DBLP:journals/corr/HeZRS15} approached this problem, demonstrating that it is not an overfitting issue, as the model does not suffer from memorizing only the training samples at the expense of generalization. Instead, this degradation problem can be resolved by explicitly letting the layers fit a residual mapping.
+The deeper a neural network becomes, the higher the chances of encountering exploding or vanishing gradients \cite{279181}. As network depth increases, accuracy becomes saturated and then degrades rapidly, meaning that adding more layers can paradoxically lead to higher training error. Kaiming He et al. \cite{DBLP:journals/corr/HeZRS15} approached this problem, demonstrating that it is not an overfitting issue, as the model does not suffer from memorizing only the training samples at the expense of generalization. Instead, this degradation problem can be resolved by explicitly letting the layers fit a residual mapping, exemplified in Figure~\ref{fig:residual_block}.
 
 \begin{figure}[htbp]
     \centering
@@ -339,4 +337,4 @@ The F-score is the harmonic mean of precision and recall.
 
 \section{Final Considerations}
 \label{sec_final_considerations}
- The study of the performance of \gls{DL} and quantum modern architectures in different generalization tasks can be very useful for the society, specially when it comes to medical application. Next chapters in this research verify applicability of \gls{DL} and \gls{QNN} models in \gls{CRC} \gls{BC}, with the presented scientific foundation in this chapter and using the exposed evaluation metrics.
+ Modern \gls{DL} technique are extremely successful approach for image classification task. It can contribute in \gls{CRC} early detection, increasing the chances of cure. Also, emerging \glspl{QNN} use in medical imaging tends to evolve with the research of quanvolutional layers alongside traditional \gls{ML} techniques, contributing to more accurate models in long term.

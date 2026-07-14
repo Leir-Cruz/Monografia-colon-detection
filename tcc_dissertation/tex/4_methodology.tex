@@ -42,29 +42,8 @@ Using the respective \gls{CSV} file, the samples were split into validation, tes
 
 Following these transformations, all images were loaded into system memory instead of being read continuously from storage, utilizing the DataLoader utility to enhance processing velocity during batch training. Training was conducted via \gls{SL} using the training and validation splits. Across the 50 epochs, the loss was calculated using the Cross Entropy \gls{LF}. If the validation loss failed to improve for 15 consecutive epochs, early stopping was activated, and the model state achieving the best performance (the lowest validation loss) was saved and evaluated using the independent test set.
 
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.5\textwidth]{loss-resnet18-nonorm-adammax}
-    \caption{Example of loss variation during the training phase for Residual Network 18 using AdamMax as the optimizer and the \gls{NCTCRCHE100K} dataset.}
-    \label{fig:loss_resnet18}
-\end{figure}
-
 Following the training phase, the optimized model was validated using the metrics described in Section \ref{sec_metrics}: accuracy, recall, precision, specificity, and F-Score on the test \gls{DS}.
 
-\begin{table}[htbp]
-    \centering
-    \caption{Example performance metrics for the test phase of Residual Network 18 using AdamMax as the optimizer and the \gls{NCTCRCHE100K} dataset.}
-    \label{table:metrics_resnet18}
-    \begin{tabular}{|l|l|}
-    \hline
-    Metrics   & Value  \\ \hline
-    Accuracy  & 0.916  \\ \hline
-    Precision & 0.9122 \\ \hline
-    Recall    & 0.916  \\ \hline
-    F-score   & 0.9116 \\ \hline
-    \end{tabular}
-
-\end{table}
 
 \section{Training and Testing Classic Architectures with LC25000}
 \label{sec_first_attempt}
