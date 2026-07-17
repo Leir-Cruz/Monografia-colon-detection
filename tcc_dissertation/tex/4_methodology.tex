@@ -1,5 +1,12 @@
 \label{chap:methodology}
-This chapter describes the experimental designs and implementation details of this work, specifying the libraries, hardware, \glspl{DS}, and procedures used to achieve the results presented in Chapter \ref{chap:results}. The primary goal of this study was to train and compare different \gls{DL} architectures using binary tissue image samples from \gls{CL} to detect \gls{CRC}.
+This chapter describes the experimental designs and implementation details of this work, specifying the libraries, hardware, \glspl{DS}, and procedures used to achieve the results presented in Chapter \ref{chap:results}. The primary goal of this study was to train and compare different \gls{DL} architectures using binary tissue image samples from \gls{CL} to detect \gls{CRC}. Figure~\ref{fig:flow_dev} illustrates development pipeline. The proposed pipeline for training and evaluating both \gls{QML} and \gls{DL} learning models follows are illustrated in Figure~\ref{fig:flow_dev}. This pipeline encompasses data acquisition, preprocessing, memory management, model optimization, and cross-dataset validation.
+
+\begin{figure}[th!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{flow-methodology}
+    \caption{Flowchart of the proposed methodology for preprocessing, training, and evaluating the models.}
+    \label{fig:flow_dev}
+\end{figure}
 
 \section{Datasets}
 \label{sec_datasets}

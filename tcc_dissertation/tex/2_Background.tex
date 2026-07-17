@@ -85,7 +85,7 @@ It was through the work of Rumelhart et al.~\cite{Rumelhart1986LearningRB} that 
     x_j = \sum_{i} y_i w_{ij} 
 \end{equation}
 One important difference pointed out in \cite{Rumelhart1986LearningRB} is that each hidden layer output is followed by a non-linear function, unlike \gls{ADALINE}, where all layers had a linear function as an output. This change is necessary because a series of linear functions could otherwise be simplified and replaced by a single linear function through weight adjustment, which would limit the learning capacity of the system.
-For example, in \gls{BC}, as explored in Chapter \ref{chap:methodology}, it is very common to use a sigmoid function, demonstrated in equation \ref{sigmoid_func}, as the non-linear activation function of the neuron output.
+For example, in \gls{BC}, as explored in Chapter \ref{chap:methodology}, it is very common to use a sigmoid function, demonstrated in Equation \ref{sigmoid_func}, as the non-linear activation function of the neuron output.
 \begin{equation}
      y_j = \frac{1}{1 + e^{-x_j}} \label{sigmoid_func}
 \end{equation}
