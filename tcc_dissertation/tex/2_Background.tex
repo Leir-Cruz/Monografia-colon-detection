@@ -70,7 +70,7 @@ Just like the perceptron, \gls{ADALINE} had one layer aside from the input and o
 \end{equation}
 
 
-Widrow \& Hoff demonstrated mathematically that the use of \gls{MSE} to adapt weights was advantageous because of its parabolic properties, which guarantee a single global minimum. $\hat{y}^{(i)}$ is the prediction output, while $y^{(i)}$ the expected / real instance value.
+Widrow \& Hoff demonstrated mathematically that the use of \gls{MSE} to adapt weights was advantageous because of its parabolic properties, which guarantee a single global minimum. $\hat{y}^{(i)}$ is the prediction output, while $y^{(i)}$ the expected instance value.
 \begin{equation} 
     MSE = \frac{1}{m} \sum_{i=1}^{m} (\hat{y}^{(i)} - y^{(i)})^2 
 \end{equation}
@@ -93,7 +93,7 @@ Rumelhart noted that the total error of a multi-layered \gls{ANN} could be calcu
 \begin{equation} 
     E = \frac{1}{2} \sum_{c} \sum_{j} (y_{j,c} - d_{j,c})^2 
 \end{equation}
-where ($c$) is an index over cases, ($j$) is an index over output units, and ($y$) is the actual state of the output. The main objective, as in Rosenblatt's work~\cite{Rosenblatt1963PRINCIPLESON}, is to minimize ($E$). To achieve this, the use of \gls{GD} \cite{5a25e804-97fa-3be4-ac27-50be05d4f28d} is suggested, which is a mathematical method used to find local minima points.
+where ($c$) is an index over cases, ($j$) is an index over output units, ($d$) is the predicted value and ($y$) is the actual state of the output. The main objective, as in Rosenblatt's work~\cite{Rosenblatt1963PRINCIPLESON}, is to minimize ($E$). To achieve this, the use of \gls{GD} \cite{5a25e804-97fa-3be4-ac27-50be05d4f28d} is suggested, which is a mathematical method used to find local minima points.
 By calculating the partial derivatives of the error and applying the calculus chain rule, it is possible to visualize how a change in the input or the weight of a layer ($j$) affects the total error:
 \begin{equation} 
     \frac{\partial E}{\partial x_j} = \frac{\partial E}{\partial y_j} y_j (1 - y_j) 
@@ -109,7 +109,7 @@ The derivatives calculated above propagate from the top layer back to the bottom
     \Delta w(t) = -\epsilon \frac{\partial E}{\partial w(t)} + \alpha \Delta w(t-1) 
 \end{equation}
 
-Where ($t$) is incremented by 1 for each sweep through the whole set of input-output cases, and ($\alpha$) is an exponential decay factor between 0 and 1 that determines the contribution of the current gradient and earlier gradients to the weight change.
+Where ($t$) is incremented by 1 for each sweep through the whole set of input-output cases, and ($\alpha$) is an exponential decay factor between 0 and 1 that determines the contribution of the current gradient and earlier gradients to the weight change. ($\epsilon$) is the learning rate that describes how fast the function is converging to the minima point and ($\frac{\partial E}{\partial w(t)}$) is the partial derivative of the error.
 
 This new method of learning with \gls{BP} and \gls{GD} made multilayer neural networks viable for everyday use, overcoming the limitation of the single layer perceptron, which could only solve linearly separable problems.
 
@@ -161,7 +161,7 @@ Hornik et al. \cite{HORNIK1989359} established that standard multilayer feedforw
 
 In the paper by Y. LeCun \cite{6795724}, an architecture was proposed where the learning procedure was fed directly with images rather than handcrafted feature vectors. The main goal was to achieve handwritten zip code digit recognition using data from the U.S. Postal Service. Another contrast with earlier works was that all connections in the network were trained using \gls{BP}, whereas the first few layers of connections previously used to be handchosen constants implemented on a neural network chip for specific tasks. To store the complex information derived from an entire image instead of a vector and to extract common features in pattern recognition, the weight sharing technique was applied to extract local features and combine them into higher-order features.
 
-The proposed network featured three hidden layers: two convolutional feature extraction layers followed by one fully connected classification layer. This setup was later referenced as a \gls{CNN}, based on the fact that the function performed by a feature map can be interpreted as a non-linear subsampled convolution with a 5 by 5 kernel, which represents the set of connection weights used by the units in the feature map, as described in Equation \ref{convolution}.
+The proposed network featured three hidden layers: two convolutional feature extraction layers followed by one fully connected classification layer. This setup was later referenced as a \gls{CNN}, based on the fact that the function performed by a feature map can be interpreted as a non-linear subsampled convolution with a 5 by 5 kernel, which represents the set of connection weights used by the units in the feature map, as described in Equation \ref{convolution}. ($f$) denotes the non-linear activation function, and ($x_i^{\,l}$) represents the ($j$) feature map produced at layer ($l$), while ($x_i^{\,l}$) the one in the previous later. ($ k_{ij}^{\,l}$) is the kernel performed in the convolution and ($b_j^{\,l}$) denotes the bias scalar specific to the desired feature map ($j$).
 
 \begin{equation}
 x_j^{\,l}
@@ -239,7 +239,7 @@ All hidden layers utilize \glspl{ReLU} for non-linearity. Their work proposes fi
 
 \section{Residual Neural Networks}
 \label{sec_residual}
-The deeper a neural network becomes, the higher the chances of encountering exploding or vanishing gradients \cite{279181}. As network depth increases, accuracy becomes saturated and then degrades rapidly, meaning that adding more layers can paradoxically lead to higher training error. Kaiming He et al. \cite{DBLP:journals/corr/HeZRS15} approached this problem, demonstrating that it is not an overfitting issue, as the model does not suffer from memorizing only the training samples at the expense of generalization. Instead, this degradation problem can be resolved by explicitly letting the layers fit a residual mapping, exemplified in Figure~\ref{fig:residual_block}.
+The deeper a neural network becomes, the higher the chances of encountering exploding or vanishing gradients \cite{279181}. As network depth increases, accuracy becomes saturated and then degrades rapidly, meaning that adding more layers can paradoxically lead to higher training error. Kaiming He et al. \cite{DBLP:journals/corr/HeZRS15} approached this problem, demonstrating that it is not an overfitting issue, as the model does not suffer from memorizing only the training samples at the expense of generalization. Instead, this degradation problem can be resolved by explicitly letting the layers fit a residual mapping, exemplified in Figure~\ref{fig:residual_block} and mathematically exposed in Equation~\ref{eq:residual_block}. ($x$) and ($y$) respectively represent the input and output vectors of the residual block, ($\{W_i\}$) the set of learnable weights and associated biases and ($F$) the residual mapping.
 
 \begin{figure}[htbp]
     \centering
@@ -250,7 +250,7 @@ The deeper a neural network becomes, the higher the chances of encountering expl
 
 \begin{equation}
 y = F(x, \{W_i\}) + x
-\label{residual block}
+\label{eq:residual_block}
 \end{equation}
 
 \section{Quanvolutional Neural Networks}
