@@ -376,24 +376,70 @@ Nevertheless, comparing these findings with the results in Tables \ref{table_NCT
 
 This conclusion is further supported by the data in Tables \ref{table_NCTCRCHE100K-nonorm_adam}, \ref{table_NCTCRCHE100K-nonorm_adammax}, and \ref{table_NCTCRCHE100K-nonorm_sgd} and Figure~\ref{fig:bar_graph_100k_nonorm}, highlighting the rigid dependency introduced by Macenko's color normalization method in the normalized training set. By removing this feature during the training stage, the resulting outcomes became more diverse and aligned closely with real world classification conditions. Although the absolute performance metrics were lower, this outcome can be attributed to the original 768 x 768 pixel dimensions of the \gls{LC25000} samples and the specific class distributions within that dataset. Comparing the mean accuracy of the evaluated models across multiple \glspl{DS}, Figures \ref{fig:bar_graph_lc25000}, \ref{fig:bar_graph_100k} and \ref{fig:bar_graph_100k_nonorm} reveals that regardless of the chosen optimizer, the models performed similarly in each training context.
 
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.9\textwidth]{bar-graph-lc25000}
-    \caption{Bar chart comparing the mean accuracy of the evaluated models across multiple datasets, using \gls{LC25000} as the training dataset.}
-    \label{fig:bar_graph_lc25000}
-\end{figure}
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.9\textwidth]{bar-graph-100k}
-    \caption{Bar chart comparing the mean accuracy of the evaluated models across multiple datasets, using \gls{NCTCRCHE100K} as the training dataset.}
+    \begin{subfigure}[b]{0.30\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{bar-graph-lc25000-adam}
+        \caption{Adam}
+    \end{subfigure}
+        \begin{subfigure}[b]{0.30\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{bar-graph-lc25000-adammax}
+        \caption{AdamMax}
+    \end{subfigure}
+        \begin{subfigure}[b]{0.30\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{bar-graph-lc25000-sgd}
+        \caption{SGD}
+    \end{subfigure}
+    \caption{Comparison of the mean classification accuracy obtained by the evaluated models using the \gls{LC25000} dataset for training with different optimization algorithms}
+    \label{fig:bar_graph_lc250000}
+\end{figure}
+
+
+\begin{figure}[htbp]
+    \centering
+        \centering
+    \begin{subfigure}[b]{0.30\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{bar-graph-100k-adam}
+        \caption{Adam}
+    \end{subfigure}
+        \begin{subfigure}[b]{0.30\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{bar-graph-100k-adammax}
+        \caption{AdamMax}
+    \end{subfigure}
+        \begin{subfigure}[b]{0.30\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{bar-graph-100k-sgd}
+        \caption{SGD}
+    \end{subfigure}
+    \caption{Comparison of the mean classification accuracy obtained by the evaluated models using the \gls{NCTCRCHE100K} dataset for training with different optimization algorithms}
     \label{fig:bar_graph_100k}
 \end{figure}
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.9\textwidth]{bar-graph-100k-nonorm}
-    \caption{Bar chart comparing the mean accuracy of the evaluated models across multiple datasets, using \gls{NCTCRCHE100K}-NoNorm as the training dataset.}
+        \centering
+    \begin{subfigure}[b]{0.30\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{bar-graph-100k-nonorm-adam}
+        \caption{Adam}
+    \end{subfigure}
+        \begin{subfigure}[b]{0.30\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{bar-graph-100k-nonorm-adammax}
+        \caption{AdamMax}
+    \end{subfigure}
+        \begin{subfigure}[b]{0.30\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{bar-graph-100k-nonorm-sgd}
+        \caption{SGD}
+    \end{subfigure}
+    \caption{Comparison of the mean classification accuracy obtained by the evaluated models using the \gls{NCTCRCHE100K}-noNorm dataset for training with different optimization algorithms}
     \label{fig:bar_graph_100k_nonorm}
 \end{figure}
 
