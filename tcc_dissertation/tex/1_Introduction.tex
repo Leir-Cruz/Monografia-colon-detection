@@ -1,13 +1,13 @@
 \label{chap:introduction}
 
-The \gls{CL} is a procedure that allows doctors to examine the inner lining of the colon and rectum using a flexible tube with a lighted camera. The \gls{CLP} passes through the anus and rectum into the colon, providing images of the interior. During \gls{CL} analysis, healthcare professionals extract a small sample of tissue from the colon region for biopsy that can be used to identify abnormalities such as polyps, which can develop into \gls{CRC} if left untreated. Figure \ref{fig:histo_samples} illustrates possibles tissue classes.
+The \gls{CL} is a procedure that allows doctors to examine the inner lining of the colon and rectum using a flexible tube with a lighted camera. The \gls{CLP} passes through the anus and rectum into the colon, providing images of the interior. During \gls{CL} analysis, healthcare professionals extract a small sample of tissue from the colon region for biopsy that can be used to identify abnormalities such as polyps, which can develop into \gls{CRC} if left untreated. Figure \ref{fig:histo_samples} illustrates possible tissue classes.
 
 \section{Problem Statement}
 \label{sec_problem}
 
-Globally, \gls{CRC} remains one of the most prevalent and lethal malignancies. As the third most common cancer worldwide, it accounts for approximately 10\% of all oncological cases and stands as the second leading cause of cancer-related mortality. According to data from Our World in Data~\cite{owid-cancer}, an estimated 1.9 million new cases and over 900,000 deaths were recorded globally in 2022 alone. In Brazil, \gls{INCA} researchers ~\cite{10.3389/fonc.2022.1060608} revealed that \gls{CRC} mortality rates will increase for both sexes in all country regions except the Southeast. The study also confirmed that the country follows the global tendency with \gls{CRC} being the third most common oncological disease. Clinical symptoms include hematochezia (blood in the stool), persistent changes in bowel habits (such as diarrhea or constipation), abdominal pain, and unexplained weight loss.
+Globally, \gls{CRC} remains one of the most prevalent and lethal malignancies. As the third most common cancer worldwide, it accounts for approximately 10\% of all oncological cases and stands as the second leading cause of cancer-related mortality. According to data from Our World in Data~\cite{owid-cancer}, an estimated 1.9 million new cases and over 900,000 deaths were recorded globally in 2022 alone. In Brazil, \gls{INCA} researchers~\cite{10.3389/fonc.2022.1060608} revealed that \gls{CRC} mortality rates will increase for both sexes in all country regions except the Southeast. The study also confirmed that the country follows the global tendency with \gls{CRC} being the third most common oncological disease. Clinical symptoms include hematochezia (blood in the stool), persistent changes in bowel habits (such as diarrhea or constipation), abdominal pain, and unexplained weight loss.
 
-While incidence rates are higher in individuals over 50 years of age, clinical studies~\cite{DEKKER20191467} indicate that various modifiable lifestyle factors significantly escalate risk. These include diets low in fruits and vegetables, high consumption of red and processed meats, physical inactivity, obesity, alcohol consumption, and smoking. Furthermore, chronic inflammatory bowel diseases and hereditary predispositions such as \gls{FAP} and Lynch syndrome can increase dramatically the patient vulnerability.
+While incidence rates are higher in individuals over 50 years of age, clinical studies~\cite{DEKKER20191467} indicate that various modifiable lifestyle factors significantly escalate risk. These include diets low in fruits and vegetables, high consumption of red and processed meats, physical inactivity, obesity, alcohol consumption, and smoking. Furthermore, chronic inflammatory bowel diseases and hereditary predispositions such as \gls{FAP} and Lynch syndrome can dramatically increase patient vulnerability.
 
 Early detection of neoplastic polyps remains the most effective strategy to improve patient survival rates and achieve clinical remission. However, standard \gls{CL} is highly invasive, and its diagnostic accuracy is heavily dependent on operator experience and the quality of bowel preparation. Furthermore, limited access to screening facilities in low-income regions frequently leads to late-stage diagnoses and poor patient prognoses. Consequently, there is an urgent need for automated, highly accurate, and efficient diagnostic methods to support early detection and alleviate the global healthcare burden.
 
@@ -32,7 +32,7 @@ Early detection of neoplastic polyps remains the most effective strategy to impr
   \begin{subfigure}[b]{0.22\textwidth}
     \centering
     \includegraphics[width=\textwidth]{DEB-TCGA-VVNKGFLN}
-    \caption{Debtris}
+    \caption{Debris}
   \end{subfigure}
   \begin{subfigure}[b]{0.22\textwidth}
     \centering
@@ -54,22 +54,22 @@ Early detection of neoplastic polyps remains the most effective strategy to impr
     \includegraphics[width=\textwidth]{ADI-TCGA-AAWDNKDK}
     \caption{Adipose}
   \end{subfigure}
-  \caption{Samples histopathological tissue images from (Kather et al.~\cite{kather2018crc100k}).}
+  \caption{Sample histopathological tissue images from Kather et al.~\cite{kather2018crc100k}.}
   \label{fig:histo_samples}
 \end{figure}
 
-\section{Literature contributions}
+\section{Literature Contributions}
 \label{sec_current_contribution}
-\gls{CNN} is the standard pattern for image recognition tasks, including medical imaging. However, studies also include the use of handcrafted feature extractor techniques and classical \gls{ML} algorithms for clustering and classification. For \gls{CRC} classification, modern \gls{DL} architectural is the main pattern used in multiple research, also identifying revelant tissue regions of the large intestine and the rectum.
+\glspl{CNN} are the standard pattern for image recognition tasks, including medical imaging. However, studies also include the use of handcrafted feature extractor techniques and classical \gls{ML} algorithms for clustering and classification. For \gls{CRC} classification, modern \gls{DL} architectures are the main pattern used in multiple studies, which also identify relevant tissue regions of the large intestine and the rectum.
 
-Rising \glspl{QNN} architecture are being aimed to medical imaging tasks, with recent studies on cancer classification. This new approach still in early adoption stage, but reveals promising performance for other oncological diseases.
+Rising \gls{QNN} architectures are being aimed at medical imaging tasks, with recent studies focusing on cancer classification. This new approach is still in an early adoption stage but reveals promising performance for other oncological diseases.
 
 \section{Research Objectives and Contributions}
 \label{sec_goals}
 
 To address these diagnostic challenges, this research evaluates the efficacy of various \gls{DL} architectures in classifying histopathological images. Specifically, this work investigates standard \glspl{DNN} alongside emerging \glspl{QNN} to analyze their performance within shallow (low-depth) architectural constraints. 
 
-The primary contributions of this work includes
+The primary contributions of this work include:
 \begin{itemize}
     \item a comparative performance analysis of classical \gls{DL} models against quantum alternatives for colorectal tissue classification;
     \item an evaluation of model efficiency and accuracy under strict, resource-constrained shallow network architectures.
